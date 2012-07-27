@@ -100,6 +100,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  activesupport
   bundler
   growl
   guard

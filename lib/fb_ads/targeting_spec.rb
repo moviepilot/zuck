@@ -13,7 +13,7 @@ module FbAds
   # Some helpers around https://developers.facebook.com/docs/reference/ads-api/targeting-specs/
   # Use like this:
   #
-  #     > ts = Facebook::TargetingSpec.new(user, keyword: 'foo', countries: ['US'])
+  #     > ts = Facebook::TargetingSpec.new(graph, ad_account, keyword: 'foo', countries: ['US'])
   #     > ts.spec
   #     => {
   #        :countries => [
@@ -28,7 +28,8 @@ module FbAds
   #
   class TargetingSpec
 
-    # @param user [User] The user who's ad account you want to use to
+    # @param graph [Koala::Facebook::API] The koala graph object to use
+    # @param ad_account [String] The ad account you want to use to
     #   query the facebook api
     # @param spec [Hash] The targeting spec. Supported keys:
     #
@@ -42,9 +43,10 @@ module FbAds
     #   - `:locales` (optional): [disabled] Array of integers, valid keys are here https://graph.facebook.com/search?type=adlocale&q=en
     #   - `:keywords`: Array of strings with keywords
     #
-    def initialize(user, spec = nil)
+    def initialize(graph, ad_account, spec = nil)
       @validated_keywords = {}
-      @user = user
+      @graph = graph
+      @ad_account = ad_account
       self.spec = spec if spec
     end
 
@@ -60,7 +62,7 @@ module FbAds
         validate_spec
         validate_keywords
         json = @spec.to_json
-        o = "#{@user.ad_account}/reachestimate"
+        o = "#{@ad_account}/reachestimate"
         result = graph.get_object(o, targeting_spec: json)
         return false unless result and result["users"].to_i >= 0
         result["users"].to_i
@@ -98,7 +100,7 @@ module FbAds
     end
 
     def graph
-      @graph ||= @user.get_graph
+      @graph
     end
 
     def validate_spec

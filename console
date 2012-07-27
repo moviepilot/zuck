@@ -1,0 +1,26 @@
+#!/usr/bin/env ruby
+$LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), 'lib'))
+
+require 'bundler'
+Bundler.require
+
+require 'irb'
+require 'fb_ads'
+
+def reload!
+  @loaded_files ||= {}
+  count = 0
+
+  Dir['./lib/**/*.rb'].each do |file|
+    mtime = File.stat(file).mtime
+    if !@loaded_files.has_key?(file) or mtime > @loaded_files[file]
+      STDERR.puts "mtime for #{file} changed, reloading"
+      load file
+      @loaded_files[file] = mtime
+      count += 1
+    end
+  end
+  "reloaded #{count} files"
+end
+
+IRB.start

@@ -4,6 +4,7 @@ source 'http://moviepilot:GoodMovies@gems.backend.moviepilot.com'
 gem 'rvm'
 gem 'bundler'
 gem 'koala', '~>1.4.1'
+gem 'activesupport'
 
 group :development do
   gem "shoulda", ">= 0"
