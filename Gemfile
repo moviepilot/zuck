@@ -9,7 +9,7 @@ group :development do
   gem "shoulda", ">= 0"
   gem "rdoc", "~> 3.12"
   gem "jeweler", "~> 1.8.4"
-  gem "rcov", ">= 0"
+  gem "simplecov", ">= 0"
 end
 
 group :development, :test do
@@ -21,7 +21,6 @@ group :development, :test do
   gem 'guard-yard'
   gem 'guard-spork'
   gem 'redcarpet'    # Markdown for yard
-  gem 'jeweler'
   gem 'ruby-debug19'
   gem 'vcr'
 end
