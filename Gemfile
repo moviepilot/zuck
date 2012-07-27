@@ -13,6 +13,7 @@ group :development do
 end
 
 group :development, :test do
+  gem 'webmock'
   gem 'rspec'
   gem 'growl'
   gem 'guard'
