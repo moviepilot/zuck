@@ -5,5 +5,10 @@ module Zuck
   class FbObject
     include Zuck::HashDelegator
     include Zuck::Koala::Methods
+    
+    def self.get(graph, path)
+      puts "GET #{path}"
+      graph.get_object(path)
+    end
   end
 end

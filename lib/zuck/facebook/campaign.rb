@@ -1,16 +1,17 @@
 module Zuck
-  class Campaign
+  class Campaign < FbObject
 
-    def self.all
-
+    def self.all(graph, ad_account)
+      r = get(graph, "act_#{ad_account.account_id}/adcampaigns")
+      r.map do |c|
+        new(graph, ad_account, c)
+      end
     end
 
-    def self.find
-
-    end
-
-    def self.find_or_create
-
+    def initialize(graph, campaign, data)
+      self.graph = graph
+      set_hash_delegator_data(data)
+      @campaign = campaign
     end
 
   end
