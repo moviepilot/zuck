@@ -1,10 +1,25 @@
 module Zuck
   module HashDelegator
 
-    def set_data(d)
+    def self.included(base)
+      base.extend(ClassMethods)
+    end
+
+    module ClassMethods
+      def known_keys(*args)
+        args.each do |key|
+          self.send(:define_method, key) do
+            init_hash
+            @hash_delegator_hash[key]
+          end
+        end
+      end
+    end
+
+    def set_hash_delegator_data(d)
       e = "You can only assign a Hash to #{self.class}"
       raise e unless d.is_a? Hash
-      @hash_delegator_hash = d
+      @hash_delegator_hash = d.symbolize_keys
     end
 
     def [](key)
@@ -18,6 +33,7 @@ module Zuck
     end
 
     def to_s
+      init_hash
       vars = @hash_delegator_hash.map do |k, v|
         "#{k}: #{v.to_json}"
       end.join(", ")
