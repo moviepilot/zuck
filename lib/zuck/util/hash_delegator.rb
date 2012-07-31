@@ -1,4 +1,40 @@
 module Zuck
+
+  # Including this module does three things:
+  #
+  # 1) Lets you use `x[:foo]` to access keys of the
+  #    underlying Hash
+  # 2) Lets you use `x[:foo] = :bar` to set values
+  #    in the underlying Hash
+  # 3) Lets you define which keys are to be expected
+  #    in the underlying hash. These keys will become
+  #    methods
+  #
+  # Here's an example:
+  #
+  #     class MyObjectWithHash
+  #       include Zuck::HashDelegator
+  #       known_keys :foo, :bar
+  #
+  #       def initialize(initial_data)
+  #         set_hash_delegator_data(initial_data)
+  #       end
+  #     end
+  #
+  #     > x = MyObjectWithHash.new(foo: :bar)
+  #     > x.foo
+  #     => :bar
+  #     > x['foo'] = :everything_is_a_symbol
+  #     > x[:foo]
+  #     => :everything_is_a_symbol
+  #     > x['foo']
+  #     => :everything_is_a_symbol
+  #     > x.foo
+  #     => :everything_is_a_symbol
+  #
+  # As you can see, all string keys become symbols and the
+  # foo method was added because it is a known key.
+  #
   module HashDelegator
 
     def self.included(base)

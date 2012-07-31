@@ -1,5 +1,9 @@
 module Zuck
   module Koala
+
+    # You can include this to any object that should have a `graph`
+    # getter and setter that checks for {::Koala::Facebook::API}
+    # instances with an access token.
     module Methods
 
       def graph=(g)
