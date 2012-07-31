@@ -39,7 +39,7 @@ module Zuck
     end
 
     def campaigns
-      Campaign.all(graph, self)
+      AdCampaign.all(graph, self)
     end
   end
 end
