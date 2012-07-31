@@ -1,5 +1,5 @@
 module Zuck
-  class Campaign < FbObject
+  class AdCampaign < FbObject
 
     def self.all(graph, ad_account)
       r = get(graph, "act_#{ad_account.account_id}/adcampaigns")
@@ -12,6 +12,10 @@ module Zuck
       self.graph = graph
       set_hash_delegator_data(data)
       @campaign = campaign
+    end
+
+    def groups
+
     end
 
   end
