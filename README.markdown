@@ -10,4 +10,11 @@ Usage
 =====
 
 Not everything is supported, here's what's implemented
-so far:
+so far.
+
+Campaigns
+---------
+
+    c  = FbAds::Campaign.find(my_fb_id)
+    c2 = FbAds::Campaign.find_or_create(my_fb_id)
+
