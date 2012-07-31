@@ -51,7 +51,7 @@ Spork.prefork do
 
 end
 
-require File.expand_path("../../lib/fb_ads", __FILE__)
+require File.expand_path("../../lib/zuck", __FILE__)
 
 # Spork.each_run do
 #   FactoryGirl.reload

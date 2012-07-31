@@ -1,4 +1,4 @@
-module FbAds
+module Zuck
 
   # Thrown when a keyword, country, gender etc. is not valid
   class InvalidSpecError    < RuntimeError; end
