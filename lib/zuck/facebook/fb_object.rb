@@ -134,5 +134,14 @@ module Zuck
       end
     end
 
+    def self.connections(*args)
+      args.each do |c|
+        define_method(c.to_s.pluralize) do
+          clazz = "Zuck::#{c.to_s.singularize.camelize}".constantize
+          clazz.all(graph, self)
+        end
+      end
+    end
+
   end
 end

@@ -16,10 +16,7 @@ module Zuck
 
     parent_object :ad_account
     list_path     :adcampaigns
-
-    def groups
-      AdGroup.all(graph, self)
-    end
+    connections   :ad_groups
 
   end
 end
