@@ -39,7 +39,7 @@ module Zuck
     #   rule are {Zuck::AdAccount}s who will return "act_123". Overwrite
     #   if necessary
     def path
-      self.id
+      self[:id]
     end
 
     # Automatique all getter.
