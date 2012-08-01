@@ -35,9 +35,7 @@ module Zuck
     include Zuck::Koala::Methods
 
     # @return [String] Most facebook objects will need to return their
-    #   id property here, so that's the default. Exceptions from this
-    #   rule are {Zuck::AdAccount}s who will return "act_123". Overwrite
-    #   if necessary
+    #   id property here, so that's the default. Overwrite if necessary
     def path
       self[:id]
     end

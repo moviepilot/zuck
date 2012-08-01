@@ -29,12 +29,6 @@ module Zuck
     list_path   'me/adaccounts'
     connections :ad_campaigns
 
-    # This looks a little funkier than {Zuck::FbObject#path} made
-    # you believe. This is because the {AdAccount} has no real parent object.
-    def path
-      "act_#{self.account_id}"
-    end
-
     def self.all
       super(Zuck.graph)
     end
