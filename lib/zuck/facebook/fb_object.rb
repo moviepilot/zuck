@@ -23,7 +23,7 @@ module Zuck
   #     case facebook returned more information than what's documented
   #     (there are a lot of these), you can still call
   #     `my_campaign[:secret_key]` to get to the juicy bits
-  # 2.  You can call AdCampaign.all(graph, my_ad_account), because your
+  # 2.  You can call `AdCampaign.all(graph, my_ad_account)`, because your
   #     `AdCampaign` instance knows how to construct the path
   #     `act_12345/adcampaigns`. It knows this, because it knows its
   #     parent object and its own list path.
