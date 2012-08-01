@@ -1,0 +1,80 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/6004497037951/adgroups?access_token=AAAEvJ5vzhl8BAG3qjJXGVUVKTzjMLrirxcVxllKJdthkQrEstIgXzMYZAAzg0ETsCGMGmX9UvUh4ZCGvATX9ZCnjNee18OTtQ9ZAarrDBQZDZD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "QWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2lu":
+      - !binary |-
+        Kg==
+      !binary "Q2FjaGUtQ29udHJvbA==":
+      - !binary |-
+        cHJpdmF0ZSwgbm8tY2FjaGUsIG5vLXN0b3JlLCBtdXN0LXJldmFsaWRhdGU=
+      !binary "Q29udGVudC1UeXBl":
+      - !binary |-
+        dGV4dC9qYXZhc2NyaXB0OyBjaGFyc2V0PVVURi04
+      !binary "RXRhZw==":
+      - !binary |-
+        ImI0ZmU2MzE5ZGNkM2ViZTdmY2E1YTBkZjViMzE2MjZjMDQ5NThhYWEi
+      !binary "RXhwaXJlcw==":
+      - !binary |-
+        U2F0LCAwMSBKYW4gMjAwMCAwMDowMDowMCBHTVQ=
+      !binary "UHJhZ21h":
+      - !binary |-
+        bm8tY2FjaGU=
+      !binary "WC1GYi1SZXY=":
+      - !binary |-
+        NjAyMDU5
+      !binary "Q29udGVudC1FbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "WC1GYi1EZWJ1Zw==":
+      - !binary |-
+        aUpyeENxZ2l3aGY2NU5MN3FzRlBiZFdFQWZTZmhFSDNsR0hmN2JMeVR0UT0=
+      !binary "RGF0ZQ==":
+      - !binary |-
+        V2VkLCAwMSBBdWcgMjAxMiAxMDo1OTozNCBHTVQ=
+      !binary "Q29ubmVjdGlvbg==":
+      - !binary |-
+        a2VlcC1hbGl2ZQ==
+      !binary "Q29udGVudC1MZW5ndGg=":
+      - !binary |-
+        NzQz
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA9VVUW/bIBD+KxF92bR0AtvENm/p1nV96FYpqTStmixqEwfN
+        AQtwmyzKf99hN2mTpVWmTpsWRRg4+Pi4++5YooI7jtj1EvGiNLqpM1kgNsA4
+        itIYh0lKSR9M+2ZzPqu5LNW2LW53KD4TiKGzxaz3URjdmxgpVGGRx+qOsY67
+        xiKW9tGNLDK3qGED7JzxeQYTsJkOYLm3STXRiC0R6SZXLaH1/gBGea4b5Voe
+        iGBCMU3oIMQxwQGJAaQ1bN0JJnMjuJO3ArYBjesHM6XkWx85bkrhpCr9ybwU
+        GRADx1A4zg+kArYhoPiT4XIeAl2NAPf8EzQXX6D59BWad0NoTr1hdArN2Qk0
+        wytv+AzN+1MEZ4l5XjWFKLJcKyVyJ7XyeMuOeEBxRMIUApIGeBDArh3vohVg
+        3Hs405OXoNwYDb6FG8LtwM/A51YYC3wyW4u8I8Vbgm+7iKHau8M6bRZAzA8Q
+        2yHs2UG0jMucbFURYBIcY3Ic4jFJGE5YkL7B8AMAEMn2qvAYD8aYMIzhv17V
+        1KBacNcWnocckwFEhUUbvDbIuyu7kymLYkbDDnPV358AUUT2JMD97AEJMFSL
+        nq21cbZXgyO1+r0M8C75JQM82xdlQEt/fwZQjJOAhgdnQPJ8Bjwp/k73jRUm
+        4wWI3zrwzoPkIRmDmERJSmj8SPCjzpOvhlX1uhX9fy1XEo69VmNGNsJ+Vq50
+        sEmUfXKF0MU02K3Xj2YPkOu6Xv9rlW5YP6VSghMSH6zSvXW61ea6HIOWvovF
+        nTbtW4COLhqbVwIWHJ1fTrVqex8qMffvAXQvpwsrc171JtIpYf27djQ0SldF
+        b5RP77j5IZQoS2G8AZzqPye6WNw0siruMbojxiKfbiGKuTC5tOJPvQt/I0VU
+        U1WPa3c3fqJKP8ierOv5Xtlv6nm8qec+5dsHFzEIaSVnEnqglT7Sk4kVMICu
+        VO1jmhWiElD6EfNsVj8Bvq18IekIAAA=
+    http_version: 
+  recorded_at: Wed, 01 Aug 2012 10:59:34 GMT
+recorded_with: VCR 2.2.4

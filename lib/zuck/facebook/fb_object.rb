@@ -85,7 +85,7 @@ module Zuck
 
     # Just a helper for debugging and what not
     def self.get(graph, path)
-      puts "Fetching #{path}"
+      # puts "Fetching #{path}"
       graph.get_object(path)
     end
 
