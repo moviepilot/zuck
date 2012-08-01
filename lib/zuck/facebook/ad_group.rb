@@ -5,7 +5,8 @@ module Zuck
 
     # These are taken from https://developers.facebook.com/docs/reference/ads-api/adaccount/
     # the API actually returns more
-    known_keys :ad_id,
+    known_keys :id,
+               :ad_id,
                :campaign_id,
                :name,
                :adgroup_status,
@@ -23,6 +24,7 @@ module Zuck
 
     parent_object :ad_campaign
     list_path     :adgroups
+    connections   :ad_creatives
 
   end
 end
