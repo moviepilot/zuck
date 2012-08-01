@@ -33,11 +33,6 @@ module Zuck
       end
     end
 
-    def initialize(graph, data)
-      self.graph = graph
-      set_hash_delegator_data(data)
-    end
-
     def campaigns
       AdCampaign.all(graph, self)
     end
