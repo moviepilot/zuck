@@ -56,9 +56,3 @@ my_creative.ad_group.name
 
 ```
 
-Campaigns
----------
-```ruby
-c  = FbAds::Campaign.find(my_fb_id)
-c2 = FbAds::Campaign.find_or_create(my_fb_id)
-```
