@@ -1,4 +1,4 @@
-Facebook Ads gem
+Zuck; use facebook's advertisement API with ruby
 ================
 
 This is a little gem that makes access to facebook's 
