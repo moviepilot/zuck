@@ -5,7 +5,7 @@ module Zuck
   #
   # By inheriting from this object, each fb object gets implemented
   # automatically (tm) through calling a couple of DSL methods and
-  # defining how an object can obtain its own path. 
+  # defining how an object can obtain its own path.
   #
   # I feel it is example time, here's an imaginary ad campaign:
   #
@@ -16,7 +16,7 @@ module Zuck
   #       list_path     :adcampaigns
   #
   #     end
-  # 
+  #
   # These handy things are now provided by {FbObject} to your object:
   #
   # 1.  Each `AdCampaign` object has a `title` and `budget` method. In
@@ -24,21 +24,15 @@ module Zuck
   #     (there are a lot of these), you can still call
   #     `my_campaign[:secret_key]` to get to the juicy bits
   # 2.  You can call AdCampaign.all(graph, my_ad_account), because your
-  #     `AdCampaign` instance knows how to construct the path 
-  #     `act_12345/adcampaigns`. It knows this, because it knows its 
+  #     `AdCampaign` instance knows how to construct the path
+  #     `act_12345/adcampaigns`. It knows this, because it knows its
   #     parent object and its own list path.
   #
-  # 
-  # 
+  #
+  #
   class FbObject
     include Zuck::HashDelegator
     include Zuck::Koala::Methods
-    
-    # Just a helper for debugging and what not
-    def self.get(graph, path)
-      puts "Fetching #{path}"
-      graph.get_object(path)
-    end
 
     # @return [String] Most facebook objects will need to return their
     #   id property here, so that's the default. Exceptions from this
@@ -48,55 +42,12 @@ module Zuck
       self.id
     end
 
-    # Part of our little DSL, sets the part of the path that fetches the
-    # list of objects from facebook.
-    #
-    #     class Foo < FbObject
-    #        ...
-    #        list_path :foos
-    #      end
-    #
-    # {FbObject} uses this to construct a path together with this class'
-    # parent object's path method (which is usually just it's ID
-    # property)
-    #
-    # @param path [String, Symbol] Pass a value if you want to set the
-    #   list_path for this object.
-    # @return The object's `list_path`
-    def self.list_path(path = nil)
-      @list_path = path if path
-      @list_path
-    end
-
-    # Pretty much like a `belongs_to`, but is used to construct paths to 
-    # access the facebook api.
-    #
-    # It also defines a getter method. Look
-    #
-    #     class AdCampaign < FbObject
-    #       ...
-    #       parent_object :ad_account
-    #     end
-    #
-    # Now on instances you can call `my_campaign.ad_account` to fetch
-    # the ad account your campaign is part of.
-    #
-    # @param type [Symbol] Pass an underscored symbol here, for example
-    #   `ad_account`
-    def self.parent_object(type)
-      @parent_object_type = type.to_s
-      @parent_object_class = "Zuck::#{type.to_s.camelcase}".constantize
-      define_method(type) do 
-        @parent_object
-      end
-    end
-
     # Automatique all getter.
     #
     # Let's say you want to fetch all campaigns
     # from facebook. This can only happen in the context of an ad
     # account. In this gem, that context is called a parent. This method
-    # would only be called on objects that inherit from {FbObject}. 
+    # would only be called on objects that inherit from {FbObject}.
     # It asks the `parent` for it's path (if it is given), and appends
     # it's own `list_path` property that you have defined (see
     # list_path)
@@ -132,6 +83,55 @@ module Zuck
       e = "Invalid parent_object: #{parent.class} is not a #{@parent_object_class}"
       raise e if @parent_object_class and !parent.is_a?(@parent_object_class)
       @parent_object = parent
+    end
+
+    # Just a helper for debugging and what not
+    def self.get(graph, path)
+      puts "Fetching #{path}"
+      graph.get_object(path)
+    end
+
+    # Part of our little DSL, sets the part of the path that fetches the
+    # list of objects from facebook.
+    #
+    #     class Foo < FbObject
+    #        ...
+    #        list_path :foos
+    #      end
+    #
+    # {FbObject} uses this to construct a path together with this class'
+    # parent object's path method (which is usually just it's ID
+    # property)
+    #
+    # @param path [String, Symbol] Pass a value if you want to set the
+    #   list_path for this object.
+    # @return The object's `list_path`
+    def self.list_path(path = nil)
+      @list_path = path if path
+      @list_path
+    end
+
+    # Pretty much like a `belongs_to`, but is used to construct paths to
+    # access the facebook api.
+    #
+    # It also defines a getter method. Look
+    #
+    #     class AdCampaign < FbObject
+    #       ...
+    #       parent_object :ad_account
+    #     end
+    #
+    # Now on instances you can call `my_campaign.ad_account` to fetch
+    # the ad account your campaign is part of.
+    #
+    # @param type [Symbol] Pass an underscored symbol here, for example
+    #   `ad_account`
+    def self.parent_object(type)
+      @parent_object_type = type.to_s
+      @parent_object_class = "Zuck::#{type.to_s.camelcase}".constantize
+      define_method(type) do
+        @parent_object
+      end
     end
 
   end
