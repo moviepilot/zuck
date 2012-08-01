@@ -15,13 +15,7 @@ module Zuck
                :lifetime_budget
 
     parent_object :ad_account
-
-    def self.all(graph, ad_account)
-      r = get(graph, "act_#{ad_account.account_id}/adcampaigns")
-      r.map do |c|
-        new(graph, c, ad_account)
-      end
-    end
+    list_path     :adcampaigns
 
     def groups
       AdGroup.all(graph, self)

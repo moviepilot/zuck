@@ -26,15 +26,18 @@ module Zuck
                :vat_status,
                :agency_client_declaration
 
-    def self.all(graph = Zuck.graph)
-      r = get(graph, 'me/adaccounts')
-      r.map do |a|
-        new(graph, a)
-      end
+    list_path 'me/adaccounts'
+
+    def path
+      "act_#{self.account_id}"
     end
 
     def campaigns
       AdCampaign.all(graph, self)
+    end
+
+    def self.all
+      super(Zuck.graph)
     end
   end
 end

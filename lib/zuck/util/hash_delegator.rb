@@ -56,7 +56,7 @@ module Zuck
     end
 
     def set_hash_delegator_data(d)
-      e = "You can only assign a Hash to #{self.class}"
+      e = "You can only assign a Hash to #{self.class}, not a #{d.class}"
       raise e unless d.is_a? Hash
       @hash_delegator_hash = d.symbolize_keys
     end

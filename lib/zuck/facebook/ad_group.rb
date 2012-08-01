@@ -22,13 +22,7 @@ module Zuck
                :view_tags
 
     parent_object :ad_campaign
-
-    def self.all(graph, campaign)
-      r = get(graph, "#{campaign.id}/adgroups")
-      r.map do |g|
-        new(graph, g, campaign)
-      end
-    end
+    list_path     :adgroups
 
   end
 end

@@ -7,7 +7,25 @@ module Zuck
     include Zuck::Koala::Methods
     
     def self.get(graph, path)
+      puts "Fetching #{path}"
       graph.get_object(path)
+    end
+
+    def self.path(&block)
+      @path_block = block
+    end
+
+    def self.path_block
+      @path_block
+    end
+
+    def path
+      self.id
+    end
+
+    def self.list_path(path = nil)
+      @list_path = path if path
+      @list_path
     end
 
     # Pretty much like a `belongs_to`
@@ -16,6 +34,16 @@ module Zuck
       @parent_object_class = "Zuck::#{type.to_s.camelcase}".constantize
       define_method(type) do 
         @parent_object
+      end
+    end
+
+    def self.all(graph, parent = nil)
+      paths = []
+      paths << parent.path if parent
+      paths << list_path
+      r = get(graph, paths.join('/'))
+      r.map do |c|
+        new(graph, c, parent)
       end
     end
 
