@@ -28,6 +28,8 @@ module Zuck
 
     list_path 'me/adaccounts'
 
+    # This looks a little funkier than {Zuck::FacebookObject#path} made
+    # you believe. This is because the {AdAccount} has no real parent object.
     def path
       "act_#{self.account_id}"
     end
