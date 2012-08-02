@@ -26,5 +26,28 @@ module Zuck
     list_path     :adgroups
     connections   :ad_creatives
 
+    def self.create(graph, data, ad_campaign = nil)
+      p = ad_campaign.ad_account
+      path = p.path
+
+      data['campaign_id'] = ad_campaign.path
+
+      # We want facebook to return the data of the created object
+      data["redownload"] = 1
+
+      # Create
+      result = put(graph, path, list_path, data)["data"]
+
+      # The data is nested by name and id, e.g.
+      #
+      #     "campaigns" => { "12345" => "data" }
+      #
+      # Since we only put one at a time, we'll fetch this like that.
+      data = result.values.first.values.first
+
+      # Return a new instance
+      new(graph, data, ad_campaign)
+    end
+
   end
 end

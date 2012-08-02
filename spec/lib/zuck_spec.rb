@@ -6,9 +6,9 @@ describe "talking to facebook" do
     Zuck.graph = Koala::Facebook::API.new('AAAEvJ5vzhl8BAG3qjJXGVUVKTzjMLrirxcVxllKJdthkQrEstIgXzMYZAAzg0ETsCGMGmX9UvUh4ZCGvATX9ZCnjNee18OTtQ9ZAarrDBQZDZD')
   end
 
-  let(:account) {account  = Zuck::AdAccount.new(Zuck.graph,  id: "act_10150585630710217")}
-  let(:campaign){campaign = Zuck::AdCampaign.new(Zuck.graph, id: "6004497037951")}
-  let(:group)   {group    = Zuck::AdGroup.new(Zuck.graph,    id: "6004497038951")}
+  let(:account) {account  = Zuck::AdAccount.new(Zuck.graph,  {id: "act_10150585630710217"})}
+  let(:campaign){campaign = Zuck::AdCampaign.new(Zuck.graph, {id: "6004497037951"}, account)}
+  let(:group)   {group    = Zuck::AdGroup.new(Zuck.graph,    {id: "6004497038951"}, campaign)}
 
   context "reading" do
 
@@ -41,10 +41,19 @@ describe "talking to facebook" do
     let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAAExaMreeha9sPAZASaclkkuheSlbjjbiSKwcYcbdC5boZBxyCevcnx5YbY0kyd7YVJNjmrqDt0ZCJAXJbJPCLQdfqeTwZDZD') }
 
     it "an ad campaign" do
-      VCR.use_cassette('create_campaign') do
+      VCR.use_cassette('create_ad_campaign') do
         o = {daily_budget: 1000, name: "bloody" }
         campaign = Zuck::AdCampaign.create(graph, o, account)
         campaign.name.should == "bloody"
+      end
+    end
+
+    it "an ad group" do
+      VCR.use_cassette('create_ad_group') do
+        o = {bid_type: 1, max_bid: 1, name: "Rap like me", targeting: '{"countries":["US"]}',
+             creative: '{"type":25,"action_spec":{"action.type":"like", "post":10150420410887685}}'}
+        group = Zuck::AdGroup.create(graph, o, campaign)
+        group.name.should == "Rap like me"
       end
     end
 
