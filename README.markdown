@@ -5,6 +5,7 @@ This is a little gem that makes access to facebook's
 ads API a little easier. Check out facebook's
 [documentation](https://developers.facebook.com/docs/reference/ads-api/)
 for a nice diagram that explains how things work.
+
 ![](https://dl.dropbox.com/u/1953503/kw29_koelner_gelierzucker_31_oder_diamant_feinster_zucker_462982.jpeg)
 
 Usage
