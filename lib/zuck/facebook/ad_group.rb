@@ -1,7 +1,7 @@
 require 'zuck/facebook/ad_creative'
 
 module Zuck
-  class AdGroup < FbObject
+  class AdGroup < RawFbObject
 
     # These are taken from https://developers.facebook.com/docs/reference/ads-api/adaccount/
     # the API actually returns more

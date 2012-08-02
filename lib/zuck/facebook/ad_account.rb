@@ -1,5 +1,5 @@
 module Zuck
-  class AdAccount < FbObject
+  class AdAccount < RawFbObject
 
     # These are taken from https://developers.facebook.com/docs/reference/ads-api/adaccount/
     # the API actually returns more

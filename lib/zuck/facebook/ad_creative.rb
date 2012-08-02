@@ -1,5 +1,5 @@
 module Zuck
-  class AdCreative < FbObject
+  class AdCreative < RawFbObject
 
     parent_object :ad_group
     list_path     :adcreatives
