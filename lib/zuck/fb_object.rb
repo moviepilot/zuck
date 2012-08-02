@@ -33,10 +33,12 @@ module Zuck
     #     parent object and its own list path.
     #
     class RawFbObject
+      extend  Zuck::FbObject::Helpers
       include Zuck::HashDelegator
       include Zuck::KoalaMethods
       include Zuck::FbObject::DSL
       include Zuck::FbObject::Read
+      include Zuck::FbObject::Write
 
     end
   end

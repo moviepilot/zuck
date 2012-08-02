@@ -32,10 +32,7 @@ module Zuck
       # @param parent [<FbObject] A parent object (needed always, except
       #   when you fetch a {Zuck::AdAccount}
       def all(graph, parent = nil)
-        paths = []
-        paths << parent.path if parent
-        paths << list_path
-        r = get(graph, paths.join('/'))
+        r = get(graph, path_with_parent(parent))
         r.map do |c|
           new(graph, c, parent)
         end
