@@ -1,4 +1,4 @@
-Facebook Ads gem
+Zuck; use facebook's advertisement API with ruby
 ================
 
 This is a little gem that makes access to facebook's 
@@ -56,9 +56,3 @@ my_creative.ad_group.name
 
 ```
 
-Campaigns
----------
-```ruby
-c  = FbAds::Campaign.find(my_fb_id)
-c2 = FbAds::Campaign.find_or_create(my_fb_id)
-```
