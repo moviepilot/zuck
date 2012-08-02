@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://graph.facebook.com/act_10150585630710217/adcampaigns
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ZGFpbHlfYnVkZ2V0PTEwMDAmbmFtZT1ibG9vZHkmcmVkb3dubG9hZD0xJmFj
+        Y2Vzc190b2tlbj1BQUFFdko1dnpobDhCQUFFeGFNcmVlaGE5c1BBWkFTYWNs
+        a2t1aGVTbGJqamJpU0t3Y1ljYmRDNWJvWkJ4eUNldmNueDVZYlkwa3lkN1lW
+        Sk5qbXJxRHQwWkNKQVhKYkpQQ0xRZGZxZVR3WkRaRA==
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      X-Fb-Rev:
+      - '602687'
+      X-Fb-Debug:
+      - FmRq8TKRkuApU79BKGVlUfRsB6JDeRn5gTrasGtiKNY=
+      Date:
+      - Thu, 02 Aug 2012 13:34:11 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '308'
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"6005851321351","data":{"campaigns":{"6005851321351":{"account_id":"10150585630710217","campaign_id":6005851321351,"name":"bloody","daily_budget":1000,"campaign_status":1,"daily_imps":0,"id":"6005851321351","start_time":1343914449,"end_time":null,"updated_time":1343914451,"created_time":1343914449}}}}'
+    http_version: 
+  recorded_at: Thu, 02 Aug 2012 13:34:11 GMT
+recorded_with: VCR 2.2.4

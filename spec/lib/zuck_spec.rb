@@ -1,2 +1,52 @@
 require 'spec_helper'
 
+describe "talking to facebook" do
+
+  before(:all) do
+    Zuck.graph = Koala::Facebook::API.new('AAAEvJ5vzhl8BAG3qjJXGVUVKTzjMLrirxcVxllKJdthkQrEstIgXzMYZAAzg0ETsCGMGmX9UvUh4ZCGvATX9ZCnjNee18OTtQ9ZAarrDBQZDZD')
+  end
+
+  let(:account) {account  = Zuck::AdAccount.new(Zuck.graph,  id: "act_10150585630710217")}
+  let(:campaign){campaign = Zuck::AdCampaign.new(Zuck.graph, id: "6004497037951")}
+  let(:group)   {group    = Zuck::AdGroup.new(Zuck.graph,    id: "6004497038951")}
+
+  context "reading" do
+
+    it "a list of ad accounts" do
+      VCR.use_cassette('list_of_ad_accounts') do
+        Zuck::AdAccount.all.should have(1).item
+      end
+    end
+
+    it "a list of ad campaigns" do
+      VCR.use_cassette('list_of_ad_campaigns') do
+        account.ad_campaigns.should have(1).item
+      end
+    end
+
+    it "a list of ad groups" do
+      VCR.use_cassette('list_of_ad_groups') do
+        campaign.ad_groups.should have(3).items
+      end
+    end
+
+    it "list of ad creatives" do
+      VCR.use_cassette('list_of_ad_creatives') do
+        group.ad_creatives.should have(1).items
+      end
+    end
+  end
+
+  context "creating" do
+    let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAAExaMreeha9sPAZASaclkkuheSlbjjbiSKwcYcbdC5boZBxyCevcnx5YbY0kyd7YVJNjmrqDt0ZCJAXJbJPCLQdfqeTwZDZD') }
+
+    it "an ad campaign" do
+      VCR.use_cassette('create_campaign') do
+        o = {daily_budget: 1000, name: "bloody" }
+        campaign = Zuck::AdCampaign.create(graph, o, account)
+        campaign.name.should == "bloody"
+      end
+    end
+
+  end
+end

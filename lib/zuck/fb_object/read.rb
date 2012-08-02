@@ -38,14 +38,6 @@ module Zuck
         end
       end
 
-      private
-
-      # Just a helper for debugging and what not
-      def get(graph, path)
-        # puts "Fetching #{path}"
-        graph.get_object(path)
-      end
-
     end
    end
  end
