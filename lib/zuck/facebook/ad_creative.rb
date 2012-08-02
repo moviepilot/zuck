@@ -1,5 +1,3 @@
-require_relative 'ad_group'
-
 module Zuck
   class AdCreative < FbObject
 

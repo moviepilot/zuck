@@ -1,10 +1,10 @@
 require 'spec_helper'
 
 class KMTest
-  extend Zuck::Koala::Methods
+  extend Zuck::KoalaMethods
 end
 
-describe Zuck::Koala::Methods do
+describe Zuck::KoalaMethods do
   describe "assigning a graph instance" do
 
     it "raises when not a Koala instance" do

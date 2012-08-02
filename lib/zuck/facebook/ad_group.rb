@@ -1,4 +1,4 @@
-require_relative 'fb_object'
+require 'zuck/facebook/ad_creative'
 
 module Zuck
   class AdGroup < FbObject

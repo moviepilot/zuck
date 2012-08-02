@@ -1,5 +1,3 @@
-require_relative 'fb_object'
-
 module Zuck
   class AdAccount < FbObject
 
