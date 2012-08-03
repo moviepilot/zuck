@@ -1,16 +1,20 @@
 module Zuck
   class AdCampaign < RawFbObject
 
-    # These are taken from https://developers.facebook.com/docs/reference/ads-api/adaccount/
-    # the API actually returns more
-    known_keys :id,
-               :account_id,
+    # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
+    # were incomplete, so I added here what the graph explorer
+    # actually returned.
+    known_keys :account_id,
+               :campaign_id,
+               :campaign_status,
+               :created_time,
+               :daily_imps,
+               :end_time,
+               :id,
+               :lifetime_budget,
                :name,
                :start_time,
-               :end_time,
-               :daily_budget,
-               :campaign_status,
-               :lifetime_budget
+               :updated_time
 
     parent_object :ad_account
     list_path     :adcampaigns
