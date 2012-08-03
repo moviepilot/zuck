@@ -12,14 +12,7 @@ module Zuck
       data = data.stringify_keys
 
       # Don't post ids, because facebook doesn't like it
-      data = data.keep_if do |k,v|
-        next if k[-3..-1] == "_id"
-        next if k         == "id"
-        next if k[-4..-1] == "_ids"
-        next if v.is_a?(Hash)
-        next if v.is_a?(Array)
-        true
-      end
+      data = data.keep_if{ |k,v| k != "id" }
 
       # Update on facebook
       result = post(graph, path, data)
