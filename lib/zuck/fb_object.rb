@@ -18,6 +18,7 @@ module Zuck
     #       known_keys    :title, :budget
     #       parent_object :ad_account
     #       list_path     :adcampaigns
+    #       connections   :ad_groups
     #
     #     end
     #
@@ -31,6 +32,10 @@ module Zuck
     #     `AdCampaign` instance knows how to construct the path
     #     `act_12345/adcampaigns`. It knows this, because it knows its
     #     parent object and its own list path.
+    # 3.  You can call `#ad_groups` on any `AdCampaign` instance to fetch 
+    #     the ad groups in that campaign. To add an ad_group to a campaign,
+    #     you can call `AdGroup.create(graph, data, my_campaign)`, or for
+    #     short: `my_campaign.create_ad_group(data)`
     #
     class RawFbObject
       extend  Zuck::FbObject::Helpers
@@ -43,4 +48,5 @@ module Zuck
   end
 end
 
+# See #{Zuck::FbObject::RawFbObject}
 Zuck::RawFbObject = Zuck::FbObject::RawFbObject

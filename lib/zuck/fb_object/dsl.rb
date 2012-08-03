@@ -1,6 +1,7 @@
 module Zuck
  module FbObject
    module DSL
+
     def self.included(base)
       base.extend(ClassMethods)
     end
@@ -108,7 +109,9 @@ module Zuck
           # and think WHAT! THIS IS NOT DRY! This is true. What's also true
           # is, that this way the classes are loaded at runtime. This is a
           # good thing because it allows for randomly loading files with classes
-          # that inherit from FbObject.
+          # that inherit from FbObject. 
+          #
+          # See also {#resolve_parent_object_class}
 
           # Define getter for connections
           define_method(c.to_s.pluralize) do
