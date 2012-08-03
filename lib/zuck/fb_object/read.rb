@@ -16,7 +16,18 @@ module Zuck
       set_parent(parent)
     end
 
+    # Refetches the data from façeboko
+    def reload
+      set_hash_delegator_data(get(graph, path))
+      self
+    end
+
     module ClassMethods
+
+
+      def find(id, graph = Zuck.graph)
+        new(id).reload
+      end
 
       # Automatique all getter.
       #

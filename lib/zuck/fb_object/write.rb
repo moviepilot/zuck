@@ -5,6 +5,14 @@ module Zuck
       base.extend(ClassMethods)
     end
 
+    def save
+
+    end
+
+    def destroy
+      self.class.destroy(graph, path)
+    end
+
 
     module ClassMethods
 
@@ -26,6 +34,10 @@ module Zuck
 
         # Return a new instance
         new(graph, data, parent)
+      end
+
+      def destroy(graph, id)
+        delete(graph, id)
       end
 
     end

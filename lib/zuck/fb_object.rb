@@ -39,6 +39,7 @@ module Zuck
     #
     class RawFbObject
       extend  Zuck::FbObject::Helpers
+      include Zuck::FbObject::Helpers
       include Zuck::HashDelegator
       include Zuck::KoalaMethods
       include Zuck::FbObject::DSL

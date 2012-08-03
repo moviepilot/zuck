@@ -22,6 +22,15 @@ module Zuck
         end
       end
 
+      def delete(graph, path)
+        begin
+          graph.delete_object(path)
+        rescue => e
+          puts "#{e} graph.delete(#{path.to_json})"
+          raise e
+        end
+      end
+
       def path_with_parent(parent=nil)
         paths = []
         paths << parent.path if parent

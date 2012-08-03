@@ -38,6 +38,7 @@ describe "talking to facebook" do
     end
   end
 
+
   context "creating" do
     let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAAExaMreeha9sPAZASaclkkuheSlbjjbiSKwcYcbdC5boZBxyCevcnx5YbY0kyd7YVJNjmrqDt0ZCJAXJbJPCLQdfqeTwZDZD') }
 
@@ -66,6 +67,17 @@ describe "talking to facebook" do
         group.name.should == "Rap like me"
       end
     end
-
   end
+
+  context "deleting" do
+    let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAPJfh51jolSxTzQCyIfLvJ1ZAVZCfjDHssTLpyYaIK3rqTeKvYBrydUeGtvA9DZAquQZAuoVZB6we8H9DUD9R6iE0yKluXAZDZD') }
+
+    it "an ad group" do
+      VCR.use_cassette('delete_ad_group') do
+        ad_group = Zuck::AdGroup.new(graph, id: '6005859287551' )
+        ad_group.destroy.should be_true
+      end
+    end
+  end
+
 end
