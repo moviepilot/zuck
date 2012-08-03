@@ -18,15 +18,40 @@ module Zuck
 
     # Refetches the data from façeboko
     def reload
-      set_hash_delegator_data(get(graph, path))
+      data = get(graph, path)
+      validate_data(data)
+      set_hash_delegator_data(data)
       self
+    end
+
+    private
+
+    # Makes sure that the data passed comes from a facebook
+    # object of the same type. We check this by comparing
+    # the 'group_id' value with the 'id' value, when this
+    # is called on a {Zuck::AdGroup} for example.
+    #
+    # Facebook omits the "ad" prefix sometimes, so we check 
+    # for both.
+    def validate_data(data)
+      long_id_key  = "#{self.class.list_path.to_s.singularize}_id"
+      short_id_key = "#{self.class.list_path.to_s.singularize[2..-1]}_id"
+      return if data[long_id_key]  and data[long_id_key].to_s  == data["id"].to_s
+      return if data[short_id_key] and data[short_id_key].to_s == data["id"].to_s
+      if data[long_id_key]
+        raise "Invalid type: #{long_id_key} '#{data[long_id_key]}' does not equal id '#{data["id"]}'"
+      elsif data[short_id_key]
+        raise "Invalid type: #{short_id_key} '#{data[short_id_key]}' does not equal id '#{data["id"]}'"
+      else
+        raise "Invalid type: neither #{long_id_key} nor #{short_id_key} set"
+      end
     end
 
     module ClassMethods
 
 
       def find(id, graph = Zuck.graph)
-        new(id).reload
+        new(graph, id: id).reload
       end
 
       # Automatique all getter.

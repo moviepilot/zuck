@@ -1,0 +1,94 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/6004497037951?access_token=AAAEvJ5vzhl8BAPJfh51jolSxTzQCyIfLvJ1ZAVZCfjDHssTLpyYaIK3rqTeKvYBrydUeGtvA9DZAquQZAuoVZB6we8H9DUD9R6iE0yKluXAZDZD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Etag:
+      - ! '"cf5de87fee9deae105c9ceb88ea2e695faef269b"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      X-Fb-Rev:
+      - '603731'
+      X-Fb-Debug:
+      - yjeTLI2LitJGP4pOiCS2YGBvrxbwMXojE2ZJ6rhVndo=
+      Date:
+      - Fri, 03 Aug 2012 09:53:02 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '348'
+    body:
+      encoding: US-ASCII
+      string: ! '{"account_id":"10150585630710217","campaign_id":6004497037951,"name":"Compare
+        Gym Hero friends and public","campaign_status":1,"lifetime_budget":6000,"daily_imps":0,"id":"6004497037951","start_time":"2012-01-30T18:08:29+0000","end_time":"2012-03-06T01:00:00+0000","updated_time":"2012-02-13T13:47:11+0000","created_time":"2012-01-30T15:47:52+0000"}'
+    http_version: 
+  recorded_at: Fri, 03 Aug 2012 09:53:02 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/600449703795?access_token=AAAEvJ5vzhl8BAPJfh51jolSxTzQCyIfLvJ1ZAVZCfjDHssTLpyYaIK3rqTeKvYBrydUeGtvA9DZAquQZAuoVZB6we8H9DUD9R6iE0yKluXAZDZD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Www-Authenticate:
+      - OAuth "Facebook Platform" "invalid_request" "Unsupported get request."
+      X-Fb-Rev:
+      - '603731'
+      X-Fb-Debug:
+      - D0hPbhMP6jB2MYSqmih4U/G37Xk9qK1j81SbGjHNy8Q=
+      Date:
+      - Fri, 03 Aug 2012 09:53:19 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '89'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"Unsupported get request.","type":"GraphMethodException","code":100}}'
+    http_version: 
+  recorded_at: Fri, 03 Aug 2012 09:53:19 GMT
+recorded_with: VCR 2.2.4
