@@ -8,6 +8,11 @@ for a nice diagram that explains how things work.
 
 ![](https://dl.dropbox.com/u/1953503/kw29_koelner_gelierzucker_31_oder_diamant_feinster_zucker_462982.jpeg)
 
+We just hacked this up and are not using it in production yet,
+so handle with care. On the other hand, simplecov reports 100%
+coverage. But as it is a gem in a very early stage, a warning was
+due.
+
 Usage
 =====
 
@@ -53,7 +58,7 @@ my_creative.ad_group.name
 => "Group names are silly"
 ```
 
-Creating
+Writing
 --------
 
 ```ruby
@@ -68,8 +73,21 @@ o = { bid_type:  1,
       creative:  creative}
       
 # Create it in the context of my_campaign
-group = Zuck::AdGroup.create(graph, o, my_campaign)
+group = my_campaign.create_ad_group(o)
 => #<Zuck::AdGroup adgroup_id: 6005851390151, ad_id: 6005851390151, campaign_id: 6005851032951, name: "My first ad group", adgroup_status: 4, bid_type: 1, max_bid: "1", bid_info: {"1":"1"}, ad_status: 4, account_id: "10150585630710217", id: "6005851390151", creative_ids: [6005851371551], targeting: {"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]}, conversion_specs: [{"action.type":"like","post":"10150420410887685"}], start_time: null, end_time: null, updated_time: 1343916568, created_time: 1343916568>
+
+# Shoot, that was the wrong name
+group.name = "My serious ad group"
+group.save
+=> true
+
+# No wait, let's not spend money on facebook
+group.destroy
+=> true
+
+# What does destroy mean? Changing the status!
+group.ad_status
+=> 3
 ```
 
 Supported objects
@@ -85,7 +103,7 @@ Here's a support chart:
     <th style="text-align:center">.create</th>
     <th style="text-align:center">.save</th>
     <th style="text-align:center">.destroy</th>
-    <th style="text-align:center">.parent.create_obj</th>
+    <th style="text-align:center">parent.create_obj*</th>
   </tr>
   <tr><td style="text-align: right">Ad account</td>       <td>✔</td><td>-</td><td>✔</td><td>✔</td><td>-</td></tr>
   <tr><td style="text-align: right">Ad account group</td> <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
@@ -96,5 +114,16 @@ Here's a support chart:
   <tr><td style="text-align: right">Ad user</td>          <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 </table>
 
+* This means that you can, for example create a new ad group by calling
+`my_campaign.create_ad_group(data)` or not.
+
+
 This gem doesn't know anything about `AdUser` yet, and `AdImage` are
 not their own objects - they merely exist inside an `AdCreative`.
+
+To-Do
+-----
+
+Add convenience stuff, right now everything is quite raw and directly
+sent over to facebook. Also, more tests directly to the api with a test
+user. Consolidate and test create code with other objects than AdGroup.
