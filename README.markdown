@@ -104,19 +104,23 @@ Here's a support chart:
     <th style="text-align:center">.save</th>
     <th style="text-align:center">.destroy</th>
     <th style="text-align:center">parent.create_obj*</th>
+    <th style="text-align:center">Convenience methods**</th>
   </tr>
-  <tr><td style="text-align: right">Ad account</td>       <td>✔</td><td>-</td><td>✔</td><td>✔</td><td>-</td></tr>
-  <tr><td style="text-align: right">Ad account group</td> <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
-  <tr><td style="text-align: right">Ad campaign</td>      <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
-  <tr><td style="text-align: right">Ad creative</td>      <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
-  <tr><td style="text-align: right">Ad group</td>         <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
-  <tr><td style="text-align: right">Ad image</td>         <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-  <tr><td style="text-align: right">Ad user</td>          <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad account</td>       <td>✔</td><td>-</td><td>✔</td><td>✔</td><td>-</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad account group</td> <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad campaign</td>      <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad creative</td>      <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad group</td>         <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad image</td>         <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad user</td>          <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 </table>
 
-* This means that you can, for example create a new ad group by calling
+(*) This means that you can, for example, create a new ad group by calling
 `my_campaign.create_ad_group(data)` or not.
 
+(**) Right now, everything goes right to facebook, but we'll want some 
+convenience methods that tell you, for example, what
+`ad_group.ad_status == 3` actually means
 
 This gem doesn't know anything about `AdUser` yet, and `AdImage` are
 not their own objects - they merely exist inside an `AdCreative`.
