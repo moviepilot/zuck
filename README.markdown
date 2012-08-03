@@ -71,3 +71,30 @@ o = { bid_type:  1,
 group = Zuck::AdGroup.create(graph, o, my_campaign)
 => #<Zuck::AdGroup adgroup_id: 6005851390151, ad_id: 6005851390151, campaign_id: 6005851032951, name: "My first ad group", adgroup_status: 4, bid_type: 1, max_bid: "1", bid_info: {"1":"1"}, ad_status: 4, account_id: "10150585630710217", id: "6005851390151", creative_ids: [6005851371551], targeting: {"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]}, conversion_specs: [{"action.type":"like","post":"10150420410887685"}], start_time: null, end_time: null, updated_time: 1343916568, created_time: 1343916568>
 ```
+
+Supported objects
+-----------------
+
+This gem supports basic CRUD on the objects of the facebook ads api.
+Here's a support chart:
+
+<table>
+  <tr>
+    <th style="text-align:right">Object</th>
+    <th style="text-align:center">.all</th>
+    <th style="text-align:center">.create</th>
+    <th style="text-align:center">.save</th>
+    <th style="text-align:center">.destroy</th>
+    <th style="text-align:center">.parent.create_obj</th>
+  </tr>
+  <tr><td style="text-align: right">Ad account</td>       <td>✔</td><td>-</td><td>✔</td><td>✔</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad account group</td> <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
+  <tr><td style="text-align: right">Ad campaign</td>      <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
+  <tr><td style="text-align: right">Ad creative</td>      <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
+  <tr><td style="text-align: right">Ad group</td>         <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
+  <tr><td style="text-align: right">Ad image</td>         <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad user</td>          <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+</table>
+
+This gem doesn't know anything about `AdUser` yet, and `AdImage` are
+not their own objects - they merely exist inside an `AdCreative`.
