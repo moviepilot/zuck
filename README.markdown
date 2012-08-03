@@ -5,20 +5,17 @@ This is a little gem that makes access to facebook's
 ads API a little easier. Check out facebook's
 [documentation](https://developers.facebook.com/docs/reference/ads-api/)
 for a nice diagram that explains how things work.
+
 ![](https://dl.dropbox.com/u/1953503/kw29_koelner_gelierzucker_31_oder_diamant_feinster_zucker_462982.jpeg)
 
 Usage
 =====
 
-Not everything is supported, here's what's implemented
-so far:
-
-- AdAccount
-- AdCampaign
-- AdGroup
-- AdCreative
+Not everything is supported yet. Here's what you can do currently.
 
 
+Reading
+--------
 ```ruby
 # Let's set a default graph object with an access token
 Zuck.graph = Koala::Facebook::API.new('my_access_token')
@@ -54,6 +51,23 @@ my_creative = my_group.ad_creatives.first
 # Let's go back up to the parent
 my_creative.ad_group.name
 => "Group names are silly"
-
 ```
 
+Creating
+--------
+
+```ruby
+# Directly defining the creative as JSON
+creative = '{"type":25,"action_spec":{"action.type":"like", "post":10150420410887685}}'
+
+# Options for the ad group we want to create
+o = { bid_type:  1,
+      max_bid:   1,
+      name:      "My first ad group",
+      targeting: '{"countries":["US"]}',
+      creative:  creative}
+      
+# Create it in the context of my_campaign
+group = Zuck::AdGroup.create(graph, o, my_campaign)
+=> #<Zuck::AdGroup adgroup_id: 6005851390151, ad_id: 6005851390151, campaign_id: 6005851032951, name: "My first ad group", adgroup_status: 4, bid_type: 1, max_bid: "1", bid_info: {"1":"1"}, ad_status: 4, account_id: "10150585630710217", id: "6005851390151", creative_ids: [6005851371551], targeting: {"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]}, conversion_specs: [{"action.type":"like","post":"10150420410887685"}], start_time: null, end_time: null, updated_time: 1343916568, created_time: 1343916568>
+```
