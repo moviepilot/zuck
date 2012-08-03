@@ -58,19 +58,13 @@ module Zuck
 
     # @return [Number] The reach for the options given in {#initialize}
     def fetch_reach
-      begin
-        validate_spec
-        validate_keywords
-        json = @spec.to_json
-        o = "#{@ad_account}/reachestimate"
-        result = graph.get_object(o, targeting_spec: json)
-        return false unless result and result["users"].to_i >= 0
-        result["users"].to_i
-      rescue StandardError => e
-        raise e if Rails.env == :test
-        log_error(e)
-        false
-      end
+      validate_spec
+      validate_keywords
+      json = @spec.to_json
+      o = "#{@ad_account}/reachestimate"
+      result = graph.get_object(o, targeting_spec: json)
+      return false unless result and result["users"].to_i >= 0
+      result["users"].to_i
     end
 
     # @return [Hash] The current targeting spec

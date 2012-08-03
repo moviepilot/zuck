@@ -73,6 +73,18 @@ describe Zuck::TargetingSpec do
       }.to_not raise_error
     end
 
+    it "accepts male as gender for young people" do
+      expect{
+        Zuck::TargetingSpec.new(graph, ad_account, countries: ['US'], keywords: ['foo'], gender: 'male', age_class: 'young')
+      }.to_not raise_error
+    end
+
+    it "accepts male as gender for old people" do
+      expect{
+        Zuck::TargetingSpec.new(graph, ad_account, countries: ['US'], keywords: ['foo'], gender: 'male', age_class: 'old')
+      }.to_not raise_error
+    end
+
     it "accepts without gender" do
       expect{
         Zuck::TargetingSpec.new(graph, ad_account, countries: ['US'], keywords: ['foo'])
@@ -89,6 +101,13 @@ describe Zuck::TargetingSpec do
       expect{
         Zuck::TargetingSpec.new(graph, ad_account, countries: ['US'], keywords: ['foo'], gender: 'gemale')
       }.to raise_error("Gender can only be male or female")
+    end
+
+    it "does not accept targetings with neither :keywords nor :connections" do
+      expect{
+        ts = Zuck::TargetingSpec.new(graph, ad_account, countries: ['US'], gender: 'female')
+        ts.fetch_reach
+      }.to raise_error("Need to set :keywords or :connections")
     end
   end
 
