@@ -38,13 +38,7 @@ module Zuck
       short_id_key = "#{self.class.list_path.to_s.singularize[2..-1]}_id"
       return if data[long_id_key]  and data[long_id_key].to_s  == data["id"].to_s
       return if data[short_id_key] and data[short_id_key].to_s == data["id"].to_s
-      if data[long_id_key]
-        raise "Invalid type: #{long_id_key} '#{data[long_id_key]}' does not equal id '#{data["id"]}'"
-      elsif data[short_id_key]
-        raise "Invalid type: #{short_id_key} '#{data[short_id_key]}' does not equal id '#{data["id"]}'"
-      else
-        raise "Invalid type: neither #{long_id_key} nor #{short_id_key} set"
-      end
+      raise "Invalid type: neither #{long_id_key} nor #{short_id_key} set"
     end
 
     module ClassMethods
