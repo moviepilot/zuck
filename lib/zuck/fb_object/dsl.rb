@@ -98,11 +98,28 @@ module Zuck
       # then your `Foo` instances will have a `#dings` and `#dongs` methods,
       # which will call `Ding.all` and `Dong.call` on the appropriate graph
       # object.
+      #
+      # Also, you will get a `#create_ding` and `#create_dong` methods that
+      # forward to `Ding.new` and `Dong.new`.
       def connections(*args)
         args.each do |c|
+
+          # Dear reader. You might notice two lines beginning with `clazz = ...`
+          # and think WHAT! THIS IS NOT DRY! This is true. What's also true
+          # is, that this way the classes are loaded at runtime. This is a
+          # good thing because it allows for randomly loading files with classes
+          # that inherit from FbObject.
+
+          # Define getter for connections
           define_method(c.to_s.pluralize) do
             clazz = "Zuck::#{c.to_s.singularize.camelize}".constantize
             clazz.all(graph, self)
+          end
+
+          # Define create method for connections
+          define_method("create_#{c.to_s.singularize}") do |data|
+            clazz = "Zuck::#{c.to_s.singularize.camelize}".constantize
+            clazz.create(graph, data, self)
           end
         end
       end

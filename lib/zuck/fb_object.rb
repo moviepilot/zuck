@@ -39,7 +39,6 @@ module Zuck
       include Zuck::FbObject::DSL
       include Zuck::FbObject::Read
       include Zuck::FbObject::Write
-
     end
   end
 end
