@@ -85,7 +85,7 @@ Here's a support chart:
     <th style="text-align:center">.create</th>
     <th style="text-align:center">.save</th>
     <th style="text-align:center">.destroy</th>
-    <th style="text-align:center">.parent.create_obj</th>
+    <th style="text-align:center">parent.create_obj*</th>
   </tr>
   <tr><td style="text-align: right">Ad account</td>       <td>✔</td><td>-</td><td>✔</td><td>✔</td><td>-</td></tr>
   <tr><td style="text-align: right">Ad account group</td> <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
@@ -95,6 +95,9 @@ Here's a support chart:
   <tr><td style="text-align: right">Ad image</td>         <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
   <tr><td style="text-align: right">Ad user</td>          <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 </table>
+
+(*) This means that you can, for example, create a new ad group by calling
+`my_campaign.create_ad_group(data)` or not.
 
 This gem doesn't know anything about `AdUser` yet, and `AdImage` are
 not their own objects - they merely exist inside an `AdCreative`.
