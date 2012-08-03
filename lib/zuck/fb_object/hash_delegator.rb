@@ -34,6 +34,8 @@ module Zuck
   #     => :everything_is_a_symbol
   #     > x.foo
   #     => :everything_is_a_symbol
+  #     > x.foo = :you_also_have_setters
+  #     => :you_also_have_setters
   #
   # As you can see, all string keys become symbols and the
   # foo and bar methods were added because they are known keys
@@ -47,9 +49,17 @@ module Zuck
     module ClassMethods
       def known_keys(*args)
         args.each do |key|
+
+          # Define getter
           self.send(:define_method, key) do
             init_hash
             @hash_delegator_hash[key]
+          end
+
+          # Define setter
+          self.send(:define_method, "#{key}=") do |val|
+            init_hash
+            @hash_delegator_hash[key] = val
           end
         end
       end
