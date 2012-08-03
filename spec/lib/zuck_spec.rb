@@ -56,6 +56,18 @@ describe Zuck::FbObject do
           end
         end
 
+        it "and saving it" do
+          VCR.use_cassette('find_a_single_campaign_and_update_it') do
+            graph = Koala::Facebook::API.new('AAAEvJ5vzhl8BALRaa2dRQ6BkK7dU2ZB6R7n9xfGif8Xnmqu5KKRHWUSLlmDXXO5lo1e8fJZAMeppR7QQtGvpnPNSBkrI1DwGHxXRrnfQZDZD')
+            group = Zuck::AdGroup.find(6005859287551, graph)
+            group.name = "My new name"
+            group.save
+            group.name.should == "My new name"
+            group.reload
+            group.name.should == "My new name"
+          end
+        end
+
       end
     end
 
