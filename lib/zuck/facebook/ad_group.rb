@@ -39,7 +39,7 @@ module Zuck
       data["redownload"] = 1
 
       # Create
-      result = put(graph, path, list_path, data)["data"]
+      result = create_connection(graph, path, list_path, data)["data"]
 
       # The data is nested by name and id, e.g.
       #

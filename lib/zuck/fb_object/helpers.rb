@@ -13,11 +13,20 @@ module Zuck
         end
       end
 
-      def put(graph, parent, connection, args = {}, opts = {})
+      def create_connection(graph, parent, connection, args = {}, opts = {})
         begin
           graph.put_connections(parent, connection, args, opts)
         rescue => e
           puts "#{e} graph.put_connections(#{parent.to_json}, #{connection.to_json}, #{args.to_json}, #{opts.to_json})"
+          raise e
+        end
+      end
+
+      def post(graph, path, data, opts = {})
+        begin
+          graph.graph_call(path.to_s, data, "post", opts)
+        rescue => e
+          puts "#{e} graph.graph_call(#{path.to_json}, #{data.to_json}, \"post\", #{opts.to_json})"
           raise e
         end
       end
