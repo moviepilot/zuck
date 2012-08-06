@@ -8,7 +8,7 @@ module Zuck
         begin
           graph.get_object(path)
         rescue => e
-          puts "#{e} graph.get_object(#{path.to_json})"
+          puts "#{e} graph.get_object(#{path.to_json})" if in_irb?
           raise e
         end
       end
@@ -17,7 +17,8 @@ module Zuck
         begin
           graph.put_connections(parent, connection, args, opts)
         rescue => e
-          puts "#{e} graph.put_connections(#{parent.to_json}, #{connection.to_json}, #{args.to_json}, #{opts.to_json})"
+          msg = "#{e} graph.put_connections(#{parent.to_json}, #{connection.to_json}, #{args.to_json}, #{opts.to_json})"
+          puts msg if in_irb?
           raise e
         end
       end
@@ -26,7 +27,8 @@ module Zuck
         begin
           graph.graph_call(path.to_s, data, "post", opts)
         rescue => e
-          puts "#{e} graph.graph_call(#{path.to_json}, #{data.to_json}, \"post\", #{opts.to_json})"
+          msg = "#{e} graph.graph_call(#{path.to_json}, #{data.to_json}, \"post\", #{opts.to_json})"
+          puts msg if in_irb?
           raise e
         end
       end
@@ -35,7 +37,7 @@ module Zuck
         begin
           graph.delete_object(path)
         rescue => e
-          puts "#{e} graph.delete(#{path.to_json})"
+          puts "#{e} graph.delete(#{path.to_json})" if in_irb?
           raise e
         end
       end
@@ -45,6 +47,10 @@ module Zuck
         paths << parent.path if parent
         paths << list_path
         paths.join('/')
+      end
+
+      def in_irb?
+        defined?(IRB)
       end
     end
   end
