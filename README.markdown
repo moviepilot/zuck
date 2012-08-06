@@ -107,12 +107,12 @@ Here's a support chart:
     <th style="text-align:center">Convenience methods**</th>
   </tr>
   <tr><td style="text-align: right">Ad account</td>       <td>✔</td><td>-</td><td>✔</td><td>✔</td><td>-</td><td>-</td></tr>
-  <tr><td style="text-align: right">Ad account group</td> <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad account group</td> <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
   <tr><td style="text-align: right">Ad campaign</td>      <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>-</td></tr>
   <tr><td style="text-align: right">Ad creative</td>      <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>-</td></tr>
   <tr><td style="text-align: right">Ad group</td>         <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>-</td></tr>
-  <tr><td style="text-align: right">Ad image</td>         <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-  <tr><td style="text-align: right">Ad user</td>          <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad image</td>         <td>●</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad user</td>          <td>●</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 </table>
 
 (*) This means that you can, for example, create a new ad group by calling
@@ -122,8 +122,11 @@ Here's a support chart:
 convenience methods that tell you, for example, what
 `ad_group.ad_status == 3` actually means
 
-This gem doesn't know anything about `AdUser` yet, and `AdImage` are
-not their own objects - they merely exist inside an `AdCreative`.
+( ) These don't exist as their own objects in this gem but live in their 
+parents. This means you can, for now, only read them:
+
+* List all ad users of an account via `my_ad_account.users`
+* Creatives 
 
 To-Do
 -----
