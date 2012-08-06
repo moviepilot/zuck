@@ -36,8 +36,8 @@ module Zuck
 
     module ClassMethods
 
-      def create(graph, data, parent=nil)
-        p = parent.path
+      def create(graph, data, parent=nil, path=nil)
+        p = path || parent.path
 
         # We want facebook to return the data of the created object
         data["redownload"] = 1
