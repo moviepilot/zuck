@@ -1,3 +1,5 @@
+require_relative 'error'
+
 module Zuck
  module FbObject
    module DSL
@@ -25,6 +27,15 @@ module Zuck
     end
 
     module ClassMethods
+
+      # Don't allow create/update/delete
+      def read_only
+        @read_only = true
+      end
+
+      def read_only?
+        !!@read_only
+      end
 
       # Attempts to resolve the {FbObject.parent_object} to a class at runtime
       # so we can load files in any random order...

@@ -1,6 +1,9 @@
 module Zuck
   class AdCreative < RawFbObject
 
+    # Can't create this directly (yet)
+    read_only
+
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
     # actually returned.
@@ -22,5 +25,6 @@ module Zuck
 
     parent_object :ad_group
     list_path     :adcreatives
+
   end
 end

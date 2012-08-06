@@ -1,17 +1,39 @@
 require 'spec_helper'
 
 describe Zuck::FbObject do
-  describe "talking to facebook" do
 
-    before(:all) do
-      Zuck.graph = Koala::Facebook::API.new('AAAEvJ5vzhl8BAG3qjJXGVUVKTzjMLrirxcVxllKJdthkQrEstIgXzMYZAAzg0ETsCGMGmX9UvUh4ZCGvATX9ZCnjNee18OTtQ9ZAarrDBQZDZD')
+  before(:all) do
+    Zuck.graph = Koala::Facebook::API.new('AAAEvJ5vzhl8BAG3qjJXGVUVKTzjMLrirxcVxllKJdthkQrEstIgXzMYZAAzg0ETsCGMGmX9UvUh4ZCGvATX9ZCnjNee18OTtQ9ZAarrDBQZDZD')
+  end
+
+  let(:graph)   { Zuck.graph                                                  }
+  let(:account) { Zuck::AdAccount.new(graph,  {id: "act_10150585630710217"})  }
+  let(:campaign){ Zuck::AdCampaign.new(graph, {id: "6004497037951"}, account) }
+  let(:group)   { Zuck::AdGroup.new(graph,    {id: "6004497038951"}, campaign)}
+  let(:creative){ Zuck::AdCreative.new(graph, {id: "1234567890123"}, group)   }
+
+
+  describe "read only objects" do
+    it "can't be created" do
+      expect{
+        Zuck::AdCreative.create(:x, {}, :y)
+      }.to raise_error(Zuck::Error::ReadOnly)
     end
 
-    let(:graph)   { Zuck.graph                                                  }
-    let(:account) { Zuck::AdAccount.new(graph,  {id: "act_10150585630710217"})  }
-    let(:campaign){ Zuck::AdCampaign.new(graph, {id: "6004497037951"}, account) }
-    let(:group)   { Zuck::AdGroup.new(graph,    {id: "6004497038951"}, campaign)}
+    it "can't be saved" do
+      expect{
+        creative.save
+      }.to raise_error(Zuck::Error::ReadOnly)
+    end
 
+    it "can't be destroyed" do
+      expect{
+        creative.destroy
+      }.to raise_error(Zuck::Error::ReadOnly)
+    end
+  end
+
+  describe "talking to facebook" do
     context "reading" do
 
       it "a list of ad accounts" do
@@ -83,6 +105,14 @@ describe Zuck::FbObject do
         end
       end
 
+      it "an ad campaign via an existing ad account" do
+        VCR.use_cassette('create_ad_campaign') do
+          o = {daily_budget: 1000, name: "bloody" }
+          campaign = account.create_ad_campaign(o)
+          campaign.name.should == "bloody"
+        end
+      end
+
       it "an ad group" do
         VCR.use_cassette('create_ad_group') do
           o = {bid_type: 1, max_bid: 1, name: "Rap like me", targeting: '{"countries":["US"]}',
@@ -92,7 +122,7 @@ describe Zuck::FbObject do
         end
       end
 
-      it "an ad group via an existing instance" do
+      it "an ad group via an existing ad campaign" do
         VCR.use_cassette('create_ad_group') do
           o = {bid_type: 1, max_bid: 1, name: "Rap like me", targeting: '{"countries":["US"]}',
                creative: '{"type":25,"action_spec":{"action.type":"like", "post":10150420410887685}}'}

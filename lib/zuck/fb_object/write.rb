@@ -6,6 +6,7 @@ module Zuck
     end
 
     def save
+      self.class.raise_if_read_only
 
       # Tell facebook to return
       data = @hash_delegator_hash.merge(redownload: 1)
@@ -36,7 +37,13 @@ module Zuck
 
     module ClassMethods
 
+      def raise_if_read_only
+        return unless read_only?
+        raise Zuck::Error::ReadOnly.new("#{self} is read_only")
+      end
+
       def create(graph, data, parent=nil, path=nil)
+        raise_if_read_only
         p = path || parent.path
 
         # We want facebook to return the data of the created object
@@ -57,6 +64,7 @@ module Zuck
       end
 
       def destroy(graph, id)
+        raise_if_read_only
         delete(graph, id)
       end
 
