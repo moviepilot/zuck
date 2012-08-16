@@ -44,6 +44,7 @@ module Zuck
     module ClassMethods
 
 
+      # Finds by object id and checks type
       def find(id, graph = Zuck.graph)
         new(graph, id: id).reload
       end
