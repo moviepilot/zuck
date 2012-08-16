@@ -13,7 +13,12 @@ module Zuck
     def initialize(graph, data, parent=nil)
       self.graph = graph
       set_hash_delegator_data(data)
-      set_parent(parent)
+
+      # If the parent is an {AdAccount} we only want to set it as this
+      # object's direct parent when this object is an {AdCampaign}.
+      if !parent.is_a?(AdAccount) or parent.is_a?(AdAccount) and self.is_a?(AdCampaign)
+        set_parent(parent)
+      end
     end
 
     # Refetches the data from façeboko

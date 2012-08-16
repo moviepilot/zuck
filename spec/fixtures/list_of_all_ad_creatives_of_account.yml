@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217/adcreatives?access_token=AAAEvJ5vzhl8BAMfUdphJ0c2lrsNtVbUkDwqoBzwgefgRgPR7tfuobLBQoqlDUfBxo4JshwZAuZCV7d3jebNNlFZCDXmezIDvKOPgnAIQAZDZD
+    uri: https://graph.facebook.com/act_10150585630710217/adcreatives?access_token=AAAEvJ5vzhl8BAOZCJiB1AjT891KjwRIioFpeRzg3u3JKnYc0lkzHaGY4OZABgcmRhb0hyVUnAZCGQ0NEocZCOuSpGqDAOfOGMKEvuWJHDAZDZD
     body:
       encoding: US-ASCII
       string: ''
@@ -30,7 +30,7 @@ http_interactions:
         dGV4dC9qYXZhc2NyaXB0OyBjaGFyc2V0PVVURi04
       !binary "RXRhZw==":
       - !binary |-
-        IjA3MmI1MDVhYWExZjM3MGM4ZGEzODU2ZDY3ZDJhMWI4YWE4OTA3MGQi
+        ImY4NDY4N2IxOWE2YjJlMjExNzIxMzY3YWUxNjYxNWUwN2UyZTAwNmYi
       !binary "RXhwaXJlcw==":
       - !binary |-
         U2F0LCAwMSBKYW4gMjAwMCAwMDowMDowMCBHTVQ=
@@ -45,42 +45,89 @@ http_interactions:
         Z3ppcA==
       !binary "WC1GYi1EZWJ1Zw==":
       - !binary |-
-        K2lpM0E0c0VkUitPQ2JBV0w2Wlc4eGViUjZtZ1kxRDZhZnhOTXFRUE5VZz0=
+        aGxobE9NcWJQZHRWTnJndGluUG5NU1F2YUZNVUYzUWxLVnNYVllOQlRPRT0=
       !binary "RGF0ZQ==":
       - !binary |-
-        VGh1LCAxNiBBdWcgMjAxMiAxMzozNDoxMCBHTVQ=
+        VGh1LCAxNiBBdWcgMjAxMiAxNDoyNzoyNyBHTVQ=
       !binary "Q29ubmVjdGlvbg==":
       - !binary |-
         a2VlcC1hbGl2ZQ==
       !binary "Q29udGVudC1MZW5ndGg=":
       - !binary |-
-        MTAyMg==
+        MTAyNQ==
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        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
+        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
     http_version: 
-  recorded_at: Thu, 16 Aug 2012 13:34:10 GMT
+  recorded_at: Thu, 16 Aug 2012 14:27:27 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/6004497038951/adcreatives?access_token=AAAEvJ5vzhl8BAG3qjJXGVUVKTzjMLrirxcVxllKJdthkQrEstIgXzMYZAAzg0ETsCGMGmX9UvUh4ZCGvATX9ZCnjNee18OTtQ9ZAarrDBQZDZD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Www-Authenticate:
+      - ! 'OAuth "Facebook Platform" "invalid_token" "Error validating access token:
+        Session has expired at unix time 1343822400. The current unix time is 1345127248."'
+      X-Fb-Rev:
+      - '611258'
+      X-Fb-Debug:
+      - RM9lZZ9l5OF49PnvEAMW/okiMmqqFekKrUxDUgY0uM8=
+      Date:
+      - Thu, 16 Aug 2012 14:27:28 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '191'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"Error validating access token: Session has expired
+        at unix time 1343822400. The current unix time is 1345127248.","type":"OAuthException","code":190,"error_subcode":463}}'
+    http_version: 
+  recorded_at: Thu, 16 Aug 2012 14:27:28 GMT
 recorded_with: VCR 2.2.4
