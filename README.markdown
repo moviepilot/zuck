@@ -109,10 +109,10 @@ Here's a support chart:
   <tr><td style="text-align: right">Ad account</td>       <td>✔</td><td>-</td><td>✔</td><td>✔</td><td>-</td><td>-</td></tr>
   <tr><td style="text-align: right">Ad account group</td> <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
   <tr><td style="text-align: right">Ad campaign</td>      <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>-</td></tr>
-  <tr><td style="text-align: right">Ad creative</td>      <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad creative</td>      <td>✔</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
   <tr><td style="text-align: right">Ad group</td>         <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>-</td></tr>
   <tr><td style="text-align: right">Ad image</td>         <td>●</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-  <tr><td style="text-align: right">Ad user</td>          <td>●</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad user</td>          <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
 </table>
 
 (*) This means that you can, for example, create a new ad group by calling
@@ -125,8 +125,8 @@ convenience methods that tell you, for example, what
 ( ) These don't exist as their own objects in this gem but live in their 
 parents. This means you can, for now, only read them:
 
-* List all ad users of an account via `my_ad_account.users`
-* Creatives 
+Users don't exist as objects yet, but you can list all ad users of
+an account via `my_ad_account.users` and you will get an array of hashes.
 
 To-Do
 -----
