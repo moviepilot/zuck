@@ -87,24 +87,19 @@ module Zuck
       def connections(*args)
         args.each do |c|
 
-          # Dear reader. You might notice two lines beginning with `clazz = ...`
-          # and think WHAT! THIS IS NOT DRY! This is true. What's also true
-          # is, that this way the classes are loaded at runtime. This is a
+          # Why a lambda? Because it gets evaluated on runtime, not now. This is a
           # good thing because it allows for randomly loading files with classes
-          # that inherit from FbObject. 
-          #
-          # See also {#resolve_parent_object_class}
+          # that inherit from FbObject.
+          class_resolver = lambda{"Zuck::#{c.to_s.singularize.camelize}".constantize}
 
           # Define getter for connections
           define_method(c.to_s.pluralize) do
-            clazz = "Zuck::#{c.to_s.singularize.camelize}".constantize
-            clazz.all(graph, self)
+            class_resolver.call.all(graph, self)
           end
 
           # Define create method for connections
           define_method("create_#{c.to_s.singularize}") do |data|
-            clazz = "Zuck::#{c.to_s.singularize.camelize}".constantize
-            clazz.create(graph, data, self)
+            class_resolver.call.create(graph, data, self)
           end
         end
       end
