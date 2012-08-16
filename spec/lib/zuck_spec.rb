@@ -62,8 +62,9 @@ describe Zuck::FbObject do
 
       it "list of all ad creatives of an account" do
         g = Koala::Facebook::API.new('AAAEvJ5vzhl8BAOZCJiB1AjT891KjwRIioFpeRzg3u3JKnYc0lkzHaGY4OZABgcmRhb0hyVUnAZCGQ0NEocZCOuSpGqDAOfOGMKEvuWJHDAZDZD')
+        Zuck::AdAccount.should_receive(:all).and_return([account])
         VCR.use_cassette('list_of_all_ad_creatives_of_account') do
-          Zuck::AdCreative.all(g, account).should have(6).items
+          Zuck::AdCreative.all(g).should have(6).items
         end
       end
 
