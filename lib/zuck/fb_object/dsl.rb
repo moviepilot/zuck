@@ -14,18 +14,6 @@ module Zuck
       self[:id]
     end
 
-    private
-
-    # Sets the parent of this instance
-    #
-    # @param parent [FbObject] Has to be of the same class type you defined
-    #   using {FbObject.parent_object}
-    def set_parent(parent)
-      return unless parent
-      self.class.validate_parent_object_class(parent)
-      @parent_object = parent
-    end
-
     module ClassMethods
 
       # Don't allow create/update/delete
@@ -36,23 +24,6 @@ module Zuck
       def read_only?
         !!@read_only
       end
-
-      # Attempts to resolve the {FbObject.parent_object} to a class at runtime
-      # so we can load files in any random order...
-      def resolve_parent_object_class
-        return if @parent_object_class
-        class_s = "Zuck::#{@parent_object_type.camelcase}"
-        @parent_object_class = class_s.constantize
-      end
-
-      # Makes sure the given parent matches what you defined
-      # in {FbObject.parent_object}
-      def validate_parent_object_class(parent)
-        resolve_parent_object_class
-        e = "Invalid parent_object: #{parent.class} is not a #{@parent_object_class}"
-        raise e if @parent_object_class and !parent.is_a?(@parent_object_class)
-      end
-
 
       # Part of our little DSL, sets the part of the path that fetches the
       # list of objects from facebook.

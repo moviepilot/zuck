@@ -60,6 +60,14 @@ describe Zuck::FbObject do
         end
       end
 
+      it "list of all ad creatives of an account" do
+        graph = Koala::Facebook::API.new('AAAEvJ5vzhl8BAMfUdphJ0c2lrsNtVbUkDwqoBzwgefgRgPR7tfuobLBQoqlDUfBxo4JshwZAuZCV7d3jebNNlFZCDXmezIDvKOPgnAIQAZDZD')
+        VCR.use_cassette('list_of_all_ad_creatives_of_account') do
+          Zuck::AdCreative.all(graph, account)
+          group.ad_creatives.should have(3).items
+        end
+      end
+
       context "an id directly" do
 
         let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAPJfh51jolSxTzQCyIfLvJ1ZAVZCfjDHssTLpyYaIK3rqTeKvYBrydUeGtvA9DZAquQZAuoVZB6we8H9DUD9R6iE0yKluXAZDZD') }

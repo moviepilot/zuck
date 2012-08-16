@@ -1,0 +1,86 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/act_10150585630710217/adcreatives?access_token=AAAEvJ5vzhl8BAMfUdphJ0c2lrsNtVbUkDwqoBzwgefgRgPR7tfuobLBQoqlDUfBxo4JshwZAuZCV7d3jebNNlFZCDXmezIDvKOPgnAIQAZDZD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "QWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2lu":
+      - !binary |-
+        Kg==
+      !binary "Q2FjaGUtQ29udHJvbA==":
+      - !binary |-
+        cHJpdmF0ZSwgbm8tY2FjaGUsIG5vLXN0b3JlLCBtdXN0LXJldmFsaWRhdGU=
+      !binary "Q29udGVudC1UeXBl":
+      - !binary |-
+        dGV4dC9qYXZhc2NyaXB0OyBjaGFyc2V0PVVURi04
+      !binary "RXRhZw==":
+      - !binary |-
+        IjA3MmI1MDVhYWExZjM3MGM4ZGEzODU2ZDY3ZDJhMWI4YWE4OTA3MGQi
+      !binary "RXhwaXJlcw==":
+      - !binary |-
+        U2F0LCAwMSBKYW4gMjAwMCAwMDowMDowMCBHTVQ=
+      !binary "UHJhZ21h":
+      - !binary |-
+        bm8tY2FjaGU=
+      !binary "WC1GYi1SZXY=":
+      - !binary |-
+        NjExMjU4
+      !binary "Q29udGVudC1FbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "WC1GYi1EZWJ1Zw==":
+      - !binary |-
+        K2lpM0E0c0VkUitPQ2JBV0w2Wlc4eGViUjZtZ1kxRDZhZnhOTXFRUE5VZz0=
+      !binary "RGF0ZQ==":
+      - !binary |-
+        VGh1LCAxNiBBdWcgMjAxMiAxMzozNDoxMCBHTVQ=
+      !binary "Q29ubmVjdGlvbg==":
+      - !binary |-
+        a2VlcC1hbGl2ZQ==
+      !binary "Q29udGVudC1MZW5ndGg=":
+      - !binary |-
+        MTAyMg==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA9WX62/bNhDA/xVBA/bJsUmKoqQAQeDUezTd0vSRYkg9CBRJ
+        PWJZVEXKahLkf9/JjpvEabZkhYv0i8TH8fi4H493l67klru7Hy9de14rd5f4
+        A5cLW+gqNrUS7u7ldXW46nfLYqbcgVtrY6GGEfYRJYhiFIYBC333auA2quRW
+        yTjlVVzzDEbhgSvK1ljVxIV0dxlCfuhjjzHPh66Kz3vN72pdGd0o6Rirm3Pn
+        p7VYgH0fw5xNC4uy3LZmqbFu1KJQXdw2JYzOra13p6PpqOu6YcqFSrSeDYWe
+        T0dcGvjUxXQkGsVtsVDx9dhhndf7opB7m1MJ3VY2Fm3TKPhzmTW6rWHaaOD2
+        G3Dvya8Vf6X3anDpLhdqeQZDYSO8tPG6BZR+/BuOZ1MB9RGcKQ6WO7+2DRQK
+        W/ZnBW2JludQep8rJ22UcorjXFfK6XQz0611bMPFTDUOr2unK2zetyWqLI3D
+        K+l0eWFAkxk6r2tbzIsLOHWrQcBpDRQ5jAe92fm8lyxXWosqc0DLcFrB7MUc
+        DBvn3OSwhsRLGBFESRwQHHoJViRMKcG+kFhyRkG+LKrZf1sKJsxVo0FeJ2dK
+        2CUtBAjDXkRpFBHEyBdefoPV/Q7SO8jbOhx3rPEQHMDk2vx35FdndYOpWXKa
+        JkJWO3WurTY7fMhnfM6LXA4rZaejdfNsx1QCT0cLikMcwqDyXDVAM+4rHvw9
+        EmKAJIgwIzRghEUsxjFUBAtSOTyrM7iR/5M/FBIfLuhz4+/b6VsZ4L6juMZv
+        38z2Ol6WT8WQfA8Mb4zyOAxv5H9MDGkUIC9cPQDPyg1uYkhlyjAlAkmcUngf
+        UvBZLFCB4Mz3GerXv+EEt4Lh9hm8bZHHMHhbfhsMomg6osHSFwaRFyKfYRaG
+        hDBKIvCFImAR9cS3+sLAJ88Qwvtv8dMx/Hdn+FQnuP1ADd5W9MUaDwGI7rzF
+        N/I/KID9HaLe7WCQPo9gcNMLMoEh9BAqIIxRyihXSRR6MuWQISDM/Ye8IISp
+        ZiNsT4psDsnGdLSBYBBQj2E/jHxEwuAr4SD6Pj5wbY/HIHjbfttAcDoiq2iw
+        94C+F2FImYiHAgqxYAxVmQoaraJBSDZKiPghe4N7BIF2mhoFFSguNwLZGaRW
+        PINov0/+KvW5z/P67Gr1XGUNr/PNBAsi9WUmCFkdg1kxIhgcMpfrrMbscyGU
+        MbHVM1XtjcfjXxaH/uIiL8OD8Z/piazzQyRI2Zgj+yE5mU26T/rgostUmr3N
+        jt8GNm118sfBG/2pnJykB581PTR5dzpuT198CKR3ppKjo/LX0xeTv+bq4uVk
+        8er1cVaNX74Zn05OJz+vtrgH23Wvrv4B/qENS/IOAAA=
+    http_version: 
+  recorded_at: Thu, 16 Aug 2012 13:34:10 GMT
+recorded_with: VCR 2.2.4
