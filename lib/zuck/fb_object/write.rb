@@ -26,7 +26,7 @@ module Zuck
       data = result["data"].values.first.values.first
 
       # Update and return
-      set_hash_delegator_data(data)
+      set_data(data)
       result["result"]
     end
 

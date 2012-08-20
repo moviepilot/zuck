@@ -12,7 +12,7 @@ module Zuck
     #   inherit from {Zuck::FbObject}
     def initialize(graph, data, parent=nil)
       self.graph = graph
-      set_hash_delegator_data(data)
+      set_data(data)
 
       # If the parent is an {AdAccount} we only want to set it as this
       # object's direct parent when this object is an {AdCampaign}.
@@ -25,7 +25,7 @@ module Zuck
     def reload
       data = get(graph, path)
       validate_data(data)
-      set_hash_delegator_data(data)
+      set_data(data)
       self
     end
 

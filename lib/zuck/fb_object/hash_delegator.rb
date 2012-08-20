@@ -18,7 +18,7 @@ module Zuck
   #       known_keys :foo, :bar
   #
   #       def initialize(initial_data)
-  #         set_hash_delegator_data(initial_data)
+  #         set_data(initial_data)
   #       end
   #     end
   #
@@ -65,10 +65,18 @@ module Zuck
       end
     end
 
-    def set_hash_delegator_data(d)
+    def set_data(d)
       e = "You can only assign a Hash to #{self.class}, not a #{d.class}"
       raise e unless d.is_a? Hash
       @hash_delegator_hash = d.symbolize_keys
+    end
+
+    def data=(d)
+      set_data(d)
+    end
+
+    def data
+      @hash_delegator_hash
     end
 
     def [](key)

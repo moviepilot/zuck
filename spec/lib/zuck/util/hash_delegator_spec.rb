@@ -14,6 +14,11 @@ describe Zuck::HashDelegator do
     del[:foo].should == :bar
   end
 
+  it "has a shortcut getter" do
+    del[:foo] = :bar
+    del.data.should == {foo: :bar}
+  end
+
   it "transforms keys to symbols" do
     del['bar'] = :foo
     del['bar'].should == :foo
@@ -29,7 +34,14 @@ describe Zuck::HashDelegator do
 
   it "allows to assign a hash" do
     x = HDTest.new
-    x.set_hash_delegator_data('some' => "thing", bar: 1)
+    x.set_data('some' => "thing", bar: 1)
+    x.to_s.should == '#<HDTest some: "thing", bar: 1>'
+    x[:some].should == "thing"
+  end
+
+  it "allows to assign a hash using a shortcut" do
+    x = HDTest.new
+    x.data = {'some' => "thing", bar: 1}
     x.to_s.should == '#<HDTest some: "thing", bar: 1>'
     x[:some].should == "thing"
   end
