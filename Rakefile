@@ -17,8 +17,8 @@ Jeweler::Tasks.new do |gem|
   gem.name = "zuck"
   gem.homepage = "http://github.com/jayniz/zuck"
   gem.license = "MIT"
-  gem.summary = %Q{TODO: one-line summary of your gem}
-  gem.description = %Q{TODO: longer description of your gem}
+  gem.summary = %Q{Ruby adapter to facebook's ad api}
+  gem.description = %Q{This gem allows to easily access facebook's ads api in ruby. See https://developers.facebook.com/docs/reference/ads-api/}
   gem.email = "jannis@gmail.com"
   gem.authors = ["Jannis Hermanns"]
   # dependencies defined in Gemfile
