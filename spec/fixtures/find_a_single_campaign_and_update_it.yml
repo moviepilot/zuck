@@ -2,213 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6005859287551?access_token=AAAEvJ5vzhl8BALRaa2dRQ6BkK7dU2ZB6R7n9xfGif8Xnmqu5KKRHWUSLlmDXXO5lo1e8fJZAMeppR7QQtGvpnPNSBkrI1DwGHxXRrnfQZDZD
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Content-Type:
-      - text/javascript; charset=UTF-8
-      Etag:
-      - ! '"bb73ea4ed81a46bdd4c12e5d9b48dd8c1552ad92"'
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
-      X-Fb-Rev:
-      - '603731'
-      X-Fb-Debug:
-      - JezJBVwUcUb7gr4pf4EldYBRW/ciTEex0rx6ozpYzI0=
-      Date:
-      - Fri, 03 Aug 2012 11:15:25 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '542'
-    body:
-      encoding: US-ASCII
-      string: ! '{"adgroup_id":6005859287551,"ad_id":6005859287551,"campaign_id":6005851032951,"name":"fepp","adgroup_status":3,"bid_type":1,"max_bid":"1","bid_info":{"1":"1"},"ad_status":3,"account_id":"10150585630710217","id":"6005859287551","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"start_time":null,"end_time":null,"updated_time":"2012-08-03T11:14:36+0000","created_time":"2012-08-03T08:03:57+0000"}'
-    http_version: 
-  recorded_at: Fri, 03 Aug 2012 11:15:25 GMT
-- request:
-    method: post
-    uri: https://graph.facebook.com/6005859287551
-    body:
-      encoding: US-ASCII
-      string: ! "-------------RubyMultipartPost\r\nContent-Disposition: form-data;
-        name=\"adgroup_id\"\r\n\r\n6005859287551\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"ad_id\"\r\n\r\n6005859287551\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"campaign_id\"\r\n\r\n6005851032951\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"name\"\r\n\r\nMy new name\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"adgroup_status\"\r\n\r\n3\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"bid_type\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"max_bid\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"bid_info%5B1%5D\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"ad_status\"\r\n\r\n3\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"account_id\"\r\n\r\n10150585630710217\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"creative_ids%5B%5D\"\r\n\r\n6005851371551\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"targeting%5Bcountries%5D%5B%5D\"\r\n\r\nUS\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"targeting%5Bfriends_of_connections%5D%5B%5D%5Bid%5D\"\r\n\r\n6005851366351\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"targeting%5Bfriends_of_connections%5D%5B%5D%5Bname%5D\"\r\n\r\n\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"conversion_specs%5B%5D%5Baction.type%5D\"\r\n\r\nlike\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"conversion_specs%5B%5D%5Bpost%5D\"\r\n\r\n10150420410887685\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"start_time\"\r\n\r\n\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"end_time\"\r\n\r\n\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"updated_time\"\r\n\r\n2012-08-03T11:14:36+0000\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"created_time\"\r\n\r\n2012-08-03T08:03:57+0000\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"redownload\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"access_token\"\r\n\r\nAAAEvJ5vzhl8BALRaa2dRQ6BkK7dU2ZB6R7n9xfGif8Xnmqu5KKRHWUSLlmDXXO5lo1e8fJZAMeppR7QQtGvpnPNSBkrI1DwGHxXRrnfQZDZD\r\n-------------RubyMultipartPost--\r\n\r\n"
-    headers:
-      Content-Type:
-      - multipart/form-data;boundary=-----------RubyMultipartPost
-      Content-Length:
-      - '2389'
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Content-Type:
-      - text/javascript; charset=UTF-8
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
-      X-Fb-Rev:
-      - '603731'
-      X-Fb-Debug:
-      - jvq2uDG0IFYJ94oS9I1woQo4eCUB9/MHWGoPjyUg1d0=
-      Date:
-      - Fri, 03 Aug 2012 11:15:26 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '951'
-    body:
-      encoding: US-ASCII
-      string: ! '{"result":true,"data":{"adgroups":{"6005859287551":{"adgroup_id":6005859287551,"ad_id":6005859287551,"campaign_id":6005851032951,"name":"My
-        new name","adgroup_status":3,"bid_type":1,"max_bid":"1","bid_info":{"1":"1"},"ad_status":3,"account_id":"10150585630710217","id":"6005859287551","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"start_time":null,"end_time":null,"updated_time":1343992526,"created_time":1343981037}},"creatives":{"6005851371551":{"type":25,"action_spec":{"action.type":"like","post":"10150420410887685"},"related_fan_page":1,"cluster_id":6005851366351,"name":"Sponsored
-        story #6005851371551","run_status":1,"preview_url":"http:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6005851371551","count_current_adgroups":10,"id":"6005851371551","creative_id":"6005851371551"}}}}'
-    http_version: 
-  recorded_at: Fri, 03 Aug 2012 11:15:26 GMT
-- request:
-    method: get
-    uri: https://graph.facebook.com/6005859287551?access_token=AAAEvJ5vzhl8BALRaa2dRQ6BkK7dU2ZB6R7n9xfGif8Xnmqu5KKRHWUSLlmDXXO5lo1e8fJZAMeppR7QQtGvpnPNSBkrI1DwGHxXRrnfQZDZD
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Content-Type:
-      - text/javascript; charset=UTF-8
-      Etag:
-      - ! '"1df7516dabd5bf2691919fa3e36d04d9f36503cc"'
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
-      X-Fb-Rev:
-      - '603731'
-      X-Fb-Debug:
-      - rRyHI9RnuMi+DDx8fy94/omR2S1omoB31q78CFqQc7Y=
-      Date:
-      - Fri, 03 Aug 2012 11:15:27 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '549'
-    body:
-      encoding: US-ASCII
-      string: ! '{"adgroup_id":6005859287551,"ad_id":6005859287551,"campaign_id":6005851032951,"name":"My
-        new name","adgroup_status":3,"bid_type":1,"max_bid":"1","bid_info":{"1":"1"},"ad_status":3,"account_id":"10150585630710217","id":"6005859287551","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"start_time":null,"end_time":null,"updated_time":"2012-08-03T11:15:26+0000","created_time":"2012-08-03T08:03:57+0000"}'
-    http_version: 
-  recorded_at: Fri, 03 Aug 2012 11:15:27 GMT
-- request:
-    method: get
-    uri: https://graph.facebook.com/6005859287551?access_token=AAAEvJ5vzhl8BAG3qjJXGVUVKTzjMLrirxcVxllKJdthkQrEstIgXzMYZAAzg0ETsCGMGmX9UvUh4ZCGvATX9ZCnjNee18OTtQ9ZAarrDBQZDZD
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - text/javascript; charset=UTF-8
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
-      Www-Authenticate:
-      - ! 'OAuth "Facebook Platform" "invalid_token" "Error validating access token:
-        Session has expired at unix time 1343822400. The current unix time is 1345558147."'
-      X-Fb-Rev:
-      - '612565'
-      X-Fb-Debug:
-      - VapU2w/7ue6B+vklcrkMqnMH9ow1xrhjy5uBUGrg238=
-      Date:
-      - Tue, 21 Aug 2012 14:09:07 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '191'
-    body:
-      encoding: US-ASCII
-      string: ! '{"error":{"message":"Error validating access token: Session has expired
-        at unix time 1343822400. The current unix time is 1345558147.","type":"OAuthException","code":190,"error_subcode":463}}'
-    http_version: 
-  recorded_at: Tue, 21 Aug 2012 14:09:08 GMT
-- request:
-    method: get
     uri: https://graph.facebook.com/6005859287551?access_token=AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD
     body:
       encoding: US-ASCII
@@ -232,7 +25,7 @@ http_interactions:
       Content-Type:
       - text/javascript; charset=UTF-8
       Etag:
-      - ! '"670f4d3edd8c5abe9e6f957b061d0919eb201e61"'
+      - ! '"b7741a9194bcc0d32abecf0bc48c03ac9bad136a"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -240,19 +33,95 @@ http_interactions:
       X-Fb-Rev:
       - '612565'
       X-Fb-Debug:
-      - +/qVarv+cSc/nb4Bun0Yxl5G5fD+zedSsSurwKZYZAQ=
+      - O+UUy1fJDylkydwqIDHF56Yp3PS77xj3eExqEBxiQ9M=
       Date:
-      - Tue, 21 Aug 2012 14:10:59 GMT
+      - Tue, 21 Aug 2012 14:20:27 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '745'
+      - '786'
     body:
       encoding: US-ASCII
       string: ! '{"adgroup_id":6005859287551,"ad_id":6005859287551,"campaign_id":6005851032951,"name":"My
-        new name","adgroup_status":3,"bid_type":1,"max_bid":"1","bid_info":{"1":"1"},"ad_status":3,"locations":[3],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"account_id":"10150585630710217","id":"6005859287551","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"start_time":null,"end_time":null,"updated_time":"2012-08-07T03:14:43+0000","created_time":"2012-08-03T08:03:57+0000"}'
+        new name","adgroup_status":3,"bid_type":1,"max_bid":"1","bid_info":{"1":"1"},"ad_status":3,"locations":[3],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"account_id":"10150585630710217","id":"6005859287551","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"last_updated_by_app_id":333322143368799,"start_time":null,"end_time":null,"updated_time":"2012-08-21T14:17:51+0000","created_time":"2012-08-03T08:03:57+0000"}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2012 14:10:59 GMT
+  recorded_at: Tue, 21 Aug 2012 14:20:28 GMT
+- request:
+    method: post
+    uri: https://graph.facebook.com/6005859287551
+    body:
+      encoding: US-ASCII
+      string: ! "-------------RubyMultipartPost\r\nContent-Disposition: form-data;
+        name=\"adgroup_id\"\r\n\r\n6005859287551\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"ad_id\"\r\n\r\n6005859287551\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"campaign_id\"\r\n\r\n6005851032951\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"name\"\r\n\r\nMy old name\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"adgroup_status\"\r\n\r\n3\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"bid_type\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"max_bid\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"bid_info%5B1%5D\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"ad_status\"\r\n\r\n3\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"locations%5B%5D\"\r\n\r\n3\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"impression_control_map%5B%5D%5Blocation%5D\"\r\n\r\n3\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"impression_control_map%5B%5D%5Bcontrol%5D%5Bimpression_control_type%5D\"\r\n\r\n2\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"impression_control_map%5B%5D%5Bcontrol%5D%5Buser_impression_limit%5D\"\r\n\r\n6\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"impression_control_map%5B%5D%5Bcontrol%5D%5Buser_impression_limit_period%5D\"\r\n\r\n24\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"impression_control_map%5B%5D%5Bcontrol%5D%5Buser_impression_limit_period_unit%5D\"\r\n\r\n0\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"account_id\"\r\n\r\n10150585630710217\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"creative_ids%5B%5D\"\r\n\r\n6005851371551\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"targeting%5Bcountries%5D%5B%5D\"\r\n\r\nUS\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"targeting%5Bfriends_of_connections%5D%5B%5D%5Bid%5D\"\r\n\r\n6005851366351\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"targeting%5Bfriends_of_connections%5D%5B%5D%5Bname%5D\"\r\n\r\n\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"conversion_specs%5B%5D%5Baction.type%5D\"\r\n\r\nlike\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"conversion_specs%5B%5D%5Bpost%5D\"\r\n\r\n10150420410887685\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"last_updated_by_app_id\"\r\n\r\n333322143368799\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"start_time\"\r\n\r\n\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"end_time\"\r\n\r\n\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"updated_time\"\r\n\r\n2012-08-21T14:17:51+0000\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"created_time\"\r\n\r\n2012-08-03T08:03:57+0000\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"redownload\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"access_token\"\r\n\r\nAAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD\r\n-------------RubyMultipartPost--\r\n\r\n"
+    headers:
+      Content-Type:
+      - multipart/form-data;boundary=-----------RubyMultipartPost
+      Content-Length:
+      - '3324'
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      X-Fb-Rev:
+      - '612565'
+      X-Fb-Debug:
+      - 0ksL16mYUlHtzQAmoW2c+LNaOu4aKdx+5xVfkdS51mk=
+      Date:
+      - Tue, 21 Aug 2012 14:20:29 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '1188'
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":true,"data":{"adgroups":{"6005859287551":{"adgroup_id":6005859287551,"ad_id":6005859287551,"campaign_id":6005851032951,"name":"My
+        old name","adgroup_status":3,"bid_type":1,"max_bid":"1","bid_info":{"1":"1"},"ad_status":3,"locations":[3],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"account_id":"10150585630710217","id":"6005859287551","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"last_updated_by_app_id":333322143368799,"start_time":null,"end_time":null,"updated_time":1345558829,"created_time":1343981037}},"creatives":{"6005851371551":{"type":25,"action_spec":{"action.type":"like","post":"10150420410887685"},"related_fan_page":1,"cluster_id":6005851366351,"name":"Sponsored
+        story #6005851371551","run_status":1,"preview_url":"http:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6005851371551","count_current_adgroups":11,"id":"6005851371551","creative_id":"6005851371551"}}}}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2012 14:20:30 GMT
 - request:
     method: post
     uri: https://graph.facebook.com/6005859287551
@@ -281,17 +150,18 @@ http_interactions:
         form-data; name=\"targeting%5Bfriends_of_connections%5D%5B%5D%5Bname%5D\"\r\n\r\n\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"conversion_specs%5B%5D%5Baction.type%5D\"\r\n\r\nlike\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"conversion_specs%5B%5D%5Bpost%5D\"\r\n\r\n10150420410887685\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"last_updated_by_app_id\"\r\n\r\n333322143368799\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"start_time\"\r\n\r\n\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"end_time\"\r\n\r\n\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"updated_time\"\r\n\r\n2012-08-07T03:14:43+0000\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"created_time\"\r\n\r\n2012-08-03T08:03:57+0000\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"updated_time\"\r\n\r\n1345558829\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"created_time\"\r\n\r\n1343981037\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"redownload\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"access_token\"\r\n\r\nAAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD\r\n-------------RubyMultipartPost--\r\n\r\n"
     headers:
       Content-Type:
       - multipart/form-data;boundary=-----------RubyMultipartPost
       Content-Length:
-      - '3210'
+      - '3296'
       Accept:
       - ! '*/*'
       User-Agent:
@@ -314,9 +184,9 @@ http_interactions:
       X-Fb-Rev:
       - '612565'
       X-Fb-Debug:
-      - pLV7cavpsXRH/al+pxuKmlO/Hj4zlpP/YcAaW8Asups=
+      - aybsAvoevphfkbHd0RJfT8BZ7KQ7h60SElY0ms5y0A8=
       Date:
-      - Tue, 21 Aug 2012 14:11:00 GMT
+      - Tue, 21 Aug 2012 14:20:31 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -324,10 +194,10 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"result":true,"data":{"adgroups":{"6005859287551":{"adgroup_id":6005859287551,"ad_id":6005859287551,"campaign_id":6005851032951,"name":"My
-        new name","adgroup_status":3,"bid_type":1,"max_bid":"1","bid_info":{"1":"1"},"ad_status":3,"locations":[3],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"account_id":"10150585630710217","id":"6005859287551","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"last_updated_by_app_id":333322143368799,"start_time":null,"end_time":null,"updated_time":1345558260,"created_time":1343981037}},"creatives":{"6005851371551":{"type":25,"action_spec":{"action.type":"like","post":"10150420410887685"},"related_fan_page":1,"cluster_id":6005851366351,"name":"Sponsored
+        new name","adgroup_status":3,"bid_type":1,"max_bid":"1","bid_info":{"1":"1"},"ad_status":3,"locations":[3],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"account_id":"10150585630710217","id":"6005859287551","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"last_updated_by_app_id":333322143368799,"start_time":null,"end_time":null,"updated_time":1345558830,"created_time":1343981037}},"creatives":{"6005851371551":{"type":25,"action_spec":{"action.type":"like","post":"10150420410887685"},"related_fan_page":1,"cluster_id":6005851366351,"name":"Sponsored
         story #6005851371551","run_status":1,"preview_url":"http:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6005851371551","count_current_adgroups":11,"id":"6005851371551","creative_id":"6005851371551"}}}}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2012 14:11:00 GMT
+  recorded_at: Tue, 21 Aug 2012 14:20:31 GMT
 - request:
     method: get
     uri: https://graph.facebook.com/6005859287551?access_token=AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD
@@ -353,7 +223,7 @@ http_interactions:
       Content-Type:
       - text/javascript; charset=UTF-8
       Etag:
-      - ! '"710c312f79703a51af6cc1688ea3102fdee70cb7"'
+      - ! '"1652cd0dfcd195031ef0ebde9d52ba22bca9edbf"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -361,9 +231,9 @@ http_interactions:
       X-Fb-Rev:
       - '612565'
       X-Fb-Debug:
-      - QdeYWhnIsF4LwrjCRuEAk4eDCvUILUR2JwUfs4vtQ3E=
+      - C6USh72V9vXHwkVPbaLd8637mADobNQkZJBlAhQGArg=
       Date:
-      - Tue, 21 Aug 2012 14:11:01 GMT
+      - Tue, 21 Aug 2012 14:20:31 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -371,7 +241,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"adgroup_id":6005859287551,"ad_id":6005859287551,"campaign_id":6005851032951,"name":"My
-        new name","adgroup_status":3,"bid_type":1,"max_bid":"1","bid_info":{"1":"1"},"ad_status":3,"locations":[3],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"account_id":"10150585630710217","id":"6005859287551","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"last_updated_by_app_id":333322143368799,"start_time":null,"end_time":null,"updated_time":"2012-08-21T14:11:00+0000","created_time":"2012-08-03T08:03:57+0000"}'
+        new name","adgroup_status":3,"bid_type":1,"max_bid":"1","bid_info":{"1":"1"},"ad_status":3,"locations":[3],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"account_id":"10150585630710217","id":"6005859287551","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"last_updated_by_app_id":333322143368799,"start_time":null,"end_time":null,"updated_time":"2012-08-21T14:20:30+0000","created_time":"2012-08-03T08:03:57+0000"}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2012 14:11:01 GMT
+  recorded_at: Tue, 21 Aug 2012 14:20:32 GMT
 recorded_with: VCR 2.2.4

@@ -87,6 +87,9 @@ describe Zuck::FbObject do
         it "and saving it" do
           VCR.use_cassette('find_a_single_campaign_and_update_it') do
             group = Zuck::AdGroup.find(6005859287551, graph)
+            group.name = "My old name"
+            group.save
+            group.name.should == "My old name"
             group.name = "My new name"
             group.save
             group.name.should == "My new name"
