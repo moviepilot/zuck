@@ -43,17 +43,36 @@ module Zuck
 
     # Makes sure that the data passed comes from a facebook
     # object of the same type. We check this by comparing
-    # the 'group_id' value with the 'id' value, when this
+    # the 'group_id' value or the 'ad_group_id' value 
+    # with the 'id' value, when this
     # is called on a {Zuck::AdGroup} for example.
     #
     # Facebook omits the "ad" prefix sometimes, so we check 
     # for both.
     def validate_data(data)
-      long_id_key  = "#{self.class.list_path.to_s.singularize}_id"
-      short_id_key = "#{self.class.list_path.to_s.singularize[2..-1]}_id"
+      singular_list_path = self.class.list_path.to_s.singularize
+
+      # This is a special case for ad accounts (they have weird ids
+      # that begin with act: "act_12345" instead of "12345"
+      return if data['account_id'] and "act_#{data['account_id']}"  == data['id'].to_s
+
+      # This is the case for all other objects
+      long_id_key  = "#{singular_list_path}_id"
+      short_id_key = "#{singular_list_path[2..-1]}_id"
       return if data[long_id_key]  and data[long_id_key].to_s  == data["id"].to_s
       return if data[short_id_key] and data[short_id_key].to_s == data["id"].to_s
-      raise "Invalid type: neither #{long_id_key} nor #{short_id_key} set"
+
+      # Something went wrong. Either the data provided by the user is
+      # not consistent, or a wrong object type was belongs to this id on facebook
+      # (an ad group instead of an ad campaign, for example).
+      #
+      # Maybe we can make somebody's life easier by raising a verbose exception.
+      error = "Invalid type.\n\nExpected data['id']=#{data['id'].inspect} to be equal to one of these:\n"
+      error += "  * data['account_id']=#{data['account_id'].inspect}\n"
+      error += "  * data['#{short_id_key}']=#{data[short_id_key].inspect}\n"
+      error += "  * data['#{long_id_key}']=#{data[long_id_key].inspect}\n"
+
+      raise error
     end
 
     module ClassMethods

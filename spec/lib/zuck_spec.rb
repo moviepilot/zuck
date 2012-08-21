@@ -76,11 +76,25 @@ describe Zuck::FbObject do
           end
         end
 
+        it "with the correct type" do
+          VCR.use_cassette('a_single_account') do
+            c = Zuck::AdAccount.find('act_10150585630710217', graph)
+          end
+        end
+
         it "when expecting an ad group but the id belongs to a campaign" do
+          expected_error = <<-END_ERROR
+Invalid type.
+
+Expected data['id']="6005950787751" to be equal to one of these:
+  * data['account_id']="10150585630710217"
+  * data['group_id']=nil
+  * data['adgroup_id']=nil
+END_ERROR
           VCR.use_cassette('a_single_campaign') do
             expect{
               c = Zuck::AdGroup.find(6005950787751, graph)
-            }.to raise_error("Invalid type: neither adgroup_id nor group_id set")
+            }.to raise_error(expected_error)
           end
         end
 
