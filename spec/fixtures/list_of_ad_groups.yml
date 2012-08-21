@@ -2,53 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6005950787751/adgroups?access_token=AAAEvJ5vzhl8BAG3qjJXGVUVKTzjMLrirxcVxllKJdthkQrEstIgXzMYZAAzg0ETsCGMGmX9UvUh4ZCGvATX9ZCnjNee18OTtQ9ZAarrDBQZDZD
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - text/javascript; charset=UTF-8
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
-      Www-Authenticate:
-      - ! 'OAuth "Facebook Platform" "invalid_token" "Error validating access token:
-        Session has expired at unix time 1343822400. The current unix time is 1345558203."'
-      X-Fb-Rev:
-      - '613755'
-      X-Fb-Debug:
-      - D5EIel7W9prfAH62pYkM1sq8Cahh/o1HjOFjw7/1wyM=
-      Date:
-      - Tue, 21 Aug 2012 14:10:03 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '191'
-    body:
-      encoding: US-ASCII
-      string: ! '{"error":{"message":"Error validating access token: Session has expired
-        at unix time 1343822400. The current unix time is 1345558203.","type":"OAuthException","code":190,"error_subcode":463}}'
-    http_version: 
-  recorded_at: Tue, 21 Aug 2012 14:10:04 GMT
-- request:
-    method: get
     uri: https://graph.facebook.com/6005950787751/adgroups?access_token=AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD
     body:
       encoding: US-ASCII
