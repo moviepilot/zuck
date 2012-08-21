@@ -7,9 +7,9 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         ZGFpbHlfYnVkZ2V0PTEwMDAmbmFtZT1ibG9vZHkmcmVkb3dubG9hZD0xJmFj
-        Y2Vzc190b2tlbj1BQUFFdko1dnpobDhCQUFFeGFNcmVlaGE5c1BBWkFTYWNs
-        a2t1aGVTbGJqamJpU0t3Y1ljYmRDNWJvWkJ4eUNldmNueDVZYlkwa3lkN1lW
-        Sk5qbXJxRHQwWkNKQVhKYkpQQ0xRZGZxZVR3WkRaRA==
+        Y2Vzc190b2tlbj1BQUFFdko1dnpobDhCQUJoVFNhekpaQjJEMEI0TjBsMjQy
+        VlgyMkhnOUoyV1pBN2ZwdGNBenRmWHhmQVpCOW1oWkI2VzFubDVkejV0WE1s
+        YjlESms5aWJzNlJxdFA3UHRPNmEzWENpSFdWd1pEWkQ=
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -33,18 +33,69 @@ http_interactions:
       Pragma:
       - no-cache
       X-Fb-Rev:
-      - '602687'
+      - '613755'
       X-Fb-Debug:
-      - FmRq8TKRkuApU79BKGVlUfRsB6JDeRn5gTrasGtiKNY=
+      - VWQPQsWPxgIjh4Npecy0FD6424cPN2uUCWXr8RfiIVQ=
       Date:
-      - Thu, 02 Aug 2012 13:34:11 GMT
+      - Tue, 21 Aug 2012 14:04:16 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '308'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6005851321351","data":{"campaigns":{"6005851321351":{"account_id":"10150585630710217","campaign_id":6005851321351,"name":"bloody","daily_budget":1000,"campaign_status":1,"daily_imps":0,"id":"6005851321351","start_time":1343914449,"end_time":null,"updated_time":1343914451,"created_time":1343914449}}}}'
+      string: ! '{"id":"6005950787751","data":{"campaigns":{"6005950787751":{"account_id":"10150585630710217","campaign_id":6005950787751,"name":"bloody","daily_budget":1000,"campaign_status":1,"daily_imps":0,"id":"6005950787751","start_time":1345557853,"end_time":null,"updated_time":1345557855,"created_time":1345557853}}}}'
     http_version: 
-  recorded_at: Thu, 02 Aug 2012 13:34:11 GMT
+  recorded_at: Tue, 21 Aug 2012 14:04:16 GMT
+- request:
+    method: post
+    uri: https://graph.facebook.com/act_10150585630710217/adcampaigns
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        ZGFpbHlfYnVkZ2V0PTEwMDAmbmFtZT1ibG9vZHkmcmVkb3dubG9hZD0xJmFj
+        Y2Vzc190b2tlbj1BQUFFdko1dnpobDhCQUczcWpKWEdWVVZLVHpqTUxyaXJ4
+        Y1Z4bGxLSmR0aGtRckVzdElnWHpNWVpBQXpnMEVUc0NHTUdtWDlVdlVoNFpD
+        R3ZBVFg5WkNuak5lZTE4T1R0UTlaQWFyckRCUVpEWkQ=
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Www-Authenticate:
+      - ! 'OAuth "Facebook Platform" "invalid_token" "Error validating access token:
+        Session has expired at unix time 1343822400. The current unix time is 1345558148."'
+      X-Fb-Rev:
+      - '612565'
+      X-Fb-Debug:
+      - SdiQ73X6WMSChdmOXrCnGNxQR7Um44+iuKaTZTD7kyM=
+      Date:
+      - Tue, 21 Aug 2012 14:09:08 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '191'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"Error validating access token: Session has expired
+        at unix time 1343822400. The current unix time is 1345558148.","type":"OAuthException","code":190,"error_subcode":463}}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2012 14:09:09 GMT
 recorded_with: VCR 2.2.4

@@ -29,8 +29,9 @@ module Zuck
     list_path     :adgroups
     connections   :ad_creatives
 
-    def self.create(graph, data, ad_campaign = nil)
+    def self.create(graph, data, ad_campaign)
       path = ad_campaign.ad_account.path
+      data['campaign_id'] = ad_campaign.id
       super(graph, data, ad_campaign, path)
     end
 

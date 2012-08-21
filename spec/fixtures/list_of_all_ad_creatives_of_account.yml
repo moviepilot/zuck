@@ -130,4 +130,134 @@ http_interactions:
         at unix time 1343822400. The current unix time is 1345127248.","type":"OAuthException","code":190,"error_subcode":463}}'
     http_version: 
   recorded_at: Thu, 16 Aug 2012 14:27:28 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/act_10150585630710217/adcreatives?access_token=AAAEvJ5vzhl8BAG3qjJXGVUVKTzjMLrirxcVxllKJdthkQrEstIgXzMYZAAzg0ETsCGMGmX9UvUh4ZCGvATX9ZCnjNee18OTtQ9ZAarrDBQZDZD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Www-Authenticate:
+      - ! 'OAuth "Facebook Platform" "invalid_token" "Error validating access token:
+        Session has expired at unix time 1343822400. The current unix time is 1345558023."'
+      X-Fb-Rev:
+      - '612565'
+      X-Fb-Debug:
+      - xd8puccsch9IrpDrmw3JIiauEqWPgd8bAbU+EFGX+c4=
+      Date:
+      - Tue, 21 Aug 2012 14:07:03 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '191'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"Error validating access token: Session has expired
+        at unix time 1343822400. The current unix time is 1345558023.","type":"OAuthException","code":190,"error_subcode":463}}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2012 14:07:04 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/act_10150585630710217/adcreatives?access_token=AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: !binary |-
+        T0s=
+    headers:
+      !binary "QWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2lu":
+      - !binary |-
+        Kg==
+      !binary "Q2FjaGUtQ29udHJvbA==":
+      - !binary |-
+        cHJpdmF0ZSwgbm8tY2FjaGUsIG5vLXN0b3JlLCBtdXN0LXJldmFsaWRhdGU=
+      !binary "Q29udGVudC1UeXBl":
+      - !binary |-
+        dGV4dC9qYXZhc2NyaXB0OyBjaGFyc2V0PVVURi04
+      !binary "RXRhZw==":
+      - !binary |-
+        IjU1YmVlZTczMThjNzM2YTNhZDc5NzIwZDg1NGM3NmNlMDg0YWMxN2Qi
+      !binary "RXhwaXJlcw==":
+      - !binary |-
+        U2F0LCAwMSBKYW4gMjAwMCAwMDowMDowMCBHTVQ=
+      !binary "UHJhZ21h":
+      - !binary |-
+        bm8tY2FjaGU=
+      !binary "WC1GYi1SZXY=":
+      - !binary |-
+        NjEyNTY1
+      !binary "Q29udGVudC1FbmNvZGluZw==":
+      - !binary |-
+        Z3ppcA==
+      !binary "WC1GYi1EZWJ1Zw==":
+      - !binary |-
+        K2JhR2JadG1NUzFUZXdSU3R0R29PN0pXSzlrcVcwMyt5TXN1NGFobTE4RT0=
+      !binary "RGF0ZQ==":
+      - !binary |-
+        VHVlLCAyMSBBdWcgMjAxMiAxNDoxMDo1NyBHTVQ=
+      !binary "Q29ubmVjdGlvbg==":
+      - !binary |-
+        a2VlcC1hbGl2ZQ==
+      !binary "Q29udGVudC1MZW5ndGg=":
+      - !binary |-
+        MTAxNg==
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        H4sIAAAAAAAAA9WXbW/bNhCA/4qgAfvk2CTFF8lAENjLsCDA1mAtmsD1IFAk
+        ZamWJU2k7dpB/vtOdtwkTtMmK1ykX2ySuju+3MPj3bWvpZN+/8O171a18fuE
+        dXypXF6Vsa2N8vvXt93u9rtf5FPjd/y6sg56GGGGKEEUozAUPGT+TcdvTCGd
+        0XEqy7iWE9DCHV8Vc+tME+fa73OEWMhwwHnA4FMpZ63lt3VV2qox2rOualbe
+        LzsxgRnDMGczh0U56eZ2Y7FuzCI3y3jeFKCdOVf3x71xb7lcdlOpTFJV066q
+        ZuOe1BZ+6nzcU42RLl+Y+Fa3W2f1icr18f5UqpqXLlbzpjHwL/WkqeZ1Oy3M
+        2+7Af6Sws/yFrzeda3+zUicnoAo7kYWLdyNg9cM/cD77BihDcKhYbLZ+6xxo
+        5K5oDwvGkkqvoPUuM17aGOPlF1lVGm9ZNdNq7jzXSDU1jSfr2lvmLmvHElMU
+        1pOl9pZZbsGS7XpvapfP8jUcu6tAwJtbaErQB7uT1ayVLLZW83LigZXuuITZ
+        8xl4Ns6kzWANSZBwoojRWBAcBgk2JEwpwUxprCWnIF/k5fTbroIJM9NUIF8l
+        H41yG1wIIIaDiNIoIoiTz8D8Aas7A+kjFBycjgfeeJKOOzgeyG/P6o5TuwE1
+        TZQuj+qscpU9kl05lTOZZ7pbGjfu7YanR7ZUeNxbUBziEJSKlWkAZ9x2AvgP
+        SIgBEhFhTqjghEc8xjF0FBep7n6sJ3Al/yd/KCQMbuhr4+/76ds64HGkuMXv
+        xE6Pl7IoXooh+REY3jnleRjeyf+cGNJIoCDcvgCvKgzuY0h1yjElCmmcUngf
+        UohZXBihJGeMo3b9e0HwIBgensH7HnkOg/flD8EgisY9KjaxUERBiBjHPAwJ
+        4ZREEAuV4BEN1PfGQsHIK4Tw8Vv8cgy/HgxfGgQPn6nB24o+e+MpANGDt/hO
+        /icFsL1DNLifDNLXkQzuR0GuMKQeygjCOaWcSpNEYaBTCSUCwpI9FQUhTbV7
+        eXuST2ZQbYx7ewgKQQOOWRgxRELxhXQQ/ZgYuPPHcxC8779DIDjukW022EZA
+        FkQYaiYSIEEhF4yhq1NFo202CMVGARk/lG9wjyDRTlNroAPNzUagPIPaSk4g
+        22+rv9J8agu9trzaPleTRtbZfoUFmfqmFISyjsOsGBEMAVnqXVVjT6RSxtrY
+        VVNTHg8Gg98X52yxzopwOBhm797K9floSE7RkP6FCkLJ+ytCzibRObkcDURa
+        OzVYu/TqUzoYDaNZNhryS1wWTK+Zu/qzSKLT82mUJ5b//a+7EBfuDZfB1W/5
+        2eX75eh0dPrrdo/HsF//5uY/CK1KxvQOAAA=
+    http_version: 
+  recorded_at: Tue, 21 Aug 2012 14:10:58 GMT
 recorded_with: VCR 2.2.4

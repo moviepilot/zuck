@@ -10,7 +10,7 @@ module Zuck
     #   facebook gave us (see known_keys).
     # @param parent [<FbObject] A parent context for this class, must
     #   inherit from {Zuck::FbObject}
-    def initialize(graph, data, parent=nil)
+    def initialize(graph, data = {}, parent=nil)
       self.graph = graph
       set_data(data)
 

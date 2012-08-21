@@ -11,10 +11,67 @@ http_interactions:
         JmNyZWF0aXZlPSU3QiUyMnR5cGUlMjIlM0EyNSUyQyUyMmFjdGlvbl9zcGVj
         JTIyJTNBJTdCJTIyYWN0aW9uLnR5cGUlMjIlM0ElMjJsaWtlJTIyJTJDJTIw
         JTIycG9zdCUyMiUzQTEwMTUwNDIwNDEwODg3Njg1JTdEJTdEJmNhbXBhaWdu
-        X2lkPTYwMDU4NTEwMzI5NTEmcmVkb3dubG9hZD0xJmFjY2Vzc190b2tlbj1B
-        QUFFdko1dnpobDhCQUFFeGFNcmVlaGE5c1BBWkFTYWNsa2t1aGVTbGJqamJp
-        U0t3Y1ljYmRDNWJvWkJ4eUNldmNueDVZYlkwa3lkN1lWSk5qbXJxRHQwWkNK
-        QVhKYkpQQ0xRZGZxZVR3WkRaRA==
+        X2lkPTYwMDQ0OTcwMzc5NTEmcmVkb3dubG9hZD0xJmFjY2Vzc190b2tlbj1B
+        QUFFdko1dnpobDhCQUJoVFNhekpaQjJEMEI0TjBsMjQyVlgyMkhnOUoyV1pB
+        N2ZwdGNBenRmWHhmQVpCOW1oWkI2VzFubDVkejV0WE1sYjlESms5aWJzNlJx
+        dFA3UHRPNmEzWENpSFdWd1pEWkQ=
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Www-Authenticate:
+      - OAuth "Facebook Platform" "invalid_request" "The campaign has finished running
+        -- You cannot create or edit ads within a campaign that has already finished
+        running."
+      X-Fb-Rev:
+      - '612565'
+      X-Fb-Debug:
+      - 2TQU4FB/xMnypXaBk1QJCN8+Xqa953obzJrq3LRy4SU=
+      Date:
+      - Tue, 21 Aug 2012 14:05:21 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '162'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"The campaign has finished running -- You cannot
+        create or edit ads within a campaign that has already finished running.","type":"Exception"}}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2012 14:05:21 GMT
+- request:
+    method: post
+    uri: https://graph.facebook.com/act_10150585630710217/adgroups
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        YmlkX3R5cGU9MSZtYXhfYmlkPTEmbmFtZT1SYXAlMjBsaWtlJTIwbWUmdGFy
+        Z2V0aW5nPSU3QiUyMmNvdW50cmllcyUyMiUzQSU1QiUyMlVTJTIyJTVEJTdE
+        JmNyZWF0aXZlPSU3QiUyMnR5cGUlMjIlM0EyNSUyQyUyMmFjdGlvbl9zcGVj
+        JTIyJTNBJTdCJTIyYWN0aW9uLnR5cGUlMjIlM0ElMjJsaWtlJTIyJTJDJTIw
+        JTIycG9zdCUyMiUzQTEwMTUwNDIwNDEwODg3Njg1JTdEJTdEJmNhbXBhaWdu
+        X2lkPTYwMDU5NTA3ODc3NTEmcmVkb3dubG9hZD0xJmFjY2Vzc190b2tlbj1B
+        QUFFdko1dnpobDhCQUJoVFNhekpaQjJEMEI0TjBsMjQyVlgyMkhnOUoyV1pB
+        N2ZwdGNBenRmWHhmQVpCOW1oWkI2VzFubDVkejV0WE1sYjlESms5aWJzNlJx
+        dFA3UHRPNmEzWENpSFdWd1pEWkQ=
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -38,20 +95,76 @@ http_interactions:
       Pragma:
       - no-cache
       X-Fb-Rev:
-      - '602687'
+      - '612565'
       X-Fb-Debug:
-      - WPqNat+qsz96ZdeBbBQjPWNwW6nn/WzmZ6DUrH1AUG0=
+      - dMRAOMEruKynwNICdc9U+JFPheRyF5jVa8rHgupYgWI=
       Date:
-      - Thu, 02 Aug 2012 14:13:47 GMT
+      - Tue, 21 Aug 2012 14:05:56 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '957'
+      - '1195'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6005851397951","data":{"adgroups":{"6005851397951":{"adgroup_id":6005851397951,"ad_id":6005851397951,"campaign_id":604497037951,"name":"Rap
-        like me","adgroup_status":4,"bid_type":1,"max_bid":"1","bid_info":{"1":"1"},"ad_status":4,"account_id":"10150585630710217","id":"6005851397951","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"start_time":null,"end_time":null,"updated_time":1343916826,"created_time":1343916826}},"creatives":{"6005851371551":{"type":25,"action_spec":{"action.type":"like","post":"10150420410887685"},"related_fan_page":1,"cluster_id":6005851366351,"name":"Sponsored
-        story #6005851371551","run_status":1,"preview_url":"http:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6005851371551","count_current_adgroups":8,"id":"6005851371551","creative_id":"6005851371551"}}}}'
+      string: ! '{"id":"6005950791151","data":{"adgroups":{"6005950791151":{"adgroup_id":6005950791151,"ad_id":6005950791151,"campaign_id":6005950787751,"name":"Rap
+        like me","adgroup_status":4,"bid_type":1,"max_bid":"1","bid_info":{"1":"1"},"ad_status":4,"locations":[3],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":3,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"account_id":"10150585630710217","id":"6005950791151","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"last_updated_by_app_id":333322143368799,"start_time":null,"end_time":null,"updated_time":1345557956,"created_time":1345557955}},"creatives":{"6005851371551":{"type":25,"action_spec":{"action.type":"like","post":"10150420410887685"},"related_fan_page":1,"cluster_id":6005851366351,"name":"Sponsored
+        story #6005851371551","run_status":1,"preview_url":"http:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6005851371551","count_current_adgroups":11,"id":"6005851371551","creative_id":"6005851371551"}}}}'
     http_version: 
-  recorded_at: Thu, 02 Aug 2012 14:13:47 GMT
+  recorded_at: Tue, 21 Aug 2012 14:05:56 GMT
+- request:
+    method: post
+    uri: https://graph.facebook.com/act_10150585630710217/adgroups
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        YmlkX3R5cGU9MSZtYXhfYmlkPTEmbmFtZT1SYXAlMjBsaWtlJTIwbWUmdGFy
+        Z2V0aW5nPSU3QiUyMmNvdW50cmllcyUyMiUzQSU1QiUyMlVTJTIyJTVEJTdE
+        JmNyZWF0aXZlPSU3QiUyMnR5cGUlMjIlM0EyNSUyQyUyMmFjdGlvbl9zcGVj
+        JTIyJTNBJTdCJTIyYWN0aW9uLnR5cGUlMjIlM0ElMjJsaWtlJTIyJTJDJTIw
+        JTIycG9zdCUyMiUzQTEwMTUwNDIwNDEwODg3Njg1JTdEJTdEJmNhbXBhaWdu
+        X2lkPTYwMDU5NTA3ODc3NTEmcmVkb3dubG9hZD0xJmFjY2Vzc190b2tlbj1B
+        QUFFdko1dnpobDhCQUczcWpKWEdWVVZLVHpqTUxyaXJ4Y1Z4bGxLSmR0aGtR
+        ckVzdElnWHpNWVpBQXpnMEVUc0NHTUdtWDlVdlVoNFpDR3ZBVFg5WkNuak5l
+        ZTE4T1R0UTlaQWFyckRCUVpEWkQ=
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Www-Authenticate:
+      - ! 'OAuth "Facebook Platform" "invalid_token" "Error validating access token:
+        Session has expired at unix time 1343822400. The current unix time is 1345558149."'
+      X-Fb-Rev:
+      - '613755'
+      X-Fb-Debug:
+      - 2zK/II77ijFR20ETBpcGStyYYRbt3d1d0bt3JWEaatc=
+      Date:
+      - Tue, 21 Aug 2012 14:09:09 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '191'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"Error validating access token: Session has expired
+        at unix time 1343822400. The current unix time is 1345558149.","type":"OAuthException","code":190,"error_subcode":463}}'
+    http_version: 
+  recorded_at: Tue, 21 Aug 2012 14:09:10 GMT
 recorded_with: VCR 2.2.4

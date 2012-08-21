@@ -3,12 +3,12 @@ require 'spec_helper'
 describe Zuck::FbObject do
 
   before(:all) do
-    Zuck.graph = Koala::Facebook::API.new('AAAEvJ5vzhl8BAG3qjJXGVUVKTzjMLrirxcVxllKJdthkQrEstIgXzMYZAAzg0ETsCGMGmX9UvUh4ZCGvATX9ZCnjNee18OTtQ9ZAarrDBQZDZD')
+    Zuck.graph = Koala::Facebook::API.new('AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD')
   end
 
   let(:graph)   { Zuck.graph                                                  }
   let(:account) { Zuck::AdAccount.new(graph,  {id: "act_10150585630710217"})  }
-  let(:campaign){ Zuck::AdCampaign.new(graph, {id: "6004497037951"}, account) }
+  let(:campaign){ Zuck::AdCampaign.new(graph, {id: "6005950787751"}, account) }
   let(:group)   { Zuck::AdGroup.new(graph,    {id: "6004497038951"}, campaign)}
   let(:creative){ Zuck::AdCreative.new(graph, {id: "1234567890123"}, group)   }
 
@@ -44,13 +44,13 @@ describe Zuck::FbObject do
 
       it "a list of ad campaigns" do
         VCR.use_cassette('list_of_ad_campaigns') do
-          account.ad_campaigns.should have(1).item
+          account.ad_campaigns.should have(3).items
         end
       end
 
       it "a list of ad groups" do
         VCR.use_cassette('list_of_ad_groups') do
-          campaign.ad_groups.should have(3).items
+          campaign.ad_groups.should have(1).item
         end
       end
 
@@ -61,7 +61,7 @@ describe Zuck::FbObject do
       end
 
       it "list of all ad creatives of an account" do
-        g = Koala::Facebook::API.new('AAAEvJ5vzhl8BAOZCJiB1AjT891KjwRIioFpeRzg3u3JKnYc0lkzHaGY4OZABgcmRhb0hyVUnAZCGQ0NEocZCOuSpGqDAOfOGMKEvuWJHDAZDZD')
+        g = graph
         Zuck::AdAccount.should_receive(:all).and_return([account])
         VCR.use_cassette('list_of_all_ad_creatives_of_account') do
           Zuck::AdCreative.all(g).should have(6).items
@@ -70,25 +70,22 @@ describe Zuck::FbObject do
 
       context "an id directly" do
 
-        let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAPJfh51jolSxTzQCyIfLvJ1ZAVZCfjDHssTLpyYaIK3rqTeKvYBrydUeGtvA9DZAquQZAuoVZB6we8H9DUD9R6iE0yKluXAZDZD') }
-
         it "with the correct type" do
           VCR.use_cassette('a_single_campaign') do
-            c = Zuck::AdCampaign.find(6004497037951, graph)
+            c = Zuck::AdCampaign.find(6005950787751, graph)
           end
         end
 
         it "when expecting an ad group but the id belongs to a campaign" do
           VCR.use_cassette('a_single_campaign') do
             expect{
-              c = Zuck::AdGroup.find(6004497037951, graph)
+              c = Zuck::AdGroup.find(6005950787751, graph)
             }.to raise_error("Invalid type: neither adgroup_id nor group_id set")
           end
         end
 
         it "and saving it" do
           VCR.use_cassette('find_a_single_campaign_and_update_it') do
-            graph = Koala::Facebook::API.new('AAAEvJ5vzhl8BALRaa2dRQ6BkK7dU2ZB6R7n9xfGif8Xnmqu5KKRHWUSLlmDXXO5lo1e8fJZAMeppR7QQtGvpnPNSBkrI1DwGHxXRrnfQZDZD')
             group = Zuck::AdGroup.find(6005859287551, graph)
             group.name = "My new name"
             group.save
@@ -103,8 +100,6 @@ describe Zuck::FbObject do
 
 
     context "creating" do
-      let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAAExaMreeha9sPAZASaclkkuheSlbjjbiSKwcYcbdC5boZBxyCevcnx5YbY0kyd7YVJNjmrqDt0ZCJAXJbJPCLQdfqeTwZDZD') }
-
       it "an ad campaign" do
         VCR.use_cassette('create_ad_campaign') do
           o = {daily_budget: 1000, name: "bloody" }
@@ -136,17 +131,15 @@ describe Zuck::FbObject do
                creative: '{"type":25,"action_spec":{"action.type":"like", "post":10150420410887685}}'}
           group = campaign.create_ad_group(o)
           group.name.should == "Rap like me"
+          group.bid_type.should == 1
         end
       end
     end
 
     context "deleting" do
-      let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAPJfh51jolSxTzQCyIfLvJ1ZAVZCfjDHssTLpyYaIK3rqTeKvYBrydUeGtvA9DZAquQZAuoVZB6we8H9DUD9R6iE0yKluXAZDZD') }
-
       it "an ad group" do
         VCR.use_cassette('delete_ad_group') do
-          ad_group = Zuck::AdGroup.new(graph, id: '6005859287551' )
-          ad_group.destroy.should be_true
+          group.destroy.should be_true
         end
       end
     end
