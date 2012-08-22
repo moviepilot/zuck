@@ -33,8 +33,8 @@ module Zuck
     list_path   'me/adaccounts'
     connections :ad_campaigns
 
-    def self.all
-      super(Zuck.graph)
+    def self.all(graph = Zuck.graph)
+      super(graph)
     end
   end
 end
