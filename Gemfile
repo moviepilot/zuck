@@ -27,7 +27,6 @@ platform :ruby do
   group :development, :test do
     gem 'debugger'
     gem 'growl'
-    gem 'guard-spork'
     gem 'redcarpet'    # Markdown for yard
   end
 end
