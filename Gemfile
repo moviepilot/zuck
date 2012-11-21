@@ -23,6 +23,11 @@ group :development, :test do
   gem 'guard-yard'
   gem 'guard-spork'
   gem 'redcarpet'    # Markdown for yard
-  gem 'debugger'
   gem 'vcr'
+end
+
+platform :ruby do
+  group :development do
+    gem 'debugger'
+  end
 end
