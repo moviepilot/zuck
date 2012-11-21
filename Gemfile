@@ -16,18 +16,18 @@ end
 group :development, :test do
   gem 'webmock'
   gem 'rspec'
-  gem 'growl'
   gem 'guard'
   gem 'guard-rspec'
   gem 'guard-bundler'
   gem 'guard-yard'
-  gem 'guard-spork'
-  gem 'redcarpet'    # Markdown for yard
   gem 'vcr'
 end
 
 platform :ruby do
-  group :development do
+  group :development, :test do
     gem 'debugger'
+    gem 'growl'
+    gem 'guard-spork'
+    gem 'redcarpet'    # Markdown for yard
   end
 end
