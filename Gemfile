@@ -25,7 +25,6 @@ platform :ruby do
     gem 'guard-rspec'
     gem 'guard-bundler'
     gem 'guard-yard'
-    gem 'debugger'
     gem 'growl'
     gem 'redcarpet'    # Markdown for yard
   end
