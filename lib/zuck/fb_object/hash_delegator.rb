@@ -68,7 +68,11 @@ module Zuck
     def set_data(d)
       e = "You can only assign a Hash to #{self.class}, not a #{d.class}"
       raise e unless d.is_a? Hash
-      @hash_delegator_hash = d.symbolize_keys
+      hash = Hash.new
+      d.each do |key, value|
+        hash[(key.to_sym rescue key) || key] = value
+      end
+      @hash_delegator_hash = hash
     end
 
     def data=(d)
