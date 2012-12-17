@@ -28,8 +28,28 @@ module Zuck
   #
   class TargetingSpec
 
+    def self.batch_process(current_user, requests)
+      graph = current_user.get_graph
+      responses = []
+      requests.each_slice(49) do |requests_slice|
+        graph.batch do |batch_api|
+          requests_slice.each do |spec|
+            targeting_spec = Facebook::TargetingSpec.new(current_user, spec)
+            targeting_spec.batch_fetch_reach(batch_api)
+          end
+        end
+      end
+      result = []
+      responses.each_with_index do |res, index|
+        next if res.class < StandardError
+        result << res.merge(requests[index])
+      end
+      result
+    end
+
     # @param graph [Koala::Facebook::API] The koala graph object to use
     # @param ad_account [String] The ad account you want to use to
+    # @param user [User] The user who's ad account you want to use to
     #   query the facebook api
     # @param spec [Hash] The targeting spec. Supported keys:
     #
@@ -52,7 +72,7 @@ module Zuck
 
     # @param spec [Hash] See {#initialize}
     def spec=(spec)
-      @spec = spec.symbolize_keys
+      @spec = spec
       build_spec
     end
 
