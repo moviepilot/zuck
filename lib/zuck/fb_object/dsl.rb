@@ -11,7 +11,7 @@ module Zuck
     # @return [String] Most facebook objects will need to return their
     #   id property here, so that's the default. Overwrite if necessary
     def path
-      self[:id]
+      self[:id] or raise "Can't find a path unless I have an id #{self.inspect}"
     end
 
     module ClassMethods
