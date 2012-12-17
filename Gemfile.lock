@@ -7,15 +7,7 @@ GEM
       multi_json (~> 1.0)
     addressable (2.3.2)
     bouncy-castle-java (1.5.0146.1)
-    columnize (0.3.6)
     crack (0.3.1)
-    debugger (1.2.0)
-      columnize (>= 0.3.1)
-      debugger-linecache (~> 1.1.1)
-      debugger-ruby_core_source (~> 1.1.3)
-    debugger-linecache (1.1.2)
-      debugger-ruby_core_source (>= 1.1.1)
-    debugger-ruby_core_source (1.1.3)
     diff-lcs (1.1.3)
     faraday (0.8.4)
       multipart-post (~> 1.1)
@@ -94,7 +86,6 @@ PLATFORMS
 DEPENDENCIES
   activesupport
   bundler
-  debugger
   growl
   guard
   guard-bundler
