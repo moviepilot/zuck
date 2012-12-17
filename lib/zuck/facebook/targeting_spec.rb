@@ -28,14 +28,14 @@ module Zuck
   #
   class TargetingSpec
 
-    def self.batch_process(current_user, requests)
-      graph = current_user.get_graph
+    # TODO this isn't used in the gem yet, but add docs!
+    def self.batch_process(graph, requests)
       responses = []
-      requests.each_slice(49) do |requests_slice|
+      requests.each_slice(50) do |requests_slice|
         graph.batch do |batch_api|
           requests_slice.each do |spec|
-            targeting_spec = Facebook::TargetingSpec.new(current_user, spec)
-            targeting_spec.batch_fetch_reach(batch_api)
+            targeting_spec = Zuck::TargetingSpec.new(graph, spec)
+            responses << targeting_spec.batch_fetch_reach(batch_api)
           end
         end
       end

@@ -124,4 +124,19 @@ describe Zuck::TargetingSpec do
     end
   end
 
+  describe "Batch processing" do
+    let(:graph){ stub(Koala::Facebook::API) }
+
+    it "doesn't split up small bunches" do
+      requests = [{some: :thing}] * 50
+      graph.should_receive(:batch).once
+      Zuck::TargetingSpec.batch_process(graph, requests)
+    end
+
+    it "splits up into 50 request bunches" do
+      requests = [{some: :thing}] * 51
+      graph.should_receive(:batch).twice
+      Zuck::TargetingSpec.batch_process(graph, requests)
+    end
+  end
 end
