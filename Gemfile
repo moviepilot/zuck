@@ -3,7 +3,7 @@ source 'http://moviepilot:GoodMovies@gems.backend.moviepilot.com'
 
 gem 'rvm'
 gem 'bundler'
-gem 'koala', '~>1.5'
+gem 'koala', '>=1.4'
 gem 'activesupport'
 
 group :development do
@@ -31,5 +31,5 @@ platform :ruby do
 end
 
 platform :jruby do
-  gem 'jruby-openssl'
+  # gem 'jruby-openssl'
 end

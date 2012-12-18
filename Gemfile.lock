@@ -31,8 +31,6 @@ GEM
       git (>= 1.2.5)
       rake
       rdoc
-    jruby-openssl (0.7.7)
-      bouncy-castle-java (>= 1.5.0146.1)
     json (1.7.4)
     json (1.7.4-java)
     koala (1.5.0)
@@ -92,8 +90,7 @@ DEPENDENCIES
   guard-rspec
   guard-yard
   jeweler (~> 1.8.4)
-  jruby-openssl
-  koala (~> 1.5)
+  koala (>= 1.4)
   rdoc (~> 3.12)
   redcarpet
   rspec
