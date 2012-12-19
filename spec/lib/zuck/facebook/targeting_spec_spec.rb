@@ -113,7 +113,7 @@ describe Zuck::TargetingSpec do
 
   describe "fetching reach" do
     let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD') }
-    let(:ad_account){ '10150585630710217' }
+    let(:ad_account){ 'act_10150585630710217' }
 
     it "bugs out when trying to use an invalid keyword" do
       VCR.use_cassette('reach_for_invalid_keyword') do
@@ -125,11 +125,21 @@ describe Zuck::TargetingSpec do
       end
     end
 
-    it "has no software bug (tm)" do
+    it "works without gender or age" do
       VCR.use_cassette('reach_for_valid_keywords') do
         spec = {countries: ['us'], keywords: ['eminem', 'sting'] }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
-        ts.fetch_reach
+        reach = ts.fetch_reach
+        reach.should == 16830580
+      end
+    end
+
+    it "works with gender and age" do
+      VCR.use_cassette('reach_for_valid_keywords_male_young') do
+        spec = {countries: ['us'], keywords: ['sting'], gender: :female, age_class: :young }
+        ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
+        reach = ts.fetch_reach
+        reach.should == 39400
       end
     end
 

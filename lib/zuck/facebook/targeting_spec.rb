@@ -48,13 +48,13 @@ module Zuck
     def initialize(graph, ad_account, spec = nil)
       @validated_keywords = {}
       @graph = graph
-      @ad_account = ad_account
+      @ad_account = "act_#{ad_account}".gsub('act_act_', 'act_')
       self.spec = spec
     end
 
     # @param spec [Hash] See {#initialize}
     def spec=(spec)
-      @spec = spec
+      @spec = spec || {}
       build_spec
     end
 
@@ -123,8 +123,16 @@ module Zuck
       [arr].flatten.compact.map(&:to_s).map(&:downcase).uniq.sort
     end
 
+    def self.normalize_countries(countries)
+      normalize_array(countries).map(&:upcase)
+    end
+
     def normalize_array(arr)
       self.class.normalize_array(arr)
+    end
+
+    def normalize_countries(countries)
+      self.class.normalize_countries(countries)
     end
 
     def validate_keywords
@@ -134,7 +142,7 @@ module Zuck
     end
 
     def validate_spec
-      @spec[:countries] = normalize_array(@spec[:countries])
+      @spec[:countries] = normalize_countries(@spec[:countries])
       @spec[:keywords]  = normalize_array(@spec[:keywords])
       raise(InvalidCountryError, "Need to set :countries") unless @spec[:countries].present?
       unless @spec[:keywords].present? or @spec[:connections].present?
@@ -160,13 +168,13 @@ module Zuck
         raise(InvalidGenderError, "Gender can only be male or female")
       end
       @spec[:genders] = [1] if gender.to_s == 'male'
-      @spec[:genders] = [0] if gender.to_s == 'female'
+      @spec[:genders] = [2] if gender.to_s == 'female'
 
       keyword = spec.delete(:keyword)
       @spec[:keywords] = normalize_array([keyword, @spec[:keywords]])
 
       country = spec.delete(:country)
-      @spec[:countries] = normalize_array([country, @spec[:countries]])
+      @spec[:countries] = normalize_countries([country, @spec[:countries]])
 
       connections = spec.delete(:connections)
       @spec[:connections] = normalize_array([connections, @spec[:connections]])

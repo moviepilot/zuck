@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&keyword_list=eminem,sting&type=adkeywordvalid
+    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&keyword_list=sting&type=adkeywordvalid
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - text/javascript; charset=UTF-8
       Etag:
-      - ! '"a684dbf074d5467a7775189984027b177954edef"'
+      - ! '"66bd8a85c55324c07c1c2afcb1eac4e2fd358bf5"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -33,21 +33,21 @@ http_interactions:
       X-Fb-Rev:
       - '698469'
       X-Fb-Debug:
-      - vtS1+m1EAAr/YCY4TKxUueU+DfmYhcASPsoK5LMzkW8=
+      - XuqZnN5WjRA/b3sTn4Nz0jyvTkw2S0OCP5x8OKrUO54=
       Date:
-      - Wed, 19 Dec 2012 15:13:41 GMT
+      - Wed, 19 Dec 2012 15:20:53 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '109'
+      - '59'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"name":"Eminem","valid":true,"id":6003170652434},{"name":"Sting","valid":true,"id":6003164299249}]}'
+      string: ! '{"data":[{"name":"Sting","valid":true,"id":6003164299249}]}'
     http_version: 
-  recorded_at: Wed, 19 Dec 2012 15:13:42 GMT
+  recorded_at: Wed, 19 Dec 2012 15:20:53 GMT
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22eminem%22,%22sting%22%5D,%22age_min%22:13,%22connections%22:%5B%5D%7D
+    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22sting%22%5D,%22age_min%22:13,%22age_max%22:24,%22genders%22:%5B2%5D,%22connections%22:%5B%5D%7D
     body:
       encoding: US-ASCII
       string: ''
@@ -70,7 +70,7 @@ http_interactions:
       Content-Type:
       - text/javascript; charset=UTF-8
       Etag:
-      - ! '"486581ad6483292ae854bf5e25d36d1b564b1865"'
+      - ! '"430ebe9f4489fdfc008a2c301d51e68d633c8978"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -78,16 +78,16 @@ http_interactions:
       X-Fb-Rev:
       - '698469'
       X-Fb-Debug:
-      - m+Eupy9dFg5wCI+Ej1LdCnZ73lJ1YHyikHIHA1+ET5Y=
+      - H+RabGZXmTXmsUVynJuDJRCthPTjpJLfPD7iwdJA3WA=
       Date:
-      - Wed, 19 Dec 2012 15:13:43 GMT
+      - Wed, 19 Dec 2012 15:20:55 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '322'
+      - '314'
     body:
       encoding: US-ASCII
-      string: ! '{"users":16830580,"bid_estimations":[{"location":3,"cpc_min":43,"cpc_median":71,"cpc_max":145,"cpm_min":2,"cpm_median":15,"cpm_max":502}],"imp_estimates":[],"data":{"users":16830580,"bid_estimations":[{"location":3,"cpc_min":43,"cpc_median":71,"cpc_max":145,"cpm_min":2,"cpm_median":15,"cpm_max":502}],"imp_estimates":[]}}'
+      string: ! '{"users":39400,"bid_estimations":[{"location":3,"cpc_min":38,"cpc_median":58,"cpc_max":115,"cpm_min":1,"cpm_median":6,"cpm_max":383}],"imp_estimates":[],"data":{"users":39400,"bid_estimations":[{"location":3,"cpc_min":38,"cpc_median":58,"cpc_max":115,"cpm_min":1,"cpm_median":6,"cpm_max":383}],"imp_estimates":[]}}'
     http_version: 
-  recorded_at: Wed, 19 Dec 2012 15:13:43 GMT
+  recorded_at: Wed, 19 Dec 2012 15:20:55 GMT
 recorded_with: VCR 2.2.4
