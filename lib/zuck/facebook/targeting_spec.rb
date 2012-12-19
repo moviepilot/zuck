@@ -27,25 +27,7 @@ module Zuck
   #     => 12345
   #
   class TargetingSpec
-
-    # TODO this isn't used in the gem yet, but add docs!
-    def self.batch_process(graph, requests)
-      responses = []
-      requests.each_slice(50) do |requests_slice|
-        graph.batch do |batch_api|
-          requests_slice.each do |spec|
-            targeting_spec = Zuck::TargetingSpec.new(graph, spec)
-            responses << targeting_spec.batch_fetch_reach(batch_api)
-          end
-        end
-      end
-      result = []
-      responses.each_with_index do |res, index|
-        next if res.class < StandardError
-        result << res.merge(requests[index])
-      end
-      result
-    end
+    attr_reader :spec, :graph
 
     # @param graph [Koala::Facebook::API] The koala graph object to use
     # @param ad_account [String] The ad account you want to use to
@@ -67,7 +49,7 @@ module Zuck
       @validated_keywords = {}
       @graph = graph
       @ad_account = ad_account
-      self.spec = spec if spec
+      self.spec = spec
     end
 
     # @param spec [Hash] See {#initialize}
@@ -87,25 +69,54 @@ module Zuck
       result["users"].to_i
     end
 
-    # @return [Hash] The current targeting spec
-    def spec
-      @spec
+    # Validates a single keyword, see {TargetingSpec.validate_keywords}
+    def validate_keyword(keyword)
+      if !@validated_keywords[keyword]
+        keywords = normalize_array([@keywords] + [keyword])
+        @validated_keywords = self.class.validate_keywords(@graph, keywords)
+      end
+      @validated_keywords[keyword] == true
     end
 
-    # Hits the facebook ad api to check if a keyword is valid
-    # @param keyword [String] The keyword you would like to check
-    # @return [true, false]
-    def validate_keyword(keyword)
-      keyword = keyword.to_s
-      if !@validated_keywords[keyword]
-        result = graph.search(nil, type: 'adkeywordvalid', keyword_list: keyword.gsub(/,/, '%2C'))#  rescue []
-        valid = result.first["valid"] == true rescue false
-        @validated_keywords[keyword] = valid
+    # Checks the ad api to see if the given keywords are valid
+    # @return [Hash] The keys are the (lowercased) keywords and the values their validity
+    def self.validate_keywords(graph, keywords)
+      keywords = normalize_array(keywords).map{|k| k.gsub(',', '%2C')}
+      search = graph.search(nil, type: 'adkeywordvalid', keyword_list: keywords.join(","))
+      results = {}
+      search.each do |r|
+        results[r['name'].downcase] = r['valid']
       end
-      @validated_keywords[keyword]
+      results
+    end
+
+    def self.batch_process(graph, requests)
+      responses = []
+      requests.each_slice(50) do |requests_slice|
+        graph.batch do |batch_api|
+          requests_slice.each do |spec|
+            targeting_spec = Zuck::TargetingSpec.new(graph, spec)
+            responses << targeting_spec.batch_fetch_reach(batch_api)
+          end
+        end
+      end
+      result = []
+      responses.each_with_index do |res, index|
+        next if res.class < StandardError
+        result << res.merge(requests[index])
+      end
+      result
     end
 
     private
+
+    def self.normalize_array(arr)
+      [arr].flatten.compact.map(&:to_s).map(&:downcase).uniq.sort
+    end
+
+    def normalize_array(arr)
+      self.class.normalize_array(arr)
+    end
 
     def validate_keywords
       @spec[:keywords].each do |w|
@@ -113,13 +124,9 @@ module Zuck
       end
     end
 
-    def graph
-      @graph
-    end
-
     def validate_spec
-      @spec[:countries] = [@spec[:countries]].flatten.uniq.compact
-      @spec[:keywords]  = [@spec[:keywords]].flatten.uniq.compact
+      @spec[:countries] = normalize_array(@spec[:countries])
+      @spec[:keywords]  = normalize_array(@spec[:keywords])
       raise(InvalidCountryError, "Need to set :countries") unless @spec[:countries].present?
       unless @spec[:keywords].present? or @spec[:connections].present?
         raise(ParamsMissingError, "Need to set :keywords or :connections")
@@ -128,7 +135,8 @@ module Zuck
     end
 
     def build_spec
-      age = spec.delete(:age_class)
+      return unless @spec
+      age = @spec.delete(:age_class)
       if age.to_s == 'young'
         @spec[:age_min] = 13
         @spec[:age_max] = 24
@@ -144,13 +152,13 @@ module Zuck
       @spec[:genders] = [0] if gender.to_s == 'female'
 
       keyword = spec.delete(:keyword)
-      @spec[:keywords] = [keyword, @spec[:keywords]].flatten.compact.uniq
+      @spec[:keywords] = normalize_array([keyword, @spec[:keywords]])
 
       country = spec.delete(:country)
-      @spec[:countries] = [country, @spec[:countries]].flatten.compact.uniq
+      @spec[:countries] = normalize_array([country, @spec[:countries]])
 
       connections = spec.delete(:connections)
-      @spec[:connections] = [connections, @spec[:connections]].flatten.compact.uniq
+      @spec[:connections] = normalize_array([connections, @spec[:connections]])
 
     end
 

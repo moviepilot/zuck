@@ -39,13 +39,13 @@ describe Zuck::TargetingSpec do
 
   describe "validating keywords" do
 
-    let(:valid_keyword_result){   [{"valid" => true }] }
-    let(:invalid_keyword_result){ [{"valid" => false }] }
+    let(:valid_keyword_result){   [{"name" => "foo", "valid" => true }] }
+    let(:invalid_keyword_result){ [{"name" => "sdjf", "valid" => false }] }
 
     it "escapes commas" do
       o = {type: 'adkeywordvalid', keyword_list: 'foo%2Cbar' }
       graph.should_receive(:search).with(nil, o).and_return []
-      fts = Zuck::TargetingSpec.new(graph, ad_account)
+      fts = Zuck::TargetingSpec.new(graph, ad_account, keywords: 'foo,bar')
       fts.validate_keyword('foo,bar').should == false
     end
 
@@ -58,11 +58,11 @@ describe Zuck::TargetingSpec do
     end
 
     it "refuses invalid keywords" do
-      o = {type: 'adkeywordvalid', keyword_list: 'foo' }
+      o = {type: 'adkeywordvalid', keyword_list: 'sdjf' }
       graph.should_receive(:search).with(nil, o).and_return invalid_keyword_result
       fts = Zuck::TargetingSpec.new(graph, ad_account)
 
-      fts.validate_keyword('foo').should == false
+      fts.validate_keyword('sdjf').should == false
     end
   end
 
@@ -111,17 +111,20 @@ describe Zuck::TargetingSpec do
     end
   end
 
-  describe "fetching the reach from facebook" do
-    it "asks koala for the right thing" do
-      ts = Zuck::TargetingSpec.new(graph, ad_account)
-      ts.should_receive(:validate_keyword).with('foo').and_return true
-      expected_spec = { targeting_spec: "{\"countries\":[\"US\"],\"keywords\":[\"foo\"],\"age_min\":13,\"connections\":[]}" }
-      graph.should_receive(:get_object).with("#{ad_account}/reachestimate", expected_spec)
-                .and_return(reach_response)
+  describe "fetching reach" do
+    let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAD7FqFZC7KRrHkxi0ksDicPVJb7wRYVyBtQVqHtbxY6ZCYAtOq2pkGQAIsqSWYcmCGJVFrs5CPKKsnD65gVKeZBZBlxwJQZDZD') }
+    let(:ad_account){ '10150585630710217' }
 
-      ts.spec = {countries: ['US'], keywords: 'foo'}
-      ts.fetch_reach.should_not == false
+    it "bugs out when trying to use an invalid keyword" do
+      VCR.use_cassette('reach_for_invalid_keyword') do
+        spec = {countries: ['us'], keywords: ['eminem', 'invalidsssssssssssssss'] }
+        ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
+        expect{
+          ts.fetch_reach
+        }.to raise_error(Zuck::InvalidKeywordError, 'invalidsssssssssssssss')
+      end
     end
+
   end
 
   describe "Batch processing" do
