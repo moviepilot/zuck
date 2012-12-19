@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAD7FqFZC7KRrHkxi0ksDicPVJb7wRYVyBtQVqHtbxY6ZCYAtOq2pkGQAIsqSWYcmCGJVFrs5CPKKsnD65gVKeZBZBlxwJQZDZD&keyword_list=&type=adkeywordvalid
+    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&keyword_list=eminem,invalidsssssssssssssss&type=adkeywordvalid
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - text/javascript; charset=UTF-8
       Etag:
-      - ! '"1050253aec7b29caff644806927dabfa81406eee"'
+      - ! '"1b6af91a08d48aeee5ffa0cf3437f38b61281b68"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -33,106 +33,16 @@ http_interactions:
       X-Fb-Rev:
       - '698469'
       X-Fb-Debug:
-      - MBc2bm9n+w+G4XVw4zG5ka31YDxIgQXGdXd66RifpHk=
+      - 7so4yUGhkG2hb0KiZDAFNlrgtEmcB0xQ9Xilxl/LfRw=
       Date:
-      - Wed, 19 Dec 2012 11:26:31 GMT
+      - Wed, 19 Dec 2012 14:36:48 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '11'
+      - '108'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[]}'
+      string: ! '{"data":[{"name":"Eminem","valid":true,"id":6003170652434},{"name":"invalidsssssssssssssss","valid":false}]}'
     http_version: 
-  recorded_at: Wed, 19 Dec 2012 11:26:31 GMT
-- request:
-    method: get
-    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAD7FqFZC7KRrHkxi0ksDicPVJb7wRYVyBtQVqHtbxY6ZCYAtOq2pkGQAIsqSWYcmCGJVFrs5CPKKsnD65gVKeZBZBlxwJQZDZD&keyword_list=eminem&type=adkeywordvalid
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Content-Type:
-      - text/javascript; charset=UTF-8
-      Etag:
-      - ! '"e8979dd9b301694d7bc9523738a37a1f9ad2d11f"'
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
-      X-Fb-Rev:
-      - '698469'
-      X-Fb-Debug:
-      - aEqOcQkCPME4rArea8YR4O5HgGRxVP5s3Kb31gHc53s=
-      Date:
-      - Wed, 19 Dec 2012 11:56:18 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '60'
-    body:
-      encoding: US-ASCII
-      string: ! '{"data":[{"name":"Eminem","valid":true,"id":6003170652434}]}'
-    http_version: 
-  recorded_at: Wed, 19 Dec 2012 11:56:18 GMT
-- request:
-    method: get
-    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAD7FqFZC7KRrHkxi0ksDicPVJb7wRYVyBtQVqHtbxY6ZCYAtOq2pkGQAIsqSWYcmCGJVFrs5CPKKsnD65gVKeZBZBlxwJQZDZD&keyword_list=invalidsssssssssssssss&type=adkeywordvalid
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Content-Type:
-      - text/javascript; charset=UTF-8
-      Etag:
-      - ! '"0bccf2ac157bf94b09277c8f22643866f0154e52"'
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
-      X-Fb-Rev:
-      - '698469'
-      X-Fb-Debug:
-      - aMpyquwv/+8bz7yw4akFTq73tYfyYvoJUrGKtKlZb/c=
-      Date:
-      - Wed, 19 Dec 2012 11:56:19 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '58'
-    body:
-      encoding: US-ASCII
-      string: ! '{"data":[{"name":"invalidsssssssssssssss","valid":false}]}'
-    http_version: 
-  recorded_at: Wed, 19 Dec 2012 11:56:19 GMT
+  recorded_at: Wed, 19 Dec 2012 14:36:48 GMT
 recorded_with: VCR 2.2.4

@@ -112,7 +112,7 @@ describe Zuck::TargetingSpec do
   end
 
   describe "fetching reach" do
-    let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAD7FqFZC7KRrHkxi0ksDicPVJb7wRYVyBtQVqHtbxY6ZCYAtOq2pkGQAIsqSWYcmCGJVFrs5CPKKsnD65gVKeZBZBlxwJQZDZD') }
+    let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD') }
     let(:ad_account){ '10150585630710217' }
 
     it "bugs out when trying to use an invalid keyword" do
@@ -122,6 +122,14 @@ describe Zuck::TargetingSpec do
         expect{
           ts.fetch_reach
         }.to raise_error(Zuck::InvalidKeywordError, 'invalidsssssssssssssss')
+      end
+    end
+
+    it "has no software bug (tm)" do
+      VCR.use_cassette('reach_for_valid_keywords') do
+        spec = {countries: ['us'], keywords: ['eminem', 'sting'] }
+        ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
+        ts.fetch_reach
       end
     end
 

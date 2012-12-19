@@ -1,0 +1,185 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAD7FqFZC7KRrHkxi0ksDicPVJb7wRYVyBtQVqHtbxY6ZCYAtOq2pkGQAIsqSWYcmCGJVFrs5CPKKsnD65gVKeZBZBlxwJQZDZD&keyword_list=eminem&type=adkeywordvalid
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Www-Authenticate:
+      - ! 'OAuth "Facebook Platform" "invalid_token" "Error validating access token:
+        Session has expired at unix time 1355922000. The current unix time is 1355926796."'
+      X-Fb-Rev:
+      - '698469'
+      X-Fb-Debug:
+      - ATVcHSNxBjpX1nUG0iyEKu/cUZC+ebmufUo6Nte+U4o=
+      Date:
+      - Wed, 19 Dec 2012 14:19:56 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '191'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"Error validating access token: Session has expired
+        at unix time 1355922000. The current unix time is 1355926796.","type":"OAuthException","code":190,"error_subcode":463}}'
+    http_version: 
+  recorded_at: Wed, 19 Dec 2012 14:19:56 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&keyword_list=eminem&type=adkeywordvalid
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Etag:
+      - ! '"e8979dd9b301694d7bc9523738a37a1f9ad2d11f"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      X-Fb-Rev:
+      - '698469'
+      X-Fb-Debug:
+      - 1LDxAY0T1E4Nm8c2t3qLwMXY7tOiTaPrWGFDrUWyjpE=
+      Date:
+      - Wed, 19 Dec 2012 14:20:31 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '60'
+    body:
+      encoding: US-ASCII
+      string: ! '{"data":[{"name":"Eminem","valid":true,"id":6003170652434}]}'
+    http_version: 
+  recorded_at: Wed, 19 Dec 2012 14:20:31 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&keyword_list=sting&type=adkeywordvalid
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Etag:
+      - ! '"66bd8a85c55324c07c1c2afcb1eac4e2fd358bf5"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      X-Fb-Rev:
+      - '698469'
+      X-Fb-Debug:
+      - iWzWmd3CvK6Q2MTN3nTTEvIMZzrldkaYDKZPdCtZA5I=
+      Date:
+      - Wed, 19 Dec 2012 14:20:32 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '59'
+    body:
+      encoding: US-ASCII
+      string: ! '{"data":[{"name":"Sting","valid":true,"id":6003164299249}]}'
+    http_version: 
+  recorded_at: Wed, 19 Dec 2012 14:20:32 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/10150585630710217/reachestimate?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&targeting_spec=%7B%22countries%22:%5B%22us%22%5D,%22keywords%22:%5B%22eminem%22,%22sting%22%5D,%22age_min%22:13,%22connections%22:%5B%5D%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Www-Authenticate:
+      - OAuth "Facebook Platform" "invalid_request" "Unsupported get request."
+      X-Fb-Rev:
+      - '698469'
+      X-Fb-Debug:
+      - FG1fzef8tTAC6c+2pChdMikGU5FB8Kw+WqnhBv6h2ak=
+      Date:
+      - Wed, 19 Dec 2012 14:20:32 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '89'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"Unsupported get request.","type":"GraphMethodException","code":100}}'
+    http_version: 
+  recorded_at: Wed, 19 Dec 2012 14:20:32 GMT
+recorded_with: VCR 2.2.4

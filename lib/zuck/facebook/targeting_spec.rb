@@ -69,10 +69,14 @@ module Zuck
       result["users"].to_i
     end
 
-    # Validates a single keyword, see {TargetingSpec.validate_keywords}
+    # Validates a single keyword from the cache or calls
+    # {TargetingSpec.validate_keywords}.to validate the keywords via
+    # facebook's api.
+    # @param keyword [String] A single keyword (will be downcased)
+    # @return boolean
     def validate_keyword(keyword)
-      if !@validated_keywords[keyword]
-        keywords = normalize_array([@keywords] + [keyword])
+      if @validated_keywords[keyword] == nil
+        keywords = normalize_array([@spec[:keywords]] + [keyword])
         @validated_keywords = self.class.validate_keywords(@graph, keywords)
       end
       @validated_keywords[keyword] == true
@@ -90,6 +94,11 @@ module Zuck
       results
     end
 
+    # Fetches a bunch of reach estimates from facebook at once.
+    # @param graph Koala graph instance
+    # @param requests [Array<Hash>] An array of specs as you would pass
+    #   to {#initialize}
+    # @return [Array]
     def self.batch_process(graph, requests)
       responses = []
       requests.each_slice(50) do |requests_slice|
@@ -147,7 +156,9 @@ module Zuck
       end
 
       gender = spec.delete(:gender)
-      raise(InvalidGenderError, "Gender can only be male or female") if gender and !['male', 'female'].include?(gender.to_s)
+      if gender and !['male', 'female'].include?(gender.to_s)
+        raise(InvalidGenderError, "Gender can only be male or female")
+      end
       @spec[:genders] = [1] if gender.to_s == 'male'
       @spec[:genders] = [0] if gender.to_s == 'female'
 
