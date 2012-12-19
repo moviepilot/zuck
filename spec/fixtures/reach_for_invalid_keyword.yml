@@ -45,4 +45,51 @@ http_interactions:
       string: ! '{"data":[{"name":"Eminem","valid":true,"id":6003170652434},{"name":"invalidsssssssssssssss","valid":false}]}'
     http_version: 
   recorded_at: Wed, 19 Dec 2012 14:36:48 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22eminem%22,%22invalidsssssssssssssss%22%5D,%22age_min%22:13,%22connections%22:%5B%5D%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - text/javascript; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Www-Authenticate:
+      - ! 'OAuth "Facebook Platform" "invalid_token" "Error validating access token:
+        Session has expired at unix time 1355932800. The current unix time is 1355934833."'
+      X-Fb-Rev:
+      - '698469'
+      X-Fb-Debug:
+      - Kkjlojh5eu19FxaW5yu6N5A+5xmmbKyfKsCpa+y2eOc=
+      Date:
+      - Wed, 19 Dec 2012 16:33:53 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '191'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"Error validating access token: Session has expired
+        at unix time 1355932800. The current unix time is 1355934833.","type":"OAuthException","code":190,"error_subcode":463}}'
+    http_version: 
+  recorded_at: Wed, 19 Dec 2012 16:33:53 GMT
 recorded_with: VCR 2.2.4

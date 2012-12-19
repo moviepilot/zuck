@@ -30,13 +30,11 @@ module Zuck
     attr_reader :spec, :graph
 
     # @param graph [Koala::Facebook::API] The koala graph object to use
-    # @param ad_account [String] The ad account you want to use to
-    # @param user [User] The user who's ad account you want to use to
-    #   query the facebook api
+    # @param ad_account [String] The ad account you want to use to query the facebook api
     # @param spec [Hash] The targeting spec. Supported keys:
     #
     #   - `:countries`: Array of uppercase two letter country codes
-    #   - `:genders` (optional): Can be an array with 0 (female) and 1 (male)
+    #   - `:genders` (optional): Can be an array with 2 (female) and 1 (male)
     #   - `:gender` (optional): Set it to 'male' or 'female' to autoconfigure the genders array
     #   - `:age_min` (optional): In years
     #   - `:age_max` (optional): In years
@@ -58,15 +56,21 @@ module Zuck
       build_spec
     end
 
-    # @return [Number] The reach for the options given in {#initialize}
+    # @return [Hash] The reach for the options given in {#initialize}, see 
+    #   https://developers.facebook.com/docs/reference/ads-api/reachestimate/
     def fetch_reach
       validate_spec
-      validate_keywords
       json = @spec.to_json
       o = "#{@ad_account}/reachestimate"
       result = graph.get_object(o, targeting_spec: json)
-      return false unless result and result["users"].to_i >= 0
-      result["users"].to_i
+      return false unless result
+      result
+    end
+
+    def validate_keywords
+      @spec[:keywords].each do |w|
+        raise(InvalidKeywordError, w) unless validate_keyword(w)
+      end
     end
 
     # Validates a single keyword from the cache or calls
@@ -96,23 +100,33 @@ module Zuck
 
     # Fetches a bunch of reach estimates from facebook at once.
     # @param graph Koala graph instance
-    # @param requests [Array<Hash>] An array of specs as you would pass
-    #   to {#initialize}
-    # @return [Array]
-    def self.batch_process(graph, requests)
-      responses = []
-      requests.each_slice(50) do |requests_slice|
-        graph.batch do |batch_api|
-          requests_slice.each do |spec|
-            targeting_spec = Zuck::TargetingSpec.new(graph, spec)
-            responses << targeting_spec.batch_fetch_reach(batch_api)
+    # @param specs [Array<Hash>] An array of specs as you would pass to {#initialize}
+    # @return [Array<Hash>] Each spec you passed in as the requests parameter with
+    #   the [:success] set to true/false and [:reach]/[:error] are filled respectively
+    def self.batch_reaches(graph, ad_account, specs)
+
+      # Make all requests
+      reaches = []
+      specs.each_slice(50) do |specs_slice|
+        reaches += graph.batch do |batch_api|
+          specs_slice.each do |spec|
+            targeting_spec = Zuck::TargetingSpec.new(batch_api, ad_account, spec)
+            targeting_spec.fetch_reach
           end
         end
       end
+
+      # Structure results
       result = []
-      responses.each_with_index do |res, index|
-        next if res.class < StandardError
-        result << res.merge(requests[index])
+      reaches.each_with_index do |res, i|
+        result[i] = specs[i]
+        if res.class < StandardError
+          result[i][:success] = false
+          result[i][:error]   = res
+        else
+          result[i][:success] = true
+          result[i][:reach]   = res
+        end
       end
       result
     end
@@ -133,12 +147,6 @@ module Zuck
 
     def normalize_countries(countries)
       self.class.normalize_countries(countries)
-    end
-
-    def validate_keywords
-      @spec[:keywords].each do |w|
-        raise(InvalidKeywordError, w) unless validate_keyword(w)
-      end
     end
 
     def validate_spec

@@ -120,7 +120,7 @@ describe Zuck::TargetingSpec do
         spec = {countries: ['us'], keywords: ['eminem', 'invalidsssssssssssssss'] }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
         expect{
-          ts.fetch_reach
+          ts.validate_keywords
         }.to raise_error(Zuck::InvalidKeywordError, 'invalidsssssssssssssss')
       end
     end
@@ -130,7 +130,7 @@ describe Zuck::TargetingSpec do
         spec = {countries: ['us'], keywords: ['eminem', 'sting'] }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
         reach = ts.fetch_reach
-        reach.should == 16830580
+        reach['users'].should == 16830580
       end
     end
 
@@ -139,25 +139,26 @@ describe Zuck::TargetingSpec do
         spec = {countries: ['us'], keywords: ['sting'], gender: :female, age_class: :young }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
         reach = ts.fetch_reach
-        reach.should == 39400
+        reach['users'].should == 39400
       end
     end
 
   end
 
   describe "Batch processing" do
-    let(:graph){ stub(Koala::Facebook::API) }
+    let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD') }
+    let(:ad_account){ 'act_10150585630710217' }
 
     it "doesn't split up small bunches" do
       requests = [{some: :thing}] * 50
-      graph.should_receive(:batch).once
-      Zuck::TargetingSpec.batch_process(graph, requests)
+      graph.should_receive(:batch).once.and_return([])
+      Zuck::TargetingSpec.batch_reaches(graph, ad_account, requests)
     end
 
     it "splits up into 50 request bunches" do
       requests = [{some: :thing}] * 51
-      graph.should_receive(:batch).twice
-      Zuck::TargetingSpec.batch_process(graph, requests)
+      graph.should_receive(:batch).twice.and_return([])
+      Zuck::TargetingSpec.batch_reaches(graph, ad_account, requests)
     end
   end
 end
