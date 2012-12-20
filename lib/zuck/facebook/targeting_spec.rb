@@ -64,7 +64,7 @@ module Zuck
       o = "#{@ad_account}/reachestimate"
       result = graph.get_object(o, targeting_spec: json)
       return false unless result
-      result
+      result.symbolize_keys!
     end
 
     def validate_keywords

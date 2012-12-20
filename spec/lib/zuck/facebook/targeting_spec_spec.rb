@@ -130,7 +130,7 @@ describe Zuck::TargetingSpec do
         spec = {countries: ['us'], keywords: ['eminem', 'sting'] }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
         reach = ts.fetch_reach
-        reach['users'].should == 16830580
+        reach[:users].should == 16830580
       end
     end
 
@@ -139,7 +139,7 @@ describe Zuck::TargetingSpec do
         spec = {countries: ['us'], keywords: ['sting'], gender: :female, age_class: :young }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
         reach = ts.fetch_reach
-        reach['users'].should == 39400
+        reach[:users].should == 39400
       end
     end
 
