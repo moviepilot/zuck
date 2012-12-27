@@ -3,9 +3,9 @@ require 'spec_helper'
 describe Zuck::TargetingSpec do
   let(:ad_account){ "2ijdsfoij" }
   let(:graph){ mock('koala') }
-  let(:reach_response){ {
-    "users" => 23688420,
-    "bid_estimations" => [
+  let(:reach_response){ {         # These can probably go since we have
+    "users" => 23688420,          # vcr cassetes with http requests and
+    "bid_estimations" => [        # responses in place
       {
         "location" => 3,
         "cpc_min" => 37,
