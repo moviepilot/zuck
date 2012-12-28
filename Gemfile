@@ -1,5 +1,4 @@
 source 'http://rubygems.org'
-source 'http://moviepilot:GoodMovies@gems.backend.moviepilot.com'
 
 gem 'rvm'
 gem 'bundler'
