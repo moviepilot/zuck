@@ -3,24 +3,10 @@ require 'spec_helper'
 describe Zuck::TargetingSpec do
   let(:ad_account){ "2ijdsfoij" }
   let(:graph){ mock('koala') }
-  let(:reach_response){ {         # These can probably go since we have
-    "users" => 23688420,          # vcr cassetes with http requests and
-    "bid_estimations" => [        # responses in place
-      {
-        "location" => 3,
-        "cpc_min" => 37,
-        "cpc_median" => 44,
-        "cpc_max" => 57,
-        "cpm_min" => 6,
-        "cpm_median" => 12,
-        "cpm_max" => 33
-      }
-    ],
-    "imp_estimates" => [
-    ],
-    "data" => {
-      "users" => 23688420,
-      "bid_estimations" => [
+  let(:reach_response){
+      {                             # These can probably go since we have
+      "users" => 23688420,          # vcr cassetes with http requests and
+      "bid_estimations" => [        # responses in place
         {
           "location" => 3,
           "cpc_min" => 37,
@@ -32,9 +18,25 @@ describe Zuck::TargetingSpec do
         }
       ],
       "imp_estimates" => [
-      ]
+      ],
+      "data" => {
+        "users" => 23688420,
+        "bid_estimations" => [
+          {
+            "location" => 3,
+            "cpc_min" => 37,
+            "cpc_median" => 44,
+            "cpc_max" => 57,
+            "cpm_min" => 6,
+            "cpm_median" => 12,
+            "cpm_max" => 33
+          }
+        ],
+        "imp_estimates" => [
+        ]
+      }
     }
-  }}
+  }
 
 
   describe "validating keywords" do
@@ -141,6 +143,14 @@ describe Zuck::TargetingSpec do
         reach = ts.fetch_reach
         reach[:users].should == 39400
       end
+    end
+
+    it "without instanciating manually" do
+      x = stub()
+      x.should_receive(:fetch_reach).and_return 9
+      Zuck::TargetingSpec.should_receive(:new).with(:graph, :ad_account, :options).and_return x
+
+      Zuck::TargetingSpec.fetch_reach(:graph, :ad_account, :options)
     end
 
   end
