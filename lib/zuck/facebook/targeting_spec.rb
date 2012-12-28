@@ -119,7 +119,7 @@ module Zuck
       # Structure results
       result = []
       reaches.each_with_index do |res, i|
-        result[i] = specs[i]
+        result[i] = specs[i].dup
         if res.class < StandardError
           result[i][:success] = false
           result[i][:error]   = res
@@ -129,6 +129,13 @@ module Zuck
         end
       end
       result
+    end
+
+    # Convenience method, parameters are the same as in {#initialize}
+    # @return (see #initialize)
+    def self.fetch_reach(graph, ad_account, options)
+      ts = Zuck::TargetingSpec.new(graph, ad_account, options)
+      ts.fetch_reach
     end
 
     private
