@@ -19,13 +19,14 @@ group :development, :test do
 end
 
 platform :ruby do
-  group :development, :test do
+  group :development do
     gem 'guard'
     gem 'guard-rspec'
     gem 'guard-bundler'
     gem 'guard-yard'
     gem 'growl'
     gem 'redcarpet'    # Markdown for yard
+    gem 'rb-fsevent'
   end
 end
 

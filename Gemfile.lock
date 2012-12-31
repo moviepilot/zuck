@@ -53,6 +53,7 @@ GEM
       method_source (~> 0.8)
       slop (~> 3.3.1)
     rake (10.0.3)
+    rb-fsevent (0.9.1)
     rdoc (3.12)
       json (~> 1.4)
     redcarpet (2.2.2)
@@ -98,6 +99,7 @@ DEPENDENCIES
   guard-yard
   jeweler (~> 1.8.4)
   koala (>= 1.5)
+  rb-fsevent
   rdoc (~> 3.12)
   redcarpet
   rspec
