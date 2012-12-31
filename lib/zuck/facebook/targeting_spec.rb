@@ -157,13 +157,13 @@ module Zuck
     end
 
     def validate_spec
-      @spec[:countries] = normalize_countries(@spec[:countries])
-      @spec[:keywords]  = normalize_array(@spec[:keywords])
+      @spec[:countries]   = normalize_countries(@spec[:countries])
+      @spec[:keywords]    = normalize_array(@spec[:keywords])
+      @spec[:broad_age] ||= false
       raise(InvalidCountryError, "Need to set :countries") unless @spec[:countries].present?
       unless @spec[:keywords].present? or @spec[:connections].present?
         raise(ParamsMissingError, "Need to set :keywords or :connections")
       end
-
     end
 
     def build_spec
