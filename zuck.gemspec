@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jannis Hermanns"]
-  s.date = "2012-12-18"
+  s.date = "2013-01-03"
   s.description = "This gem allows to easily access facebook's ads api in ruby. See https://developers.facebook.com/docs/reference/ads-api/"
   s.email = "jannis@gmail.com"
   s.extra_rdoc_files = [
@@ -20,6 +20,7 @@ Gem::Specification.new do |s|
     ".rvmrc",
     ".travis.yml",
     ".yardopts",
+    "CHANGELOG.markdown",
     "Gemfile",
     "Gemfile.lock",
     "Guardfile.dist",
@@ -54,6 +55,9 @@ Gem::Specification.new do |s|
     "spec/fixtures/list_of_ad_creatives.yml",
     "spec/fixtures/list_of_ad_groups.yml",
     "spec/fixtures/list_of_all_ad_creatives_of_account.yml",
+    "spec/fixtures/reach_for_invalid_keyword.yml",
+    "spec/fixtures/reach_for_valid_keywords.yml",
+    "spec/fixtures/reach_for_valid_keywords_male_young.yml",
     "spec/lib/zuck/facebook/ad_account_spec.rb",
     "spec/lib/zuck/facebook/ad_campaign_spec.rb",
     "spec/lib/zuck/facebook/targeting_spec_spec.rb",
@@ -62,7 +66,8 @@ Gem::Specification.new do |s|
     "spec/lib/zuck/util/hash_delegator_spec.rb",
     "spec/lib/zuck_spec.rb",
     "spec/spec_helper.rb",
-    "spec/vcr_setup.rb"
+    "spec/vcr_setup.rb",
+    "zuck.gemspec"
   ]
   s.homepage = "http://github.com/jayniz/zuck"
   s.licenses = ["MIT"]
@@ -76,7 +81,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rvm>, [">= 0"])
       s.add_runtime_dependency(%q<bundler>, [">= 0"])
-      s.add_runtime_dependency(%q<koala>, [">= 1.4"])
+      s.add_runtime_dependency(%q<koala>, [">= 1.5"])
       s.add_runtime_dependency(%q<activesupport>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, [">= 0"])
       s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
@@ -91,10 +96,11 @@ Gem::Specification.new do |s|
       s.add_development_dependency(%q<guard-yard>, [">= 0"])
       s.add_development_dependency(%q<growl>, [">= 0"])
       s.add_development_dependency(%q<redcarpet>, [">= 0"])
+      s.add_development_dependency(%q<rb-fsevent>, [">= 0"])
     else
       s.add_dependency(%q<rvm>, [">= 0"])
       s.add_dependency(%q<bundler>, [">= 0"])
-      s.add_dependency(%q<koala>, [">= 1.4"])
+      s.add_dependency(%q<koala>, [">= 1.5"])
       s.add_dependency(%q<activesupport>, [">= 0"])
       s.add_dependency(%q<shoulda>, [">= 0"])
       s.add_dependency(%q<rdoc>, ["~> 3.12"])
@@ -109,11 +115,12 @@ Gem::Specification.new do |s|
       s.add_dependency(%q<guard-yard>, [">= 0"])
       s.add_dependency(%q<growl>, [">= 0"])
       s.add_dependency(%q<redcarpet>, [">= 0"])
+      s.add_dependency(%q<rb-fsevent>, [">= 0"])
     end
   else
     s.add_dependency(%q<rvm>, [">= 0"])
     s.add_dependency(%q<bundler>, [">= 0"])
-    s.add_dependency(%q<koala>, [">= 1.4"])
+    s.add_dependency(%q<koala>, [">= 1.5"])
     s.add_dependency(%q<activesupport>, [">= 0"])
     s.add_dependency(%q<shoulda>, [">= 0"])
     s.add_dependency(%q<rdoc>, ["~> 3.12"])
@@ -128,6 +135,7 @@ Gem::Specification.new do |s|
     s.add_dependency(%q<guard-yard>, [">= 0"])
     s.add_dependency(%q<growl>, [">= 0"])
     s.add_dependency(%q<redcarpet>, [">= 0"])
+    s.add_dependency(%q<rb-fsevent>, [">= 0"])
   end
 end
 
