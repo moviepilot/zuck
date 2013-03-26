@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "zuck"
-  s.version = "0.0.4"
+  s.version = "0.0.5"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jannis Hermanns"]
-  s.date = "2013-01-03"
+  s.date = "2013-03-26"
   s.description = "This gem allows to easily access facebook's ads api in ruby. See https://developers.facebook.com/docs/reference/ads-api/"
   s.email = "jannis@gmail.com"
   s.extra_rdoc_files = [
