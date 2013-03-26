@@ -13,7 +13,7 @@ group :development do
 end
 
 group :development, :test do
-  gem 'webmock'
+  gem 'webmock', '~>1.8.0'
   gem 'rspec'
   gem 'vcr'
 end
