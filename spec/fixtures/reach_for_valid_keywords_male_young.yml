@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&keyword_list=sting&type=adkeywordvalid
+    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&keyword_list=Sting&type=adkeywordvalid
     body:
       encoding: US-ASCII
       string: ''
@@ -47,7 +47,7 @@ http_interactions:
   recorded_at: Wed, 19 Dec 2012 15:20:53 GMT
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22sting%22%5D,%22age_min%22:13,%22age_max%22:24,%22genders%22:%5B2%5D,%22connections%22:%5B%5D,%22broad_age%22:false%7D
+    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22Sting%22%5D,%22age_min%22:13,%22age_max%22:24,%22genders%22:%5B2%5D,%22connections%22:%5B%5D,%22broad_age%22:false%7D
     body:
       encoding: US-ASCII
       string: ''

@@ -76,7 +76,7 @@ module Zuck
     # Validates a single keyword from the cache or calls
     # {TargetingSpec.validate_keywords}.to validate the keywords via
     # facebook's api.
-    # @param keyword [String] A single keyword (will be downcased)
+    # @param keyword [String] A single keyword
     # @return boolean
     def validate_keyword(keyword)
       if @validated_keywords[keyword] == nil
@@ -93,7 +93,7 @@ module Zuck
       search = graph.search(nil, type: 'adkeywordvalid', keyword_list: keywords.join(","))
       results = {}
       search.each do |r|
-        results[r['name'].downcase] = r['valid']
+        results[r['name']] = r['valid']
       end
       results
     end
@@ -141,7 +141,7 @@ module Zuck
     private
 
     def self.normalize_array(arr)
-      [arr].flatten.compact.map(&:to_s).map(&:downcase).uniq.sort
+      [arr].flatten.compact.map(&:to_s).uniq.sort
     end
 
     def self.normalize_countries(countries)

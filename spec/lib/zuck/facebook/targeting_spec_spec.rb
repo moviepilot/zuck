@@ -119,7 +119,7 @@ describe Zuck::TargetingSpec do
 
     it "bugs out when trying to use an invalid keyword" do
       VCR.use_cassette('reach_for_invalid_keyword') do
-        spec = {countries: ['us'], keywords: ['eminem', 'invalidsssssssssssssss'] }
+        spec = {countries: ['us'], keywords: ['Eminem', 'invalidsssssssssssssss'] }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
         expect{
           ts.validate_keywords
@@ -129,7 +129,7 @@ describe Zuck::TargetingSpec do
 
     it "works without gender or age" do
       VCR.use_cassette('reach_for_valid_keywords') do
-        spec = {countries: ['us'], keywords: ['eminem', 'sting'] }
+        spec = {countries: ['us'], keywords: ['Eminem', 'Sting'] }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
         reach = ts.fetch_reach
         reach[:users].should == 16830580
@@ -138,7 +138,7 @@ describe Zuck::TargetingSpec do
 
     it "works with gender and age" do
       VCR.use_cassette('reach_for_valid_keywords_male_young') do
-        spec = {countries: ['us'], keywords: ['sting'], gender: :female, age_class: :young }
+        spec = {countries: ['us'], keywords: ['Sting'], gender: :female, age_class: :young }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
         reach = ts.fetch_reach
         reach[:users].should == 39400

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&keyword_list=eminem,invalidsssssssssssssss&type=adkeywordvalid
+    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&keyword_list=Eminem,invalidsssssssssssssss&type=adkeywordvalid
     body:
       encoding: US-ASCII
       string: ''
@@ -47,7 +47,7 @@ http_interactions:
   recorded_at: Wed, 19 Dec 2012 14:36:48 GMT
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22eminem%22,%22invalidsssssssssssssss%22%5D,%22age_min%22:13,%22connections%22:%5B%5D%7D
+    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22Eminem%22,%22invalidsssssssssssssss%22%5D,%22age_min%22:13,%22connections%22:%5B%5D%7D
     body:
       encoding: US-ASCII
       string: ''
