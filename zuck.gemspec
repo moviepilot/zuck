@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "zuck"
-  s.version = "0.0.6"
+  s.version = "0.0.7"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jannis Hermanns"]
-  s.date = "2013-03-26"
+  s.date = "2013-06-19"
   s.description = "This gem allows to easily access facebook's ads api in ruby. See https://developers.facebook.com/docs/reference/ads-api/"
   s.email = "jannis@gmail.com"
   s.extra_rdoc_files = [
@@ -72,7 +72,7 @@ Gem::Specification.new do |s|
   s.homepage = "http://github.com/jayniz/zuck"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
-  s.rubygems_version = "1.8.24"
+  s.rubygems_version = "1.8.25"
   s.summary = "Ruby adapter to facebook's ad api"
 
   if s.respond_to? :specification_version then
