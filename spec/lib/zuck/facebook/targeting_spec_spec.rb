@@ -105,6 +105,14 @@ describe Zuck::TargetingSpec do
       }.to raise_error("Gender can only be male or female")
     end
 
+    it "does not accept invalid countries" do
+      expect{
+        z = Zuck::TargetingSpec.new(graph, ad_account, countries: ['XX'], keywords: ['foo'], gender: 'female')
+        z.send(:validate_spec)
+      }.to raise_error('Invalid countrie(s): ["XX"]')
+    end
+
+
     it "does not accept targetings with neither :keywords nor :connections" do
       expect{
         ts = Zuck::TargetingSpec.new(graph, ad_account, countries: ['US'], gender: 'female')

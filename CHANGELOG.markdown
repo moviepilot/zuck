@@ -1,3 +1,7 @@
+0.0.8
+-----
+- validate the countries before fetching a reach estimate
+
 0.0.7
 -----
 - don't downcase keywords when normalizing, it matters for keywords
