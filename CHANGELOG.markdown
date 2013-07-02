@@ -1,3 +1,8 @@
+0.0.9
+-----
+- add Zuck::TargetingSpec.valid_countries? method to allow for country
+  validation from the outside
+
 0.0.8
 -----
 - validate the countries before fetching a reach estimate
