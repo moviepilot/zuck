@@ -189,9 +189,13 @@ module Zuck
     end
 
     def validate_countries
-      raise(InvalidCountryError, "Need to set :countries") unless @spec[:countries].present?
-      raise(InvalidCountryError, "Must supply between 1 and 25 countries") if @spec[:countries].length > 25
-      invalid_countries = @spec[:countries] - Zuck::ISO_COUNTRY_CODES
+      self.class.valid_countries?(@spec[:countries])
+    end
+
+    def self.valid_countries?(countries)
+      raise(InvalidCountryError, "Need to set :countries") unless countries.present?
+      raise(InvalidCountryError, "Must supply between 1 and 25 countries") if countries.length > 25
+      invalid_countries = countries - Zuck::ISO_COUNTRY_CODES
       return if invalid_countries.empty?
       raise(InvalidCountryError, "Invalid countrie(s): #{invalid_countries}")
     end
