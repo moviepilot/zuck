@@ -49,6 +49,8 @@ module Zuck
   #     => 12345
   #
   class TargetingSpec
+    include Zuck::Helpers
+
     attr_reader :spec, :graph
 
     # @param graph [Koala::Facebook::API] The koala graph object to use
@@ -103,21 +105,9 @@ module Zuck
     def validate_keyword(keyword)
       if @validated_keywords[keyword] == nil
         keywords = normalize_array([@spec[:keywords]] + [keyword])
-        @validated_keywords = self.class.validate_keywords(@graph, keywords)
+        @validated_keywords = Zuck::AdKeyword.validate(@graph, keywords)
       end
       @validated_keywords[keyword] == true
-    end
-
-    # Checks the ad api to see if the given keywords are valid
-    # @return [Hash] The keys are the (lowercased) keywords and the values their validity
-    def self.validate_keywords(graph, keywords)
-      keywords = normalize_array(keywords).map{|k| k.gsub(',', '%2C')}
-      search = graph.search(nil, type: 'adkeywordvalid', keyword_list: keywords.join(","))
-      results = {}
-      search.each do |r|
-        results[r['name']] = r['valid']
-      end
-      results
     end
 
     # Fetches a bunch of reach estimates from facebook at once.
@@ -162,20 +152,8 @@ module Zuck
 
     private
 
-    def self.normalize_array(arr)
-      [arr].flatten.compact.map(&:to_s).uniq.sort
-    end
-
     def self.normalize_countries(countries)
-      normalize_array(countries).map(&:upcase)
-    end
-
-    def normalize_array(arr)
-      self.class.normalize_array(arr)
-    end
-
-    def normalize_countries(countries)
-      self.class.normalize_countries(countries)
+      [countries].flatten.compact.map(&:to_s).uniq.sort.map(&:upcase)
     end
 
     def validate_spec
