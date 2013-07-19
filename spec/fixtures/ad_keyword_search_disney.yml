@@ -1,0 +1,53 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAE7m0kztNbbASKHymRlXoBZCdZCtMsebNEgaR0yOmZCBfeTIXT8MnuV3ZCH5lBDQOcC4S9geswWZBuF707gJ42lV9DHgGILsRaiG2upipiHggl7UZAeDVgBSSsap9s9uv1ghZCxNsmH&q=disney&type=adkeyword
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Etag:
+      - ! '"167c644dd8fab56d0277dc91306a5636a7994715"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      X-Fb-Rev:
+      - '880776'
+      X-Fb-Debug:
+      - Fc7xjOmnC+MtzLHCEOi9yDh3oWYLK/7+pqNc61S25kg=
+      Date:
+      - Fri, 19 Jul 2013 09:46:15 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '589'
+    body:
+      encoding: US-ASCII
+      string: ! '{"data":[{"name":"Disney Channel","id":6003711659516},{"name":"Disneyland","id":6003361056187},{"name":"Disney","id":6003663755307},{"name":"#The
+        Walt Disney Company","description":"Audience: 72,500,000","id":6003270522085},{"name":"#Disneyland","description":"Audience:
+        24,100,000","id":6003274193708},{"name":"#Disney Channel","description":"Audience:
+        17,800,000","id":6003327130854},{"name":"#The Walt Disney Company#Walt Disney
+        Pictures","description":"Audience: 14,600,000","id":6004710425192},{"name":"#Walt
+        Disney Pictures","description":"Audience: 14,600,000","id":6003050377616}]}'
+    http_version: 
+  recorded_at: Fri, 19 Jul 2013 09:46:19 GMT
+recorded_with: VCR 2.3.0

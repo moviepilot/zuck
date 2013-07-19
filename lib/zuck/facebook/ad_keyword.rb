@@ -3,6 +3,20 @@ module Zuck
     extend Zuck::Helpers
     extend self
 
+    # Given a keyword, make a guess on what the closest keyword
+    # on the facebook ads api is. It tends to use a # prefixed
+    # keyword if available, and also a more popular one over a less
+    # popular one
+    def best_guess(graph, keyword)
+      search(graph, keyword).sort do |a,b|
+        if a[:audience].to_i > 0 || b[:audience].to_i > 0
+          a[:audience].to_i <=> b[:audience].to_i
+        else
+          b[:name].length <=> a[:name].length
+        end
+      end.last
+    end
+
     # Checks the ad api to see if the given keywords are valid
     # @return [Hash] The keys are the (lowercased) keywords and the values their validity
     def validate(graph, keywords)
@@ -15,5 +29,17 @@ module Zuck
       results
     end
 
+    # Ad keyword search
+    def search(graph, keyword)
+      results = graph.search(keyword, type: :adkeyword).map do |r|
+        audience = r['description'].scan(/[0-9]+/).join('').to_i rescue nil
+        {
+          name: r['name'],
+          id:   r['id'],
+          audience: audience
+        }
+      end
+    end
   end
+
 end
