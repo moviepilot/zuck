@@ -152,10 +152,6 @@ module Zuck
 
     private
 
-    def self.normalize_countries(countries)
-      [countries].flatten.compact.map(&:to_s).uniq.sort.map(&:upcase)
-    end
-
     def validate_spec
       @spec[:countries]   = normalize_countries(@spec[:countries])
       @spec[:keywords]    = normalize_array(@spec[:keywords])

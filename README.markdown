@@ -10,10 +10,6 @@ for a nice diagram that explains how things work.
 
 ![](https://dl.dropbox.com/u/1953503/kw29_koelner_gelierzucker_31_oder_diamant_feinster_zucker_462982.jpeg)
 
-We just hacked this up and are not using it in production yet,
-so handle with care. On the other hand, simplecov reports 100%
-coverage. But as it is a gem in a very early stage, a warning was
-due.
 
 Usage
 =====

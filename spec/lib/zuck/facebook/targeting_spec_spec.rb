@@ -3,41 +3,6 @@ require 'spec_helper'
 describe Zuck::TargetingSpec do
   let(:ad_account){ "2ijdsfoij" }
   let(:graph){ mock('koala') }
-  let(:reach_response){
-      {                             # These can probably go since we have
-      "users" => 23688420,          # vcr cassetes with http requests and
-      "bid_estimations" => [        # responses in place
-        {
-          "location" => 3,
-          "cpc_min" => 37,
-          "cpc_median" => 44,
-          "cpc_max" => 57,
-          "cpm_min" => 6,
-          "cpm_median" => 12,
-          "cpm_max" => 33
-        }
-      ],
-      "imp_estimates" => [
-      ],
-      "data" => {
-        "users" => 23688420,
-        "bid_estimations" => [
-          {
-            "location" => 3,
-            "cpc_min" => 37,
-            "cpc_median" => 44,
-            "cpc_max" => 57,
-            "cpm_min" => 6,
-            "cpm_median" => 12,
-            "cpm_max" => 33
-          }
-        ],
-        "imp_estimates" => [
-        ]
-      }
-    }
-  }
-
 
   describe "validating keywords" do
 
@@ -166,7 +131,13 @@ describe Zuck::TargetingSpec do
   describe "Batch processing" do
     let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD') }
     let(:ad_account){ 'act_10150585630710217' }
+    let(:spec_mock){ mock(fetch_reach: {some: :data}) }
 
+    it "fetches each reach" do
+      requests = [{some: :thing}] * 51
+      Zuck::TargetingSpec.should_receive(:new).exactly(51).and_return spec_mock
+      Zuck::TargetingSpec.batch_reaches(graph, ad_account, requests)
+    end
     it "doesn't split up small bunches" do
       requests = [{some: :thing}] * 50
       graph.should_receive(:batch).once.and_return([])
@@ -177,6 +148,16 @@ describe Zuck::TargetingSpec do
       requests = [{some: :thing}] * 51
       graph.should_receive(:batch).twice.and_return([])
       Zuck::TargetingSpec.batch_reaches(graph, ad_account, requests)
+    end
+
+    it "reformats results including errors" do
+      responses = [{facebook: :response}, Koala::KoalaError.new]
+      requests = [{some: :thing}] * 51
+      graph.should_receive(:batch).twice.and_return(responses)
+      reaches = Zuck::TargetingSpec.batch_reaches(graph, ad_account, requests)
+
+      reaches[0][:success].should == true
+      reaches[1][:success].should == false
     end
   end
 end
