@@ -12,7 +12,7 @@ module Zuck
         if a[:audience].to_i > 0 || b[:audience].to_i > 0
           a[:audience].to_i <=> b[:audience].to_i
         else
-          b[:name].length <=> a[:name].length
+          b[:keyword].length <=> a[:keyword].length
         end
       end.last
     end
@@ -34,7 +34,7 @@ module Zuck
       results = graph.search(keyword, type: :adkeyword).map do |r|
         audience = r['description'].scan(/[0-9]+/).join('').to_i rescue nil
         {
-          name: r['name'],
+          keyword: r['name'],
           id:   r['id'],
           audience: audience
         }

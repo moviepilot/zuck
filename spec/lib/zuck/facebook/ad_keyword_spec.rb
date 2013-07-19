@@ -5,13 +5,13 @@ describe Zuck::AdKeyword do
 
   it "finds the best keyword with a #" do
     VCR.use_cassette('ad_keyword_search_disney') do
-      Zuck::AdKeyword.best_guess(graph, 'disney')[:name].should == '#The Walt Disney Company'
+      Zuck::AdKeyword.best_guess(graph, 'disney')[:keyword].should == '#The Walt Disney Company'
     end
   end
 
   it "finds the best keyword when no keyword with # is available" do
     VCR.use_cassette('ad_keyword_search_steve_carell') do
-      Zuck::AdKeyword.best_guess(graph, 'steve carell')[:name].should == 'Steve Carell'
+      Zuck::AdKeyword.best_guess(graph, 'steve carell')[:keyword].should == 'Steve Carell'
     end
   end
 
