@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "zuck"
-  s.version = "0.0.9"
+  s.version = "0.1.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jannis Hermanns"]
-  s.date = "2013-07-04"
+  s.date = "2013-07-19"
   s.description = "This gem allows to easily access facebook's ads api in ruby. See https://developers.facebook.com/docs/reference/ads-api/"
   s.email = "jannis@gmail.com"
   s.extra_rdoc_files = [
@@ -34,6 +34,7 @@ Gem::Specification.new do |s|
     "lib/zuck/facebook/ad_campaign.rb",
     "lib/zuck/facebook/ad_creative.rb",
     "lib/zuck/facebook/ad_group.rb",
+    "lib/zuck/facebook/ad_keyword.rb",
     "lib/zuck/facebook/targeting_spec.rb",
     "lib/zuck/fb_object.rb",
     "lib/zuck/fb_object/dsl.rb",
@@ -43,9 +44,13 @@ Gem::Specification.new do |s|
     "lib/zuck/fb_object/read.rb",
     "lib/zuck/fb_object/read_only.rb",
     "lib/zuck/fb_object/write.rb",
+    "lib/zuck/helpers.rb",
     "lib/zuck/koala/koala_methods.rb",
     "spec/fixtures/a_single_account.yml",
     "spec/fixtures/a_single_campaign.yml",
+    "spec/fixtures/ad_keyword_search_disney.yml",
+    "spec/fixtures/ad_keyword_search_nonexistant.yml",
+    "spec/fixtures/ad_keyword_search_steve_carell.yml",
     "spec/fixtures/create_ad_campaign.yml",
     "spec/fixtures/create_ad_group.yml",
     "spec/fixtures/delete_ad_group.yml",
@@ -60,6 +65,7 @@ Gem::Specification.new do |s|
     "spec/fixtures/reach_for_valid_keywords_male_young.yml",
     "spec/lib/zuck/facebook/ad_account_spec.rb",
     "spec/lib/zuck/facebook/ad_campaign_spec.rb",
+    "spec/lib/zuck/facebook/ad_keyword_spec.rb",
     "spec/lib/zuck/facebook/targeting_spec_spec.rb",
     "spec/lib/zuck/fb_object/helpers_spec.rb",
     "spec/lib/zuck/koala/koala_methods_spec.rb",
