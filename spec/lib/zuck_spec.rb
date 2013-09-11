@@ -135,7 +135,7 @@ END_ERROR
 
       it "an ad group" do
         VCR.use_cassette('create_ad_group') do
-          o = {bid_type: 1, max_bid: 1, name: "Rap like me", targeting: '{"countries":["US"]}',
+          o = {bid_type: 'CPC', max_bid: 1, name: "Rap like me", targeting: '{"countries":["US"]}',
                creative: '{"type":25,"action_spec":{"action.type":"like", "post":10150420410887685}}'}
           group = Zuck::AdGroup.create(graph, o, campaign)
           group.name.should == "Rap like me"
@@ -144,11 +144,11 @@ END_ERROR
 
       it "an ad group via an existing ad campaign" do
         VCR.use_cassette('create_ad_group') do
-          o = {bid_type: 1, max_bid: 1, name: "Rap like me", targeting: '{"countries":["US"]}',
+          o = {bid_type: 'CPC', max_bid: 1, name: "Rap like me", targeting: '{"countries":["US"]}',
                creative: '{"type":25,"action_spec":{"action.type":"like", "post":10150420410887685}}'}
           group = campaign.create_ad_group(o)
           group.name.should == "Rap like me"
-          group.bid_type.should == 1
+          group.bid_type.should == 'CPC'
         end
       end
     end

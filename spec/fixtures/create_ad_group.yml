@@ -5,7 +5,7 @@ http_interactions:
     uri: https://graph.facebook.com/act_10150585630710217/adgroups
     body:
       encoding: US-ASCII
-      string: bid_type=1&max_bid=1&name=Rap+like+me&targeting=%7B%22countries%22%3A%5B%22US%22%5D%7D&creative=%7B%22type%22%3A25%2C%22action_spec%22%3A%7B%22action.type%22%3A%22like%22%2C+%22post%22%3A10150420410887685%7D%7D&campaign_id=6005950787751&redownload=1&access_token=AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD
+      string: bid_type=CPC&max_bid=1&name=Rap+like+me&targeting=%7B%22countries%22%3A%5B%22US%22%5D%7D&creative=%7B%22type%22%3A25%2C%22action_spec%22%3A%7B%22action.type%22%3A%22like%22%2C+%22post%22%3A10150420410887685%7D%7D&campaign_id=6005950787751&redownload=1&access_token=AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD
     headers:
       Content-Type:
       - application/x-www-form-urlencoded
@@ -40,8 +40,8 @@ http_interactions:
       - '1195'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6005950791151","data":{"adgroups":{"6005950791151":{"adgroup_id":6005950791151,"ad_id":6005950791151,"campaign_id":6005950787751,"name":"Rap
-        like me","adgroup_status":4,"bid_type":1,"max_bid":"1","bid_info":{"1":"1"},"ad_status":4,"locations":[3],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":3,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"account_id":"10150585630710217","id":"6005950791151","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"last_updated_by_app_id":333322143368799,"start_time":null,"end_time":null,"updated_time":1345557956,"created_time":1345557955}},"creatives":{"6005851371551":{"type":25,"action_spec":{"action.type":"like","post":"10150420410887685"},"related_fan_page":1,"cluster_id":6005851366351,"name":"Sponsored
+      string: ! '{"id":"6005950791151","data":{"adgroups":{"6005950791151":{"campaign_id":6005950787751,"name":"Rap
+        like me","adgroup_status":4,"bid_type":"CPC","max_bid":"1","bid_info":{"1":"1"},"ad_status":4,"locations":[3],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":3,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"account_id":"10150585630710217","id":"6005950791151","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"last_updated_by_app_id":333322143368799,"updated_time":1345557956,"created_time":1345557955}},"creatives":{"6005851371551":{"type":25,"action_spec":{"action.type":"like","post":"10150420410887685"},"related_fan_page":1,"cluster_id":6005851366351,"name":"Sponsored
         story #6005851371551","run_status":1,"preview_url":"http:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6005851371551","count_current_adgroups":11,"id":"6005851371551","creative_id":"6005851371551"}}}}'
     http_version:
   recorded_at: Tue, 21 Aug 2012 14:05:56 GMT

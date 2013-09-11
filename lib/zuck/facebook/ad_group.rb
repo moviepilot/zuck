@@ -7,9 +7,7 @@ module Zuck
     # were incomplete, so I added here what the graph explorer
     # actually returned.
     known_keys :account_id,
-               :ad_id,
                :ad_status,
-               :adgroup_id,
                :adgroup_status,
                :bid_info,
                :bid_type,
@@ -17,11 +15,9 @@ module Zuck
                :conversion_specs,
                :created_time,
                :creative_ids,
-               :end_time,
                :id,
                :max_bid,
                :name,
-               :start_time,
                :targeting,
                :updated_time
 
