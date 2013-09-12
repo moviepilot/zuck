@@ -33,9 +33,9 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - 4qaJBtZY3OhmTEnjOeqG9Q+dEMsqYKBI1gjJ7zCExHk=
+      - lxn3l9UOrsvGe1F/eup5jwB9fSDgPvkFevLOA7O0jbM=
       Date:
-      - Thu, 12 Sep 2013 11:49:58 GMT
+      - Thu, 12 Sep 2013 11:58:04 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -45,5 +45,5 @@ http_interactions:
       string: ! '{"data":[{"id":"6010889111951","account_id":"10150585630710217","name":"bloody","daily_budget":1000,"campaign_status":1,"daily_imps":0,"frequency_cap":0,"frequency_cap_reset_period":0,"start_time":"2013-09-12T12:14:47+0200","updated_time":"2013-09-12T12:14:47+0200","created_time":"2013-09-12T12:14:47+0200","campaign_id":6010889111951},{"id":"6010341807151","account_id":"10150585630710217","name":"Promoting
         \"HAPPY BIRTHDAY, ARNOLD #pumpingandhumping\"","lifetime_budget":1500,"campaign_status":1,"daily_imps":0,"frequency_cap":0,"frequency_cap_reset_period":0,"start_time":"2013-07-31T15:10:27+0200","end_time":"2013-08-01T15:10:27+0200","updated_time":"2013-07-31T15:10:28+0200","created_time":"2013-07-31T15:10:27+0200","campaign_id":6010341807151}],"paging":{"cursors":{"after":"NjAxMDM0MTgwNzE1MQ==","before":"NjAxMDg4OTExMTk1MQ=="}},"count":2,"limit":100,"offset":0}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 11:49:58 GMT
+  recorded_at: Thu, 12 Sep 2013 11:58:04 GMT
 recorded_with: VCR 2.3.0

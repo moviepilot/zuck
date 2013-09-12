@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Etag:
-      - ! '"aef2b53cbdfcffbefb622b8fdd9ba1683fec097a"'
+      - ! '"fe7021bb7426a11f441f06f51bfcb2584b32f711"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -33,18 +33,18 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - 9rRRiaZ2JBiYr6jGjTths2nFC92XrTLqP6PmlzpENjk=
+      - ZmjB24X8grT5eSD2WtkOqx0h8tyjcbrtZwJPhGdhNqw=
       Date:
-      - Thu, 12 Sep 2013 11:50:00 GMT
+      - Thu, 12 Sep 2013 11:58:06 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '697'
     body:
       encoding: US-ASCII
-      string: ! '{"account_id":"10150585630710217","account_status":1,"age":590.83481481481,"amount_spent":4093,"balance":0,"business_city":"Berlin","business_country_code":"DE","business_name":"Big
+      string: ! '{"account_id":"10150585630710217","account_status":1,"age":590.84043981481,"amount_spent":4093,"balance":0,"business_city":"Berlin","business_country_code":"DE","business_name":"Big
         Mike Alright UG (haftungsbeschr\u00e4nkt)","business_state":"Berlin","business_street2":"J\u00e4gerndorfer
         Zeile 61","business_street":"Big Mike Alright UG (haftungsbeschr\u00e4nkt)","business_zip":"12209","capabilities":[2,6,15,11,16],"currency":"USD","daily_spend_limit":150000,"id":"act_10150585630710217","is_personal":0,"name":"","spend_cap":5000,"timezone_id":47,"timezone_name":"Europe\/Berlin","timezone_offset_hours_utc":2,"users":[{"uid":501730216,"permissions":[1,2,3,4,5,7],"role":1001}],"vat_status":3}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 11:50:01 GMT
+  recorded_at: Thu, 12 Sep 2013 11:58:06 GMT
 recorded_with: VCR 2.3.0

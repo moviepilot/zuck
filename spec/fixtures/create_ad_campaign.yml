@@ -31,16 +31,16 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - z/ywVa1LQ38UXtf89CJ6sEvDqFOqG2WKflWD47jkfoQ=
+      - dzXIYQQf1kOSRkhynjUOGUoA2quXLAoSs4laP/Exsrk=
       Date:
-      - Thu, 12 Sep 2013 11:50:03 GMT
+      - Thu, 12 Sep 2013 11:58:09 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '341'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6010889998551","data":{"campaigns":{"6010889998551":{"id":"6010889998551","account_id":"10150585630710217","name":"bloody","daily_budget":1000,"campaign_status":1,"daily_imps":0,"frequency_cap":0,"frequency_cap_reset_period":0,"start_time":1378986603,"updated_time":1378986603,"created_time":1378986603,"campaign_id":6010889998551}}}}'
+      string: ! '{"id":"6010890077151","data":{"campaigns":{"6010890077151":{"id":"6010890077151","account_id":"10150585630710217","name":"bloody","daily_budget":1000,"campaign_status":1,"daily_imps":0,"frequency_cap":0,"frequency_cap_reset_period":0,"start_time":1378987089,"updated_time":1378987089,"created_time":1378987089,"campaign_id":6010890077151}}}}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 11:50:03 GMT
+  recorded_at: Thu, 12 Sep 2013 11:58:09 GMT
 recorded_with: VCR 2.3.0

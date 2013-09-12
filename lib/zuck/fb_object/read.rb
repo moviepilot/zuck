@@ -31,16 +31,6 @@ module Zuck
 
     private
 
-    def id_field_name
-      name = "#{self.class.name.demodulize.downcase}_id"
-
-      # For some reason, facebook decided to not give campaigns and accounts an
-      # adaccount_id campaign_id field
-      nonexistant = ['adcampaign_id', 'adaccount_id']
-      return if nonexistant.include?(name)
-      name
-    end
-
     # Sets the parent of this instance
     #
     # @param parent [FbObject] Has to be of the same class type you defined
