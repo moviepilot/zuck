@@ -2,75 +2,48 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217/adcampaigns?access_token=AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD
+    uri: https://graph.facebook.com/act_10150585630710217/adcampaigns?access_token=CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD&fields=
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
-      message: !binary |-
-        T0s=
+      message: OK
     headers:
-      !binary "QWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2lu":
-      - !binary |-
-        Kg==
-      !binary "Q2FjaGUtQ29udHJvbA==":
-      - !binary |-
-        cHJpdmF0ZSwgbm8tY2FjaGUsIG5vLXN0b3JlLCBtdXN0LXJldmFsaWRhdGU=
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC9qYXZhc2NyaXB0OyBjaGFyc2V0PVVURi04
-      !binary "RXRhZw==":
-      - !binary |-
-        Ijc5YTRmNTQ3ZDg1NGYxNGRkYmQwMjhjNDI5ZDgwYjM2NDc2NzM4ZTMi
-      !binary "RXhwaXJlcw==":
-      - !binary |-
-        U2F0LCAwMSBKYW4gMjAwMCAwMDowMDowMCBHTVQ=
-      !binary "UHJhZ21h":
-      - !binary |-
-        bm8tY2FjaGU=
-      !binary "WC1GYi1SZXY=":
-      - !binary |-
-        NjEyNTY1
-      !binary "Q29udGVudC1FbmNvZGluZw==":
-      - !binary |-
-        Z3ppcA==
-      !binary "WC1GYi1EZWJ1Zw==":
-      - !binary |-
-        NDdwSXUvUzE4emNKdnMwU0RWbUZvdll3STdiNXlNVFZsTGt1V0w1ZDAvTT0=
-      !binary "RGF0ZQ==":
-      - !binary |-
-        VHVlLCAyMSBBdWcgMjAxMiAxNDoxMDo1NCBHTVQ=
-      !binary "Q29ubmVjdGlvbg==":
-      - !binary |-
-        a2VlcC1hbGl2ZQ==
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        NTUz
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Etag:
+      - ! '"9ead3a0dd56903298ee4dc342ae5d04c3e860521"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      X-Fb-Rev:
+      - '934677'
+      X-Fb-Debug:
+      - g8uPz/HrcsdRgKEwCSiikujEnSO+xwZKoL3mxOJP5+E=
+      Date:
+      - Thu, 12 Sep 2013 09:22:16 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '875'
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA52U227aQBCGXwXtRW8KYXZ9XimqTKgaIbWJWisglwot9tpY
-        +FS8pAHEu3cMNSEBWjWSL9brf07fzHhDQqEE4d83RARBsczVJAkJJxSoAYZt
-        mBpYFBi1SJsEIitFEuc7hQmg644FmuUYtE1ykUk0uylQspCtT6usdSsXRSta
-        JDIPq5bIw1a5nKZJcOyoUkItK8LRQZpEUiWZnEyXYSzVLgC0MbskXU2SrEQV
-        vu5yexEa3aGXhZrUxviRAWUdoB0NPOpwsDlz3gMFQB0m8lKldcD0gHEAfBrV
-        skQi8pWSdajmUZ3rFqe0UQYLearcRzZrpcH2ym37DXCRPQWNHcOdpkURrrCQ
-        PZQGFIZAMofmNEzZRXjPrs/DszvAPGpwZu2wsFfw8mWatslZTGhpeWDwmpTW
-        WJ7FdCbG2zA5Bli2ZR3N4P9hwtG7MGPGwfUlTIzWnQad00OxzzP2V0x/LG2u
-        6f/AdBJj+wObXS8q4Vq9NlmCJ5yBNimiqKo3B4+liJM8JnxDcvmEV2SmVFnx
-        cXfcjReinF1FIpDTophfBUU27opATU42Hq/DZqqqD/h3kFU1UcVc5teu6358
-        HBiP61lq99zezPsm1gO/x/rQ079AynT2MGLsNnYGbOi7VlSqwF2raPQUuX7P
-        yWZ+zxzSPDXCtaFGn9Op0x/MnWRamV9/qnvrXt2ZQhvdJLfDh19+3++/21d2
-        vVum7W8wBOaDswQAAA==
+      encoding: US-ASCII
+      string: ! '{"data":[{"id":"6010888547351","account_id":"10150585630710217","name":"bloody","daily_budget":1000,"campaign_status":1,"daily_imps":0,"frequency_cap":0,"frequency_cap_reset_period":0,"start_time":"2013-09-12T11:18:28+0200","updated_time":"2013-09-12T11:18:30+0200","created_time":"2013-09-12T11:18:28+0200","campaign_id":6010888547351},{"id":"6010341807151","account_id":"10150585630710217","name":"Promoting
+        \"HAPPY BIRTHDAY, ARNOLD #pumpingandhumping\"","lifetime_budget":1500,"campaign_status":1,"daily_imps":0,"frequency_cap":0,"frequency_cap_reset_period":0,"start_time":"2013-07-31T15:10:27+0200","end_time":"2013-08-01T15:10:27+0200","updated_time":"2013-07-31T15:10:28+0200","created_time":"2013-07-31T15:10:27+0200","campaign_id":6010341807151}],"paging":{"cursors":{"after":"NjAxMDM0MTgwNzE1MQ==","before":"NjAxMDg4ODU0NzM1MQ=="}},"count":2,"limit":100,"offset":0}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2012 14:10:55 GMT
-recorded_with: VCR 2.2.4
+  recorded_at: Thu, 12 Sep 2013 09:22:16 GMT
+recorded_with: VCR 2.3.0

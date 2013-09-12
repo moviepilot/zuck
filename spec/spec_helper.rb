@@ -43,5 +43,8 @@ def expect_id_and_return(id, ret_val)
   lambda { |id| id.to_s.should == id.to_s; ret_val }
 end
 
+def test_access_token
+  'CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD'
+end
 
 require File.expand_path("../../lib/zuck", __FILE__)

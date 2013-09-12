@@ -4,19 +4,15 @@ http_interactions:
     method: post
     uri: https://graph.facebook.com/act_10150585630710217/adcampaigns
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        ZGFpbHlfYnVkZ2V0PTEwMDAmbmFtZT1ibG9vZHkmcmVkb3dubG9hZD0xJmFj
-        Y2Vzc190b2tlbj1BQUFFdko1dnpobDhCQUJoVFNhekpaQjJEMEI0TjBsMjQy
-        VlgyMkhnOUoyV1pBN2ZwdGNBenRmWHhmQVpCOW1oWkI2VzFubDVkejV0WE1s
-        YjlESms5aWJzNlJxdFA3UHRPNmEzWENpSFdWd1pEWkQ=
+      encoding: US-ASCII
+      string: daily_budget=1000&name=bloody&redownload=1&access_token=CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Content-Type:
       - application/x-www-form-urlencoded
       Accept:
       - ! '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
@@ -27,23 +23,24 @@ http_interactions:
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Content-Type:
-      - text/javascript; charset=UTF-8
+      - application/json; charset=UTF-8
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
       X-Fb-Rev:
-      - '613755'
+      - '934677'
       X-Fb-Debug:
-      - VWQPQsWPxgIjh4Npecy0FD6424cPN2uUCWXr8RfiIVQ=
+      - UGyxyoxKDT1v9/0qJ1qdseP6qvMhPRzxaJQhJFGdB7M=
       Date:
-      - Tue, 21 Aug 2012 14:04:16 GMT
+      - Thu, 12 Sep 2013 09:22:19 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '308'
+      - '341'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6005950787751","data":{"campaigns":{"6005950787751":{"account_id":"10150585630710217","campaign_id":6005950787751,"name":"bloody","daily_budget":1000,"campaign_status":1,"daily_imps":0,"id":"6005950787751","start_time":1345557853,"end_time":null,"updated_time":1345557855,"created_time":1345557853}}}}'
+      string: ! '{"id":"6010888572151","data":{"campaigns":{"6010888572151":{"id":"6010888572151","account_id":"10150585630710217","name":"bloody","daily_budget":1000,"campaign_status":1,"daily_imps":0,"frequency_cap":0,"frequency_cap_reset_period":0,"start_time":1378977739,"updated_time":1378977739,"created_time":1378977739,"campaign_id":6010888572151}}}}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2012 14:04:16 GMT
+  recorded_at: Thu, 12 Sep 2013 09:22:20 GMT
+recorded_with: VCR 2.3.0

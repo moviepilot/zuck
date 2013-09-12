@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAE7m0kztNbbASKHymRlXoBZCdZCtMsebNEgaR0yOmZCBfeTIXT8MnuV3ZCH5lBDQOcC4S9geswWZBuF707gJ42lV9DHgGILsRaiG2upipiHggl7UZAeDVgBSSsap9s9uv1ghZCxNsmH&q=steve%20carell&type=adkeyword
+    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD&q=moviepilot&type=adkeyword
     body:
       encoding: US-ASCII
       string: ''
@@ -25,25 +25,24 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Etag:
-      - ! '"60ec5ec86640fb83726a422cc072f56d0f507bc4"'
+      - ! '"5af1c2df3403480db8f57d9e9bfd2ed4a6f925ef"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
       X-Fb-Rev:
-      - '880776'
+      - '934677'
       X-Fb-Debug:
-      - kQjivQ0nnGBYWqGHMoygWVVEMyXLEezpddYiJnNYitM=
+      - WVaopoJsouLbmKvgfzdD3ZaOUfTdprxROJW/EpIaJ3c=
       Date:
-      - Fri, 19 Jul 2013 10:09:06 GMT
+      - Thu, 12 Sep 2013 09:22:12 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '248'
+      - '95'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"name":"Anything With Steve Carell","id":6003332902745},{"name":"Keep
-        Steve Carell On Office","id":6003656406820},{"name":"Steve Carell","id":6004016779789}]}'
+      string: ! '{"data":[{"name":"Moviepilot","id":6003327847780},{"name":"Moviepilotcom","id":6003495809986}]}'
     http_version: 
-  recorded_at: Fri, 19 Jul 2013 10:09:10 GMT
+  recorded_at: Thu, 12 Sep 2013 09:22:12 GMT
 recorded_with: VCR 2.3.0

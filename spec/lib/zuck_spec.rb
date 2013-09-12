@@ -3,14 +3,14 @@ require 'spec_helper'
 describe Zuck::FbObject do
 
   before(:all) do
-    Zuck.graph = Koala::Facebook::API.new('AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD')
+    Zuck.graph = Koala::Facebook::API.new(test_access_token)
   end
 
   let(:graph)   { Zuck.graph                                                  }
   let(:account) { Zuck::AdAccount.new(graph,  {id: "act_10150585630710217"})  }
-  let(:campaign){ Zuck::AdCampaign.new(graph, {id: "6005950787751"}, account) }
-  let(:group)   { Zuck::AdGroup.new(graph,    {id: "6004497038951"}, campaign)}
-  let(:creative){ Zuck::AdCreative.new(graph, {id: "1234567890123"}, group)   }
+  let(:campaign){ Zuck::AdCampaign.new(graph, {id: "6010888547351"}, account) }
+  let(:group)   { Zuck::AdGroup.new(graph,    {id: "6004497037951"}, campaign)}
+  let(:creative){ Zuck::AdCreative.new(graph, {id: "6004501081751"}, group)   }
 
 
   describe "read only objects" do
@@ -44,7 +44,7 @@ describe Zuck::FbObject do
 
       it "a list of ad campaigns" do
         VCR.use_cassette('list_of_ad_campaigns') do
-          account.ad_campaigns.should have(3).items
+          account.ad_campaigns.should have(1).items
         end
       end
 
@@ -64,7 +64,7 @@ describe Zuck::FbObject do
         g = graph
         Zuck::AdAccount.should_receive(:all).and_return([account])
         VCR.use_cassette('list_of_all_ad_creatives_of_account') do
-          Zuck::AdCreative.all(g).should have(6).items
+          Zuck::AdCreative.all(g).should have(3).items
         end
       end
 

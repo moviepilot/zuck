@@ -52,7 +52,7 @@ module Zuck
 
           # Define list of known keys
           self.send(:define_method, :known_keys) do
-            args
+            args || []
           end
 
           # Define getter

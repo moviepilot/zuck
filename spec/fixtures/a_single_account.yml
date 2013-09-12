@@ -2,17 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217?access_token=AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD
+    uri: https://graph.facebook.com/act_10150585630710217?access_token=CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD&fields=account_id,account_status,balance,business_city,business_country_code,business_name,business_state,business_street,business_street2,business_zip,capabilities,currency,daily_spend_limit,id,is_personal,name,notification_settings,timezone_id,timezone_name,timezone_offset_hours_utc,users,vat_status
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
@@ -27,10 +27,10 @@ http_interactions:
         cHJpdmF0ZSwgbm8tY2FjaGUsIG5vLXN0b3JlLCBtdXN0LXJldmFsaWRhdGU=
       !binary "Q29udGVudC1UeXBl":
       - !binary |-
-        dGV4dC9qYXZhc2NyaXB0OyBjaGFyc2V0PVVURi04
+        YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD1VVEYtOA==
       !binary "RXRhZw==":
       - !binary |-
-        Ijc1NWUyMTBmYjE2N2NkOTQxNWI3ODIzZTZjOGM4YjYwYTQ1MzUwZTUi
+        IjM0ZDE1N2E2MjdkMTYwZWU5ZWNiOGIxODViMjYxMzVlNzFmNjY5MDIi
       !binary "RXhwaXJlcw==":
       - !binary |-
         U2F0LCAwMSBKYW4gMjAwMCAwMDowMDowMCBHTVQ=
@@ -39,37 +39,37 @@ http_interactions:
         bm8tY2FjaGU=
       !binary "WC1GYi1SZXY=":
       - !binary |-
-        NjEyNTY1
+        OTM0Njc3
       !binary "Q29udGVudC1FbmNvZGluZw==":
       - !binary |-
         Z3ppcA==
       !binary "WC1GYi1EZWJ1Zw==":
       - !binary |-
-        L3l3UTJxVWc2L0toZVhhTnFXY21lVFFsSW0vVkFEV09tUFIvQVkzVWsxTT0=
+        ZUJoVGZuRVBRZFhoeUYwM3IrNmpndnR4MjJPYjdna3N0NkV6SEhROGVRcz0=
       !binary "RGF0ZQ==":
       - !binary |-
-        VHVlLCAyMSBBdWcgMjAxMiAxNDo1MjoyNCBHTVQ=
+        VGh1LCAxMiBTZXAgMjAxMyAwOToyMjoxOCBHTVQ=
       !binary "Q29ubmVjdGlvbg==":
       - !binary |-
         a2VlcC1hbGl2ZQ==
       !binary "Q29udGVudC1MZW5ndGg=":
       - !binary |-
-        NTA1
+        NTMx
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA6VSTWvcMBD9K0anFgSV7LU361tDQqHQU8mlTRGyLO8OsSWj
-        j8Bm2f/e0W7i2MS3nOz39GbmzceJQEtqIlUQnPGSlTdlVbAtZznfEoq8stEE
-        cRGtCYwcND7NpD7IED2pOSUqOqeNOqLg4fcdagIM+sUafcm32c6I1zz30dlR
-        P3671a4HM4+wXed1EAcbnRcxKFLnlIAXo3beGtmTmlHSRA9Gey9e093CPvsF
-        Tzr73jvYH0L28CP7cpBdiGbvG+3VwT1GxvTGPIWvWG2K98FpHdD3JzPkmOLn
-        tcReO9Na12mX/dHQ66zi84oKQprT1PjMigxpxB9fXmBMW8lztltkShtzR6Fs
-        m+Lu7vHxWQbxtpiCklZCfxR+1KYVPQyAneYlYzjB6HGepP57IjHtqGR8W+At
-        VJTgoAfwHqxJ75zmtKAbWtLtP0qc7bEUZ4yfERkboAMlA2oFLi0ATpvUJzJl
-        SwDV7PLFwDNNEP/mEGd3hZTgb8WuomKV3SxDyyWslnC3gHzpgs9d5DOP7y6Q
-        nUQL9uL4zSuqVrwiO3ldxE6W39litTqyK9WRXVRHvFI97XjWfPUBzpvfrZa/
-        WWHPuBolR9lADwF0uo8c76CRvTQKDwPvarBWtLqTsQ94mOYZryxdR5OOLF3C
-        +T90T7SjiQQAAA==
+        H4sIAAAAAAAAA6VUyW7bMBD9FYGnFiBQUZtj3xokKBAgpyKXNgVB07Q9iEwK
+        XAo4hv69QymRqUS3+mLN48y8Nwt5IUJKE7TnsCMbwnJW5/VN3ZT5iuUFWxE6
+        OTgvfHBkwyjZilZoqcgmx+/gQCvnuAR/xhS3yragMe56EPPbM5dmhyHk7j49
+        1OIUwVs4ZI/worLvrYXD0WdPP7IvR7H3QR/cVjl5tM8hz1WlX/zXND6qGhJ8
+        onXeKuX/L3fMUGCKh5H8oKzeGbtXNvuloFVZw1Itr9DFHhZFvkZYik5soQUP
+        Crv2u6ANZTVljLLmD54Ga5WWsWNPP+/QfSegPXPXKb3jLZwAleMs8EfJMBoh
+        PV8aDzjeKeuMFu0wj7eGYkZtPOxBCg9Gc6e8B+wl2VxInbNVidNtosGQYvhH
+        vp5GE79SE+sfTUrws8lHp3IRreah9cxkU6YxxUg/0a7nznNRLBVVJJKvohCd
+        nGboQPsuHb0WpCM6SZ/FThVc0XKRHdEFdkRn7GgvsMcxJ8U3n8y0+PUi/c0i
+        Gmc762PauTiEtJZoVx/8PyiLCznbDrRnQ0V7qq/vMaOHk3o1Wg3PS7VKgLc9
+        vQ/WdOr523R/pwiz3+PS8qMJ1vHgJdkUlASHu4636UJCzDhtMiV4CU7gHO56
+        PGe0oCWtaE1XeNmsafGNiKvdo/VXeP7+mJX9P87SI/gCBQAA
     http_version: 
-  recorded_at: Tue, 21 Aug 2012 14:52:25 GMT
-recorded_with: VCR 2.2.4
+  recorded_at: Thu, 12 Sep 2013 09:22:18 GMT
+recorded_with: VCR 2.3.0

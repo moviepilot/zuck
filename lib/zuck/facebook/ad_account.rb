@@ -19,8 +19,6 @@ module Zuck
                :daily_spend_limit,
                :id,
                :is_personal,
-               :moo_default_bid,
-               :moo_default_conversion_bid,
                :name,
                :notification_settings,
                :timezone_id,
