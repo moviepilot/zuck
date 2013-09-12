@@ -2,78 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217?access_token=CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD&fields=account_id,account_status,balance,business_city,business_country_code,business_name,business_state,business_street,business_street2,business_zip,capabilities,currency,daily_spend_limit,id,is_personal,name,notification_settings,timezone_id,timezone_name,timezone_offset_hours_utc,users,vat_status
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.7
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-  response:
-    status:
-      code: 200
-      message: !binary |-
-        T0s=
-    headers:
-      !binary "QWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2lu":
-      - !binary |-
-        Kg==
-      !binary "Q2FjaGUtQ29udHJvbA==":
-      - !binary |-
-        cHJpdmF0ZSwgbm8tY2FjaGUsIG5vLXN0b3JlLCBtdXN0LXJldmFsaWRhdGU=
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD1VVEYtOA==
-      !binary "RXRhZw==":
-      - !binary |-
-        IjM0ZDE1N2E2MjdkMTYwZWU5ZWNiOGIxODViMjYxMzVlNzFmNjY5MDIi
-      !binary "RXhwaXJlcw==":
-      - !binary |-
-        U2F0LCAwMSBKYW4gMjAwMCAwMDowMDowMCBHTVQ=
-      !binary "UHJhZ21h":
-      - !binary |-
-        bm8tY2FjaGU=
-      !binary "WC1GYi1SZXY=":
-      - !binary |-
-        OTM0Njc3
-      !binary "Q29udGVudC1FbmNvZGluZw==":
-      - !binary |-
-        Z3ppcA==
-      !binary "WC1GYi1EZWJ1Zw==":
-      - !binary |-
-        VHNjSHBmUU9XSHhsTHpLVGZlZ3RmNmoxQmpjSTZFR0sxeUVIaWNCeXBraz0=
-      !binary "RGF0ZQ==":
-      - !binary |-
-        VGh1LCAxMiBTZXAgMjAxMyAxMDo0MTo1NyBHTVQ=
-      !binary "Q29ubmVjdGlvbg==":
-      - !binary |-
-        a2VlcC1hbGl2ZQ==
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        NTMx
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA6VUyW7bMBD9FYGnFiBQUZtj3xokKBAgpyKXNgVB07Q9iEwK
-        XAo4hv69QymRqUS3+mLN48y8Nwt5IUJKE7TnsCMbwnJW5/VN3ZT5iuUFWxE6
-        OTgvfHBkwyjZilZoqcgmx+/gQCvnuAR/xhS3yragMe56EPPbM5dmhyHk7j49
-        1OIUwVs4ZI/worLvrYXD0WdPP7IvR7H3QR/cVjl5tM8hz1WlX/zXND6qGhJ8
-        onXeKuX/L3fMUGCKh5H8oKzeGbtXNvuloFVZw1Itr9DFHhZFvkZYik5soQUP
-        Crv2u6ANZTVljLLmD54Ga5WWsWNPP+/QfSegPXPXKb3jLZwAleMs8EfJMBoh
-        PV8aDzjeKeuMFu0wj7eGYkZtPOxBCg9Gc6e8B+wl2VxInbNVidNtosGQYvhH
-        vp5GE79SE+sfTUrws8lHp3IRreah9cxkU6YxxUg/0a7nznNRLBVVJJKvohCd
-        nGboQPsuHb0WpCM6SZ/FThVc0XKRHdEFdkRn7GgvsMcxJ8U3n8y0+PUi/c0i
-        Gmc762PauTiEtJZoVx/8PyiLCznbDrRnQ0V7qq/vMaOHk3o1Wg3PS7VKgLc9
-        vQ/WdOr523R/pwiz3+PS8qMJ1vHgJdkUlASHu4636UJCzDhtMiV4CU7gHO56
-        PGe0oCWtaE1XeNmsafGNiKvdo/VXeP7+mJX9P87SI/gCBQAA
-    http_version: 
-  recorded_at: Thu, 12 Sep 2013 10:41:57 GMT
-- request:
-    method: get
     uri: https://graph.facebook.com/act_10150585630710217?access_token=CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD&fields=account_groups,account_id,account_status,age,agency_client_declaration,amount_spent,balance,business_city,business_country_code,business_name,business_state,business_street2,business_street,business_zip,capabilities,currency,daily_spend_limit,id,is_personal,name,spend_cap,timezone_id,timezone_name,timezone_offset_hours_utc,tos_accepted,users,vat_status
     body:
       encoding: US-ASCII
@@ -97,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Etag:
-      - ! '"72cdb2b85f856a6531322875c37841e7dc2d056a"'
+      - ! '"aef2b53cbdfcffbefb622b8fdd9ba1683fec097a"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -105,18 +33,18 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - JztgOYQG0tQkcXUjSIKHQbHQ/RnH+Xuwje+HmVsFuKE=
+      - 9rRRiaZ2JBiYr6jGjTths2nFC92XrTLqP6PmlzpENjk=
       Date:
-      - Thu, 12 Sep 2013 11:47:32 GMT
+      - Thu, 12 Sep 2013 11:50:00 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '697'
     body:
       encoding: US-ASCII
-      string: ! '{"account_id":"10150585630710217","account_status":1,"age":590.83310185185,"amount_spent":4093,"balance":0,"business_city":"Berlin","business_country_code":"DE","business_name":"Big
+      string: ! '{"account_id":"10150585630710217","account_status":1,"age":590.83481481481,"amount_spent":4093,"balance":0,"business_city":"Berlin","business_country_code":"DE","business_name":"Big
         Mike Alright UG (haftungsbeschr\u00e4nkt)","business_state":"Berlin","business_street2":"J\u00e4gerndorfer
         Zeile 61","business_street":"Big Mike Alright UG (haftungsbeschr\u00e4nkt)","business_zip":"12209","capabilities":[2,6,15,11,16],"currency":"USD","daily_spend_limit":150000,"id":"act_10150585630710217","is_personal":0,"name":"","spend_cap":5000,"timezone_id":47,"timezone_name":"Europe\/Berlin","timezone_offset_hours_utc":2,"users":[{"uid":501730216,"permissions":[1,2,3,4,5,7],"role":1001}],"vat_status":3}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 11:47:32 GMT
+  recorded_at: Thu, 12 Sep 2013 11:50:01 GMT
 recorded_with: VCR 2.3.0

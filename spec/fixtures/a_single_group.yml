@@ -33,9 +33,9 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - CQo5GEUQwDFBpXEmu/SGU23+i2c9p3BxdUfhKuonHeY=
+      - S67hN1wGKEMrDDIgxmCB0B5UFK1Hc+wsz/Omx4pPZG4=
       Date:
-      - Thu, 12 Sep 2013 10:41:58 GMT
+      - Thu, 12 Sep 2013 11:50:01 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -44,5 +44,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"error":{"message":"(#100) Unknown fields: ad_status,adgroup_status,bid_info,bid_type,conversion_specs,creative_ids,max_bid,targeting,adgroup_id.","type":"OAuthException","code":100}}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 10:41:58 GMT
+  recorded_at: Thu, 12 Sep 2013 11:50:01 GMT
 recorded_with: VCR 2.3.0

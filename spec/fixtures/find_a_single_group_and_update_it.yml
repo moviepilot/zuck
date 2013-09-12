@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Etag:
-      - ! '"7752c1bf5ecd749d035162eef82bd6b8e9c9ae2c"'
+      - ! '"4e82c4c5f8dcdd65afe83b2391d027703c9123f9"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -33,9 +33,9 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - yi4j76FjE77KSvhYfQrcT6oPUI0tVtQkONLLLKy6Hbk=
+      - TwKsFYNCr76rkNGkKI7bGtppGq++uNHryPSn7KyOSXk=
       Date:
-      - Thu, 12 Sep 2013 10:41:58 GMT
+      - Thu, 12 Sep 2013 11:50:01 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -43,9 +43,9 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"account_id":"10150585630710217","ad_status":3,"adgroup_status":3,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"created_time":"2013-09-12T12:20:54+0200","creative_ids":[6010888561951],"id":"6010889169151","max_bid":1,"name":"My
-        new name","targeting":{"countries":["US"]},"updated_time":"2013-09-12T12:40:39+0200","adgroup_id":6010889169151}'
+        new name","targeting":{"countries":["US"]},"updated_time":"2013-09-12T12:42:00+0200","adgroup_id":6010889169151}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 10:41:59 GMT
+  recorded_at: Thu, 12 Sep 2013 11:50:01 GMT
 - request:
     method: post
     uri: https://graph.facebook.com/6010889169151
@@ -63,7 +63,7 @@ http_interactions:
         form-data; name=\"max_bid\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"name\"\r\n\r\nMy old name\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"targeting%5Bcountries%5D%5B%5D\"\r\n\r\nUS\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"updated_time\"\r\n\r\n2013-09-12T12:40:39+0200\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"updated_time\"\r\n\r\n2013-09-12T12:42:00+0200\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"adgroup_id\"\r\n\r\n6010889169151\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"redownload\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"access_token\"\r\n\r\nCAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD\r\n-------------RubyMultipartPost--\r\n\r\n"
@@ -94,9 +94,9 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - iXqdu6ZMeDqLP/zKhQcbEJDs8jas2AxMTPK8N08/Gkw=
+      - Vc/kivs9TaoSlks24U/a8sO9PggLmRjsy0UBFRJgpE0=
       Date:
-      - Thu, 12 Sep 2013 10:41:59 GMT
+      - Thu, 12 Sep 2013 11:50:02 GMT
       Transfer-Encoding:
       - chunked
       Connection:
@@ -104,10 +104,10 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"result":true,"data":{"adgroups":{"6010889169151":{"id":"6010889169151","account_id":"10150585630710217","adgroup_status":3,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"creative_ids":[6010888561951],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"My
-        old name","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":1378982519,"created_time":1378981254,"ad_id":6010889169151,"adgroup_id":6010889169151,"max_bid":1,"tracking_pixel_ids":[]}},"creatives":{"6010888561951":{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
-        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":1}}}}'
+        old name","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":1378986602,"created_time":1378981254,"ad_id":6010889169151,"adgroup_id":6010889169151,"max_bid":1,"tracking_pixel_ids":[]}},"creatives":{"6010888561951":{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
+        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":2}}}}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 10:41:59 GMT
+  recorded_at: Thu, 12 Sep 2013 11:50:02 GMT
 - request:
     method: post
     uri: https://graph.facebook.com/6010889169151
@@ -129,7 +129,7 @@ http_interactions:
         form-data; name=\"locations%5B%5D\"\r\n\r\n3\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"name\"\r\n\r\nMy new name\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"targeting%5Bcountries%5D%5B%5D\"\r\n\r\nUS\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"updated_time\"\r\n\r\n1378982519\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"updated_time\"\r\n\r\n1378986602\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"created_time\"\r\n\r\n1378981254\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"ad_id\"\r\n\r\n6010889169151\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"adgroup_id\"\r\n\r\n6010889169151\r\n-------------RubyMultipartPost\r\nContent-Disposition:
@@ -163,9 +163,9 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - 0rrQu2dLsM96y4aH/j3c6Fjs2etUEGT+krDnGYIuwDU=
+      - B9vnnqh814OmH3Lu4C1B0wiyu3luI4zoeWeIO7OZ4MY=
       Date:
-      - Thu, 12 Sep 2013 10:42:00 GMT
+      - Thu, 12 Sep 2013 11:50:02 GMT
       Transfer-Encoding:
       - chunked
       Connection:
@@ -173,10 +173,10 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"result":true,"data":{"adgroups":{"6010889169151":{"id":"6010889169151","account_id":"10150585630710217","adgroup_status":3,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"creative_ids":[6010888561951],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"My
-        new name","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":1378982520,"created_time":1378981254,"ad_id":6010889169151,"adgroup_id":6010889169151,"max_bid":1,"tracking_pixel_ids":[]}},"creatives":{"6010888561951":{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
-        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":1}}}}'
+        new name","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":1378986602,"created_time":1378981254,"ad_id":6010889169151,"adgroup_id":6010889169151,"max_bid":1,"tracking_pixel_ids":[]}},"creatives":{"6010888561951":{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
+        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":2}}}}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 10:42:00 GMT
+  recorded_at: Thu, 12 Sep 2013 11:50:03 GMT
 - request:
     method: get
     uri: https://graph.facebook.com/6010889169151?access_token=CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD&fields=account_id,ad_status,adgroup_status,bid_info,bid_type,campaign_id,conversion_specs,created_time,creative_ids,id,max_bid,name,targeting,updated_time,adgroup_id
@@ -202,7 +202,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Etag:
-      - ! '"4e82c4c5f8dcdd65afe83b2391d027703c9123f9"'
+      - ! '"3aa7fd3edd4f5ec3b3d21b22a6c89711d83e416a"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -210,9 +210,9 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - E1+vgpHUcgLcMJ34l5ygPYKCQn0/xd7mXzRlIdRIL54=
+      - AB5uqEs8oV/YBx99rc0JBhdM7rEYs8tlxqD3nodxxfY=
       Date:
-      - Thu, 12 Sep 2013 10:42:01 GMT
+      - Thu, 12 Sep 2013 11:50:03 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -220,7 +220,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"account_id":"10150585630710217","ad_status":3,"adgroup_status":3,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"created_time":"2013-09-12T12:20:54+0200","creative_ids":[6010888561951],"id":"6010889169151","max_bid":1,"name":"My
-        new name","targeting":{"countries":["US"]},"updated_time":"2013-09-12T12:42:00+0200","adgroup_id":6010889169151}'
+        new name","targeting":{"countries":["US"]},"updated_time":"2013-09-12T13:50:02+0200","adgroup_id":6010889169151}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 10:42:01 GMT
+  recorded_at: Thu, 12 Sep 2013 11:50:03 GMT
 recorded_with: VCR 2.3.0
