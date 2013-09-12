@@ -33,9 +33,9 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - Z8BdyMxi/K8QCFcArFQVrz03L9Wu578cnWFNBzFR6aQ=
+      - jzNaDT9tVaQVVRR8IKSa0FhL3Vf1mpvm3EiA6+pUYsg=
       Date:
-      - Thu, 12 Sep 2013 12:05:15 GMT
+      - Thu, 12 Sep 2013 12:10:09 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -44,5 +44,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"data":[]}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 12:05:15 GMT
+  recorded_at: Thu, 12 Sep 2013 12:10:09 GMT
 recorded_with: VCR 2.3.0

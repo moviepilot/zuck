@@ -50,6 +50,9 @@ module Zuck
     # Facebook omits the "ad" prefix sometimes, so we check 
     # for both.
     def validate_data(data)
+      # AdCampaigns won't have the 'campaign_id' anymore as of Oct 13
+      return if is_a?(Zuck::AdCampaign)
+
       singular_list_path = self.class.list_path.to_s.singularize
 
       # This is a special case for ad accounts (they have weird ids

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6005950787751?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&fields=account_id,campaign_id,campaign_status,created_time,daily_imps,end_time,id,lifetime_budget,name,start_time,updated_time
+    uri: https://graph.facebook.com/6005950787751?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&fields=account_id,campaign_status,created_time,daily_imps,end_time,id,lifetime_budget,name,start_time,updated_time
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Etag:
-      - ! '"ed8d5a843d61215ab13e42837b35ddbee4155ddb"'
+      - ! '"e86bfdbd29a6618779f20e958e1dfe705bb806de"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -33,16 +33,16 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - kPzIO1Au/lXj3663sEYunFfzEb7BRe9rRwy4utUUhHI=
+      - omWcGsB86zuPsrhulzRulFUovSSySNd7nEY9ZS491m0=
       Date:
-      - Thu, 12 Sep 2013 12:05:21 GMT
+      - Thu, 12 Sep 2013 12:10:16 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '258'
+      - '230'
     body:
       encoding: US-ASCII
-      string: ! '{"account_id":"10150585630710217","campaign_id":6005950787751,"campaign_status":3,"created_time":"2012-08-21T16:04:13+0200","daily_imps":0,"id":"6005950787751","name":"bloody","start_time":"2012-08-21T16:04:13+0200","updated_time":"2013-03-25T12:40:29+0100"}'
+      string: ! '{"account_id":"10150585630710217","campaign_status":3,"created_time":"2012-08-21T16:04:13+0200","daily_imps":0,"id":"6005950787751","name":"bloody","start_time":"2012-08-21T16:04:13+0200","updated_time":"2013-03-25T12:40:29+0100"}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 12:05:21 GMT
+  recorded_at: Thu, 12 Sep 2013 12:10:16 GMT
 recorded_with: VCR 2.3.0
