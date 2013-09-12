@@ -33,9 +33,9 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - MBGspKdgi4MofDKnaRkUlai6vlW5EniRHv1sTVi0ftI=
+      - EMkma5AVfp17cYzoavOVQXmuVbL15If4/tXmFADlVHw=
       Date:
-      - Thu, 12 Sep 2013 12:10:08 GMT
+      - Thu, 12 Sep 2013 13:21:33 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -49,5 +49,5 @@ http_interactions:
         Pictures","description":"Audience: 9,200,000","id":6004710425192},{"name":"#Walt
         Disney Pictures","description":"Audience: 9,200,000","id":6003050377616}]}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 12:10:08 GMT
+  recorded_at: Thu, 12 Sep 2013 13:21:33 GMT
 recorded_with: VCR 2.3.0

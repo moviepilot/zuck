@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Etag:
-      - ! '"df885422e7a13a2a3d75b639fa017241bb8f57e0"'
+      - ! '"059c02f2d58116e7271e2885bc8551cf1b65f739"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -33,9 +33,9 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - opynZhmejJlCVA179jxmnGjmjDq9YaleKBt523O15+Y=
+      - WDxMSDUs/mE5bYf2TYbE+FrTVQ6Ff/EM8TOVcqc9SLQ=
       Date:
-      - Thu, 12 Sep 2013 12:10:15 GMT
+      - Thu, 12 Sep 2013 13:21:39 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -43,7 +43,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"data":[{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
-        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":6}],"paging":{"next":"https:\/\/graph.facebook.com\/6010889169151\/adcreatives?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&limit=500&offset=500&__after_id=6010888561951"},"count":1,"limit":500}'
+        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":9}],"paging":{"next":"https:\/\/graph.facebook.com\/6010889169151\/adcreatives?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&limit=500&offset=500&__after_id=6010888561951"},"count":1,"limit":500}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 12:10:15 GMT
+  recorded_at: Thu, 12 Sep 2013 13:21:39 GMT
 recorded_with: VCR 2.3.0

@@ -31,18 +31,18 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - d8zfbwA4b3kJkFWZ4Nwj5ES/HfFcghmTeh5L6VtZq24=
+      - 40pq1sYZfSG3uVJTkgqTxLh8ul6oVyjcwRASFefh3mY=
       Date:
-      - Thu, 12 Sep 2013 12:10:24 GMT
+      - Thu, 12 Sep 2013 13:21:42 GMT
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6010890262551","data":{"adgroups":{"6010890262551":{"id":"6010890262551","account_id":"10150585630710217","adgroup_status":4,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"creative_ids":[6010888561951],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"Rap
-        like me","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":1378987824,"created_time":1378987824,"ad_id":6010890262551,"adgroup_id":6010890262551,"max_bid":1,"tracking_pixel_ids":[]}},"creatives":{"6010888561951":{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
-        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":7}}}}'
+      string: ! '{"id":"6010891176751","data":{"adgroups":{"6010891176751":{"id":"6010891176751","account_id":"10150585630710217","adgroup_status":4,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"creative_ids":[6010888561951],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"Rap
+        like me","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":1378992102,"created_time":1378992102,"ad_id":6010891176751,"adgroup_id":6010891176751,"max_bid":1,"tracking_pixel_ids":[]}},"creatives":{"6010888561951":{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
+        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":11}}}}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 12:10:24 GMT
+  recorded_at: Thu, 12 Sep 2013 13:21:42 GMT
 recorded_with: VCR 2.3.0

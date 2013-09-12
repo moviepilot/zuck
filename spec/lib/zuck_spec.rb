@@ -44,13 +44,13 @@ describe Zuck::FbObject do
 
       it "a list of ad campaigns" do
         VCR.use_cassette('list_of_ad_campaigns') do
-          account.ad_campaigns.should have(5).items
+          account.ad_campaigns.should have(8).items
         end
       end
 
       it "a list of ad groups" do
         VCR.use_cassette('list_of_ad_groups') do
-          campaign.ad_groups.should have(6).item
+          campaign.ad_groups.should have(9).item
         end
       end
 
@@ -140,8 +140,7 @@ describe Zuck::FbObject do
                creative: '{"type":25,"action_spec":{"action.type":"like", "post":10150420410887685}}'}
           group = campaign.create_ad_group(o)
           group.name.should == "Rap like me"
-          # Seems like when writing you use enums (strings) for bid_type,
-          # but fb will still return the magic ints
+          # Until Oct 2013 Facebook will return the magic ints, and then the enums
           group.bid_type.should == 1
         end
       end
