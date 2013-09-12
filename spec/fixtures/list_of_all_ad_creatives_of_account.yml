@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217/adcreatives?access_token=CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD&fields=
+    uri: https://graph.facebook.com/act_10150585630710217/adcreatives?access_token=CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD&fields=
     body:
       encoding: US-ASCII
       string: ''
@@ -45,10 +45,10 @@ http_interactions:
         Z3ppcA==
       !binary "WC1GYi1EZWJ1Zw==":
       - !binary |-
-        NjVzL3ZtKytkU1JEVmkvWHBDeHBYeWVUSWVVU2lGM1ZvaE9oMWkrNUQvZz0=
+        ZjVGY0UxT1E4SVMxSW1ZTk11aW45b3VWRVdzSyt0VWNsUjlZYTFNeE5JUT0=
       !binary "RGF0ZQ==":
       - !binary |-
-        VGh1LCAxMiBTZXAgMjAxMyAwOToyMjoxOCBHTVQ=
+        VGh1LCAxMiBTZXAgMjAxMyAxMDo0MTo1NSBHTVQ=
       !binary "Q29ubmVjdGlvbg==":
       - !binary |-
         a2VlcC1hbGl2ZQ==
@@ -89,5 +89,5 @@ http_interactions:
         V9WRkXrQHPPHX3i4WIKbMrhPguPlpGAZ9HAf7kn5oT1UPjySx8v2CF8MT6qL
         AptN4EqtHv980fZkGBMvbqb1+NPT8qqKPzaqbjYK4DAKjPv0FxNW9goIFAAA
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 09:22:18 GMT
+  recorded_at: Thu, 12 Sep 2013 10:41:55 GMT
 recorded_with: VCR 2.3.0

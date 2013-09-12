@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/me/adaccounts?access_token=CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD&fields=
+    uri: https://graph.facebook.com/me/adaccounts?access_token=CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD&fields=
     body:
       encoding: US-ASCII
       string: ''
@@ -30,7 +30,7 @@ http_interactions:
         YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD1VVEYtOA==
       !binary "RXRhZw==":
       - !binary |-
-        IjcyMjA1YzhkNmNjMzUwNDI1MzZiMWJiNDM0MjNiZjk1NjBmMjg2OGIi
+        ImEyMmRhZWE5YjdiYmY5YzdkZDYyMDUyYmY3MDgzZGYxOGZmMmMwOTci
       !binary "RXhwaXJlcw==":
       - !binary |-
         U2F0LCAwMSBKYW4gMjAwMCAwMDowMDowMCBHTVQ=
@@ -45,34 +45,34 @@ http_interactions:
         Z3ppcA==
       !binary "WC1GYi1EZWJ1Zw==":
       - !binary |-
-        TmtWTEVyTGVaWm1MMmgwbmtnLy85WlZjblFLVFJ6U2JPUnZtcHNsQVhMYz0=
+        MUFiUnV1dEl0YXJuamhmRDJLaXIxTVkzTkg5YlkwelY0QU9ucmgwQmJnbz0=
       !binary "RGF0ZQ==":
       - !binary |-
-        VGh1LCAxMiBTZXAgMjAxMyAwOToyMjoxNiBHTVQ=
+        VGh1LCAxMiBTZXAgMjAxMyAxMDo0MTo1NCBHTVQ=
       !binary "Q29ubmVjdGlvbg==":
       - !binary |-
         a2VlcC1hbGl2ZQ==
       !binary "Q29udGVudC1MZW5ndGg=":
       - !binary |-
-        NjY2
+        Njcw
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA6VUUU/bMBD+K5WfNsna4qRJaSUeQEWTJoE0TbwMkOUmTuqR
-        2JXtwAriv+9zSkMC2dPyktz57r7v7j7nmRTCC7K6eSYiz02rPVcFWREWsTRK
-        T9IsiRYsitmCUNIdiNzzqUMtGoljhB3rOC9868iKUZK31kqd7xFw/XONGK8a
-        +WS07MDmi4Hjtc5Fa81O3n49l7ZWephhytJJz7emtY63PierGJgVwNNl9GWR
-        xMcHsGInNqpWXknwuIlpRllKGaMsu0M7ju+kdUaLmqwiikGoes/dTuqC16pR
-        HtTTCA8lm9YpLZ3jr+zOVTW7VPdydlZbVW397Prb7NNWlL7VldtIl2/tbRtF
-        cq7v/WeQ7/Odt1KiMPnPCjFKfD9AVNLqwthS2tkvqWo5y9gQMVc+jL2f44CK
-        8GFjH0+e1C4oII6j5ahSUIfd89wUIW99gcMH4flxzwklh+Fh7FjGYXCiFjpH
-        OL5F08krxGAC82iJhMYYXshStLVHXf2AfSij+SbIgnUV/h3B5R/sD0LSPmwQ
-        gJRsheONqixaK8J2G+VCQWy/FLWTlLQOEJ3c24CRRmyRQN4ZJaPoG0ZjmtA5
-        TekCUrGmRg8gxF5gaeNVqXLhA1Vo0StsnayeSV8tGIF+90biCw0mvoYmdngw
-        KcFnFh2CkknvfJyajkzWVzqUyMbBy3HwmBQbkooHlN9IwdsHjbwd7JE6oiao
-        w9tTH+X2Hbx5k0l0eCfQ4R2hw55ADxocNJ99MIfNLyfhTya9YbejOQ4nF5Yw
-        7CXY83fx75iF/8xIHbBHS4Xd9/eCByrciQq6C+3h7+pMUDX+4aWXFpfz6vfZ
-        4+XTxf5qffZ4tb5mlz9OT8NdlqWx4fJOnqPuX0k2UD4PBgAA
+        H4sIAAAAAAAAA6VUTU/cMBD9KyufWslq43zursQBtKhSJZCqiksBRd7Eybok
+        9sp2oAviv/c5CyGB9NRckhnPzHsz85wnUnLHyfr6ifCi0J1yuSzJmrCAJUGy
+        TNIoyFgQsoxQ0h/wwuVzh4q3AscIe61jHXedJWtGSdEZI1RxQMDVzw1inGzF
+        o1aiB4uzkeOlznln9F7cfD0TppFqnKGrygqX73RnbN65gqxDYNYAT1bBl2yZ
+        JWHE4iVLAMv3fCsb6aQAj+uQphRuxihLb9GOzffCWK14Q9YBxSBkc8jtXqgy
+        b2QrHagnAR5Ktp2VSlibv7A7k/XiQt6JxWljZL1zi6tvi087XrlO1XYrbLEz
+        N10QiFjduc8gP+RbZ4RAYfKfFUKU+H6EqIVRpTaVMItfQjZikbIxYiGdH/sw
+        xxEV7vzGPp48yr1XQBgGq0klrw5zyAtd+rzNOQ7vuctf9xxRchwexo5lHAfH
+        G64KhOObt728fAwmEAcrJLRa56WoeNc41FX32IfUKt96WbC+wr8jcvEH+4OQ
+        lPMbBCAlO27zVtYGrZV+u620viC2X/HGCko6C4he7p3HSAKWRZB3Sskk+prR
+        kEY0pgnNIBWjG/QAQuwZltJOVrLgzlOFFp3E1sn6iQzVvOHp928kPlNv4mts
+        YodHkxJ8psExKJr1xtPUZGKyodKxRDoNXk2Dp6TYmFQ4ovxGCt4haOLtYV+p
+        I2qGOrwD9Unu0MGbN5pFh3cGHd4JOuwZdK/BUfPpB3Pc/GoWfjnr9budzHE8
+        Ob+EcS/ejt/Fv2Pm/zMTdcCeLBX20N8zHqhwz2vozreHv6vVXtX4h1dOGFzO
+        y9+nDxeP54fLzenD5eaKXfw4OfF3WVTa+Ms7e466fwGXAWgBDwYAAA==
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 09:22:16 GMT
+  recorded_at: Thu, 12 Sep 2013 10:41:54 GMT
 recorded_with: VCR 2.3.0

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6005950787751?access_token=CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD&fields=account_id,campaign_id,campaign_status,created_time,daily_imps,end_time,id,lifetime_budget,name,start_time,updated_time
+    uri: https://graph.facebook.com/6005950787751?access_token=CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD&fields=account_id,campaign_id,campaign_status,created_time,daily_imps,end_time,id,lifetime_budget,name,start_time,updated_time
     body:
       encoding: US-ASCII
       string: ''
@@ -33,9 +33,9 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - B7QQcI36yDf0NFIQ9XWTr9oS132xdkcwsR33zcf2u5Y=
+      - evcbxxvzeOKuoDbxRK5uZ0UlsRKRxrsWb12aGEuBxrI=
       Date:
-      - Thu, 12 Sep 2013 09:22:18 GMT
+      - Thu, 12 Sep 2013 10:53:28 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -44,50 +44,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"account_id":"10150585630710217","campaign_id":6005950787751,"campaign_status":3,"created_time":"2012-08-21T16:04:13+0200","daily_imps":0,"id":"6005950787751","name":"bloody","start_time":"2012-08-21T16:04:13+0200","updated_time":"2013-03-25T12:40:29+0100"}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 09:22:18 GMT
-- request:
-    method: get
-    uri: https://graph.facebook.com/6005950787751?access_token=CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD&fields=account_id,ad_status,adgroup_status,bid_info,bid_type,campaign_id,conversion_specs,created_time,creative_ids,id,max_bid,name,targeting,updated_time
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.7
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - application/json; charset=UTF-8
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
-      Www-Authenticate:
-      - ! 'OAuth "Facebook Platform" "invalid_request" "(#100) Unknown fields: ad_status,adgroup_status,bid_info,bid_type,conversion_specs,creative_ids,max_bid,targeting."'
-      X-Fb-Rev:
-      - '934677'
-      X-Fb-Debug:
-      - llJjOIJhM2Qw1CSEHfcGwfm6dZcTck1CAJ2Fp//OM0A=
-      Date:
-      - Thu, 12 Sep 2013 09:22:19 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '173'
-    body:
-      encoding: US-ASCII
-      string: ! '{"error":{"message":"(#100) Unknown fields: ad_status,adgroup_status,bid_info,bid_type,conversion_specs,creative_ids,max_bid,targeting.","type":"OAuthException","code":100}}'
-    http_version: 
-  recorded_at: Thu, 12 Sep 2013 09:22:19 GMT
+  recorded_at: Thu, 12 Sep 2013 10:53:28 GMT
 recorded_with: VCR 2.3.0

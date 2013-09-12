@@ -8,9 +8,9 @@ describe Zuck::FbObject do
 
   let(:graph)   { Zuck.graph                                                  }
   let(:account) { Zuck::AdAccount.new(graph,  {id: "act_10150585630710217"})  }
-  let(:campaign){ Zuck::AdCampaign.new(graph, {id: "6010888547351"}, account) }
-  let(:group)   { Zuck::AdGroup.new(graph,    {id: "6010888572951"}, campaign)}
-  let(:creative){ Zuck::AdCreative.new(graph, {id: "6004501081751"}, group)   }
+  let(:campaign){ Zuck::AdCampaign.new(graph, {id: "6010889111951"}, account) }
+  let(:group)   { Zuck::AdGroup.new(graph,    {id: "6010889169151"}, campaign)}
+  let(:creative){ Zuck::AdCreative.new(graph, {id: "6010888561951"}, group)   }
 
 
   describe "read only objects" do
@@ -70,37 +70,29 @@ describe Zuck::FbObject do
 
       context "an id directly" do
 
-        it "with the correct type" do
+        it "campaign with the correct type" do
           VCR.use_cassette('a_single_campaign') do
             c = Zuck::AdCampaign.find(6005950787751, graph)
           end
         end
 
-        it "with the correct type" do
+        it "account with the correct type" do
           VCR.use_cassette('a_single_account') do
             c = Zuck::AdAccount.find('act_10150585630710217', graph)
           end
         end
 
         it "when expecting an ad group but the id belongs to a campaign" do
-          expected_error = <<-END_ERROR
-Invalid type.
-
-Expected data['id']="6005950787751" to be equal to one of these:
-  * data['account_id']="10150585630710217"
-  * data['group_id']=nil
-  * data['adgroup_id']=nil
-END_ERROR
-          VCR.use_cassette('a_single_campaign') do
+          VCR.use_cassette('a_single_group') do
             expect{
-              c = Zuck::AdGroup.find(6005950787751, graph)
-            }.to raise_error(expected_error)
+              c = Zuck::AdGroup.find(6010889111951, graph)
+            }.to raise_error(Koala::Facebook::ClientError)
           end
         end
 
         it "and saving it" do
-          VCR.use_cassette('find_a_single_campaign_and_update_it') do
-            group = Zuck::AdGroup.find(6005859287551, graph)
+          VCR.use_cassette('find_a_single_group_and_update_it') do
+            group = Zuck::AdGroup.find(6010889169151, graph)
             group.name = "My old name"
             group.save
             group.name.should == "My old name"

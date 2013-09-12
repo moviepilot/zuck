@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6010888547351/adgroups?access_token=CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD&fields=
+    uri: https://graph.facebook.com/6010889111951/adgroups?access_token=CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD&fields=
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Etag:
-      - ! '"fe1523292063e7d4aeea670098edef6fe4c189e9"'
+      - ! '"52dde6c503c699cadc5fb8d0b69a41db05c66dc7"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -33,17 +33,17 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - 2PTMtoQFUakNC3T+DcrW/nNsjL/xmyaK0CUjWtS5kuY=
+      - ripE267+baHSAEDHsUfJOfhkgDZ6DWtNTAvf82ERIVU=
       Date:
-      - Thu, 12 Sep 2013 09:22:17 GMT
+      - Thu, 12 Sep 2013 10:41:55 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '845'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"id":"6010888562351","account_id":"10150585630710217","adgroup_status":4,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010888547351,"conversion_specs":[],"creative_ids":[6010888561951],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"Rap
-        like me","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":"2013-09-12T11:19:47+0200","created_time":"2013-09-12T11:19:47+0200","ad_id":6010888562351,"adgroup_id":6010888562351,"max_bid":1,"tracking_pixel_ids":[],"ad_status":4,"start_time":null,"end_time":null}],"paging":{"cursors":{"after":"NjAxMDg4ODU2MjM1MQ==","before":"NjAxMDg4ODU2MjM1MQ=="}},"count":1,"limit":500,"offset":0}'
+      string: ! '{"data":[{"id":"6010889285151","account_id":"10150585630710217","adgroup_status":4,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"creative_ids":[6010888561951],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"Rap
+        like me","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":"2013-09-12T12:40:40+0200","created_time":"2013-09-12T12:40:40+0200","ad_id":6010889285151,"adgroup_id":6010889285151,"max_bid":1,"tracking_pixel_ids":[],"ad_status":4,"start_time":null,"end_time":null}],"paging":{"cursors":{"after":"NjAxMDg4OTI4NTE1MQ==","before":"NjAxMDg4OTI4NTE1MQ=="}},"count":1,"limit":500,"offset":0}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 09:22:17 GMT
+  recorded_at: Thu, 12 Sep 2013 10:41:55 GMT
 recorded_with: VCR 2.3.0

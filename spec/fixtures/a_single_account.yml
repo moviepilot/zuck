@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217?access_token=CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD&fields=account_id,account_status,balance,business_city,business_country_code,business_name,business_state,business_street,business_street2,business_zip,capabilities,currency,daily_spend_limit,id,is_personal,name,notification_settings,timezone_id,timezone_name,timezone_offset_hours_utc,users,vat_status
+    uri: https://graph.facebook.com/act_10150585630710217?access_token=CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD&fields=account_id,account_status,balance,business_city,business_country_code,business_name,business_state,business_street,business_street2,business_zip,capabilities,currency,daily_spend_limit,id,is_personal,name,notification_settings,timezone_id,timezone_name,timezone_offset_hours_utc,users,vat_status
     body:
       encoding: US-ASCII
       string: ''
@@ -45,10 +45,10 @@ http_interactions:
         Z3ppcA==
       !binary "WC1GYi1EZWJ1Zw==":
       - !binary |-
-        ZUJoVGZuRVBRZFhoeUYwM3IrNmpndnR4MjJPYjdna3N0NkV6SEhROGVRcz0=
+        VHNjSHBmUU9XSHhsTHpLVGZlZ3RmNmoxQmpjSTZFR0sxeUVIaWNCeXBraz0=
       !binary "RGF0ZQ==":
       - !binary |-
-        VGh1LCAxMiBTZXAgMjAxMyAwOToyMjoxOCBHTVQ=
+        VGh1LCAxMiBTZXAgMjAxMyAxMDo0MTo1NyBHTVQ=
       !binary "Q29ubmVjdGlvbg==":
       - !binary |-
         a2VlcC1hbGl2ZQ==
@@ -71,5 +71,52 @@ http_interactions:
         vQ/WdOr523R/pwiz3+PS8qMJ1vHgJdkUlASHu4636UJCzDhtMiV4CU7gHO56
         PGe0oCWtaE1XeNmsafGNiKvdo/VXeP7+mJX9P87SI/gCBQAA
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 09:22:18 GMT
+  recorded_at: Thu, 12 Sep 2013 10:41:57 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/act_10150585630710217?access_token=CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD&fields=account_groups,account_id,account_status,age,agency_client_declaration,amount_spent,balance,business_city,business_country_code,business_name,business_state,business_street2,business_street,business_zip,capabilities,currency,daily_spend_limit,id,is_personal,name,spend_cap,timezone_id,timezone_name,timezone_offset_hours_utc,tos_accepted,users,vat_status
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Etag:
+      - ! '"72cdb2b85f856a6531322875c37841e7dc2d056a"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      X-Fb-Rev:
+      - '934677'
+      X-Fb-Debug:
+      - JztgOYQG0tQkcXUjSIKHQbHQ/RnH+Xuwje+HmVsFuKE=
+      Date:
+      - Thu, 12 Sep 2013 11:47:32 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '697'
+    body:
+      encoding: US-ASCII
+      string: ! '{"account_id":"10150585630710217","account_status":1,"age":590.83310185185,"amount_spent":4093,"balance":0,"business_city":"Berlin","business_country_code":"DE","business_name":"Big
+        Mike Alright UG (haftungsbeschr\u00e4nkt)","business_state":"Berlin","business_street2":"J\u00e4gerndorfer
+        Zeile 61","business_street":"Big Mike Alright UG (haftungsbeschr\u00e4nkt)","business_zip":"12209","capabilities":[2,6,15,11,16],"currency":"USD","daily_spend_limit":150000,"id":"act_10150585630710217","is_personal":0,"name":"","spend_cap":5000,"timezone_id":47,"timezone_name":"Europe\/Berlin","timezone_offset_hours_utc":2,"users":[{"uid":501730216,"permissions":[1,2,3,4,5,7],"role":1001}],"vat_status":3}'
+    http_version: 
+  recorded_at: Thu, 12 Sep 2013 11:47:32 GMT
 recorded_with: VCR 2.3.0

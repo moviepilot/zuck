@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/6010889111951?access_token=CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD&fields=account_id,ad_status,adgroup_status,bid_info,bid_type,campaign_id,conversion_specs,created_time,creative_ids,id,max_bid,name,targeting,updated_time,adgroup_id
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - no-store
+      Content-Type:
+      - application/json; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      Www-Authenticate:
+      - ! 'OAuth "Facebook Platform" "invalid_request" "(#100) Unknown fields: ad_status,adgroup_status,bid_info,bid_type,conversion_specs,creative_ids,max_bid,targeting,adgroup_id."'
+      X-Fb-Rev:
+      - '934677'
+      X-Fb-Debug:
+      - CQo5GEUQwDFBpXEmu/SGU23+i2c9p3BxdUfhKuonHeY=
+      Date:
+      - Thu, 12 Sep 2013 10:41:58 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '184'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"(#100) Unknown fields: ad_status,adgroup_status,bid_info,bid_type,conversion_specs,creative_ids,max_bid,targeting,adgroup_id.","type":"OAuthException","code":100}}'
+    http_version: 
+  recorded_at: Thu, 12 Sep 2013 10:41:58 GMT
+recorded_with: VCR 2.3.0
