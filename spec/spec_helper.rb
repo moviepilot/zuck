@@ -44,7 +44,7 @@ def expect_id_and_return(id, ret_val)
 end
 
 def test_access_token
-  'CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD'
+  'CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD'
 end
 
 require File.expand_path("../../lib/zuck", __FILE__)

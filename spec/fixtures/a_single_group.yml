@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6010889111951?access_token=CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD&fields=account_id,ad_id,adgroup_id,adgroup_status,bid_type,campaign_id,conversion_specs,created_time,creative_ids,id,disapprove_reason_descriptions,last_updated_by_app_id,max_bid,name,targeting,tracking_specs,updated_time,view_tags
+    uri: https://graph.facebook.com/6010889111951?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&fields=account_id,ad_id,adgroup_id,adgroup_status,bid_type,campaign_id,conversion_specs,created_time,creative_ids,id,disapprove_reason_descriptions,last_updated_by_app_id,max_bid,name,targeting,tracking_specs,updated_time,view_tags
     body:
       encoding: US-ASCII
       string: ''
@@ -33,9 +33,9 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - +f6c181oXLA55+zjYTOUs4qHy+0ZUenAdvYKYAHLocQ=
+      - NJ22l6gYyUymoFurfDn60pKuW6L+bNFSgNZ0V7sTbQc=
       Date:
-      - Thu, 12 Sep 2013 11:58:07 GMT
+      - Thu, 12 Sep 2013 12:05:22 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -44,5 +44,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"error":{"message":"(#100) Unknown fields: ad_id,adgroup_id,adgroup_status,bid_type,conversion_specs,creative_ids,disapprove_reason_descriptions,last_updated_by_app_id,max_bid,targeting,tracking_specs,view_tags.","type":"OAuthException","code":100}}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 11:58:07 GMT
+  recorded_at: Thu, 12 Sep 2013 12:05:22 GMT
 recorded_with: VCR 2.3.0

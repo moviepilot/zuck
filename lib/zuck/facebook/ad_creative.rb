@@ -7,21 +7,24 @@ module Zuck
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
     # actually returned.
-    known_keys :alt_view_tags,
+    known_keys :name,
+               :type,
+               :object_id,
                :body,
-               :count_current_adgroups,
-               :creative_id,
-               :id,
                :image_hash,
                :image_url,
-               :link_url,
-               :name,
-               :object_id,
-               :preview_url,
-               :run_status,
+               :id,
+               :creative_id,
                :title,
-               :type,
-               :view_tag
+               :run_status,
+               :link_url,
+               :url_tags,
+               :preview_url,
+               :related_fan_page,
+               :follow_redirect,
+               :auto_update,
+               :story_id,
+               :action_spec
 
     parent_object :ad_group
     list_path     :adcreatives

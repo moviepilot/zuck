@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22Eminem%22,%22Sting%22%5D,%22age_min%22:13,%22connections%22:%5B%5D,%22broad_age%22:false%7D
+    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22Eminem%22,%22Sting%22%5D,%22age_min%22:13,%22connections%22:%5B%5D,%22broad_age%22:false%7D
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Etag:
-      - ! '"4e5aa3eac0ffa1141fce1dc2760138f4802b2855"'
+      - ! '"c7ee4e24727032f2ecbee5161ea83c95c683de9d"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -33,16 +33,16 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - YB+RbLIORQXeADXG2xzcT80CLxzj6E2Co+EnCdCVhv4=
+      - lAD5q31K6qn9IEFUmGiuCCTEv2F2hhRnV+DcStvmfVI=
       Date:
-      - Thu, 12 Sep 2013 11:58:01 GMT
+      - Thu, 12 Sep 2013 12:05:18 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '562'
     body:
       encoding: US-ASCII
-      string: ! '{"users":17800000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":217,"cpa_median":386,"cpa_max":520,"cpc_min":40,"cpc_median":64,"cpc_max":85,"cpm_min":6,"cpm_median":21,"cpm_max":221}],"estimate_ready":true,"imp_estimates":[],"min_reach":null,"max_reach":null,"data":{"users":17800000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":217,"cpa_median":386,"cpa_max":520,"cpc_min":40,"cpc_median":64,"cpc_max":85,"cpm_min":6,"cpm_median":21,"cpm_max":221}],"estimate_ready":true,"imp_estimates":[],"min_reach":null,"max_reach":null}}'
+      string: ! '{"users":17800000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":216,"cpa_median":384,"cpa_max":520,"cpc_min":40,"cpc_median":65,"cpc_max":85,"cpm_min":6,"cpm_median":21,"cpm_max":216}],"estimate_ready":true,"imp_estimates":[],"min_reach":null,"max_reach":null,"data":{"users":17800000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":216,"cpa_median":384,"cpa_max":520,"cpc_min":40,"cpc_median":65,"cpc_max":85,"cpm_min":6,"cpm_median":21,"cpm_max":216}],"estimate_ready":true,"imp_estimates":[],"min_reach":null,"max_reach":null}}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 11:58:01 GMT
+  recorded_at: Thu, 12 Sep 2013 12:05:18 GMT
 recorded_with: VCR 2.3.0

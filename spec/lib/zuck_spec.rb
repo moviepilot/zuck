@@ -44,13 +44,13 @@ describe Zuck::FbObject do
 
       it "a list of ad campaigns" do
         VCR.use_cassette('list_of_ad_campaigns') do
-          account.ad_campaigns.should have(2).items
+          account.ad_campaigns.should have(3).items
         end
       end
 
       it "a list of ad groups" do
         VCR.use_cassette('list_of_ad_groups') do
-          campaign.ad_groups.should have(3).item
+          campaign.ad_groups.should have(4).item
         end
       end
 

@@ -5,7 +5,7 @@ http_interactions:
     uri: https://graph.facebook.com/act_10150585630710217/adgroups
     body:
       encoding: US-ASCII
-      string: bid_type=CPC&max_bid=1&name=Rap+like+me&targeting=%7B%22countries%22%3A%5B%22US%22%5D%7D&creative=%7B%22type%22%3A25%2C%22action_spec%22%3A%7B%22action.type%22%3A%22like%22%2C+%22post%22%3A10150420410887685%7D%7D&campaign_id=6010889111951&redownload=1&access_token=CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD
+      string: bid_type=CPC&max_bid=1&name=Rap+like+me&targeting=%7B%22countries%22%3A%5B%22US%22%5D%7D&creative=%7B%22type%22%3A25%2C%22action_spec%22%3A%7B%22action.type%22%3A%22like%22%2C+%22post%22%3A10150420410887685%7D%7D&campaign_id=6010889111951&redownload=1&access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD
     headers:
       User-Agent:
       - Faraday v0.8.7
@@ -31,18 +31,18 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - h5UY+JllCy2IwWEAdV0RhuIHUA6NHBuq4jVf47xjBUE=
+      - xBtBe4Sp609GECuAb3ae/qMIz/tMBFuizLB8e1+yFDA=
       Date:
-      - Thu, 12 Sep 2013 11:58:10 GMT
+      - Thu, 12 Sep 2013 12:05:26 GMT
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6010890080151","data":{"adgroups":{"6010890080151":{"id":"6010890080151","account_id":"10150585630710217","adgroup_status":4,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"creative_ids":[6010888561951],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"Rap
-        like me","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":1378987090,"created_time":1378987090,"ad_id":6010890080151,"adgroup_id":6010890080151,"max_bid":1,"tracking_pixel_ids":[]}},"creatives":{"6010888561951":{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
-        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":4}}}}'
+      string: ! '{"id":"6010890214151","data":{"adgroups":{"6010890214151":{"id":"6010890214151","account_id":"10150585630710217","adgroup_status":4,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"creative_ids":[6010888561951],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"Rap
+        like me","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":1378987526,"created_time":1378987526,"ad_id":6010890214151,"adgroup_id":6010890214151,"max_bid":1,"tracking_pixel_ids":[]}},"creatives":{"6010888561951":{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
+        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":6}}}}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 11:58:10 GMT
+  recorded_at: Thu, 12 Sep 2013 12:05:26 GMT
 recorded_with: VCR 2.3.0

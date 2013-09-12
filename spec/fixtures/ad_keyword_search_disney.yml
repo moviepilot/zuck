@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAIVQqWQ3rAE1O5XzoJtd8gVN2lxAzj4uluseUzC0yArPZBBIS93QM8u97oFL7dF2LDNfmGEcRk5vPN8O6NdqceZCqFFtZCi1Us7xLOAsClTksNC1owKOxJiy09aDWxspcoJbkwb3ZCqK1o9qtK5EK09bHZAdgPsFIh4ILyRuCgAm4Xgyc1OgZD&q=disney&type=adkeyword
+    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&q=disney&type=adkeyword
     body:
       encoding: US-ASCII
       string: ''
@@ -33,9 +33,9 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - dN5sLWs2hsrwyp7za4+8aQ4GTniVJB5ZHs4pMhS7XWM=
+      - IqhgU3iiKgAOFcHZyKEADWnp6GSU9zhj57NHr52Bk/U=
       Date:
-      - Thu, 12 Sep 2013 11:57:58 GMT
+      - Thu, 12 Sep 2013 12:05:14 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -49,5 +49,5 @@ http_interactions:
         Pictures","description":"Audience: 9,200,000","id":6004710425192},{"name":"#Walt
         Disney Pictures","description":"Audience: 9,200,000","id":6003050377616}]}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 11:57:58 GMT
+  recorded_at: Thu, 12 Sep 2013 12:05:14 GMT
 recorded_with: VCR 2.3.0
