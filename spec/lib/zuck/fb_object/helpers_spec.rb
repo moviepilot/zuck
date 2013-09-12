@@ -3,6 +3,7 @@ require 'spec_helper'
 class HTest
   extend  Zuck::FbObject::Helpers
   include Zuck::FbObject::Helpers
+  def self.known_keys; []; end
 end
 
 describe Zuck::FbObject::Helpers do
@@ -11,12 +12,12 @@ describe Zuck::FbObject::Helpers do
 
   context "get" do
     it "forwards to koala" do
-      graph_mock.should_receive(:get_object).with('/foo').and_return(true)
+      graph_mock.should_receive(:get_object).with('/foo', fields: '').and_return(true)
       HTest.send(:get, graph_mock, "/foo")
     end
 
     it "does not swallow exceptions" do
-      graph_mock.should_receive(:get_object).with('/foo').and_raise("broken")
+      graph_mock.should_receive(:get_object).with('/foo', fields: '').and_raise("broken")
       expect{
         HTest.send(:get, graph_mock, "/foo")
       }.to raise_error("broken")

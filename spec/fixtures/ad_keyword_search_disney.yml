@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAE7m0kztNbbASKHymRlXoBZCdZCtMsebNEgaR0yOmZCBfeTIXT8MnuV3ZCH5lBDQOcC4S9geswWZBuF707gJ42lV9DHgGILsRaiG2upipiHggl7UZAeDVgBSSsap9s9uv1ghZCxNsmH&q=disney&type=adkeyword
+    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&q=disney&type=adkeyword
     body:
       encoding: US-ASCII
       string: ''
@@ -25,29 +25,29 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Etag:
-      - ! '"167c644dd8fab56d0277dc91306a5636a7994715"'
+      - ! '"ddd1522d71e8cbd1a1e68ee5ff6cf1e5dbde04cb"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
       X-Fb-Rev:
-      - '880776'
+      - '934677'
       X-Fb-Debug:
-      - Fc7xjOmnC+MtzLHCEOi9yDh3oWYLK/7+pqNc61S25kg=
+      - EMkma5AVfp17cYzoavOVQXmuVbL15If4/tXmFADlVHw=
       Date:
-      - Fri, 19 Jul 2013 09:46:15 GMT
+      - Thu, 12 Sep 2013 13:21:33 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '589'
+      - '587'
     body:
       encoding: US-ASCII
       string: ! '{"data":[{"name":"Disney Channel","id":6003711659516},{"name":"Disneyland","id":6003361056187},{"name":"Disney","id":6003663755307},{"name":"#The
-        Walt Disney Company","description":"Audience: 72,500,000","id":6003270522085},{"name":"#Disneyland","description":"Audience:
-        24,100,000","id":6003274193708},{"name":"#Disney Channel","description":"Audience:
-        17,800,000","id":6003327130854},{"name":"#The Walt Disney Company#Walt Disney
-        Pictures","description":"Audience: 14,600,000","id":6004710425192},{"name":"#Walt
-        Disney Pictures","description":"Audience: 14,600,000","id":6003050377616}]}'
+        Walt Disney Company","description":"Audience: 78,100,000","id":6003270522085},{"name":"#Disneyland","description":"Audience:
+        26,200,000","id":6003274193708},{"name":"#Disney Channel","description":"Audience:
+        22,600,000","id":6003327130854},{"name":"#The Walt Disney Company#Walt Disney
+        Pictures","description":"Audience: 9,200,000","id":6004710425192},{"name":"#Walt
+        Disney Pictures","description":"Audience: 9,200,000","id":6003050377616}]}'
     http_version: 
-  recorded_at: Fri, 19 Jul 2013 09:46:19 GMT
+  recorded_at: Thu, 12 Sep 2013 13:21:33 GMT
 recorded_with: VCR 2.3.0

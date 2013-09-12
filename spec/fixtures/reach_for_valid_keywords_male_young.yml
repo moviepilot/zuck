@@ -2,17 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&keyword_list=Sting&type=adkeywordvalid
+    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22Sting%22%5D,%22age_min%22:13,%22age_max%22:24,%22genders%22:%5B2%5D,%22connections%22:%5B%5D,%22broad_age%22:false%7D
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
@@ -23,71 +23,26 @@ http_interactions:
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Content-Type:
-      - text/javascript; charset=UTF-8
+      - application/json; charset=UTF-8
       Etag:
-      - ! '"66bd8a85c55324c07c1c2afcb1eac4e2fd358bf5"'
+      - ! '"ed45c65e395f6b7bcfd3dcbb4451e915b2ab464d"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
       X-Fb-Rev:
-      - '698469'
+      - '934677'
       X-Fb-Debug:
-      - XuqZnN5WjRA/b3sTn4Nz0jyvTkw2S0OCP5x8OKrUO54=
+      - MFmGzAEJviAufFQtZWEOYbuCwzuNMsFYRc+LXv34UT8=
       Date:
-      - Wed, 19 Dec 2012 15:20:53 GMT
+      - Thu, 12 Sep 2013 13:21:38 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '59'
+      - '552'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"name":"Sting","valid":true,"id":6003164299249}]}'
+      string: ! '{"users":38000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":246,"cpa_median":424,"cpa_max":578,"cpc_min":37,"cpc_median":59,"cpc_max":76,"cpm_min":3,"cpm_median":8,"cpm_max":15}],"estimate_ready":true,"imp_estimates":[],"min_reach":null,"max_reach":null,"data":{"users":38000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":246,"cpa_median":424,"cpa_max":578,"cpc_min":37,"cpc_median":59,"cpc_max":76,"cpm_min":3,"cpm_median":8,"cpm_max":15}],"estimate_ready":true,"imp_estimates":[],"min_reach":null,"max_reach":null}}'
     http_version: 
-  recorded_at: Wed, 19 Dec 2012 15:20:53 GMT
-- request:
-    method: get
-    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22Sting%22%5D,%22age_min%22:13,%22age_max%22:24,%22genders%22:%5B2%5D,%22connections%22:%5B%5D,%22broad_age%22:false%7D
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Content-Type:
-      - text/javascript; charset=UTF-8
-      Etag:
-      - ! '"430ebe9f4489fdfc008a2c301d51e68d633c8978"'
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
-      X-Fb-Rev:
-      - '698469'
-      X-Fb-Debug:
-      - H+RabGZXmTXmsUVynJuDJRCthPTjpJLfPD7iwdJA3WA=
-      Date:
-      - Wed, 19 Dec 2012 15:20:55 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '314'
-    body:
-      encoding: US-ASCII
-      string: ! '{"users":39400,"bid_estimations":[{"location":3,"cpc_min":38,"cpc_median":58,"cpc_max":115,"cpm_min":1,"cpm_median":6,"cpm_max":383}],"imp_estimates":[],"data":{"users":39400,"bid_estimations":[{"location":3,"cpc_min":38,"cpc_median":58,"cpc_max":115,"cpm_min":1,"cpm_median":6,"cpm_max":383}],"imp_estimates":[]}}'
-    http_version: 
-  recorded_at: Wed, 19 Dec 2012 15:20:55 GMT
-recorded_with: VCR 2.2.4
+  recorded_at: Thu, 12 Sep 2013 13:21:38 GMT
+recorded_with: VCR 2.3.0

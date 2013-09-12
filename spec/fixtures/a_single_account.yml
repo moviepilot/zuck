@@ -2,74 +2,49 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217?access_token=AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD
+    uri: https://graph.facebook.com/act_10150585630710217?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&fields=account_groups,account_id,account_status,age,agency_client_declaration,amount_spent,balance,business_city,business_country_code,business_name,business_state,business_street2,business_street,business_zip,capabilities,currency,daily_spend_limit,id,is_personal,name,spend_cap,timezone_id,timezone_name,timezone_offset_hours_utc,tos_accepted,users,vat_status
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
-      message: !binary |-
-        T0s=
+      message: OK
     headers:
-      !binary "QWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2lu":
-      - !binary |-
-        Kg==
-      !binary "Q2FjaGUtQ29udHJvbA==":
-      - !binary |-
-        cHJpdmF0ZSwgbm8tY2FjaGUsIG5vLXN0b3JlLCBtdXN0LXJldmFsaWRhdGU=
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC9qYXZhc2NyaXB0OyBjaGFyc2V0PVVURi04
-      !binary "RXRhZw==":
-      - !binary |-
-        Ijc1NWUyMTBmYjE2N2NkOTQxNWI3ODIzZTZjOGM4YjYwYTQ1MzUwZTUi
-      !binary "RXhwaXJlcw==":
-      - !binary |-
-        U2F0LCAwMSBKYW4gMjAwMCAwMDowMDowMCBHTVQ=
-      !binary "UHJhZ21h":
-      - !binary |-
-        bm8tY2FjaGU=
-      !binary "WC1GYi1SZXY=":
-      - !binary |-
-        NjEyNTY1
-      !binary "Q29udGVudC1FbmNvZGluZw==":
-      - !binary |-
-        Z3ppcA==
-      !binary "WC1GYi1EZWJ1Zw==":
-      - !binary |-
-        L3l3UTJxVWc2L0toZVhhTnFXY21lVFFsSW0vVkFEV09tUFIvQVkzVWsxTT0=
-      !binary "RGF0ZQ==":
-      - !binary |-
-        VHVlLCAyMSBBdWcgMjAxMiAxNDo1MjoyNCBHTVQ=
-      !binary "Q29ubmVjdGlvbg==":
-      - !binary |-
-        a2VlcC1hbGl2ZQ==
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        NTA1
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Etag:
+      - ! '"3974cd2e1bd6adde467a920e740351a73e2d5889"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      X-Fb-Rev:
+      - '934677'
+      X-Fb-Debug:
+      - X2mEeMJUPl6v6oa677ct5KWrnQJIEqYykFRDw7P1OOE=
+      Date:
+      - Thu, 12 Sep 2013 13:21:40 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '697'
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA6VSTWvcMBD9K0anFgSV7LU361tDQqHQU8mlTRGyLO8OsSWj
-        j8Bm2f/e0W7i2MS3nOz39GbmzceJQEtqIlUQnPGSlTdlVbAtZznfEoq8stEE
-        cRGtCYwcND7NpD7IED2pOSUqOqeNOqLg4fcdagIM+sUafcm32c6I1zz30dlR
-        P3671a4HM4+wXed1EAcbnRcxKFLnlIAXo3beGtmTmlHSRA9Gey9e093CPvsF
-        Tzr73jvYH0L28CP7cpBdiGbvG+3VwT1GxvTGPIWvWG2K98FpHdD3JzPkmOLn
-        tcReO9Na12mX/dHQ66zi84oKQprT1PjMigxpxB9fXmBMW8lztltkShtzR6Fs
-        m+Lu7vHxWQbxtpiCklZCfxR+1KYVPQyAneYlYzjB6HGepP57IjHtqGR8W+At
-        VJTgoAfwHqxJ75zmtKAbWtLtP0qc7bEUZ4yfERkboAMlA2oFLi0ATpvUJzJl
-        SwDV7PLFwDNNEP/mEGd3hZTgb8WuomKV3SxDyyWslnC3gHzpgs9d5DOP7y6Q
-        nUQL9uL4zSuqVrwiO3ldxE6W39litTqyK9WRXVRHvFI97XjWfPUBzpvfrZa/
-        WWHPuBolR9lADwF0uo8c76CRvTQKDwPvarBWtLqTsQ94mOYZryxdR5OOLF3C
-        +T90T7SjiQQAAA==
+      encoding: US-ASCII
+      string: ! '{"account_id":"10150585630710217","account_status":1,"age":590.89847222222,"amount_spent":4093,"balance":0,"business_city":"Berlin","business_country_code":"DE","business_name":"Big
+        Mike Alright UG (haftungsbeschr\u00e4nkt)","business_state":"Berlin","business_street2":"J\u00e4gerndorfer
+        Zeile 61","business_street":"Big Mike Alright UG (haftungsbeschr\u00e4nkt)","business_zip":"12209","capabilities":[2,6,15,11,16],"currency":"USD","daily_spend_limit":150000,"id":"act_10150585630710217","is_personal":0,"name":"","spend_cap":5000,"timezone_id":47,"timezone_name":"Europe\/Berlin","timezone_offset_hours_utc":2,"users":[{"uid":501730216,"permissions":[1,2,3,4,5,7],"role":1001}],"vat_status":3}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2012 14:52:25 GMT
-recorded_with: VCR 2.2.4
+  recorded_at: Thu, 12 Sep 2013 13:21:40 GMT
+recorded_with: VCR 2.3.0

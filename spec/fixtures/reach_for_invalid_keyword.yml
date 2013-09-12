@@ -2,17 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&keyword_list=Eminem,invalidsssssssssssssss&type=adkeywordvalid
+    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&keyword_list=Eminem,invalidsssssssssssssss&type=adkeywordvalid
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
@@ -23,7 +23,7 @@ http_interactions:
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Content-Type:
-      - text/javascript; charset=UTF-8
+      - application/json; charset=UTF-8
       Etag:
       - ! '"1b6af91a08d48aeee5ffa0cf3437f38b61281b68"'
       Expires:
@@ -31,11 +31,11 @@ http_interactions:
       Pragma:
       - no-cache
       X-Fb-Rev:
-      - '698469'
+      - '934677'
       X-Fb-Debug:
-      - 7so4yUGhkG2hb0KiZDAFNlrgtEmcB0xQ9Xilxl/LfRw=
+      - J8DeY1E4Yqw7bJX0tlNMHLA1W2i+1busrhuPm8oG1vg=
       Date:
-      - Wed, 19 Dec 2012 14:36:48 GMT
+      - Thu, 12 Sep 2013 13:21:34 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -44,52 +44,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"data":[{"name":"Eminem","valid":true,"id":6003170652434},{"name":"invalidsssssssssssssss","valid":false}]}'
     http_version: 
-  recorded_at: Wed, 19 Dec 2012 14:36:48 GMT
-- request:
-    method: get
-    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22Eminem%22,%22invalidsssssssssssssss%22%5D,%22age_min%22:13,%22connections%22:%5B%5D%7D
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - no-store
-      Content-Type:
-      - text/javascript; charset=UTF-8
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
-      Www-Authenticate:
-      - ! 'OAuth "Facebook Platform" "invalid_token" "Error validating access token:
-        Session has expired at unix time 1355932800. The current unix time is 1355934833."'
-      X-Fb-Rev:
-      - '698469'
-      X-Fb-Debug:
-      - Kkjlojh5eu19FxaW5yu6N5A+5xmmbKyfKsCpa+y2eOc=
-      Date:
-      - Wed, 19 Dec 2012 16:33:53 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '191'
-    body:
-      encoding: US-ASCII
-      string: ! '{"error":{"message":"Error validating access token: Session has expired
-        at unix time 1355932800. The current unix time is 1355934833.","type":"OAuthException","code":190,"error_subcode":463}}'
-    http_version: 
-  recorded_at: Wed, 19 Dec 2012 16:33:53 GMT
-recorded_with: VCR 2.2.4
+  recorded_at: Thu, 12 Sep 2013 13:21:34 GMT
+recorded_with: VCR 2.3.0

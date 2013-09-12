@@ -5,14 +5,14 @@ http_interactions:
     uri: https://graph.facebook.com/act_10150585630710217/adgroups
     body:
       encoding: US-ASCII
-      string: bid_type=1&max_bid=1&name=Rap+like+me&targeting=%7B%22countries%22%3A%5B%22US%22%5D%7D&creative=%7B%22type%22%3A25%2C%22action_spec%22%3A%7B%22action.type%22%3A%22like%22%2C+%22post%22%3A10150420410887685%7D%7D&campaign_id=6005950787751&redownload=1&access_token=AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD
+      string: bid_type=CPC&max_bid=1&name=Rap+like+me&targeting=%7B%22countries%22%3A%5B%22US%22%5D%7D&creative=%7B%22type%22%3A25%2C%22action_spec%22%3A%7B%22action.type%22%3A%22like%22%2C+%22post%22%3A10150420410887685%7D%7D&campaign_id=6010889111951&redownload=1&access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Content-Type:
       - application/x-www-form-urlencoded
       Accept:
       - ! '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
@@ -23,25 +23,26 @@ http_interactions:
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Content-Type:
-      - text/javascript; charset=UTF-8
+      - application/json; charset=UTF-8
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
       X-Fb-Rev:
-      - '612565'
+      - '934677'
       X-Fb-Debug:
-      - dMRAOMEruKynwNICdc9U+JFPheRyF5jVa8rHgupYgWI=
+      - 40pq1sYZfSG3uVJTkgqTxLh8ul6oVyjcwRASFefh3mY=
       Date:
-      - Tue, 21 Aug 2012 14:05:56 GMT
+      - Thu, 12 Sep 2013 13:21:42 GMT
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
-      Content-Length:
-      - '1195'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6005950791151","data":{"adgroups":{"6005950791151":{"adgroup_id":6005950791151,"ad_id":6005950791151,"campaign_id":6005950787751,"name":"Rap
-        like me","adgroup_status":4,"bid_type":1,"max_bid":"1","bid_info":{"1":"1"},"ad_status":4,"locations":[3],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":3,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"account_id":"10150585630710217","id":"6005950791151","creative_ids":[6005851371551],"targeting":{"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]},"conversion_specs":[{"action.type":"like","post":"10150420410887685"}],"last_updated_by_app_id":333322143368799,"start_time":null,"end_time":null,"updated_time":1345557956,"created_time":1345557955}},"creatives":{"6005851371551":{"type":25,"action_spec":{"action.type":"like","post":"10150420410887685"},"related_fan_page":1,"cluster_id":6005851366351,"name":"Sponsored
-        story #6005851371551","run_status":1,"preview_url":"http:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6005851371551","count_current_adgroups":11,"id":"6005851371551","creative_id":"6005851371551"}}}}'
-    http_version:
-  recorded_at: Tue, 21 Aug 2012 14:05:56 GMT
+      string: ! '{"id":"6010891176751","data":{"adgroups":{"6010891176751":{"id":"6010891176751","account_id":"10150585630710217","adgroup_status":4,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"creative_ids":[6010888561951],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"Rap
+        like me","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":1378992102,"created_time":1378992102,"ad_id":6010891176751,"adgroup_id":6010891176751,"max_bid":1,"tracking_pixel_ids":[]}},"creatives":{"6010888561951":{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
+        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":11}}}}'
+    http_version: 
+  recorded_at: Thu, 12 Sep 2013 13:21:42 GMT
+recorded_with: VCR 2.3.0

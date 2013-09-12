@@ -2,21 +2,17 @@
 http_interactions:
 - request:
     method: post
-    uri: https://graph.facebook.com/6004497038951
+    uri: https://graph.facebook.com/6010889169151
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        YWNjZXNzX3Rva2VuPUFBQUV2SjV2emhsOEJBQmhUU2F6SlpCMkQwQjROMGwy
-        NDJWWDIySGc5SjJXWkE3ZnB0Y0F6dGZYeGZBWkI5bWhaQjZXMW5sNWR6NXRY
-        TWxiOURKazlpYnM2UnF0UDdQdE82YTNYQ2lIV1Z3WkRaRCZtZXRob2Q9ZGVs
-        ZXRl
+      encoding: US-ASCII
+      string: access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&method=delete
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Content-Type:
       - application/x-www-form-urlencoded
       Accept:
       - ! '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
@@ -27,17 +23,17 @@ http_interactions:
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Content-Type:
-      - text/javascript; charset=UTF-8
+      - application/json; charset=UTF-8
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
       X-Fb-Rev:
-      - '612565'
+      - '934677'
       X-Fb-Debug:
-      - avl/vpqMd+xVIPXir1VXIWHjUEpg4VLpSSFim8G0OJk=
+      - 3Wi9ttNPO87lCGaYoK4G5weYE4oNEdHTNxYqAacF+3M=
       Date:
-      - Tue, 21 Aug 2012 14:11:08 GMT
+      - Thu, 12 Sep 2013 13:21:43 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -46,5 +42,5 @@ http_interactions:
       encoding: US-ASCII
       string: 'true'
     http_version: 
-  recorded_at: Tue, 21 Aug 2012 14:11:08 GMT
-recorded_with: VCR 2.2.4
+  recorded_at: Thu, 12 Sep 2013 13:21:43 GMT
+recorded_with: VCR 2.3.0

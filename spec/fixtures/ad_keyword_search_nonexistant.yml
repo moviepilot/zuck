@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAE7m0kztNbbASKHymRlXoBZCdZCtMsebNEgaR0yOmZCBfeTIXT8MnuV3ZCH5lBDQOcC4S9geswWZBuF707gJ42lV9DHgGILsRaiG2upipiHggl7UZAeDVgBSSsap9s9uv1ghZCxNsmH&q=ick%20spickeby&type=adkeyword
+    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&q=ick%20spickeby&type=adkeyword
     body:
       encoding: US-ASCII
       string: ''
@@ -31,11 +31,11 @@ http_interactions:
       Pragma:
       - no-cache
       X-Fb-Rev:
-      - '880776'
+      - '934677'
       X-Fb-Debug:
-      - 9OW6+vCkQZB0G4ete2rLeuHXg2keTeb0soekntO0k0c=
+      - V2xDeIibjgmqPVctLhdC4Iqmf0noftdgSSelAh1HfzM=
       Date:
-      - Fri, 19 Jul 2013 10:16:13 GMT
+      - Thu, 12 Sep 2013 13:21:34 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -44,5 +44,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"data":[]}'
     http_version: 
-  recorded_at: Fri, 19 Jul 2013 10:16:17 GMT
+  recorded_at: Thu, 12 Sep 2013 13:21:34 GMT
 recorded_with: VCR 2.3.0
