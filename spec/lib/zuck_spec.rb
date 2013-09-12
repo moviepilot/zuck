@@ -9,7 +9,7 @@ describe Zuck::FbObject do
   let(:graph)   { Zuck.graph                                                  }
   let(:account) { Zuck::AdAccount.new(graph,  {id: "act_10150585630710217"})  }
   let(:campaign){ Zuck::AdCampaign.new(graph, {id: "6010888547351"}, account) }
-  let(:group)   { Zuck::AdGroup.new(graph,    {id: "6004497037951"}, campaign)}
+  let(:group)   { Zuck::AdGroup.new(graph,    {id: "6010888572951"}, campaign)}
   let(:creative){ Zuck::AdCreative.new(graph, {id: "6004501081751"}, group)   }
 
 
@@ -44,7 +44,7 @@ describe Zuck::FbObject do
 
       it "a list of ad campaigns" do
         VCR.use_cassette('list_of_ad_campaigns') do
-          account.ad_campaigns.should have(1).items
+          account.ad_campaigns.should have(2).items
         end
       end
 
@@ -64,7 +64,7 @@ describe Zuck::FbObject do
         g = graph
         Zuck::AdAccount.should_receive(:all).and_return([account])
         VCR.use_cassette('list_of_all_ad_creatives_of_account') do
-          Zuck::AdCreative.all(g).should have(3).items
+          Zuck::AdCreative.all(g).should have(9).items
         end
       end
 
@@ -148,7 +148,9 @@ END_ERROR
                creative: '{"type":25,"action_spec":{"action.type":"like", "post":10150420410887685}}'}
           group = campaign.create_ad_group(o)
           group.name.should == "Rap like me"
-          group.bid_type.should == 'CPC'
+          # Seems like when writing you use enums (strings) for bid_type,
+          # but fb will still return the magic ints
+          group.bid_type.should == 1
         end
       end
     end

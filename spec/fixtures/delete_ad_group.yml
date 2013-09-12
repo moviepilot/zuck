@@ -43,4 +43,47 @@ http_interactions:
       string: 'true'
     http_version: 
   recorded_at: Thu, 12 Sep 2013 09:22:21 GMT
+- request:
+    method: post
+    uri: https://graph.facebook.com/6010888572951
+    body:
+      encoding: US-ASCII
+      string: access_token=CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD&method=delete
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      X-Fb-Rev:
+      - '934677'
+      X-Fb-Debug:
+      - beOunHXA+X5CCd5Hh/FzHl9p9/y17UmvFK2T5v0nUFY=
+      Date:
+      - Thu, 12 Sep 2013 09:33:26 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4'
+    body:
+      encoding: US-ASCII
+      string: 'true'
+    http_version: 
+  recorded_at: Thu, 12 Sep 2013 09:33:26 GMT
 recorded_with: VCR 2.3.0

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6004497037951/adcreatives?access_token=CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD&fields=
+    uri: https://graph.facebook.com/6010888572951/adcreatives?access_token=CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD&fields=
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       Content-Type:
       - application/json; charset=UTF-8
       Etag:
-      - ! '"a1eec922f79480408ad174572067017368e0322b"'
+      - ! '"85942141c4d945ae98e7001abc3f9261dc45e742"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
@@ -33,16 +33,17 @@ http_interactions:
       X-Fb-Rev:
       - '934677'
       X-Fb-Debug:
-      - ouhjr5AHRRk/wMlIXq9NWrsq/cdTe+v3OEmxwyUynXs=
+      - lQbhzHoGyUL2ux0okho787Lj2EkawU4zZK2teWgpl70=
       Date:
-      - Thu, 12 Sep 2013 09:22:17 GMT
+      - Thu, 12 Sep 2013 09:33:30 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '33'
+      - '709'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[],"count":0,"limit":500}'
+      string: ! '{"data":[{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
+        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":2}],"paging":{"next":"https:\/\/graph.facebook.com\/6010888572951\/adcreatives?access_token=CAAEvJ5vzhl8BACAx0zfP8gdDgQQifhVnaIqAdn2gzdJD7uEaJcfUvCzzhhDEsrDULiaKpDErxdTldZAfhMgNVLZAmnJ9ZANPHM8jeAEqpXAvK4CoAyBatH8Af58Ry1gTUjAnv5xZBwU5sKx4Kzkf6jqpFNj96HoDsBKPtOghiddiiqUy55JUFXGXaAImWj8ZD&limit=500&offset=500&__after_id=6010888561951"},"count":1,"limit":500}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 09:22:17 GMT
+  recorded_at: Thu, 12 Sep 2013 09:33:30 GMT
 recorded_with: VCR 2.3.0
