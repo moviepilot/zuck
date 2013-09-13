@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = "zuck"
-  s.version = "0.1.0"
+  s.version = "0.2.0"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Jannis Hermanns"]
-  s.date = "2013-07-19"
+  s.date = "2013-09-13"
   s.description = "This gem allows to easily access facebook's ads api in ruby. See https://developers.facebook.com/docs/reference/ads-api/"
   s.email = "jannis@gmail.com"
   s.extra_rdoc_files = [
@@ -48,13 +48,14 @@ Gem::Specification.new do |s|
     "lib/zuck/koala/koala_methods.rb",
     "spec/fixtures/a_single_account.yml",
     "spec/fixtures/a_single_campaign.yml",
+    "spec/fixtures/a_single_group.yml",
     "spec/fixtures/ad_keyword_search_disney.yml",
+    "spec/fixtures/ad_keyword_search_moviepilot.yml",
     "spec/fixtures/ad_keyword_search_nonexistant.yml",
-    "spec/fixtures/ad_keyword_search_steve_carell.yml",
     "spec/fixtures/create_ad_campaign.yml",
     "spec/fixtures/create_ad_group.yml",
     "spec/fixtures/delete_ad_group.yml",
-    "spec/fixtures/find_a_single_campaign_and_update_it.yml",
+    "spec/fixtures/find_a_single_group_and_update_it.yml",
     "spec/fixtures/list_of_ad_accounts.yml",
     "spec/fixtures/list_of_ad_campaigns.yml",
     "spec/fixtures/list_of_ad_creatives.yml",
