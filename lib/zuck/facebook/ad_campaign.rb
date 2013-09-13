@@ -5,7 +5,6 @@ module Zuck
     # were incomplete, so I added here what the graph explorer
     # actually returned.
     known_keys :account_id,
-               :campaign_id,
                :campaign_status,
                :created_time,
                :daily_imps,

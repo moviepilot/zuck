@@ -1,3 +1,7 @@
+0.2.0
+-----
+- implement Facbook's [Oct 2013 breaking changes](https://developers.facebook.com/roadmap/#q4_2013)
+
 0.0.9
 -----
 - add Zuck::TargetingSpec.valid_countries? method to allow for country

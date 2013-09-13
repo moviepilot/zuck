@@ -2,17 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6004497038951/adcreatives?access_token=AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD
+    uri: https://graph.facebook.com/6010889169151/adcreatives?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&fields=
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
@@ -23,29 +23,27 @@ http_interactions:
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Content-Type:
-      - text/javascript; charset=UTF-8
+      - application/json; charset=UTF-8
       Etag:
-      - ! '"afeb33d4f39589f66a3d09afd314278e343f95e7"'
+      - ! '"059c02f2d58116e7271e2885bc8551cf1b65f739"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
       X-Fb-Rev:
-      - '612565'
+      - '934677'
       X-Fb-Debug:
-      - WPqBFVCSVmbqniKM/+IwgPR86eYrO0wnhgI1HETxMlk=
+      - WDxMSDUs/mE5bYf2TYbE+FrTVQ6Ff/EM8TOVcqc9SLQ=
       Date:
-      - Tue, 21 Aug 2012 14:10:56 GMT
+      - Thu, 12 Sep 2013 13:21:39 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '771'
+      - '712'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"view_tag":"","alt_view_tags":[],"creative_id":"6004497038551","type":2,"title":"","body":"The
-        free iPhone workout tracker app without bells and whistles. Optimized to be
-        used at the gym while working out.","image_hash":"4df6142c0d1f4600f13967e7ca655601","link_url":"https:\/\/www.facebook.com\/gymhero?sk=wall","object_id":250413944992062,"name":"Gym
-        Hero","run_status":1,"preview_url":"http:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6004497038551","count_current_adgroups":1,"id":"6004497038551"}],"limit":500,"offset":0,"count":1,"paging":{"next":"https:\/\/graph.facebook.com\/6004497038951\/adcreatives?access_token=AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD&offset=500"}}'
+      string: ! '{"data":[{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
+        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":9}],"paging":{"next":"https:\/\/graph.facebook.com\/6010889169151\/adcreatives?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&limit=500&offset=500&__after_id=6010888561951"},"count":1,"limit":500}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2012 14:10:57 GMT
-recorded_with: VCR 2.2.4
+  recorded_at: Thu, 12 Sep 2013 13:21:39 GMT
+recorded_with: VCR 2.3.0

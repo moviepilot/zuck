@@ -2,17 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/search?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&keyword_list=Eminem,Sting&type=adkeywordvalid
+    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22Eminem%22,%22Sting%22%5D,%22age_min%22:13,%22connections%22:%5B%5D,%22broad_age%22:false%7D
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
@@ -23,71 +23,26 @@ http_interactions:
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Content-Type:
-      - text/javascript; charset=UTF-8
+      - application/json; charset=UTF-8
       Etag:
-      - ! '"a684dbf074d5467a7775189984027b177954edef"'
+      - ! '"9ac6d458b810272cafd8ce451a7f9f1f9530c83b"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
       X-Fb-Rev:
-      - '698469'
+      - '934677'
       X-Fb-Debug:
-      - vtS1+m1EAAr/YCY4TKxUueU+DfmYhcASPsoK5LMzkW8=
+      - 61VwYP47RnemHT8gXLSpsdpq6MKIPD9tWkdAbhxdaK8=
       Date:
-      - Wed, 19 Dec 2012 15:13:41 GMT
+      - Thu, 12 Sep 2013 13:21:36 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '109'
+      - '562'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"name":"Eminem","valid":true,"id":6003170652434},{"name":"Sting","valid":true,"id":6003164299249}]}'
+      string: ! '{"users":17800000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":217,"cpa_median":391,"cpa_max":521,"cpc_min":40,"cpc_median":64,"cpc_max":85,"cpm_min":6,"cpm_median":22,"cpm_max":215}],"estimate_ready":true,"imp_estimates":[],"min_reach":null,"max_reach":null,"data":{"users":17800000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":217,"cpa_median":391,"cpa_max":521,"cpc_min":40,"cpc_median":64,"cpc_max":85,"cpm_min":6,"cpm_median":22,"cpm_max":215}],"estimate_ready":true,"imp_estimates":[],"min_reach":null,"max_reach":null}}'
     http_version: 
-  recorded_at: Wed, 19 Dec 2012 15:13:42 GMT
-- request:
-    method: get
-    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22Eminem%22,%22Sting%22%5D,%22age_min%22:13,%22connections%22:%5B%5D,%22broad_age%22:false%7D
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-      User-Agent:
-      - Ruby
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Content-Type:
-      - text/javascript; charset=UTF-8
-      Etag:
-      - ! '"486581ad6483292ae854bf5e25d36d1b564b1865"'
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      Pragma:
-      - no-cache
-      X-Fb-Rev:
-      - '698469'
-      X-Fb-Debug:
-      - m+Eupy9dFg5wCI+Ej1LdCnZ73lJ1YHyikHIHA1+ET5Y=
-      Date:
-      - Wed, 19 Dec 2012 15:13:43 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '322'
-    body:
-      encoding: US-ASCII
-      string: ! '{"users":16830580,"bid_estimations":[{"location":3,"cpc_min":43,"cpc_median":71,"cpc_max":145,"cpm_min":2,"cpm_median":15,"cpm_max":502}],"imp_estimates":[],"data":{"users":16830580,"bid_estimations":[{"location":3,"cpc_min":43,"cpc_median":71,"cpc_max":145,"cpm_min":2,"cpm_median":15,"cpm_max":502}],"imp_estimates":[]}}'
-    http_version: 
-  recorded_at: Wed, 19 Dec 2012 15:13:43 GMT
-recorded_with: VCR 2.2.4
+  recorded_at: Thu, 12 Sep 2013 13:21:36 GMT
+recorded_with: VCR 2.3.0

@@ -1,0 +1,224 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/6010889169151?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&fields=account_id,adgroup_status,bid_info,bid_type,campaign_id,conversion_specs,created_time,creative_ids,id,disapprove_reason_descriptions,last_updated_by_app_id,name,targeting,tracking_specs,updated_time,view_tags
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Etag:
+      - ! '"0ea0b12563db3c86f01ef40a9da03a2db4a32d72"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      X-Fb-Rev:
+      - '934677'
+      X-Fb-Debug:
+      - VCyI9aJoRQx5rWFrVnm7mmaJl+GBZZtcd7LYEMGHZBA=
+      Date:
+      - Thu, 12 Sep 2013 13:21:41 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '386'
+    body:
+      encoding: US-ASCII
+      string: ! '{"account_id":"10150585630710217","adgroup_status":3,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"created_time":"2013-09-12T12:20:54+0200","creative_ids":[6010888561951],"id":"6010889169151","last_updated_by_app_id":333322143368799,"name":"My
+        new name","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":"2013-09-12T14:10:20+0200"}'
+    http_version: 
+  recorded_at: Thu, 12 Sep 2013 13:21:41 GMT
+- request:
+    method: post
+    uri: https://graph.facebook.com/6010889169151
+    body:
+      encoding: US-ASCII
+      string: ! "-------------RubyMultipartPost\r\nContent-Disposition: form-data;
+        name=\"account_id\"\r\n\r\n10150585630710217\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"adgroup_status\"\r\n\r\n3\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"bid_info%5B1%5D\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"bid_type\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"campaign_id\"\r\n\r\n6010889111951\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"created_time\"\r\n\r\n2013-09-12T12:20:54+0200\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"creative_ids%5B%5D\"\r\n\r\n6010888561951\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"last_updated_by_app_id\"\r\n\r\n333322143368799\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"name\"\r\n\r\nMy old name\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"targeting%5Bcountries%5D%5B%5D\"\r\n\r\nUS\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"updated_time\"\r\n\r\n2013-09-12T14:10:20+0200\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"redownload\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"access_token\"\r\n\r\nCAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD\r\n-------------RubyMultipartPost--\r\n\r\n"
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Content-Type:
+      - multipart/form-data;boundary=-----------RubyMultipartPost
+      Content-Length:
+      - '1535'
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      X-Fb-Rev:
+      - '934677'
+      X-Fb-Debug:
+      - axj4l9SLqagkHeGrd1726eOY3vviSQQEl/OqISoYMHQ=
+      Date:
+      - Thu, 12 Sep 2013 13:25:27 GMT
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":true,"data":{"adgroups":{"6010889169151":{"id":"6010889169151","account_id":"10150585630710217","adgroup_status":3,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"creative_ids":[6010888561951],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"My
+        old name","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":1378992327,"created_time":1378981254,"ad_id":6010889169151,"adgroup_id":6010889169151,"max_bid":1,"tracking_pixel_ids":[]}},"creatives":{"6010888561951":{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
+        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":11}}}}'
+    http_version: 
+  recorded_at: Thu, 12 Sep 2013 13:25:27 GMT
+- request:
+    method: post
+    uri: https://graph.facebook.com/6010889169151
+    body:
+      encoding: US-ASCII
+      string: ! "-------------RubyMultipartPost\r\nContent-Disposition: form-data;
+        name=\"account_id\"\r\n\r\n10150585630710217\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"adgroup_status\"\r\n\r\n3\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"bid_info%5B1%5D\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"bid_type\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"campaign_id\"\r\n\r\n6010889111951\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"creative_ids%5B%5D\"\r\n\r\n6010888561951\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"impression_control_map%5B%5D%5Blocation%5D\"\r\n\r\n3\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"impression_control_map%5B%5D%5Bcontrol%5D%5Bimpression_control_type%5D\"\r\n\r\n2\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"impression_control_map%5B%5D%5Bcontrol%5D%5Buser_impression_limit%5D\"\r\n\r\n6\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"impression_control_map%5B%5D%5Bcontrol%5D%5Buser_impression_limit_period%5D\"\r\n\r\n24\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"impression_control_map%5B%5D%5Bcontrol%5D%5Buser_impression_limit_period_unit%5D\"\r\n\r\n0\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"last_updated_by_app_id\"\r\n\r\n333322143368799\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"locations%5B%5D\"\r\n\r\n3\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"name\"\r\n\r\nMy new name\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"targeting%5Bcountries%5D%5B%5D\"\r\n\r\nUS\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"updated_time\"\r\n\r\n1378992327\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"created_time\"\r\n\r\n1378981254\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"ad_id\"\r\n\r\n6010889169151\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"adgroup_id\"\r\n\r\n6010889169151\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"max_bid\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"redownload\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"access_token\"\r\n\r\nCAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD\r\n-------------RubyMultipartPost--\r\n\r\n"
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Content-Type:
+      - multipart/form-data;boundary=-----------RubyMultipartPost
+      Content-Length:
+      - '2606'
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      X-Fb-Rev:
+      - '934677'
+      X-Fb-Debug:
+      - v3179FVag9ZBYdJn+mk1OEghnZQ4V/rVusbvbigGqP4=
+      Date:
+      - Thu, 12 Sep 2013 13:25:27 GMT
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"result":true,"data":{"adgroups":{"6010889169151":{"id":"6010889169151","account_id":"10150585630710217","adgroup_status":3,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"creative_ids":[6010888561951],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"My
+        new name","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":1378992327,"created_time":1378981254,"ad_id":6010889169151,"adgroup_id":6010889169151,"max_bid":1,"tracking_pixel_ids":[]}},"creatives":{"6010888561951":{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
+        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":11}}}}'
+    http_version: 
+  recorded_at: Thu, 12 Sep 2013 13:25:27 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/6010889169151?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&fields=account_id,adgroup_status,bid_info,bid_type,campaign_id,conversion_specs,created_time,creative_ids,id,disapprove_reason_descriptions,last_updated_by_app_id,name,targeting,tracking_specs,updated_time,view_tags
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Access-Control-Allow-Origin:
+      - ! '*'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Content-Type:
+      - application/json; charset=UTF-8
+      Etag:
+      - ! '"e966b528ad01aab8f098d620581efe748fec290b"'
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      Pragma:
+      - no-cache
+      X-Fb-Rev:
+      - '934677'
+      X-Fb-Debug:
+      - 4DyERtTVBt0cmNdrH5WnvTU3KMVM0vf2zqmf8pmW59Q=
+      Date:
+      - Thu, 12 Sep 2013 13:25:27 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '386'
+    body:
+      encoding: US-ASCII
+      string: ! '{"account_id":"10150585630710217","adgroup_status":3,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"created_time":"2013-09-12T12:20:54+0200","creative_ids":[6010888561951],"id":"6010889169151","last_updated_by_app_id":333322143368799,"name":"My
+        new name","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":"2013-09-12T15:25:27+0200"}'
+    http_version: 
+  recorded_at: Thu, 12 Sep 2013 13:25:28 GMT
+recorded_with: VCR 2.3.0

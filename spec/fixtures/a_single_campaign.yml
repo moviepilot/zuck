@@ -2,17 +2,17 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6005950787751?access_token=AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD
+    uri: https://graph.facebook.com/6005950787751?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&fields=account_id,campaign_status,created_time,daily_imps,end_time,id,lifetime_budget,name,start_time,updated_time
     body:
       encoding: US-ASCII
       string: ''
     headers:
+      User-Agent:
+      - Faraday v0.8.7
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - ! '*/*'
-      User-Agent:
-      - Ruby
   response:
     status:
       code: 200
@@ -23,26 +23,26 @@ http_interactions:
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Content-Type:
-      - text/javascript; charset=UTF-8
+      - application/json; charset=UTF-8
       Etag:
-      - ! '"050868a2c006f558b70017a737ca8f72419e7bc1"'
+      - ! '"e86bfdbd29a6618779f20e958e1dfe705bb806de"'
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
       X-Fb-Rev:
-      - '612565'
+      - '934677'
       X-Fb-Debug:
-      - o5ZT1cHA5d8AdQpUe+7pBF0kc5dqhirTcSEjdEaM7m8=
+      - i6CJnwde2dK30oFKSKB+yrtbjQtBwOx7j7wbo7jQdwQ=
       Date:
-      - Tue, 21 Aug 2012 14:13:01 GMT
+      - Thu, 12 Sep 2013 13:21:40 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '294'
+      - '230'
     body:
       encoding: US-ASCII
-      string: ! '{"account_id":"10150585630710217","campaign_id":6005950787751,"name":"bloody","daily_budget":1000,"campaign_status":1,"daily_imps":0,"id":"6005950787751","start_time":"2012-08-21T14:04:13+0000","end_time":null,"updated_time":"2012-08-21T14:08:34+0000","created_time":"2012-08-21T14:04:13+0000"}'
+      string: ! '{"account_id":"10150585630710217","campaign_status":3,"created_time":"2012-08-21T16:04:13+0200","daily_imps":0,"id":"6005950787751","name":"bloody","start_time":"2012-08-21T16:04:13+0200","updated_time":"2013-03-25T12:40:29+0100"}'
     http_version: 
-  recorded_at: Tue, 21 Aug 2012 14:13:02 GMT
-recorded_with: VCR 2.2.4
+  recorded_at: Thu, 12 Sep 2013 13:21:40 GMT
+recorded_with: VCR 2.3.0

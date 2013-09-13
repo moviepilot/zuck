@@ -3,14 +3,14 @@ require 'spec_helper'
 describe Zuck::FbObject do
 
   before(:all) do
-    Zuck.graph = Koala::Facebook::API.new('AAAEvJ5vzhl8BABhTSazJZB2D0B4N0l242VX22Hg9J2WZA7fptcAztfXxfAZB9mhZB6W1nl5dz5tXMlb9DJk9ibs6RqtP7PtO6a3XCiHWVwZDZD')
+    Zuck.graph = Koala::Facebook::API.new(test_access_token)
   end
 
   let(:graph)   { Zuck.graph                                                  }
   let(:account) { Zuck::AdAccount.new(graph,  {id: "act_10150585630710217"})  }
-  let(:campaign){ Zuck::AdCampaign.new(graph, {id: "6005950787751"}, account) }
-  let(:group)   { Zuck::AdGroup.new(graph,    {id: "6004497038951"}, campaign)}
-  let(:creative){ Zuck::AdCreative.new(graph, {id: "1234567890123"}, group)   }
+  let(:campaign){ Zuck::AdCampaign.new(graph, {id: "6010889111951"}, account) }
+  let(:group)   { Zuck::AdGroup.new(graph,    {id: "6010889169151"}, campaign)}
+  let(:creative){ Zuck::AdCreative.new(graph, {id: "6010888561951"}, group)   }
 
 
   describe "read only objects" do
@@ -44,13 +44,13 @@ describe Zuck::FbObject do
 
       it "a list of ad campaigns" do
         VCR.use_cassette('list_of_ad_campaigns') do
-          account.ad_campaigns.should have(3).items
+          account.ad_campaigns.should have(8).items
         end
       end
 
       it "a list of ad groups" do
         VCR.use_cassette('list_of_ad_groups') do
-          campaign.ad_groups.should have(1).item
+          campaign.ad_groups.should have(9).item
         end
       end
 
@@ -64,43 +64,35 @@ describe Zuck::FbObject do
         g = graph
         Zuck::AdAccount.should_receive(:all).and_return([account])
         VCR.use_cassette('list_of_all_ad_creatives_of_account') do
-          Zuck::AdCreative.all(g).should have(6).items
+          Zuck::AdCreative.all(g).should have(9).items
         end
       end
 
       context "an id directly" do
 
-        it "with the correct type" do
+        it "campaign with the correct type" do
           VCR.use_cassette('a_single_campaign') do
             c = Zuck::AdCampaign.find(6005950787751, graph)
           end
         end
 
-        it "with the correct type" do
+        it "account with the correct type" do
           VCR.use_cassette('a_single_account') do
             c = Zuck::AdAccount.find('act_10150585630710217', graph)
           end
         end
 
         it "when expecting an ad group but the id belongs to a campaign" do
-          expected_error = <<-END_ERROR
-Invalid type.
-
-Expected data['id']="6005950787751" to be equal to one of these:
-  * data['account_id']="10150585630710217"
-  * data['group_id']=nil
-  * data['adgroup_id']=nil
-END_ERROR
-          VCR.use_cassette('a_single_campaign') do
+          VCR.use_cassette('a_single_group') do
             expect{
-              c = Zuck::AdGroup.find(6005950787751, graph)
-            }.to raise_error(expected_error)
+              c = Zuck::AdGroup.find(6010889111951, graph)
+            }.to raise_error(Koala::Facebook::ClientError)
           end
         end
 
         it "and saving it" do
-          VCR.use_cassette('find_a_single_campaign_and_update_it') do
-            group = Zuck::AdGroup.find(6005859287551, graph)
+          VCR.use_cassette('find_a_single_group_and_update_it') do
+            group = Zuck::AdGroup.find(6010889169151, graph)
             group.name = "My old name"
             group.save
             group.name.should == "My old name"
@@ -135,7 +127,7 @@ END_ERROR
 
       it "an ad group" do
         VCR.use_cassette('create_ad_group') do
-          o = {bid_type: 1, max_bid: 1, name: "Rap like me", targeting: '{"countries":["US"]}',
+          o = {bid_type: 'CPC', max_bid: 1, name: "Rap like me", targeting: '{"countries":["US"]}',
                creative: '{"type":25,"action_spec":{"action.type":"like", "post":10150420410887685}}'}
           group = Zuck::AdGroup.create(graph, o, campaign)
           group.name.should == "Rap like me"
@@ -144,10 +136,11 @@ END_ERROR
 
       it "an ad group via an existing ad campaign" do
         VCR.use_cassette('create_ad_group') do
-          o = {bid_type: 1, max_bid: 1, name: "Rap like me", targeting: '{"countries":["US"]}',
+          o = {bid_type: 'CPC', max_bid: 1, name: "Rap like me", targeting: '{"countries":["US"]}',
                creative: '{"type":25,"action_spec":{"action.type":"like", "post":10150420410887685}}'}
           group = campaign.create_ad_group(o)
           group.name.should == "Rap like me"
+          # Until Oct 2013 Facebook will return the magic ints, and then the enums
           group.bid_type.should == 1
         end
       end

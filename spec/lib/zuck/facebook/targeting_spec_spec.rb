@@ -87,7 +87,7 @@ describe Zuck::TargetingSpec do
   end
 
   describe "fetching reach" do
-    let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD') }
+    let(:graph){ Koala::Facebook::API.new(test_access_token) }
     let(:ad_account){ 'act_10150585630710217' }
 
     it "bugs out when trying to use an invalid keyword" do
@@ -105,7 +105,7 @@ describe Zuck::TargetingSpec do
         spec = {countries: ['us'], keywords: ['Eminem', 'Sting'] }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
         reach = ts.fetch_reach
-        reach[:users].should == 16830580
+        reach[:users].should == 17800000
       end
     end
 
@@ -114,7 +114,7 @@ describe Zuck::TargetingSpec do
         spec = {countries: ['us'], keywords: ['Sting'], gender: :female, age_class: :young }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
         reach = ts.fetch_reach
-        reach[:users].should == 39400
+        reach[:users].should == 38000
       end
     end
 
@@ -129,7 +129,7 @@ describe Zuck::TargetingSpec do
   end
 
   describe "Batch processing" do
-    let(:graph){ Koala::Facebook::API.new('AAAEvJ5vzhl8BAPLr6fQgNy2wdUHDJ7ZAoX9PTZCFnebwuTBZBEqO7lNTVZA3XNsTHPTATpTmVFs6o6Jp1pZAL8ZA54BRBXWYtztVug8bm2BAZDZD') }
+    let(:graph){ Koala::Facebook::API.new(test_access_token) }
     let(:ad_account){ 'act_10150585630710217' }
     let(:spec_mock){ mock(fetch_reach: {some: :data}) }
 
