@@ -19,7 +19,6 @@ module Zuck
                :url_tags,
                :preview_url,
                :related_fan_page,
-               :follow_redirect,
                :auto_update,
                :story_id,
                :action_spec
