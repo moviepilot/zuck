@@ -104,7 +104,7 @@ module Zuck
         result = []
         if get_all
           r = get(graph, path_with_parent(parent)+"?fields=#{known_keys}")
-          while r.count > 0
+          while r.to_a.count > 0
             result.concat(r.to_a)
             r = r.next_page
           end

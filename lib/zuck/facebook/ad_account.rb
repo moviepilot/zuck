@@ -54,7 +54,7 @@ module Zuck
       result = []
       if get_all
         r = get(graph, stats_path)
-        while r.count > 0
+        while r.to_a.count > 0
           result.concat(r.to_a)
           r = r.next_page
         end
@@ -78,7 +78,7 @@ module Zuck
       result = []
       if get_all
         r = get(graph, stats_path)
-        while r.count > 0
+        while r.to_a.count > 0
           result.concat(r.to_a)
           r = r.next_page
         end
