@@ -27,6 +27,15 @@ module Zuck
       set_data(data)
       self
     end
+    
+    # Fetches stats on the object
+    #
+    # @param [DateTime] start_time the time we want to get results back from
+    # @param [DateTime] end_time the time we want to get results to, inclusive
+    def stats(start_time = nil, end_time = nil)
+      stats_path = path+"/stats"+self.class.get_stats_query(start_time, end_time)
+      get(graph, stats_path)
+    end
 
     private
 
@@ -41,6 +50,26 @@ module Zuck
     end
 
     module ClassMethods
+      
+      # Builds a query string to use with stats calls
+      # 
+      # @param [DateTime] start_time the time we want to get results back from
+      # @param [DateTime] end_time the time we want to get results to, inclusive
+      #
+      # @return {String} the query string for the query
+      def get_stats_query(start_time = nil, end_time = nil)
+        str = ""
+        
+        query = {}
+        query[:start_time] = start_time.to_i.to_s if start_time
+        query[:end_time] = end_time.to_i.to_s if end_time
+        
+        if query.keys.length > 0
+          str = "?" + query.to_query
+        end
+        
+        return str
+      end
 
       # Finds by object id and checks type
       def find(id, graph = Zuck.graph)
@@ -67,10 +96,23 @@ module Zuck
       #
       # @param graph [Koala::Facebook::API] A graph with access_token
       # @param parent [<FbObject] A parent object to scope
-      def all(graph = Zuck.graph, parent = nil)
+      # @param get_all [Boolean] True if we want to page through all results, false otherwise
+      def all(graph = Zuck.graph, parent = nil, get_all = true)
         parent ||= parent_ad_account_fallback
-        r = get(graph, path_with_parent(parent))
-        r.map do |c|
+        known_keys = new(graph).known_keys.join(",")
+        
+        result = []
+        if get_all
+          r = get(graph, path_with_parent(parent)+"?fields=#{known_keys}")
+          while r.count > 0
+            result.concat(r.to_a)
+            r = r.next_page
+          end
+        else
+          result = get(graph, path_with_parent(parent)+"?fields=#{known_keys}")
+        end
+        
+        result.map do |c|
           new(graph, c, parent)
         end
       end

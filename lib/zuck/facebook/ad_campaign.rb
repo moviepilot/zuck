@@ -18,6 +18,11 @@ module Zuck
     parent_object :ad_account
     list_path     :adcampaigns
     connections   :ad_groups
+    
+    # gets conversion info for a campaign
+    def conversions
+      r = get(graph, path+"/conversions")
+    end
 
   end
 end
