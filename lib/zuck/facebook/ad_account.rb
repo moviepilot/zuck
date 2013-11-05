@@ -73,7 +73,7 @@ module Zuck
     # @return {Array} If we get all results, this will be an array of the data returned from FB. If we only
     #                 get one page of results, this will be a GraphCollection object that has paging support on it
     def adgroupstats(get_all, start_time = nil, end_time = nil)
-      stats_path = path+"/adcampaignstats"+self.class.get_stats_query(start_time, end_time)
+      stats_path = path+"/adgroupstats"+self.class.get_stats_query(start_time, end_time)
       
       result = []
       if get_all
