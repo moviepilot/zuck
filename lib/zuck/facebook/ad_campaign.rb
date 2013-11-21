@@ -50,7 +50,10 @@ module Zuck
       data[:campaign_id] ||= self.id
       
       # Create the new ad group and return it
-      ad_group = Zuck::AdGroup.new(Zuck.graph, data, self)      
+      ad_group = Zuck::AdGroup.new(Zuck.graph, data, self)
+      # We need to workaround the creative_id field because it is not a 'known_key' for GETs
+      ad_group.creative_id ||= data[:creative_id] if data[:creative_id]
+      
       return ad_group
     end
 
