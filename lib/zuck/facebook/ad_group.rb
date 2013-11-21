@@ -2,6 +2,7 @@ require 'zuck/facebook/ad_creative'
 
 module Zuck
   class AdGroup < RawFbObject
+    attr_accessor :creative_id
 
     BID_TYPE_CPC = 'CPC'
     BID_TYPE_CPM = 'CPM'
@@ -23,8 +24,7 @@ module Zuck
                :campaign_id,
                :conversion_specs,
                :created_time,
-               :creative_ids,
-               :creative_id,
+               :creative_ids,               
                :id,
                :disapprove_reason_descriptions,
                :last_updated_by_app_id,
@@ -95,7 +95,7 @@ module Zuck
       path = ad_campaign.ad_account.path
       data['campaign_id'] = ad_campaign.id
       super(graph, data, ad_campaign, path)
-    end
+    end    
 
   end
 end
