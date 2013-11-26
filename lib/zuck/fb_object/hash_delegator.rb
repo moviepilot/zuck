@@ -64,7 +64,12 @@ module Zuck
           # Define setter
           self.send(:define_method, "#{key}=") do |val|
             init_hash
-            @hash_delegator_hash[key] = val
+            existingVal = @hash_delegator_hash[key]
+            
+            if (val != existingVal)              
+              @hash_delegator_hash[key] = val
+              @dirty_keys.add(key)
+            end
           end
         end
       end
@@ -106,10 +111,24 @@ module Zuck
       "#<#{self.class} #{vars}>"
     end
 
+    def is_dirty?
+      response = false
+      if (@dirty_keys && @dirty_keys.length > 0)
+        response = true
+      end
+      return response      
+    end
+
     private
 
     def init_hash
       @hash_delegator_hash ||= {}
+      @dirty_keys ||= Set.new
     end
+
+    def reset_dirty
+      @dirty_keys = Set.new
+    end
+
   end
 end

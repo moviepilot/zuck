@@ -33,7 +33,7 @@ module Zuck
     #   inherit from {Zuck::FbObject}
     def initialize(graph, data = {}, parent=nil)
       super(graph, data, parent)
-      self.campaign_status ||= CAMPAIGN_STATUS_PAUSED
+      @hash_delegator_hash[:campaign_status] ||= CAMPAIGN_STATUS_PAUSED
     end
 
     # Creates a new Ad Group object with pointers to the current campaign and account

@@ -45,7 +45,7 @@ module Zuck
     #   inherit from {Zuck::FbObject}
     def initialize(graph, data = {}, parent=nil)
       super(graph, data, parent)
-      self.bid_type ||= BID_TYPE_ABSOLUTE_OCPM
+      @hash_delegator_hash[:bid_type] ||= BID_TYPE_ABSOLUTE_OCPM
     end
 
     # Saves the current creative to Facebook
