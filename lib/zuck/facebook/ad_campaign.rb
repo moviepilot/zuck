@@ -55,13 +55,7 @@ module Zuck
       ad_group.creative_id ||= data[:creative_id] if data[:creative_id]
       
       return ad_group
-    end
-
-    # Sets the bid info object with the appropriate hash data
-    # @param {Integer} bid_amount The bid amount in cents
-    def set_cpa_bid(bid_amount)
-      self.bid_info = {'ACTIONS' => bid_amount}
-    end
+    end    
 
     # Saves the current creative to Facebook
     # @throws Exception If not all required fields are present
