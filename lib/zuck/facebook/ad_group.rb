@@ -12,7 +12,7 @@ module Zuck
 
     CONVERSION_ACTION_INSTALL = 'mobile_app_install'
 
-    REQUIRED_FIELDS = [:name, :bid_type, :bid_info, :campaign_id, :creative_id, :targeting]
+    REQUIRED_FIELDS = [:name, :bid_type, :bid_info, :campaign_id, :targeting]
 
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
@@ -60,6 +60,8 @@ module Zuck
         raise "You need to set the following fields before saving: #{missing_fields.join(', ')}"
       elsif (!self.conversion_specs && (self.bid_type == BID_TYPE_ABSOLUTE_OCPM || self.bid_type == BID_TYPE_CPA))
         raise "You must specify 'conversion_specs' when the bid_type is OCPM or CPA"
+      elsif (!self.id && !self.creative_id)
+        raise "You must specify 'creative_id' to save a new AdGroup"
       end
 
       args = {
@@ -71,11 +73,7 @@ module Zuck
         "targeting" => self.targeting.to_json,
         "conversion_specs" => self.conversion_specs.to_json,
         "redownload" => 1,
-      }
-
-      puts "------------------------------"
-      puts "Saving AdGroup:"
-      puts args
+      }      
 
       if (!self.id)
         fb_response = Zuck.graph.put_connections(self.account_id,"adgroups", args)
@@ -84,10 +82,22 @@ module Zuck
           response = true
         end
       else 
-        # TODO: potentially support updating a creative
-        raise "Updates are not yet implemented for creatives"
+        if (self.is_dirty?)          
+          # Build up a hash with the dirty fields
+          post_data = {}
+          @dirty_keys.each do |dirty_key|
+            if (dirty_key == :campaign_id)
+              raise "You cannot modify the campaign_id of an Ad Group"
+            end
+            post_data[dirty_key] = args[dirty_key.to_s]
+          end
+          
+          # The FB API will return true if the save is successful. False otherwise.
+          response = Zuck.graph.graph_call(self.id, post_data, "post")        
+        end
       end
 
+      reset_dirty if response
       return response
     end
 

@@ -91,10 +91,19 @@ module Zuck
           response = true
         end
       else 
-        # TODO: potentially support updating a creative
-        raise "Updates are not yet implemented for campaigns"
+        if (self.is_dirty?)          
+          # Build up a hash with the dirty fields
+          post_data = {}
+          @dirty_keys.each do |dirty_key|
+            post_data[dirty_key] = args[dirty_key.to_s]
+          end
+          
+          # The FB API will return true if the save is successful. False otherwise.
+          response = Zuck.graph.graph_call(self.id, post_data, "post")        
+        end
       end
 
+      reset_dirty if response
       return response
     end
 
