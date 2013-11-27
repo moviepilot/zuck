@@ -26,8 +26,7 @@ module Zuck
                :auto_update,
                :story_id,
                :action_spec,
-               :mobile_store,
-               :account_id
+               :mobile_store
 
     parent_object :ad_group
     list_path     :adcreatives
