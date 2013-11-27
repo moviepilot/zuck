@@ -56,9 +56,9 @@ module Zuck
     # @param {Hash} data Initial values for the creative's properties. Defaults to an emtpy Hash
     # @return {Zuck::AdCreative} A new campaign object
     def new_creative(data = {})
-      data ||= {}
-      data[:account_id] ||= self.id
-      creative = Zuck::AdCreative.new(Zuck.graph, data, self)      
+      data ||= {}      
+      creative = Zuck::AdCreative.new(Zuck.graph, data, self)
+      creative.account_id = self.id
       return creative
     end
 
