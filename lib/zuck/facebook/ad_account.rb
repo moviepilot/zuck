@@ -34,7 +34,7 @@ module Zuck
 
 
     list_path   'me/adaccounts'
-    connections :ad_campaigns, :ad_groups
+    connections :ad_campaigns, :ad_groups, :custom_audiences
 
     # Queries for an an array of all accounts for the current user
     # @return {Array} A list of fully hydrated Account objects
@@ -62,6 +62,23 @@ module Zuck
       return creative
     end
 
+    # Creates a new custom audience based on a facebook edge
+    # @param {Hash} data
+    #               :edge_id {String} of open graph object to scrape
+    #               :name {String} 
+    #               :description {String}
+    # @return {Object} CustomAudience Custom audience just created
+
+    def new_custom_audience(data = {})
+      data ||= {}      
+      data[:account_id] ||= self.account_id #only the number, not the prefix
+
+      #create audiences
+      audience = Zuck::CustomAudience.new(Zuck.graph, data, self)
+
+      return audience
+    end     
+
     # gets AdCampaign stats for this AdAccount
     #
     # @param {Boolean} get_all True if we want to page through all results, false if we only want the first page
@@ -81,6 +98,7 @@ module Zuck
           r = r.next_page
         end
       else
+
         result = get(graph, stats_path)
       end
       return result
