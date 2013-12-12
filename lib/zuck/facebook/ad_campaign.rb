@@ -3,6 +3,7 @@ module Zuck
 
     CAMPAIGN_STATUS_ACTIVE = 1
     CAMPAIGN_STATUS_PAUSED = 2
+    CAMPAIGN_STATUS_DELETED = 3
 
     REQUIRED_FIELDS = [:name, :campaign_status, :account_id]
 
@@ -105,6 +106,14 @@ module Zuck
 
       reset_dirty if response
       return response
+    end
+
+    # Trigger a soft-delete
+    def delete
+      if (self.campaign_status != CAMPAIGN_STATUS_DELETED)
+        Zuck.graph.delete_object(self.id)
+        self.campaign_status = CAMPAIGN_STATUS_DELETED
+      end
     end
 
     # gets conversion info for a campaign
