@@ -41,10 +41,6 @@ module Zuck
     # @param {Hash} data Initial values for the Ad Group's properties. Defaults to an emtpy Hash
     # @return {Zuck::AdGroup} A new ad group object
     def new_ad_group(data = {})
-      if (!self.id)
-        raise "You must save this campaign before you can create Ad Groups for it"
-      end
-
       # Setup the default params
       data ||= {}
       data[:account_id] ||= self.account_id
