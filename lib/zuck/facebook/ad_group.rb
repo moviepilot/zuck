@@ -29,6 +29,7 @@ module Zuck
                :adgroup_status,
                :bid_info,
                :bid_type,
+               :campaign_group_id,
                :campaign_id,
                :conversion_specs,
                :created_time,

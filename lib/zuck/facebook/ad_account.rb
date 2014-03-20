@@ -42,6 +42,16 @@ module Zuck
       super(graph)
     end
     
+    # Creates a new campaign group object with pointers to the current account
+    # @param {Hash} data Initial values for the campaign group's properties. Defaults to an empty Hash
+    # @return {Zuck::AdCampaignGroup} A new campaign group object
+    def new_campaign_group(data = {})
+      data ||= {}
+      data[:account_id] ||= self.id
+      campaign_group = Zuck::AdCampaignGroup.new(Zuck.graph, data, self)
+      return campaign_group
+    end
+    
     # Creates a new campaign object with pointers to the current account
     # @param {Hash} data Initial values for the campaign's properties. Defaults to an emtpy Hash
     # @return {Zuck::AdCampaign} A new campaign object
