@@ -34,7 +34,7 @@ module Zuck
 
 
     list_path   'me/adaccounts'
-    connections :ad_campaigns, :ad_groups, :custom_audiences
+    connections :ad_campaigns, :ad_campaign_groups, :ad_groups, :custom_audiences
 
     # Queries for an an array of all accounts for the current user
     # @return {Array} A list of fully hydrated Account objects
