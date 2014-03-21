@@ -1,9 +1,9 @@
 module Zuck
   class AdCampaign < RawFbObject
 
-    CAMPAIGN_STATUS_ACTIVE = 1
-    CAMPAIGN_STATUS_PAUSED = 2
-    CAMPAIGN_STATUS_DELETED = 3
+    CAMPAIGN_STATUS_ACTIVE = "ACTIVE"
+    CAMPAIGN_STATUS_PAUSED = "PAUSED"
+    CAMPAIGN_STATUS_DELETED = "DELETED"
 
     REQUIRED_FIELDS = [:name, :campaign_status, :account_id, :campaign_group_id]
 
