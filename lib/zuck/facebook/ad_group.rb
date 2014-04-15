@@ -35,7 +35,7 @@ module Zuck
                :created_time,
                :creative_ids,               
                :id,
-               :disapprove_reason_descriptions,
+               # :disapprove_reason_descriptions, # note: this should be reenabled with :adgroup_review_feedback
                :last_updated_by_app_id,
                :name,
                :targeting,
