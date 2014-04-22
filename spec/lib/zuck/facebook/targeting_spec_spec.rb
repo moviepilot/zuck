@@ -10,14 +10,14 @@ describe Zuck::TargetingSpec do
     let(:invalid_interest_result){ [{"name" => "sdjf", "valid" => false }] }
 
     it "escapes commas" do
-      o = {type: 'adkeywordvalid', keyword_list: 'foo%2Cbar' }
+      o = {type: 'adinterestvalid', interest_list: ['foo%2Cbar'] }
       graph.should_receive(:search).with(nil, o).and_return []
       fts = Zuck::TargetingSpec.new(graph, ad_account, interests: 'foo,bar')
       fts.validate_interest('foo,bar').should == false
     end
 
     it "acknowledges valid interests" do
-      o = {type: 'adkeywordvalid', keyword_list: 'foo' }
+      o = {type: 'adinterestvalid', interest_list: ['foo'] }
       graph.should_receive(:search).with(nil, o).and_return valid_interest_result
       fts = Zuck::TargetingSpec.new(graph, ad_account)
 
@@ -25,7 +25,7 @@ describe Zuck::TargetingSpec do
     end
 
     it "refuses invalid interests" do
-      o = {type: 'adkeywordvalid', keyword_list: 'sdjf' }
+      o = {type: 'adinterestvalid', interest_list: ['sdjf'] }
       graph.should_receive(:search).with(nil, o).and_return invalid_interest_result
       fts = Zuck::TargetingSpec.new(graph, ad_account)
 

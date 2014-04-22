@@ -21,7 +21,7 @@ module Zuck
     # @return [Hash] The keys are the (lowercased) keywords and the values their validity
     def validate(graph, keywords)
       keywords = normalize_array(keywords).map{|k| k.gsub(',', '%2C')}
-      search = graph.search(nil, type: 'adkeywordvalid', keyword_list: keywords.join(","))
+      search = graph.search(nil, type: 'adinterestvalid', interest_list: [keywords].flatten)
       results = {}
       search.each do |r|
         results[r['name']] = r['valid']
