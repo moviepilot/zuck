@@ -35,13 +35,13 @@ module Zuck
   # Some helpers around https://developers.facebook.com/docs/reference/ads-api/targeting-specs/
   # Use like this:
   #
-  #     > ts = Facebook::TargetingSpec.new(graph, ad_account, keyword: 'foo', countries: ['US'])
+  #     > ts = Facebook::TargetingSpec.new(graph, ad_account, keyword: 'foo', geo_locations: {countries: ['US']})
   #     > ts.spec
   #     => {
   #        :countries => [
   #          [0] "US"
   #        ],
-  #         :keywords => [
+  #         :interests => [
   #          [0] "foo"
   #        ]
   #     }
@@ -65,10 +65,10 @@ module Zuck
     #   - `:age_class` (optional): Set it to `young` or `old` to autoconfigure `age_min` and `age_max`
     #     for people older or younger than 25
     #   - `:locales` (optional): [disabled] Array of integers, valid keys are here https://graph.facebook.com/search?type=adlocale&q=en
-    #   - `:keywords`: Array of strings with keywords
+    #   - `:interests`: Array of strings with interests
     #
     def initialize(graph, ad_account, spec = nil)
-      @validated_keywords = {}
+      @validated_interests = {}
       @graph = graph
       @ad_account = "act_#{ad_account}".gsub('act_act_', 'act_')
       self.spec = spec
@@ -91,23 +91,23 @@ module Zuck
       result.with_indifferent_access
     end
 
-    def validate_keywords
-      @spec[:keywords].each do |w|
+    def validate_interests
+      @spec[:interests].each do |w|
         raise(InvalidKeywordError, w) unless validate_keyword(w)
       end
     end
 
     # Validates a single keyword from the cache or calls
-    # {TargetingSpec.validate_keywords}.to validate the keywords via
+    # {TargetingSpec.validate_interests}.to validate the interests via
     # facebook's api.
     # @param keyword [String] A single keyword
     # @return boolean
     def validate_keyword(keyword)
-      if @validated_keywords[keyword] == nil
-        keywords = normalize_array([@spec[:keywords]] + [keyword])
-        @validated_keywords = Zuck::AdKeyword.validate(@graph, keywords)
+      if @validated_interests[keyword] == nil
+        interests = normalize_array([@spec[:interests]] + [keyword])
+        @validated_interests = Zuck::AdKeyword.validate(@graph, interests)
       end
-      @validated_keywords[keyword] == true
+      @validated_interests[keyword] == true
     end
 
     # Fetches a bunch of reach estimates from facebook at once.
@@ -153,17 +153,18 @@ module Zuck
     private
 
     def validate_spec
-      @spec[:countries]   = normalize_countries(@spec[:countries])
-      @spec[:keywords]    = normalize_array(@spec[:keywords])
+      @spec[:interests]    = normalize_array(@spec[:interests])
       @spec[:broad_age] ||= false
       validate_countries
-      unless @spec[:keywords].present? or @spec[:connections].present?
-        raise(ParamsMissingError, "Need to set :keywords or :connections")
+      unless @spec[:interests].present? or @spec[:connections].present?
+        raise(ParamsMissingError, "Need to set :interests or :connections")
       end
     end
 
     def validate_countries
-      self.class.valid_countries?(@spec[:countries])
+      return unless @spec[:geo_locations] and @spec[:geo_locations][:countries]
+      @spec[:geo_locations][:countries] = normalize_countries(@spec[:geo_locations][:countries])
+      self.class.valid_countries?(@spec[:geo_locations][:countries])
     end
 
     def self.valid_countries?(countries)
@@ -194,7 +195,7 @@ module Zuck
       @spec[:genders] = [2] if gender.to_s == 'female'
 
       keyword = spec.delete(:keyword)
-      @spec[:keywords] = normalize_array([keyword, @spec[:keywords]])
+      @spec[:interests] = normalize_array([keyword, @spec[:interests]])
 
       country = spec.delete(:country)
       @spec[:countries] = normalize_countries([country, @spec[:countries]])

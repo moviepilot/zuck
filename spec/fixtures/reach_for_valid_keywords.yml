@@ -45,4 +45,51 @@ http_interactions:
       string: ! '{"users":17800000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":217,"cpa_median":391,"cpa_max":521,"cpc_min":40,"cpc_median":64,"cpc_max":85,"cpm_min":6,"cpm_median":22,"cpm_max":215}],"estimate_ready":true,"imp_estimates":[],"min_reach":null,"max_reach":null,"data":{"users":17800000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":217,"cpa_median":391,"cpa_max":521,"cpc_min":40,"cpc_median":64,"cpc_max":85,"cpm_min":6,"cpm_median":22,"cpm_max":215}],"estimate_ready":true,"imp_estimates":[],"min_reach":null,"max_reach":null}}'
     http_version: 
   recorded_at: Thu, 12 Sep 2013 13:21:36 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&targeting_spec=%7B%22geo_locations%22:%7B%22countries%22:%5B%22US%22%5D%7D,%22interests%22:%5B%22Eminem%22,%22Sting%22%5D,%22age_min%22:13,%22countries%22:%5B%5D,%22connections%22:%5B%5D,%22broad_age%22:false%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Www-Authenticate:
+      - ! 'OAuth "Facebook Platform" "invalid_token" "Error validating access token:
+        This may be because the user logged out or may be due to a system error."'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1216101'
+      Cache-Control:
+      - no-store
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - cf1MHO5MmzUnCnoei1ksBi2K6aQjpEhrylAVHYx/crA=
+      Date:
+      - Tue, 22 Apr 2014 10:30:50 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '182'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"Error validating access token: This may be because
+        the user logged out or may be due to a system error.","type":"OAuthException","code":190,"error_subcode":467}}'
+    http_version: 
+  recorded_at: Tue, 22 Apr 2014 10:30:51 GMT
 recorded_with: VCR 2.3.0
