@@ -19,6 +19,7 @@ describe Zuck::TargetingSpec do
     it "acknowledges valid interests" do
       o = {type: 'adinterestvalid', interest_list: ['foo'] }
       graph.should_receive(:search).with(nil, o).and_return valid_interest_result
+      #graph.should_not_receive(:search)
       fts = Zuck::TargetingSpec.new(graph, ad_account)
 
       fts.validate_interest('foo').should == true

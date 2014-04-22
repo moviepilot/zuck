@@ -105,7 +105,7 @@ module Zuck
     def validate_interest(interest)
       if @validated_interests[interest] == nil
         interests = normalize_array([@spec[:interests]] + [interest])
-        @validated_interests = Zuck::AdKeyword.validate(@graph, interests)
+        @validated_interests = Zuck::AdInterest.validate(@graph, interests)
       end
       @validated_interests[interest] == true
     end

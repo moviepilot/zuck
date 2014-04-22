@@ -1,0 +1,54 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&q=disney&type=adinterest
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - ! '"8b5fcea570986b5e25aff7226b80215ebf71cf56"'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1216101'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - oBEMRG6MgL42DEtthxp3LNt+Gzgr2GbJckt8uA8N/q8=
+      Date:
+      - Tue, 22 Apr 2014 16:22:30 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '854'
+    body:
+      encoding: US-ASCII
+      string: ! '{"data":[{"name":"The Walt Disney Company","id":6003270522085,"audience_size":129354141,"path":[],"description":null},{"name":"Disney
+        Channel","id":6003327130854,"audience_size":45965936,"path":[],"description":null},{"name":"Walt
+        Disney","id":6003284678611,"audience_size":38133064,"path":[],"description":null},{"name":"Disneyland","id":6003274193708,"audience_size":31257896,"path":[],"description":null},{"name":"Walt
+        Disney Parks and Resorts","id":6003318701218,"audience_size":26448385,"path":[],"description":null},{"name":"List
+        of Disney Channel Original Movies","id":6003220883649,"audience_size":38392980,"path":[],"description":null},{"name":"Disney
+        XD","id":6003540152503,"audience_size":16841504,"path":[],"description":null},{"name":"Walt
+        Disney Animation Studios","id":6003375444677,"audience_size":17506594,"path":[],"description":null}]}'
+    http_version: 
+  recorded_at: Tue, 22 Apr 2014 16:22:31 GMT
+recorded_with: VCR 2.3.0
