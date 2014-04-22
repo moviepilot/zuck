@@ -1,6 +1,17 @@
+1.0.0
+-----
+- Implement Facebook's April 9 breaking changes, which also change this
+  gem
+- AdKeyword/keywords are gone, welcome AdInterest/interests
+  (see [the
+docs](https://developers.facebook.com/docs/reference/ads-api/interest-targeting))
+- locations became geo_locations, and you can now also target cities
+  (see [the
+docs](https://developers.facebook.com/docs/reference/ads-api/targeting-specs))
+
 0.2.0
 -----
-- implement Facbook's [Oct 2013 breaking changes](https://developers.facebook.com/roadmap/#q4_2013)
+- implement Facebook's [Oct 2013 breaking changes](https://developers.facebook.com/roadmap/#q4_2013)
 
 0.0.9
 -----
