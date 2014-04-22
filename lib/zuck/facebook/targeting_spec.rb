@@ -35,7 +35,7 @@ module Zuck
   # Some helpers around https://developers.facebook.com/docs/reference/ads-api/targeting-specs/
   # Use like this:
   #
-  #     > ts = Facebook::TargetingSpec.new(graph, ad_account, keyword: 'foo', geo_locations: {countries: ['US']})
+  #     > ts = Facebook::TargetingSpec.new(graph, ad_account, interest: 'foo', geo_locations: {countries: ['US']})
   #     > ts.spec
   #     => {
   #        :countries => [
@@ -93,21 +93,21 @@ module Zuck
 
     def validate_interests
       @spec[:interests].each do |w|
-        raise(InvalidKeywordError, w) unless validate_keyword(w)
+        raise(InvalidKeywordError, w) unless validate_interest(w)
       end
     end
 
-    # Validates a single keyword from the cache or calls
+    # Validates a single interest from the cache or calls
     # {TargetingSpec.validate_interests}.to validate the interests via
     # facebook's api.
-    # @param keyword [String] A single keyword
+    # @param interest [String] A single interest
     # @return boolean
-    def validate_keyword(keyword)
-      if @validated_interests[keyword] == nil
-        interests = normalize_array([@spec[:interests]] + [keyword])
+    def validate_interest(interest)
+      if @validated_interests[interest] == nil
+        interests = normalize_array([@spec[:interests]] + [interest])
         @validated_interests = Zuck::AdKeyword.validate(@graph, interests)
       end
-      @validated_interests[keyword] == true
+      @validated_interests[interest] == true
     end
 
     # Fetches a bunch of reach estimates from facebook at once.
@@ -194,8 +194,8 @@ module Zuck
       @spec[:genders] = [1] if gender.to_s == 'male'
       @spec[:genders] = [2] if gender.to_s == 'female'
 
-      keyword = spec.delete(:keyword)
-      @spec[:interests] = normalize_array([keyword, @spec[:interests]])
+      interest = spec.delete(:interest)
+      @spec[:interests] = normalize_array([interest, @spec[:interests]])
 
       country = spec.delete(:country)
       @spec[:countries] = normalize_countries([country, @spec[:countries]])

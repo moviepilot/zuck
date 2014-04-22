@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&keyword_list=Eminem,invalidsssssssssssssss&type=adkeywordvalid
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Www-Authenticate:
+      - OAuth "Facebook Platform" "invalid_request" "This search type has been deprecated
+        for your app."
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1216101'
+      Cache-Control:
+      - no-store
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - 5YWQGv5UmUcgvCXSOo52+SA8r7cDrVuPgHIvhviZFdc=
+      Date:
+      - Tue, 22 Apr 2014 13:36:40 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '115'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"This search type has been deprecated for your
+        app.","type":"GraphMethodException","code":100}}'
+    http_version: 
+  recorded_at: Tue, 22 Apr 2014 13:36:41 GMT
+recorded_with: VCR 2.3.0

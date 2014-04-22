@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22Eminem%22,%22Sting%22%5D,%22age_min%22:13,%22connections%22:%5B%5D,%22broad_age%22:false%7D
+    uri: https://graph.facebook.com/act_1384977038406122/reachestimate?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&targeting_spec=%7B%22geo_locations%22:%7B%22countries%22:%5B%22US%22%5D%7D,%22interests%22:%5B%22Eminem%22,%22Sting%22%5D,%22age_min%22:13,%22countries%22:%5B%5D,%22connections%22:%5B%5D,%22broad_age%22:false%7D
     body:
       encoding: US-ASCII
       string: ''
@@ -18,36 +18,36 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
+      Etag:
+      - ! '"c1294c35226a3ed2f57509721e541bd19ab3a0ed"'
       Content-Type:
       - application/json; charset=UTF-8
-      Etag:
-      - ! '"9ac6d458b810272cafd8ce451a7f9f1f9530c83b"'
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
       X-Fb-Rev:
-      - '934677'
+      - '1216101'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - 61VwYP47RnemHT8gXLSpsdpq6MKIPD9tWkdAbhxdaK8=
+      - TKktKl3jf/UiEoF+94LZ687QmZePRbIbsuJtQAwSVYQ=
       Date:
-      - Thu, 12 Sep 2013 13:21:36 GMT
+      - Tue, 22 Apr 2014 13:31:34 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '562'
+      - '488'
     body:
       encoding: US-ASCII
-      string: ! '{"users":17800000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":217,"cpa_median":391,"cpa_max":521,"cpc_min":40,"cpc_median":64,"cpc_max":85,"cpm_min":6,"cpm_median":22,"cpm_max":215}],"estimate_ready":true,"imp_estimates":[],"min_reach":null,"max_reach":null,"data":{"users":17800000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":217,"cpa_median":391,"cpa_max":521,"cpc_min":40,"cpc_median":64,"cpc_max":85,"cpm_min":6,"cpm_median":22,"cpm_max":215}],"estimate_ready":true,"imp_estimates":[],"min_reach":null,"max_reach":null}}'
+      string: ! '{"users":28000000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":10,"cpa_median":16,"cpa_max":21,"cpc_min":10,"cpc_median":16,"cpc_max":21,"cpm_min":7,"cpm_median":93,"cpm_max":271}],"estimate_ready":true,"imp_estimates":[],"data":{"users":28000000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":10,"cpa_median":16,"cpa_max":21,"cpc_min":10,"cpc_median":16,"cpc_max":21,"cpm_min":7,"cpm_median":93,"cpm_max":271}],"estimate_ready":true,"imp_estimates":[]}}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 13:21:36 GMT
+  recorded_at: Tue, 22 Apr 2014 13:31:35 GMT
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&targeting_spec=%7B%22geo_locations%22:%7B%22countries%22:%5B%22US%22%5D%7D,%22interests%22:%5B%22Eminem%22,%22Sting%22%5D,%22age_min%22:13,%22countries%22:%5B%5D,%22connections%22:%5B%5D,%22broad_age%22:false%7D
+    uri: https://graph.facebook.com/act_1384977038406122/reachestimate?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&targeting_spec=%7B%22geo_locations%22:%7B%22countries%22:%5B%22US%22%5D%7D,%22interests%22:%5B%22Eminem%22,%22Sting%20(Musician)%22%5D,%22age_min%22:13,%22countries%22:%5B%5D,%22connections%22:%5B%5D,%22broad_age%22:false%7D
     body:
       encoding: US-ASCII
       string: ''
@@ -60,12 +60,11 @@ http_interactions:
       - ! '*/*'
   response:
     status:
-      code: 400
-      message: Bad Request
+      code: 200
+      message: OK
     headers:
-      Www-Authenticate:
-      - ! 'OAuth "Facebook Platform" "invalid_token" "Error validating access token:
-        This may be because the user logged out or may be due to a system error."'
+      Etag:
+      - ! '"a8f1384987b3c658b17a07155c2cc83b2a1701ce"'
       Content-Type:
       - application/json; charset=UTF-8
       Pragma:
@@ -75,21 +74,20 @@ http_interactions:
       X-Fb-Rev:
       - '1216101'
       Cache-Control:
-      - no-store
+      - private, no-cache, no-store, must-revalidate
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - cf1MHO5MmzUnCnoei1ksBi2K6aQjpEhrylAVHYx/crA=
+      - ORocQtfaAdpNtxSIfrYYstW/EysQjQ78NX75OLnYKII=
       Date:
-      - Tue, 22 Apr 2014 10:30:50 GMT
+      - Tue, 22 Apr 2014 14:21:09 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '182'
+      - '490'
     body:
       encoding: US-ASCII
-      string: ! '{"error":{"message":"Error validating access token: This may be because
-        the user logged out or may be due to a system error.","type":"OAuthException","code":190,"error_subcode":467}}'
+      string: ! '{"users":28000000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":12,"cpa_median":19,"cpa_max":25,"cpc_min":11,"cpc_median":17,"cpc_max":22,"cpm_min":7,"cpm_median":124,"cpm_max":283}],"estimate_ready":true,"imp_estimates":[],"data":{"users":28000000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":12,"cpa_median":19,"cpa_max":25,"cpc_min":11,"cpc_median":17,"cpc_max":22,"cpm_min":7,"cpm_median":124,"cpm_max":283}],"estimate_ready":true,"imp_estimates":[]}}'
     http_version: 
-  recorded_at: Tue, 22 Apr 2014 10:30:51 GMT
+  recorded_at: Tue, 22 Apr 2014 14:21:11 GMT
 recorded_with: VCR 2.3.0
