@@ -2,7 +2,58 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217/reachestimate?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&targeting_spec=%7B%22countries%22:%5B%22US%22%5D,%22keywords%22:%5B%22Sting%22%5D,%22age_min%22:13,%22age_max%22:24,%22genders%22:%5B2%5D,%22connections%22:%5B%5D,%22broad_age%22:false%7D
+    uri: https://graph.facebook.com/act_1384977038406122/reachestimate?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&targeting_spec=%7B%22geo_locations%22:%7B%22countries%22:%5B%22US%22%5D%7D,%22interests%22:%5B%22Sting%22%5D,%22age_min%22:13,%22age_max%22:24,%22genders%22:%5B2%5D,%22countries%22:%5B%5D,%22connections%22:%5B%5D,%22broad_age%22:false%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Www-Authenticate:
+      - ! 'OAuth "Facebook Platform" "invalid_request" "(#1487703) Invalid Interests
+        Targeting: You have selected invalid interests.,Invalid Interests Targeting:
+        You have selected invalid interests."'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1216101'
+      Cache-Control:
+      - no-store
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - OKnEh+SCMeuUtDeOx7uBgc2Y3+cP/ADtQmizuwCFbh4=
+      Date:
+      - Tue, 22 Apr 2014 13:31:34 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '376'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"(#1487703) Invalid Interests Targeting: You
+        have selected invalid interests.,Invalid Interests Targeting: You have selected
+        invalid interests.","type":"OAuthException","code":1487703,"error_data":{"showable_errors":["Invalid
+        Interests Targeting: You have selected invalid interests.","Invalid Interests
+        Targeting: You have selected invalid interests."]}}}'
+    http_version: 
+  recorded_at: Tue, 22 Apr 2014 13:31:36 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/act_1384977038406122/reachestimate?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&targeting_spec=%7B%22geo_locations%22:%7B%22countries%22:%5B%22US%22%5D%7D,%22interests%22:%5B%22Sting%20(musician)%22%5D,%22age_min%22:13,%22age_max%22:24,%22genders%22:%5B2%5D,%22countries%22:%5B%5D,%22connections%22:%5B%5D,%22broad_age%22:false%7D
     body:
       encoding: US-ASCII
       string: ''
@@ -18,31 +69,31 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
+      Etag:
+      - ! '"535b11b3cffda3c65a081209ee4ddf3835e6f914"'
       Content-Type:
       - application/json; charset=UTF-8
-      Etag:
-      - ! '"ed45c65e395f6b7bcfd3dcbb4451e915b2ab464d"'
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
       X-Fb-Rev:
-      - '934677'
+      - '1216101'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - MFmGzAEJviAufFQtZWEOYbuCwzuNMsFYRc+LXv34UT8=
+      - 7bO34dIJWYBvK8cDwLDpgiq7ZexaDsJ9Ij4Qa/B1jFw=
       Date:
-      - Thu, 12 Sep 2013 13:21:38 GMT
+      - Tue, 22 Apr 2014 14:20:18 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '552'
+      - '480'
     body:
       encoding: US-ASCII
-      string: ! '{"users":38000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":246,"cpa_median":424,"cpa_max":578,"cpc_min":37,"cpc_median":59,"cpc_max":76,"cpm_min":3,"cpm_median":8,"cpm_max":15}],"estimate_ready":true,"imp_estimates":[],"min_reach":null,"max_reach":null,"data":{"users":38000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":246,"cpa_median":424,"cpa_max":578,"cpc_min":37,"cpc_median":59,"cpc_max":76,"cpm_min":3,"cpm_median":8,"cpm_max":15}],"estimate_ready":true,"imp_estimates":[],"min_reach":null,"max_reach":null}}'
+      string: ! '{"users":74000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":10,"cpa_median":15,"cpa_max":20,"cpc_min":9,"cpc_median":14,"cpc_max":18,"cpm_min":6,"cpm_median":17,"cpm_max":136}],"estimate_ready":true,"imp_estimates":[],"data":{"users":74000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":10,"cpa_median":15,"cpa_max":20,"cpc_min":9,"cpc_median":14,"cpc_max":18,"cpm_min":6,"cpm_median":17,"cpm_max":136}],"estimate_ready":true,"imp_estimates":[]}}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 13:21:38 GMT
+  recorded_at: Tue, 22 Apr 2014 14:20:20 GMT
 recorded_with: VCR 2.3.0

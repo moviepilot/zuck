@@ -1,0 +1,186 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&keyword_list=Eminem,invalidsssssssssssssss&type=adkeywordvalid
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Www-Authenticate:
+      - OAuth "Facebook Platform" "invalid_request" "This search type has been deprecated
+        for your app."
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1216101'
+      Cache-Control:
+      - no-store
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - 5YWQGv5UmUcgvCXSOo52+SA8r7cDrVuPgHIvhviZFdc=
+      Date:
+      - Tue, 22 Apr 2014 13:36:40 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '115'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"This search type has been deprecated for your
+        app.","type":"GraphMethodException","code":100}}'
+    http_version: 
+  recorded_at: Tue, 22 Apr 2014 13:36:41 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&keyword_list=Eminem,invalidsssssssssssssss&type=adinterestvalid
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - ! '"1050253aec7b29caff644806927dabfa81406eee"'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1216101'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - ojR7Y6RIT7GLVdCXuXQmUXCaTKnDob/Lcxk/NYR6FVE=
+      Date:
+      - Tue, 22 Apr 2014 15:53:05 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11'
+    body:
+      encoding: US-ASCII
+      string: ! '{"data":[]}'
+    http_version: 
+  recorded_at: Tue, 22 Apr 2014 15:53:07 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&interest_list=Eminem,invalidsssssssssssssss&type=adinterestvalid
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Www-Authenticate:
+      - OAuth "Facebook Platform" "invalid_request" "(#100) param interest_list must
+        be an array."
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1216101'
+      Cache-Control:
+      - no-store
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - d4l2YYQRkv0eOtLLFGlS40LwTDqugSEc3O5ILobLc8E=
+      Date:
+      - Tue, 22 Apr 2014 15:55:06 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '103'
+    body:
+      encoding: US-ASCII
+      string: ! '{"error":{"message":"(#100) param interest_list must be an array.","type":"OAuthException","code":100}}'
+    http_version: 
+  recorded_at: Tue, 22 Apr 2014 15:55:07 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&interest_list%5B%5D=invalidsssssssssssssss&type=adinterestvalid
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.7
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Etag:
+      - ! '"99b46c018fb5ff17aaa09a5f4c8cc1e39a023833"'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1216101'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - pRnjXTFy5pPE54NjzHEgMQgm1715mvuGDsxzdtLib40=
+      Date:
+      - Tue, 22 Apr 2014 15:56:01 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '269'
+    body:
+      encoding: US-ASCII
+      string: ! '{"data":[{"name":"Eminem","valid":true,"id":6003267925601,"audience_size":121735657,"path":[],"description":null},{"name":"em\u0131nem","valid":true,"id":6004151469695,"audience_size":44621,"path":[],"description":null},{"name":"invalidsssssssssssssss","valid":false}]}'
+    http_version: 
+  recorded_at: Tue, 22 Apr 2014 15:56:03 GMT
+recorded_with: VCR 2.3.0
