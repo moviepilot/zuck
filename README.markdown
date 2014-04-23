@@ -94,31 +94,31 @@ AdInterest convenience methods
 ```ruby
 graph = Zuck.graph
 
-# Search for keywords (to auto complete, for example) (yes, facebook sometimes returns ids as string and sometimes as numbers)
+# Search for interests (to auto complete, for example) (yes, facebook sometimes returns ids as string and sometimes as numbers)
 Zuck::AdInterest.search(graph, "Auto")
 =>  [
-      {:keyword=>"Auto", :id=>"6003156165433", :audience=>nil},
-      {:keyword=>"#Automobile", :id=>6003176678152, :audience=>97900000},
-      {:keyword=>"#Auto racing", :id=>6003146718552, :audience=>21800000},
-      {:keyword=>"#Auto mechanic", :id=>6003109384433, :audience=>14600000}
+      {:interest=>"Auto", :id=>"6003156165433", :audience=>nil},
+      {:interest=>"#Automobile", :id=>6003176678152, :audience=>97900000},
+      {:interest=>"#Auto racing", :id=>6003146718552, :audience=>21800000},
+      {:interest=>"#Auto mechanic", :id=>6003109384433, :audience=>14600000}
     ]
 
-# Quickly check if a keyword is valid
+# Quickly check if a interest is valid
 Zuck::AdInterest.validate(graph, '#Eminem')
 => {"#Eminem" => true}
 
-# Quickly check a couple of keywords
+# Quickly check a couple of interests
 Zuck::AdInterest.validate(graph, ['#Eminem', 'Wil Ferel', 'Bronson'])
 => {"#Eminem"=>true, "Bronson"=>true, "Wil Ferel"=>false}
 
-# Make a best guess on how a keyword is called on Facebook
+# Make a best guess on how a interest is called on Facebook
 Zuck::AdInterest.best_guess(graph, 'Disney')
-=> {:keyword=>"#The Walt Disney Company", :id=>6003270522085, :audience=>72500000}
+=> {:interest=>"#The Walt Disney Company", :id=>6003270522085, :audience=>72500000}
 
-# Sometimes a best guess does not return a keyword with a # prefix, and that
-# means that we don't know the audience of that keyword:
+# Sometimes a best guess does not return a interest with a # prefix, and that
+# means that we don't know the audience of that interest:
 Zuck::AdInterest.best_guess(graph, 'Moviepilot')
-=> {:keyword=>"Moviepilot", :id=>6003327847780, :audience=>nil}
+=> {:interest=>"Moviepilot", :id=>6003327847780, :audience=>nil}
 
 ```
 
