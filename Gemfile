@@ -2,14 +2,14 @@ source 'http://rubygems.org'
 
 gem 'rvm'
 gem 'bundler'
-gem 'koala', '>=1.6'
+gem 'koala', '~>1.6.0'
 gem 'activesupport'
 
 group :development do
-  gem "shoulda", ">= 0"
+  gem "shoulda", "~> 3.3.2"
   gem "rdoc", "~> 3.12"
-  gem "jeweler", "~> 1.8.4"
-  gem "simplecov", ">= 0", :require => false
+  gem "jeweler", "~> 2.0.1"
+  gem "simplecov", "~> 0.7.1", :require => false
 end
 
 group :development, :test do
