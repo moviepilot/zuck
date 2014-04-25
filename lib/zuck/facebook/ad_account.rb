@@ -1,5 +1,7 @@
 module Zuck
   class AdAccount < RawFbObject
+    
+    NEW_CAMPAIGN_STRUCTURE_CAPABILITY = 28
 
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
@@ -34,12 +36,27 @@ module Zuck
 
 
     list_path   'me/adaccounts'
-    connections :ad_campaigns, :ad_groups, :custom_audiences
+    connections :ad_campaigns, :ad_campaign_groups, :ad_groups, :custom_audiences
 
     # Queries for an an array of all accounts for the current user
     # @return {Array} A list of fully hydrated Account objects
     def self.all(graph = Zuck.graph)
       super(graph)
+    end
+    
+    # @return {Boolean} true if this ad account supports the new campaign structure, false otherwise
+    def has_new_campaign_structure?
+      return self.capabilities.include?(NEW_CAMPAIGN_STRUCTURE_CAPABILITY)
+    end
+    
+    # Creates a new campaign group object with pointers to the current account
+    # @param {Hash} data Initial values for the campaign group's properties. Defaults to an empty Hash
+    # @return {Zuck::AdCampaignGroup} A new campaign group object
+    def new_campaign_group(data = {})
+      data ||= {}
+      data[:account_id] ||= self.id
+      campaign_group = Zuck::AdCampaignGroup.new(Zuck.graph, data, self)
+      return campaign_group
     end
     
     # Creates a new campaign object with pointers to the current account

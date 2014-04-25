@@ -1,16 +1,17 @@
 module Zuck
   class AdCampaign < RawFbObject
 
-    CAMPAIGN_STATUS_ACTIVE = 1
-    CAMPAIGN_STATUS_PAUSED = 2
-    CAMPAIGN_STATUS_DELETED = 3
+    CAMPAIGN_STATUS_ACTIVE = "ACTIVE"
+    CAMPAIGN_STATUS_PAUSED = "PAUSED"
+    CAMPAIGN_STATUS_DELETED = "DELETED"
 
-    REQUIRED_FIELDS = [:name, :campaign_status, :account_id]
+    REQUIRED_FIELDS = [:name, :campaign_status, :account_id, :campaign_group_id]
 
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
     # actually returned.
     known_keys :account_id,
+               :campaign_group_id,
                :campaign_status,
                :created_time,
                :daily_imps,
@@ -73,6 +74,7 @@ module Zuck
       # Setup the post body for Facebook
       args = {
         "name" => self.name,
+        "campaign_group_id" => self.campaign_group_id,
         "campaign_status" => self.campaign_status,
         "daily_budget" => self.daily_budget.to_i,
         "lifetime_budget" => self.lifetime_budget.to_i,
