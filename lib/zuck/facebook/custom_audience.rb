@@ -167,34 +167,5 @@ module Zuck
       self.approximate_count = graph_obj['approximate_count']
       return self
     end
-
-
-
-
-    # List of facebook user ids who liked a certain facebook edge
-    # @param {Integer} :
-    # @param {Array} :countries {Array} list of countries to create audiences for
-    # @return [Array] List of ids
-    def get_likers_for_custom_edge(app_id, edge_ids)
-      ids = []
-      edge_ids.each_with_index do |edge_id, i|
-        sleep(1)
-        puts "Edge #{i + 1}"
-        response = Zuck.graph.graph_call("#{app_id}_#{edge_id}/likes/?limit=1000&fields=id")
-        while response.present?
-          ids += response
-          sleep(0.25)
-          response = response.next_page
-        end
-         File.open('/Users/davidpekar/Desktop/bb.txt','w') {|f| f.write(ids.to_s)}
-
-
-      end
-
-      return ids
-    end
-
-
-
   end
 end 
