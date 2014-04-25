@@ -6,10 +6,6 @@ module Zuck
     LOOKALIKE_MINIMUM_SIZE = 500
     FACEBOOK_BATCH_SIZE = 10000
 
-    # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
-    # were incomplete, so I added here what the graph explorer
-    # actually returned.
-
     known_keys :id,
                :account_id,
                :approximate_count,
@@ -28,6 +24,34 @@ module Zuck
     parent_object :ad_account
     list_path :customaudiences
 
+    # Types of lookalike audience
+    LOOKALIKE_TYPE_SIMILARITY = "similarity"
+    LOOKALIKE_TYPE_REACH = "reach"
+
+    LOOKALIIKE_TYPES = [
+      LOOKALIKE_TYPE_SIMILARITY,
+      LOOKALIKE_TYPE_REACH
+    ]
+
+    # Id Types accepted by Facebook
+    EMAIL='email_hash'
+    IDFA='mobile_advertiser_id'
+    PHONE_NUMBER='phone_hash'
+    FACEBOOK_ID='id'
+    THIRD_PARTY_ID='custom_audience_third_party_id'
+
+    ID_TYPES = [
+      EMAIL,
+      IDFA,
+      PHONE_NUMBER,
+      FACEBOOK_ID,
+      THIRD_PARTY_ID
+    ]
+
+    HASHED_ID_TYPES =[
+      EMAIL,
+      PHONE_NUMBER
+    ]
 
     # @param graph [Koala::Facebook::API] A graph with access_token
     # @param data [Hash] The properties you want to assign, this is what
@@ -85,69 +109,27 @@ module Zuck
         raise "You must save this audience before you can populate it."
       else
         batch = 0
+        #TODO: Need to add error checking here
         ids.in_groups_of(FACEBOOK_BATCH_SIZE) do |id_batch|
-          begin
-            tries ||= 3
-            puts "batch: #{batch}"
-            compacted_id_batch = id_batch.compact
+          puts "batch: #{batch}"
+          compacted_id_batch = id_batch.compact
 
-            hashified_ids = compacted_id_batch.collect do |id| 
-              {id_type => id}
+          hashified_ids = compacted_id_batch.collect do |id| 
+            if HASHED_ID_TYPES.include?(id)
+              id = Digest::MD5.hexdigest(id)
             end
+            {id_type => id}
+          end
 
-            args = {
-              'users' => hashified_ids.to_json 
-            }            
-            puts "count: " +compacted_id_batch.count
-            response = Zuck.graph.put_connections(self.id, "users", args)
-            batch += 1
-          rescue Exception => e         
-            if (tries -= 1) > 0
-              puts "Retrying"
-              retry 
-            else            
-              puts "All retries failed: #{e}"
-            end
-          end        
+          puts "count: " +hashified_ids.count.inspect
+          response = Zuck.graph.put_connections(self.id, "users", "users" => hashified_ids.to_json)
+          batch += 1
         end
       end
 
       return response
      end
 
-
-    # Creates a new custom audience based on a facebook edge
-    # @param {Array} types of lookalikes to create similarity or reach (or both)
-    # @param {Array} countries for which to create lookalikes
-    def create_lookalike_set(types = [], countries = [])
-
-      self.hydrate
-
-      if (types.blank?)
-        raise "You must specify which types of lookalike audiences you want to create."
-      elsif (countries.blank?)
-        raise "You must specify which countries you want lookalike audiences for."
-      elsif (self.approximate_count < LOOKALIKE_MINIMUM_SIZE)
-        raise "Your seed audience needs to be at least #{LOOKALIKE_MINIMUM_SIZE} users to make a lookalike from it."
-      end
-
-      types.each do |type|
-        countries.each do |country|
-
-          # Setup the post body for Facebook
-          args = {
-            "name" => "#{self.name}-#{type}-#{country}",
-            'origin_audience_id' => self.id,
-            'lookalike_spec' => { 
-              'type' => type, 
-              'country' =>  country 
-            }.to_json
-          }  
-
-          new_audience = Zuck.graph.put_connections("act_#{self.account_id}",'customaudiences', args)
-        end
-      end
-    end
 
     # Loads all information available about this audience into the object
     # @return [Zuck::CustomAudience] this audience object
@@ -161,11 +143,39 @@ module Zuck
       self.time_updated = graph_obj['time_updated']
       self.parent_audience_id = graph_obj['parent_audience_id']
       self.subtype = graph_obj['subtype']
-      self.subtype_name = graph_obj['subtype_name']
       self.type_name = graph_obj['type_name']
       self.status = graph_obj['status']
       self.approximate_count = graph_obj['approximate_count']
       return self
     end
-  end
-end 
+
+
+    # Creates a new lookalike audience from existing custom audience
+    # @param {String} type        similarity or reach
+    # @param {String} country     members of the lookalike audience will be from this country
+    def create_lookalike(type, country)
+
+      self.hydrate
+
+      if type.blank? or !LOOKALIIKE_TYPES.include?(type)
+        raise "You must specify a lookalike audience type. (reach or similarity)"
+      elsif country.blank? # Add list of acceptable countries
+        raise "You must specify which countries you want lookalike audiences for."
+      elsif (self.approximate_count < LOOKALIKE_MINIMUM_SIZE)
+        raise "Your seed audience needs to be at least #{LOOKALIKE_MINIMUM_SIZE} users to make a lookalike from it."
+      end
+
+      # Setup the post body for Facebook
+      args = {
+        "name" => "#{self.name}-#{type}-#{country}",
+        'origin_audience_id' => self.id,
+        'lookalike_spec' => { 
+          'type' => type, 
+          'country' =>  country 
+        }.to_json
+      }  
+
+      new_audience = Zuck.graph.put_connections("act_#{self.account_id}",'customaudiences', args)
+    end
+  end #class
+end #module
