@@ -64,7 +64,6 @@ module Zuck
 
     # Creates a new custom audience based on a facebook edge
     # @param {Hash} data
-    #               :edge_id {String} of open graph object to scrape
     #               :name {String} 
     #               :description {String}
     # @return {Object} CustomAudience Custom audience just created

@@ -20,7 +20,6 @@ module Zuck
                :parent_category,
                :status,
                :subtype,
-               :subtype_name,
                :type,
                :type_name,
                :time_updated
@@ -73,24 +72,43 @@ module Zuck
 
 
     # Populate a custom audience with set of facebook ids
-    # @param data [Hash] The properties you want to assign, this is what    
-     def populate(ids = [])
+    # @param ids [Array] Array of ids in the audience
+    # @param id_type [String] Type of the id's
+    #
+    # @return response from Facebook    
+     def populate(ids = [], id_type)
       response = false
 
-
       if ids.blank?
-        raise "You must specify a set of Facebook id's to populate this audience with."
+        raise "You must specify a set of id's to populate this audience with."
       elsif (!self.id)
         raise "You must save this audience before you can populate it."
       else
         batch = 0
         ids.in_groups_of(FACEBOOK_BATCH_SIZE) do |id_batch|
-          puts "batch: #{batch}"
-          args = {
-            'users' => id_batch.compact.to_json 
-          }
-          response = Zuck.graph.put_connections(self.id, "users", args)
-          batch += 1
+          begin
+            tries ||= 3
+            puts "batch: #{batch}"
+            compacted_id_batch = id_batch.compact
+
+            hashified_ids = compacted_id_batch.collect do |id| 
+              {id_type => id}
+            end
+
+            args = {
+              'users' => hashified_ids.to_json 
+            }            
+            puts "count: " +compacted_id_batch.count
+            response = Zuck.graph.put_connections(self.id, "users", args)
+            batch += 1
+          rescue Exception => e         
+            if (tries -= 1) > 0
+              puts "Retrying"
+              retry 
+            else            
+              puts "All retries failed: #{e}"
+            end
+          end        
         end
       end
 
