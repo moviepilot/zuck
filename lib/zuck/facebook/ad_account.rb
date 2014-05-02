@@ -1,7 +1,7 @@
 module Zuck
   class AdAccount < RawFbObject
     
-    NEW_CAMPAIGN_STRUCTURE_CAPABILITY = 28
+    NEW_CAMPAIGN_STRUCTURE_CAPABILITY = "NEW_CAMPAIGN_STRUCTURE"
 
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
