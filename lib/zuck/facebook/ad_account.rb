@@ -3,6 +3,22 @@ module Zuck
     
     NEW_CAMPAIGN_STRUCTURE_CAPABILITY = "NEW_CAMPAIGN_STRUCTURE"
 
+    # Facebook Ad Account Statuses
+    STATUS_ACTIVE = 1
+    STATUS_DISABLED = 2
+    STATUS_UNSETTLED = 3 
+    STATUS_PENDING_REVIEW = 7
+    STATUS_PENDING_CLOSURE = 100
+    STATUS_TEMPORARILY_UNAVAILABLE = 101
+
+    # Facebook Ad Is Personal Values
+    PERSONAL_TYPE_NOT_PERSON = 0
+    PERSONAL_TYPE_IS_PERSONAL = 2
+
+    # Facebook Ad Currencies
+    # Note: Only supporting USD for now
+    CURRENCY_USD = "USD"
+
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
     # actually returned.
