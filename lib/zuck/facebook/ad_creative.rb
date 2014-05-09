@@ -7,7 +7,7 @@ module Zuck
     CREATIVE_STORE_IPAD = "itunes_ipad"
     CREATIVE_STORE_ANDROID = "google_play"
 
-    REQUIRED_FIELDS = [:type, :object_id, :mobile_store, :title, :body, :image_hash]
+    REQUIRED_FIELDS = [:type, :object_store_url, :title, :body, :image_hash]
 
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
@@ -15,6 +15,7 @@ module Zuck
     known_keys :name,
                :type,
                :object_id,
+               :object_store_url,
                :body,
                :image_hash,
                :image_url,
@@ -58,12 +59,10 @@ module Zuck
       end
 
       args = {
-        "type" => self.type,
-        "object_id" => self.object_id.to_i,
-        "mobile_store" => self.mobile_store,
+        "object_store_url" => self.object_store_url,
+        "image_hash" => self.image_hash,
         "title" => self.title,
         "body" => self.body,
-        "image_hash" => self.image_hash,
         "name" => self.name    
       }      
 
