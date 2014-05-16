@@ -48,7 +48,7 @@ module Zuck
         rescue => e
           num_retries+=1
           if e.instance_of? Koala::Facebook::ServerError && num_retries<MAX_RETRIES
-            "post failed for #{path} (attempts: #{num_retries}, message: #{e})" if in_irb?
+            puts "post failed for #{path} (attempts: #{num_retries}, message: #{e})" if in_irb?
             sleep(RETRY_DELAY_SECONDS)
             retry
           else
@@ -66,7 +66,7 @@ module Zuck
         rescue => e
           num_retries+=1
           if e.instance_of? Koala::Facebook::ServerError && num_retries<MAX_RETRIES
-            "delete failed for #{path} (attempts: #{num_retries}, message: #{e})" if in_irb?
+            puts "delete failed for #{path} (attempts: #{num_retries}, message: #{e})" if in_irb?
             sleep(RETRY_DELAY_SECONDS)
             retry
           else
