@@ -91,7 +91,8 @@ module Zuck
       }      
 
       if (!self.id)
-        fb_response = Zuck.graph.put_connections(self.account_id,"adgroups", args)
+        account_id = Zuck::AdAccount.id_for_api(self.account_id)
+        fb_response = Zuck.graph.put_connections(account_id,"adgroups", args)
         if (fb_response && fb_response.has_key?('id'))
           self.id = fb_response['id']
           response = true
