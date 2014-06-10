@@ -50,14 +50,22 @@ module Zuck
         data["redownload"] = 1
 
         # Create
-        result = create_connection(graph, p, list_path, data)["data"]
+        created = create_connection(graph, p, list_path, data)
 
-        # The data is nested by name and id, e.g.
-        #
-        #     "campaigns" => { "12345" => "data" }
-        #
-        # Since we only put one at a time, we'll fetch this like that.
-        data = result.values.first.values.first
+        if created["data"] 
+          # The data is nested by name and id, e.g.
+          #
+          #     "campaigns" => { "12345" => "data" }
+          #
+          # Since we only put one at a time, we'll fetch this like that.
+
+          result = created['data']
+          data = result.values.first.values.first
+        else
+          # Other objects that only return an Id (eg, Custom Audiences)
+
+          data = created
+        end
 
         # Return a new instance
         new(graph, data, parent)
