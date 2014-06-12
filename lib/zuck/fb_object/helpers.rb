@@ -12,7 +12,7 @@ module Zuck
           graph.get_object(path, fields: known_keys.compact.join(','))
         rescue => e
           num_retries+=1
-          if e.instance_of? Koala::Facebook::ServerError && num_retries<MAX_RETRIES
+          if e.instance_of?(Koala::Facebook::ServerError) && num_retries<MAX_RETRIES
             puts "get failed for #{path} (attempts: #{num_retries}, message: #{e})" if in_irb?
             sleep(RETRY_DELAY_SECONDS)
             retry
@@ -29,7 +29,7 @@ module Zuck
           graph.put_connections(parent, connection, args, opts)
         rescue => e
           num_retries+=1
-          if e.instance_of? Koala::Facebook::ServerError && num_retries<MAX_RETRIES
+          if e.instance_of?(Koala::Facebook::ServerError) && num_retries<MAX_RETRIES
             puts "create_connection failed (attempts: #{num_retries}, message: #{e})" if in_irb?
             sleep(RETRY_DELAY_SECONDS)
             retry
@@ -47,7 +47,7 @@ module Zuck
           graph.graph_call(path.to_s, data, "post", opts)
         rescue => e
           num_retries+=1
-          if e.instance_of? Koala::Facebook::ServerError && num_retries<MAX_RETRIES
+          if e.instance_of?(Koala::Facebook::ServerError) && num_retries<MAX_RETRIES
             puts "post failed for #{path} (attempts: #{num_retries}, message: #{e})" if in_irb?
             sleep(RETRY_DELAY_SECONDS)
             retry
@@ -65,7 +65,7 @@ module Zuck
           graph.delete_object(path)
         rescue => e
           num_retries+=1
-          if e.instance_of? Koala::Facebook::ServerError && num_retries<MAX_RETRIES
+          if e.instance_of?(Koala::Facebook::ServerError) && num_retries<MAX_RETRIES
             puts "delete failed for #{path} (attempts: #{num_retries}, message: #{e})" if in_irb?
             sleep(RETRY_DELAY_SECONDS)
             retry
