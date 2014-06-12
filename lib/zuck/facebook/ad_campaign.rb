@@ -4,6 +4,7 @@ module Zuck
     CAMPAIGN_STATUS_ACTIVE = "ACTIVE"
     CAMPAIGN_STATUS_PAUSED = "PAUSED"
     CAMPAIGN_STATUS_DELETED = "DELETED"
+    CAMPAIGN_STATUS_GROUP_PAUSED = "CAMPAIGN_GROUP_PAUSED"
 
     REQUIRED_FIELDS = [:name, :campaign_status, :account_id, :campaign_group_id]
 
