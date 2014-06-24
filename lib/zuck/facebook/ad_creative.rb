@@ -23,7 +23,6 @@ module Zuck
                :title,
                :link_url,
                :url_tags,
-               :preview_url,
                :related_fan_page,
                :auto_update,
                :story_id,
