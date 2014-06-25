@@ -20,7 +20,7 @@ module Zuck
 
     CONVERSION_ACTION_INSTALL = 'mobile_app_install'
 
-    REQUIRED_FIELDS = [:name, :bid_type, :bid_info, :campaign_id, :targeting]
+    REQUIRED_FIELDS = [:name, :bid_type, :bid_info, :campaign_id, :targeting, :objective]
 
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
@@ -35,6 +35,7 @@ module Zuck
                :created_time,
                :creative_ids,               
                :id,
+               :objective,
                # :disapprove_reason_descriptions, # note: this should be reenabled with :adgroup_review_feedback
                :last_updated_by_app_id,
                :name,
