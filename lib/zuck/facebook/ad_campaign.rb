@@ -68,7 +68,7 @@ module Zuck
         raise "You need to set the following fields before saving: #{missing_fields.join(', ')}"
       elsif (!self.daily_budget && !self.lifetime_budget)
         raise "You must specifiy either a daily or lifetime_budget"
-      elsif (self.lifetime_budget && !self.end_time)
+      elsif (self.lifetime_budget && self.lifetime_budget > 0 && !self.end_time)
         raise "You must specify an end_time for campaigns with lifetime budgets"
       end
 
