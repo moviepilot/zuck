@@ -17,7 +17,7 @@ module Zuck
     OBJECTIVE_MOBILE_APP_ENGAGEMENT = "MOBILE_APP_ENGAGEMENT"
     OBJECTIVE_WEBSITE_CLICKS = "WEBSITE_CLICKS"
     
-    REQUIRED_FIELDS = [:name, :campaign_group_status, :account_id]
+    REQUIRED_FIELDS = [:name, :campaign_group_status, :objective, :account_id]
 
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adcampaign-alpha)
     # were incomplete, so I added here what the graph explorer
@@ -57,7 +57,8 @@ module Zuck
       # Setup the post body for Facebook
       args = {
         "name" => self.name,
-        "campaign_group_status" => self.campaign_group_status
+        "campaign_group_status" => self.campaign_group_status,
+        "objective" => self.objective
       }  
 
       if (!self.id)
