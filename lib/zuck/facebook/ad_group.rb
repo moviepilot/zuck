@@ -89,6 +89,7 @@ module Zuck
         "targeting" => self.targeting.to_json,
         "conversion_specs" => self.conversion_specs.to_json,
         "redownload" => 1,
+        "objective" => self.objective
       }      
 
       if (!self.id)
