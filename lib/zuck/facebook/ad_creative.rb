@@ -1,20 +1,15 @@
 module Zuck
   class AdCreative < RawFbObject
     attr_accessor :account_id
-    
-    CREATIVE_TYPE_MOBILE_APP = 32
-    CREATIVE_STORE_ITUNES = "itunes"
-    CREATIVE_STORE_IPAD = "itunes_ipad"
-    CREATIVE_STORE_ANDROID = "google_play"
-    
-    REQUIRED_FIELDS = [:type, :object_store_url, :title, :body, :image_hash]
+
+    REQUIRED_FIELDS = [:object_story_id]
 
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
     # actually returned.
     known_keys :name,
-               :type,
                :object_id,
+               :object_story_id,
                :object_store_url,
                :body,
                :image_hash,
@@ -23,11 +18,8 @@ module Zuck
                :title,
                :link_url,
                :url_tags,
-               :related_fan_page,
                :auto_update,
-               :story_id,
-               :action_spec,
-               :mobile_store
+               :action_spec
 
     parent_object :ad_group
     list_path     :adcreatives
@@ -40,7 +32,6 @@ module Zuck
     #   inherit from {Zuck::FbObject}
     def initialize(graph, data = {}, parent=nil)
       super(graph, data, parent)
-      self.type ||= CREATIVE_TYPE_MOBILE_APP
     end
 
     # Saves the current creative to Facebook
@@ -58,11 +49,7 @@ module Zuck
       end
 
       args = {
-        "object_store_url" => self.object_store_url,
-        "image_hash" => self.image_hash,
-        "title" => self.title,
-        "body" => self.body,
-        "name" => self.name    
+        "object_story_id" => self.object_story_id
       }      
 
       if (!self.id)
