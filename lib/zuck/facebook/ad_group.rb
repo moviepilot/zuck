@@ -90,8 +90,13 @@ module Zuck
         "conversion_specs" => self.conversion_specs.to_json,
         "redownload" => 1,
         "objective" => self.objective
-      }      
-
+      }
+      
+      # since we don't set the adgroup status initially, we only want to change it if we have an id
+      if (self.id)
+        args["adgroup_status"] = self.adgroup_status
+      end
+      
       if (!self.id)
         account_id = Zuck::AdAccount.id_for_api(self.account_id)
         fb_response = Zuck.graph.put_connections(account_id,"adgroups", args)
