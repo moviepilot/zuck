@@ -24,7 +24,7 @@ module Zuck
                :start_time,
                :updated_time
 
-    parent_object :ad_account
+    parent_object :ad_campaign_group
     list_path     :adcampaigns
     connections   :ad_groups
     
