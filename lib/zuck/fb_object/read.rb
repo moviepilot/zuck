@@ -14,9 +14,7 @@ module Zuck
       self.graph = graph
       set_data(data)
 
-      # If the parent is an {AdAccount} we only want to set it as this
-      # object's direct parent when this object is an {AdCampaign}.
-      if !parent.is_a?(AdAccount) or parent.is_a?(AdAccount) and self.is_a?(AdCampaign)
+      if !parent.is_a?(AdAccount)
         set_parent(parent)
       end
     end
