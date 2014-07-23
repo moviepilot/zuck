@@ -1,7 +1,7 @@
 module Zuck
   class AdAccount < RawFbObject
     
-    NEW_CAMPAIGN_STRUCTURE_CAPABILITY = "NEW_CAMPAIGN_STRUCTURE"
+    CAPABILITY_NEW_CAMPAIGN_STRUCTURE = "NEW_CAMPAIGN_STRUCTURE"
 
     # Facebook Ad Account Statuses
     STATUS_ACTIVE = 1
@@ -64,7 +64,7 @@ module Zuck
     
     # @return {Boolean} true if this ad account supports the new campaign structure, false otherwise
     def has_new_campaign_structure?
-      return self.capabilities.include?(NEW_CAMPAIGN_STRUCTURE_CAPABILITY)
+      return self.capabilities.include?(CAPABILITY_NEW_CAMPAIGN_STRUCTURE)
     end
     
     # Creates a new campaign group object with pointers to the current account
