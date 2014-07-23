@@ -18,6 +18,8 @@ module Zuck
     # Facebook Ad Currencies
     # Note: Only supporting USD for now
     CURRENCY_USD = "USD"
+    
+    BATCH_SIZE = 50
 
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
@@ -169,6 +171,67 @@ module Zuck
         response = "act_#{account_id}"
       end
       return response
+    end
+    
+
+    # Gets a hash of data for the given account and connection type for the provided
+    # array of URIs
+    #
+    # @param [Array] base_url_list An array of URI strings to batch [e.g. a list of object_story_ids]
+    # @param [String] connection_name The type of connection to get data for [e.g. "adcampaigns", "reachestimates"]
+    # @param [Hash] params A hash of params for the batch call
+    #
+    # @return [Hash] A hash of batched data in the form of {uri => data}
+    def batch_get_connection_data(base_uri_list, connection_name, params={})
+      batch_data = {}
+      
+      # Cut the array of base URIs into batch sizes...
+      base_uri_list.each_slice(BATCH_SIZE).to_a.each do |base_uri_batch|
+        self.graph.batch do |batch_api|
+          # ... then process it
+          base_uri_batch.each do |base_uri|
+            batch_api.get_connections(base_uri, connection_name, params) do |result_data|
+              batch_data[base_uri] = result_data if is_valid_data?(result_data)
+            end
+          end
+        end
+      end
+      
+      return batch_data
+    end
+   
+    # Gets a hash of data for the given account and connection type for the provided
+    # array of URIs
+    #
+    # @param [Array] base_url_list An array of URI strings to batch [e.g. a list of Zuck::AdCampaign ids]
+    # @param [Hash] params A hash of params for the batch call
+    #
+    # @return [Hash] A hash of batched data in the form of {uri => data}
+    def batch_get_object_data(base_uri_list, params={})
+      batch_data = {}
+      
+      # Cut the array of base URIs into batch sizes...
+      base_uri_list.each_slice(BATCH_SIZE).to_a.each do |base_uri_batch|
+        self.graph.batch do |batch_api|
+          # ... then process it
+          base_uri_batch.each do |base_uri|
+            batch_api.get_object(base_uri, params) do |result_data|
+              batch_data[base_uri] = result_data if is_valid_data?(result_data)
+            end
+          end
+        end
+      end
+      
+      return batch_data
+    end
+    
+    # Convenience function for validating data from a facebook call
+    #
+    # @param [Object] result_data The result data to validate
+    #
+    # @return [Boolean] Whether or not the data is valid
+    def is_valid_data?(result_data)
+      return !result_data.blank? && result_data.is_a?(Koala::Facebook::ClientError) == false && result_data.is_a?(Koala::Facebook::APIError) == false
     end
     
   end
