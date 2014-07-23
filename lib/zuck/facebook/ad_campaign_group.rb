@@ -52,6 +52,8 @@ module Zuck
       missing_fields = (REQUIRED_FIELDS - active_fields)
       if (missing_fields.length != 0)
         raise "You need to set the following fields before saving: #{missing_fields.join(', ')}"
+      elsif (self.name && self.name.length > 100)
+        raise "The name of this AdCampaignGroup is longer than 100 characters"
       end
 
       # Setup the post body for Facebook
