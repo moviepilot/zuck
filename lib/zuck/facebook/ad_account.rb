@@ -2,6 +2,7 @@ module Zuck
   class AdAccount < RawFbObject
     
     CAPABILITY_NEW_CAMPAIGN_STRUCTURE = "NEW_CAMPAIGN_STRUCTURE"
+    CAPABILITY_HAS_ACCEPTED_MOBILE_APP_ENGAGEMENT_TOS = "HAS_ACCEPTED_MOBILE_APP_ENGAGEMENT_TOS" # Facebook capability which allows us to generate custom audiences
 
     # Facebook Ad Account Statuses
     STATUS_ACTIVE = 1
