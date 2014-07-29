@@ -70,8 +70,6 @@ module Zuck
         raise "You must specifiy either a daily or lifetime_budget"
       elsif (self.lifetime_budget && self.lifetime_budget > 0 && !self.end_time)
         raise "You must specify an end_time for campaigns with lifetime budgets"
-      elsif (self.name && self.name.length > 100)
-        raise "The name of this AdCampaign is longer than 100 characters"
       end
 
       # Setup the post body for Facebook

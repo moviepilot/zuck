@@ -79,8 +79,6 @@ module Zuck
         raise "You must specify 'conversion_specs' when the bid_type is OCPM or CPA"
       elsif (!self.id && !self.creative_id)
         raise "You must specify 'creative_id' to save a new AdGroup"
-      elsif (self.name && self.name.length > 100)
-        raise "The name of this AdGroup is longer than 100 characters"
       end
 
       args = {
