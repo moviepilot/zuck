@@ -3,9 +3,6 @@ module Zuck
 
     REQUIRED_FIELDS = [:name]
 
-    LOOKALIKE_MINIMUM_SIZE = 500
-    FACEBOOK_BATCH_SIZE = 10000
-
     known_keys :id,
                :account_id,
                :approximate_count,
@@ -23,16 +20,25 @@ module Zuck
 
     parent_object :ad_account
     list_path :customaudiences
-
+    
+    LOOKALIKE_MINIMUM_SIZE = 500
+    FACEBOOK_BATCH_SIZE = 10000
+    
     # Types of lookalike audience
     LOOKALIKE_TYPE_SIMILARITY = "similarity"
     LOOKALIKE_TYPE_REACH = "reach"
-
-    LOOKALIIKE_TYPES = [
+    LOOKALIKE_TYPE_CUSTOM_RATIO = "custom_ratio" # Automatically set as the type when a ratio is set
+    
+    LOOKALIKE_TYPES = [
       LOOKALIKE_TYPE_SIMILARITY,
-      LOOKALIKE_TYPE_REACH
+      LOOKALIKE_TYPE_REACH,
+      LOOKALIKE_TYPE_CUSTOM_RATIO
     ]
-
+    
+    # Range of values for custom ratios
+    MIN_CUSTOM_RATIO = 0.01
+    MAX_CUSTOM_RATIO = 0.20
+    
     # Id Types accepted by Facebook
     EMAIL='email_hash'
     IDFA='mobile_advertiser_id'
@@ -146,36 +152,87 @@ module Zuck
       self.type_name = graph_obj['type_name']
       self.status = graph_obj['status']
       self.approximate_count = graph_obj['approximate_count']
+      
+      # TODO: Need to get data if subtype == 'LOOKALIKE'
+      #self.lookalike_ratio = graph_obj['lookalike_spec']['ratio']
+      #self.lookalike_type = graph_obj['lookalike_spec']['type']
+      #self.lookalike_country = graph_obj['lookalike_spec']['country']
       return self
     end
-
-
+    
     # Creates a new lookalike audience from existing custom audience
-    # @param {String} type        similarity or reach
-    # @param {String} country     members of the lookalike audience will be from this country
-    def create_lookalike(type, country)
-
-      self.hydrate
-
-      if type.blank? or !LOOKALIIKE_TYPES.include?(type)
-        raise "You must specify a lookalike audience type. (reach or similarity)"
-      elsif country.blank? # Add list of acceptable countries
-        raise "You must specify which countries you want lookalike audiences for."
-      elsif (self.approximate_count < LOOKALIKE_MINIMUM_SIZE)
-        raise "Your seed audience needs to be at least #{LOOKALIKE_MINIMUM_SIZE} users to make a lookalike from it."
-      end
-
+    #
+    # @param [String] name        A name for the Zuck::CustomAudience being created
+    # @param [String] type        similarity or reach
+    # @param [Float]  ratio       A float ratio for this lookalike, only needed if type is 'custom_ratio'
+    # @param [String] country     Members of the lookalike audience will be from this country
+    #
+    # @return [Hash] A response hash with data from our call
+    def create_lookalike(name, country, type, ratio=nil)
+      
       # Setup the post body for Facebook
       args = {
-        "name" => "#{self.name}-#{type}-#{country}",
+        "name" => name,
         'origin_audience_id' => self.id,
         'lookalike_spec' => { 
-          'type' => type, 
           'country' =>  country 
-        }.to_json
-      }  
-
-      new_audience = Zuck.graph.put_connections("act_#{self.account_id}",'customaudiences', args)
+        }
+      }
+      
+      # Only specify a type OR ratio 
+      args['lookalike_spec']['type'] = type if !ratio.present?
+      args['lookalike_spec']['ratio'] = ratio if ratio.present?
+      
+      # Make sure our lookalike params are valid
+      Zuck::CustomAudience.validate_lookalike_params(params)
+      
+      # Load our local data
+      self.hydrate
+      
+      # Make sure our Zuck::CustomAudience is big enough to make a lookalike
+      if (self.approximate_count < LOOKALIKE_MINIMUM_SIZE)
+        raise "Your seed audience needs to be at least #{LOOKALIKE_MINIMUM_SIZE} users to make a lookalike from it."
+      end
+      
+      return Zuck.graph.put_connections("act_#{self.account_id}",'customaudiences', args.to_json)
     end
+    
+  protected
+    
+    # Conveience function for validating our input parameters
+    #
+    # @param [Hash] params A hash of parameters for our Zuck::CustomAudience lookalike
+    def self.validate_lookalike_params(params)
+      # Validate our inputs
+      if params.blank?
+        raise "Can't create a lookalike without params"
+      elsif !params['name'].present
+        raise "You must specify a name for the lookalike"
+      elsif !country.present? || country.length != 2 # TODO: Add list of acceptable countries
+        raise "You must specify a valid ISO 3166-1 alpha-2 country code for your lookalike"
+      elsif params['lookalike_spec'].blank?
+        raise "You must specify a lookalike specs for your lookalike audience"
+      else # Validate ratio + type together
+        lookalike_specs = params['lookalike_spec']
+        ratio = lookalike_specs['ratio']
+        type = lookalike_specs['type']
+        
+        # If a ratio is specified, make sure it is within range and type is not specified...
+        if ratio.present?
+          if ratio < MIN_CUSTOM_RATIO || ratio > MAX_CUSTOM_RATIO
+            raise "Custom ratios must be between #{MIN_CUSTOM_RATIO} and #{MAX_CUSTOM_RATIO}"
+          elsif type.present? && type != LOOKALIKE_TYPE_CUSTOM_RATIO
+            raise "Type can only be specified in the absence of a custom ratio"
+          end
+        # ... else if type is specified make sure it is valid [reach / similarity]
+        elsif type.present? && !LOOKALIKE_TYPES.include?(type)
+          raise "You must specify a lookalike audience type if a custom ratio is not present. (reach or similarity)"
+        # ... otherwise we don't have a valid lookalike
+        else
+          raise "You must specify either a type or custom ratio"
+        end
+      end
+    end # end validate_lookalike_params
+    
   end #class
 end #module
