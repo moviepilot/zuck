@@ -194,7 +194,8 @@ module Zuck
         raise "Your seed audience needs to be at least #{LOOKALIKE_MINIMUM_SIZE} users to make a lookalike from it."
       end
       
-      return Zuck.graph.put_connections("act_#{self.account_id}",'customaudiences', args.to_json)
+      account_id_uri = Zuck::AdAccount.id_for_api(self.account_id)
+      return Zuck.graph.put_connections(account_id_uri,"customaudiences", args)
     end
     
   protected
@@ -206,16 +207,20 @@ module Zuck
       # Validate our inputs
       if params.blank?
         raise "Can't create a lookalike without params"
-      elsif !params['name'].present
+      elsif !params['name'].present?
         raise "You must specify a name for the lookalike"
-      elsif !country.present? || country.length != 2 # TODO: Add list of acceptable countries
-        raise "You must specify a valid ISO 3166-1 alpha-2 country code for your lookalike"
       elsif params['lookalike_spec'].blank?
         raise "You must specify a lookalike specs for your lookalike audience"
-      else # Validate ratio + type together
+      else 
         lookalike_specs = params['lookalike_spec']
         ratio = lookalike_specs['ratio']
         type = lookalike_specs['type']
+        country = lookalike_specs['country']
+        
+        # Validate that the country is alpha-2
+        if !country.present? || country.length != 2 # TODO: Add list of acceptable countries
+          raise "You must specify a valid ISO 3166-1 alpha-2 country code for your lookalike"
+        end
         
         # If a ratio is specified, make sure it is within range and type is not specified...
         if ratio.present?
