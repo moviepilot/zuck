@@ -184,7 +184,7 @@ module Zuck
       args['lookalike_spec']['ratio'] = ratio if ratio.present?
       
       # Make sure our lookalike params are valid
-      Zuck::CustomAudience.validate_lookalike_params(params)
+      Zuck::CustomAudience.validate_lookalike_params(args)
       
       # Load our local data
       self.hydrate
