@@ -194,6 +194,8 @@ module Zuck
         raise "Your seed audience needs to be at least #{LOOKALIKE_MINIMUM_SIZE} users to make a lookalike from it."
       end
       
+      # Convert the internal hash to json
+      args['lookalike_spec'] = args['lookalike_spec'].to_json
       account_id_uri = Zuck::AdAccount.id_for_api(self.account_id)
       return Zuck.graph.put_connections(account_id_uri,"customaudiences", args)
     end
@@ -229,12 +231,11 @@ module Zuck
           elsif type.present? && type != LOOKALIKE_TYPE_CUSTOM_RATIO
             raise "Type can only be specified in the absence of a custom ratio"
           end
+        elsif type == LOOKALIKE_TYPE_CUSTOM_RATIO
+          raise "Must specify a ratio when using a custom ratio type"
         # ... else if type is specified make sure it is valid [reach / similarity]
-        elsif type.present? && !LOOKALIKE_TYPES.include?(type)
+        elsif !type.present? || !LOOKALIKE_TYPES.include?(type)
           raise "You must specify a lookalike audience type if a custom ratio is not present. (reach or similarity)"
-        # ... otherwise we don't have a valid lookalike
-        else
-          raise "You must specify either a type or custom ratio"
         end
       end
     end # end validate_lookalike_params
