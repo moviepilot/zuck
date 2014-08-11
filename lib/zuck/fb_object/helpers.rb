@@ -12,6 +12,8 @@ module Zuck
           graph.get_object(path, fields: known_keys.compact.join(','))
         rescue => e
           num_retries+=1
+          # Temp logging for GET requests
+          Rails.logger.warn "Error occurred during GET request: #{path}\n#{e}"
           if e.instance_of?(Koala::Facebook::ServerError) && num_retries<MAX_RETRIES
             puts "get failed for #{path} (attempts: #{num_retries}, message: #{e})" if in_irb?
             sleep(RETRY_DELAY_SECONDS)
@@ -47,6 +49,8 @@ module Zuck
           graph.graph_call(path.to_s, data, "post", opts)
         rescue => e
           num_retries+=1
+          # Temp logging for POST requests
+          Rails.logger.warn "Error occurred during POST request: #{path}\n#{e}"
           if e.instance_of?(Koala::Facebook::ServerError) && num_retries<MAX_RETRIES
             puts "post failed for #{path} (attempts: #{num_retries}, message: #{e})" if in_irb?
             sleep(RETRY_DELAY_SECONDS)
