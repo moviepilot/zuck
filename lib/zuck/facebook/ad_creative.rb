@@ -11,6 +11,7 @@ module Zuck
                :object_id,
                :object_story_id,
                :object_store_url,
+               :object_type,
                :body,
                :image_hash,
                :image_url,
