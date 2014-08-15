@@ -47,6 +47,17 @@ module Zuck
       include Zuck::FbObject::Write
     end
   end
+  
+  
+  # Convenience function for validating data from a facebook call
+  #
+  # @param [Object] result_data The result data to validate
+  #
+  # @return [Boolean] Whether or not the data is valid
+  def self.is_valid_data?(result_data)
+    return !result_data.blank? && result_data.is_a?(Koala::Facebook::ClientError) == false && result_data.is_a?(Koala::Facebook::APIError) == false
+  end
+  
 end
 
 # See #{Zuck::FbObject::RawFbObject}

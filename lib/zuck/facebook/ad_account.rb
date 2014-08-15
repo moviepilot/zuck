@@ -192,7 +192,7 @@ module Zuck
           # ... then process it
           base_uri_batch.each do |base_uri|
             batch_api.get_connections(base_uri, connection_name, params) do |result_data|
-              batch_data[base_uri] = result_data if is_valid_data?(result_data)
+              batch_data[base_uri] = result_data if Zuck::is_valid_data?(result_data)
             end
           end
         end
@@ -217,7 +217,7 @@ module Zuck
           # ... then process it
           base_uri_batch.each do |base_uri|
             batch_api.get_object(base_uri, params) do |result_data|
-              batch_data[base_uri] = result_data if is_valid_data?(result_data)
+              batch_data[base_uri] = result_data if Zuck::is_valid_data?(result_data)
             end
           end
         end
@@ -226,14 +226,7 @@ module Zuck
       return batch_data
     end
     
-    # Convenience function for validating data from a facebook call
-    #
-    # @param [Object] result_data The result data to validate
-    #
-    # @return [Boolean] Whether or not the data is valid
-    def is_valid_data?(result_data)
-      return !result_data.blank? && result_data.is_a?(Koala::Facebook::ClientError) == false && result_data.is_a?(Koala::Facebook::APIError) == false
-    end
+    
     
   end
 end
