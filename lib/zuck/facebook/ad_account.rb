@@ -58,7 +58,7 @@ module Zuck
     connections :ad_campaigns, :ad_campaign_groups, :ad_groups, :ad_creatives, :custom_audiences
 
     # Queries for an an array of all accounts for the current user
-    # @return {Array} A list of fully hydrated Account objects
+    # @return [Array] A list of fully hydrated Account objects
     def self.all(graph = Zuck.graph)
       super(graph)
     end
@@ -69,8 +69,8 @@ module Zuck
     end
     
     # Creates a new campaign group object with pointers to the current account
-    # @param {Hash} data Initial values for the campaign group's properties. Defaults to an empty Hash
-    # @return {Zuck::AdCampaignGroup} A new campaign group object
+    # @param [Hash] data Initial values for the campaign group's properties. Defaults to an empty Hash
+    # @return [Zuck::AdCampaignGroup] A new campaign group object
     def new_campaign_group(data = {})
       data ||= {}
       data[:account_id] ||= self.id
@@ -79,8 +79,8 @@ module Zuck
     end
     
     # Creates a new campaign object with pointers to the current account
-    # @param {Hash} data Initial values for the campaign's properties. Defaults to an emtpy Hash
-    # @return {Zuck::AdCampaign} A new campaign object
+    # @param [Hash] data Initial values for the campaign's properties. Defaults to an emtpy Hash
+    # @return [Zuck::AdCampaign] A new campaign object
     def new_campaign(data = {})
       data ||= {}
       data[:account_id] ||= self.id
@@ -89,8 +89,8 @@ module Zuck
     end
 
     # Creates a new creative object with pointers to the current account
-    # @param {Hash} data Initial values for the creative's properties. Defaults to an emtpy Hash
-    # @return {Zuck::AdCreative} A new campaign object
+    # @param [Hash] data Initial values for the creative's properties. Defaults to an emtpy Hash
+    # @return [Zuck::AdCreative] A new campaign object
     def new_creative(data = {})
       data ||= {}      
       creative = Zuck::AdCreative.new(Zuck.graph, data, self)
@@ -99,10 +99,10 @@ module Zuck
     end
 
     # Creates a new custom audience based on a facebook edge
-    # @param {Hash} data
+    # @param [Hash] data
     #               :name {String} 
     #               :description {String}
-    # @return {Object} CustomAudience Custom audience just created
+    # @return [Object] CustomAudience Custom audience just created
 
     def new_custom_audience(data = {})
       data ||= {}      
@@ -112,15 +112,42 @@ module Zuck
       audience = Zuck::CustomAudience.new(Zuck.graph, data, self)
 
       return audience
-    end     
+    end
+    
+    # Fetches stats for AdCampaignGroups inside this AdAccount
+    # 
+    # @param [Array] ids An array of AdCampaignGroup ids to get stats for
+    # @param [DateTime] start_time the time we want to get results back from
+    # @param [DateTime] end_time the time we want to get results to, inclusive
+    #
+    # @return [Hash] A hash of ad campaign group id to {"data" => [{"impressions"=>0, "clicks"=>0, ...}]}
+    def ad_campaign_group_stats(ids=[], start_time=nil, end_time=nil)
+      # if no ids were specified, get the full list of ids
+      if !ids || ids.length == 0
+        ids = self.ad_campaign_groups.collect{|acg| acg.id}
+      end
+      
+      result = {}
+      if ids && ids.length > 0
+        fields = [
+          'impressions','spent','clicks'
+        ]
+        
+        stats_path = path+"/stats"+self.class.get_stats_query(start_time, end_time)+"&ids=#{ids.join(',')}&fields=#{fields.join(',')}"
+        
+        result = get(graph, stats_path)
+      end
+      
+      return result
+    end
 
     # gets AdCampaign stats for this AdAccount
     #
-    # @param {Boolean} get_all True if we want to page through all results, false if we only want the first page
+    # @param [Boolean] get_all True if we want to page through all results, false if we only want the first page
     # @param [DateTime] start_time the time we want to get results back from
     # @param [DateTime] end_time the time we want to get results to, inclusive
     # 
-    # @return {Array} If we get all results, this will be an array of the data returned from FB. If we only
+    # @return [Array] If we get all results, this will be an array of the data returned from FB. If we only
     #                 get one page of results, this will be a GraphCollection object that has paging support on it
     def adcampaignstats(get_all, start_time = nil, end_time = nil)
       stats_path = path+"/adcampaignstats"+self.class.get_stats_query(start_time, end_time)
@@ -141,11 +168,11 @@ module Zuck
     
     # gets AdGroup stats for this AdAccount
     #
-    # @param {Boolean} get_all True if we want to page through all results, false if we only want the first page
+    # @param [Boolean] get_all True if we want to page through all results, false if we only want the first page
     # @param [DateTime] start_time the time we want to get results back from
     # @param [DateTime] end_time the time we want to get results to, inclusive
     # 
-    # @return {Array} If we get all results, this will be an array of the data returned from FB. If we only
+    # @return [Array] If we get all results, this will be an array of the data returned from FB. If we only
     #                 get one page of results, this will be a GraphCollection object that has paging support on it
     def adgroupstats(get_all, start_time = nil, end_time = nil)
       stats_path = path+"/adgroupstats"+self.class.get_stats_query(start_time, end_time)
@@ -164,8 +191,8 @@ module Zuck
     end
 
     # Helper method to make sure that a given Account Id has the prefix needed to be used for Graph API calls
-    # @param {String} account_id The account_id you have
-    # @return {String} The account id with the 'act_' prefix
+    # @param [String] account_id The account_id you have
+    # @return [String] The account id with the 'act_' prefix
     def self.id_for_api(account_id)
       response = account_id.to_s
       if (account_id && !account_id.to_s.include?("act_"))
