@@ -31,7 +31,9 @@ module Zuck
     # @param [DateTime] start_time the time we want to get results back from
     # @param [DateTime] end_time the time we want to get results to, inclusive
     def stats(start_time = nil, end_time = nil)
-      stats_path = path+"/stats"+self.class.get_stats_query(start_time, end_time)
+      stats_query_hash = self.class.get_stats_query(start_time, end_time)
+      stats_path = path+"/stats"
+      stats_path += "?#{stats_query_hash.to_query}" if stats_query_hash.keys.length > 0
       get(graph, stats_path)
     end
 
@@ -54,19 +56,12 @@ module Zuck
       # @param [DateTime] start_time the time we want to get results back from
       # @param [DateTime] end_time the time we want to get results to, inclusive
       #
-      # @return {String} the query string for the query
+      # @return [Hash] the start and end params for the query
       def get_stats_query(start_time = nil, end_time = nil)
-        str = ""
-        
         query = {}
         query[:start_time] = start_time.to_i.to_s if start_time
         query[:end_time] = end_time.to_i.to_s if end_time
-        
-        if query.keys.length > 0
-          str = "?" + query.to_query
-        end
-        
-        return str
+        return query
       end
 
       # Finds by object id and checks type
