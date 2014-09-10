@@ -158,7 +158,7 @@ module Zuck
       stats_query_hash = self.class.get_stats_query(start_time, end_time)
       stats_path = path+"/adcampaignstats"
       if ad_campaign_ids.length > 0 && ad_campaign_ids.length < 200
-        stats_query_hash[:campaign_ids] = ad_campaign_ids.join(',')
+        stats_query_hash[:campaign_ids] = "[#{ad_campaign_ids.join(',')}]"
       end
       stats_path += "?" + stats_query_hash.to_query if stats_query_hash.keys.length > 0
       
@@ -189,7 +189,7 @@ module Zuck
       stats_query_hash = self.class.get_stats_query(start_time, end_time)
       stats_path = path+"/adgroupstats"
       if ad_group_ids.length > 0 && ad_group_ids.length < 200
-        stats_query_hash[:adgroup_ids] = ad_group_ids.join(',')
+        stats_query_hash[:adgroup_ids] = "[#{ad_group_ids.join(',')}]"
       end
       stats_path += "?" + stats_query_hash.to_query if stats_query_hash.keys.length > 0
       
