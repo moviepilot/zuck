@@ -45,6 +45,7 @@ module Zuck
                :id,
                :is_personal,
                :name,
+               :owner,
                :spend_cap,
                :timezone_id,
                :timezone_name,
