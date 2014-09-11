@@ -133,7 +133,11 @@ module Zuck
           'impressions','spent','clicks'
         ]
         
-        stats_path = path+"/stats"+self.class.get_stats_query(start_time, end_time)+"&ids=#{ids.join(',')}&fields=#{fields.join(',')}"
+        stats_query_hash = self.class.get_stats_query(start_time, end_time)
+        stats_query_hash[:ids] = ids.join(',')
+        stats_query_hash[:fields] = fields.join(',')
+        stats_path = path+"/stats"
+        stats_path += "?" + stats_query_hash.to_query if stats_query_hash.keys.length > 0
         
         result = get(graph, stats_path)
       end
@@ -144,13 +148,19 @@ module Zuck
     # gets AdCampaign stats for this AdAccount
     #
     # @param [Boolean] get_all True if we want to page through all results, false if we only want the first page
+    # @param [Array] ad_campaign_ids A list of ad campaign ids to specifically get
     # @param [DateTime] start_time the time we want to get results back from
     # @param [DateTime] end_time the time we want to get results to, inclusive
     # 
     # @return [Array] If we get all results, this will be an array of the data returned from FB. If we only
     #                 get one page of results, this will be a GraphCollection object that has paging support on it
-    def adcampaignstats(get_all, start_time = nil, end_time = nil)
-      stats_path = path+"/adcampaignstats"+self.class.get_stats_query(start_time, end_time)
+    def adcampaignstats(get_all, ad_campaign_ids=[], start_time = nil, end_time = nil)
+      stats_query_hash = self.class.get_stats_query(start_time, end_time)
+      stats_path = path+"/adcampaignstats"
+      if ad_campaign_ids.length > 0 && ad_campaign_ids.length < 200
+        stats_query_hash[:campaign_ids] = "[#{ad_campaign_ids.join(',')}]"
+      end
+      stats_path += "?" + stats_query_hash.to_query if stats_query_hash.keys.length > 0
       
       result = []
       if get_all
@@ -169,13 +179,19 @@ module Zuck
     # gets AdGroup stats for this AdAccount
     #
     # @param [Boolean] get_all True if we want to page through all results, false if we only want the first page
+    # @param [Array] ad_group_ids A list of ad group ids to specifically get
     # @param [DateTime] start_time the time we want to get results back from
     # @param [DateTime] end_time the time we want to get results to, inclusive
     # 
     # @return [Array] If we get all results, this will be an array of the data returned from FB. If we only
     #                 get one page of results, this will be a GraphCollection object that has paging support on it
-    def adgroupstats(get_all, start_time = nil, end_time = nil)
-      stats_path = path+"/adgroupstats"+self.class.get_stats_query(start_time, end_time)
+    def adgroupstats(get_all, ad_group_ids=[], start_time = nil, end_time = nil)
+      stats_query_hash = self.class.get_stats_query(start_time, end_time)
+      stats_path = path+"/adgroupstats"
+      if ad_group_ids.length > 0 && ad_group_ids.length < 200
+        stats_query_hash[:adgroup_ids] = "[#{ad_group_ids.join(',')}]"
+      end
+      stats_path += "?" + stats_query_hash.to_query if stats_query_hash.keys.length > 0
       
       result = []
       if get_all
