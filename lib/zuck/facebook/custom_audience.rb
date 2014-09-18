@@ -163,16 +163,18 @@ module Zuck
     # Creates a new lookalike audience from existing custom audience
     #
     # @param [String] name        A name for the Zuck::CustomAudience being created
+    # @param [String] description A description for this audience
     # @param [String] type        similarity or reach
     # @param [Float]  ratio       A float ratio for this lookalike, only needed if type is 'custom_ratio'
     # @param [String] country     Members of the lookalike audience will be from this country
     #
     # @return [Hash] A response hash with data from our call
-    def create_lookalike(name, country, type, ratio=nil)
+    def create_lookalike(name, description, country, type, ratio=nil)
       
       # Setup the post body for Facebook
       args = {
         "name" => name,
+        'description' => description,
         'origin_audience_id' => self.id,
         'lookalike_spec' => { 
           'country' =>  country 
