@@ -8,18 +8,36 @@ module Zuck
                :approximate_count,
                :lookalike_audience_ids,
                :name,
+               :data_source,
+               :delivery_status,
                :description,
-               :parent_audience_id,
-               :parent_category,
-               :status,
+               :lookalike_spec,
+               :operation_status,
+               :permission_for_actions,
                :subtype,
-               :type,
-               :type_name,
+               :time_content_updated,
+               :time_created,
                :time_updated
-
-
+               
     parent_object :ad_account
     list_path :customaudiences
+    
+    OPERATION_STATUS = {
+      :normal => 200,            # Normal: there is no updating or issues found.
+      :updating => 300,          # Updating: there is an ongoing updating on the audience
+      :warning => 400,           # Warning: there is some message we would like advertisers to know
+      :no_upload => 410,         # No upload: no file has been uploaded
+      :low_match_rate => 411,    # Low match rate: low rate of matched people
+      :high_invalid_rate => 412, # High invalid rate: high rate of invalid people
+      :no_pixel => 421,          # No pixel: Your Custom Audience pixel hasn't been installed on your website yet
+      :pixel_not_firing => 422,  # Pixel not firing: Your Custom Audience pixel isn't firing
+      :invalid_pixel => 423,     # Invalid pixel: Your Custom Audience pixel is invalid
+      :refresh_failed => 431,    # Audience refresh failed
+      :build_failed_1 => 432,    # Audience build failed
+      :build_failed_2 => 433,    # Audience build failed
+      :build_retrying => 434,    # Audience build retrying
+      :error => 500              # Error: there is some error and advertisers need to take action items to fix the error
+    }
     
     LOOKALIKE_MINIMUM_SIZE = 500
     FACEBOOK_BATCH_SIZE = 10000
@@ -39,19 +57,17 @@ module Zuck
     MIN_CUSTOM_RATIO = 0.01
     MAX_CUSTOM_RATIO = 0.20
     
-    # Id Types accepted by Facebook
-    EMAIL='email_hash'
-    IDFA='mobile_advertiser_id'
-    PHONE_NUMBER='phone_hash'
-    FACEBOOK_ID='id'
-    THIRD_PARTY_ID='custom_audience_third_party_id'
+    # Id Types accepted by Facebook for Custom Audience population
+    FACEBOOK_ID='UID'
+    EMAIL='EMAIL_SHA256'
+    PHONE_NUMBER='PHONE_SHA_256'
+    IDFA='MOBILE_ADVERTISER_ID'
 
     ID_TYPES = [
       EMAIL,
       IDFA,
       PHONE_NUMBER,
-      FACEBOOK_ID,
-      THIRD_PARTY_ID
+      FACEBOOK_ID
     ]
 
     HASHED_ID_TYPES =[
@@ -117,18 +133,21 @@ module Zuck
         batch = 0
         #TODO: Need to add error checking here
         ids.in_groups_of(FACEBOOK_BATCH_SIZE) do |id_batch|
-          puts "batch: #{batch}"
           compacted_id_batch = id_batch.compact
 
           hashified_ids = compacted_id_batch.collect do |id| 
             if HASHED_ID_TYPES.include?(id)
-              id = Digest::MD5.hexdigest(id)
+              id = Digest::SHA256.hexdigest(id)
             end
-            {id_type => id}
+            id
           end
+          payload = {
+            :schema => id_type,
+            :data => hashified_ids
+          }
 
-          puts "count: " +hashified_ids.count.inspect
-          response = Zuck.graph.put_connections(self.id, "users", "users" => hashified_ids.to_json)
+          response = Zuck.graph.put_connections(self.id, "users", "payload" => payload.to_json)
+          
           batch += 1
         end
       end
@@ -145,12 +164,8 @@ module Zuck
       end
 
       graph_obj = Zuck.graph.graph_call(self.id)
-      self.type = graph_obj['type']
       self.time_updated = graph_obj['time_updated']
-      self.parent_audience_id = graph_obj['parent_audience_id']
       self.subtype = graph_obj['subtype']
-      self.type_name = graph_obj['type_name']
-      self.status = graph_obj['status']
       self.approximate_count = graph_obj['approximate_count']
       
       # TODO: Need to get data if subtype == 'LOOKALIKE'
