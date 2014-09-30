@@ -41,7 +41,7 @@ module Zuck
                :business_zip,
                :capabilities,
                :currency,
-               :created_time,
+               # :created_time, # TODO: turn this back on, it *should* work, but currently doesn't
                :daily_spend_limit,
                :id,
                :is_personal,
