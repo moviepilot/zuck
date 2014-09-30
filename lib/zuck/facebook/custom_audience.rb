@@ -11,14 +11,33 @@ module Zuck
                :data_source,
                :delivery_status,
                :description,
+               :lookalike_spec,
                :operation_status,
                :permission_for_actions,
                :subtype,
+               :time_content_updated,
+               :time_created,
                :time_updated
-
-
+               
     parent_object :ad_account
     list_path :customaudiences
+    
+    OPERATION_STATUS = {
+      :normal => 200,            # Normal: there is no updating or issues found.
+      :updating => 300,          # Updating: there is an ongoing updating on the audience
+      :warning => 400,           # Warning: there is some message we would like advertisers to know
+      :no_upload => 410,         # No upload: no file has been uploaded
+      :low_match_rate => 411,    # Low match rate: low rate of matched people
+      :high_invalid_rate => 412, # High invalid rate: high rate of invalid people
+      :no_pixel => 421,          # No pixel: Your Custom Audience pixel hasn't been installed on your website yet
+      :pixel_not_firing => 422,  # Pixel not firing: Your Custom Audience pixel isn't firing
+      :invalid_pixel => 423,     # Invalid pixel: Your Custom Audience pixel is invalid
+      :refresh_failed => 431,    # Audience refresh failed
+      :build_failed_1 => 432,    # Audience build failed
+      :build_failed_2 => 433,    # Audience build failed
+      :build_retrying => 434,    # Audience build retrying
+      :error => 500              # Error: there is some error and advertisers need to take action items to fix the error
+    }
     
     LOOKALIKE_MINIMUM_SIZE = 500
     FACEBOOK_BATCH_SIZE = 10000
@@ -145,10 +164,8 @@ module Zuck
       end
 
       graph_obj = Zuck.graph.graph_call(self.id)
-      self.type = graph_obj['type']
       self.time_updated = graph_obj['time_updated']
       self.subtype = graph_obj['subtype']
-      self.type_name = graph_obj['type_name']
       self.approximate_count = graph_obj['approximate_count']
       
       # TODO: Need to get data if subtype == 'LOOKALIKE'
