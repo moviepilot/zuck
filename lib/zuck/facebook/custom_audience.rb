@@ -162,8 +162,14 @@ module Zuck
       if (!self.id)
         raise "You must save this audience before you can hydrate."
       end
+      
+      fields = [
+        :time_updated,
+        :subtype,
+        :approximate_count
+      ]
 
-      graph_obj = Zuck.graph.graph_call(self.id)
+      graph_obj = Zuck.graph.graph_call(self.id, {:fields => fields})
       self.time_updated = graph_obj['time_updated']
       self.subtype = graph_obj['subtype']
       self.approximate_count = graph_obj['approximate_count']
