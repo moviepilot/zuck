@@ -29,12 +29,12 @@ module Zuck
                :timezone_name,
                :timezone_offset_hours_utc,
                :tos_accepted,
-               :users,
-               :vat_status
+               :users
 
 
     list_path   'me/adaccounts'
-    connections :ad_campaigns
+    connections :ad_campaigns,
+                :custom_audiences
 
     def self.all(graph = Zuck.graph)
       super(graph)
