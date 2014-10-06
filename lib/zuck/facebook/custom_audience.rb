@@ -19,15 +19,19 @@ module Zuck
     list_path     :customaudiences
 
 
-    def emails=(emails)
+    def add_emails(emails)
       audience = emails.map{|email|
-        {email_hash: Digest::MD5.hexdigest(email)}
+        Digest::SHA256.hexdigest(email)
       }
-      add_users(audience, "md5")
+      add_users(audience, "EMAIL_SHA256")
     end
 
-    def add_users(audience, hash_type)
-      create_connection(graph, self.id, :users, {users: audience.to_json, hash_type: hash_type})
+    def add_users(data, schema)
+      create_connection(graph, 
+                        self.id, 
+                        :users, 
+                        {payload: {data: data, schema: schema}.to_json}
+                       )
     end
 
   end
