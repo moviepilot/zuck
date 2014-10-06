@@ -48,24 +48,29 @@ module Zuck
 
     module ClassMethods
       def known_keys(*args)
-        args.each do |key|
+        if args.length > 0
+          @known_keys = args
+          args.each do |key|
 
-          # Define list of known keys
-          self.send(:define_method, :known_keys) do
-            args || []
-          end
+            # Define list of known keys
+            self.send(:define_method, :known_keys) do
+              args || []
+            end
 
-          # Define getter
-          self.send(:define_method, key) do
-            init_hash
-            @hash_delegator_hash[key]
-          end
+            # Define getter
+            self.send(:define_method, key) do
+              init_hash
+              @hash_delegator_hash[key]
+            end
 
-          # Define setter
-          self.send(:define_method, "#{key}=") do |val|
-            init_hash
-            @hash_delegator_hash[key] = val
+            # Define setter
+            self.send(:define_method, "#{key}=") do |val|
+              init_hash
+              @hash_delegator_hash[key] = val
+            end
           end
+        else
+          Array(@known_keys)
         end
       end
     end
