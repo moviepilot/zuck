@@ -29,8 +29,7 @@ module Zuck
                :timezone_name,
                :timezone_offset_hours_utc,
                :tos_accepted,
-               :users,
-               :vat_status
+               :users
 
 
     list_path   'me/adaccounts'
