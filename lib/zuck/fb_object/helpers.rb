@@ -6,7 +6,14 @@ module Zuck
 
       def get(graph, path)
         begin
-          graph.get_object(path, fields: known_keys.compact.join(','))
+          ret = []
+          graph_collection = graph.get_object(path, fields: known_keys.compact.join(','))
+          loop do
+            ret += graph_collection
+            break if not graph_collection.paging['next']
+            graph_collection = graph_collection.next_page
+          end
+          ret
         rescue => e
           puts "#{e} graph.get_object(#{path.to_json})" if in_irb?
           raise e
