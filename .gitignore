@@ -5,3 +5,4 @@ pkg
 log
 Guardfile
 tmp
+.env
