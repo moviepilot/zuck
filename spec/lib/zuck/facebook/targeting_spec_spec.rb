@@ -130,7 +130,7 @@ describe Zuck::TargetingSpec do
   end
 
   describe "Batch processing" do
-    let(:graph){ Koala::Facebook::API.new(test_access_token) }
+    let(:graph){ Koala::Facebook::API.new(ENV['ACCESS_TOKEN']) }
     let(:ad_account){ 'act_10150585630710217' }
     let(:spec_mock){ mock(fetch_reach: {some: :data}) }
 

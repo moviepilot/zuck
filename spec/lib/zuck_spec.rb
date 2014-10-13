@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Zuck::FbObject do
 
   before(:all) do
-    Zuck.graph = Koala::Facebook::API.new(test_access_token)
+    Zuck.graph = Koala::Facebook::API.new(ENV['ACCESS_TOKEN'])
   end
 
   let(:graph)   { Zuck.graph                                                  }
