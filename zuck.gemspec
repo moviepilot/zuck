@@ -6,7 +6,7 @@
 
 Gem::Specification.new do |s|
   s.name = "zuck"
-  s.version = "1.0.0"
+  s.version = "1.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
@@ -89,7 +89,7 @@ Gem::Specification.new do |s|
     if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
       s.add_runtime_dependency(%q<rvm>, [">= 0"])
       s.add_runtime_dependency(%q<bundler>, [">= 0"])
-      s.add_runtime_dependency(%q<koala>, ["~> 1.6.0"])
+      s.add_runtime_dependency(%q<koala>, ["~> 1.10.0"])
       s.add_runtime_dependency(%q<activesupport>, [">= 0"])
       s.add_development_dependency(%q<shoulda>, ["~> 3.3.2"])
       s.add_development_dependency(%q<rdoc>, ["~> 3.12"])
