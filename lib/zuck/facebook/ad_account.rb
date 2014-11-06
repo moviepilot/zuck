@@ -43,6 +43,8 @@ module Zuck
                :currency,
                # :created_time, # TODO: turn this back on, it *should* work, but currently doesn't
                :daily_spend_limit,
+               :funding_source,
+               :funding_source_details,
                :id,
                :is_personal,
                :name,
