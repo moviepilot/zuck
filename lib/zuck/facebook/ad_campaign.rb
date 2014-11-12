@@ -102,7 +102,7 @@ module Zuck
         "bid_info" => self.bid_info.to_json,
         "targeting" => self.targeting.to_json,
         "redownload" => true
-      }  
+      }
 
       if (!self.id)
         account_id = Zuck::AdAccount.id_for_api(self.account_id)
@@ -112,7 +112,7 @@ module Zuck
           response = true
         end
       else 
-        if (self.is_dirty?)          
+        if (self.is_dirty?)
           # Build up a hash with the dirty fields
           post_data = {}
           @dirty_keys.each do |dirty_key|
