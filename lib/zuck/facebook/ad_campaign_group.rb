@@ -26,6 +26,7 @@ module Zuck
     known_keys :account_id,
                :name,
                :campaign_group_status,
+               :created_time,
                :objective,
                :id
 
