@@ -50,6 +50,21 @@ module Zuck
       @hash_delegator_hash[:bid_type] ||= BID_TYPE_ABSOLUTE_OCPM
     end
     
+    # @return [Hash] A hash of bid info
+    def get_bid_info
+      return self.bid_info.present? ? self.bid_info : self.ad_groups.first.bid_info 
+    end
+    
+    # @return [String] The bid type
+    def get_bid_type
+      return self.bid_type.present? ? self.bid_type : self.ad_groups.first.bid_type 
+    end
+    
+    # @return [Hash] A hash of targeting spec info
+    def get_targeting
+      return self.targeting.present? ? self.targeting : self.ad_groups.first.targeting 
+    end
+    
     # Sets the bid info object with the appropriate hash data
     # @param {Integer} bid_amount The bid amount in cents
     def set_cpa_bid(bid_amount)
@@ -98,9 +113,9 @@ module Zuck
         "lifetime_budget" => self.lifetime_budget.to_i,
         "start_time" => self.start_time,
         "end_time" => self.end_time,
-        "bid_type" => self.bid_type,
-        "bid_info" => self.bid_info.to_json,
-        "targeting" => self.targeting.to_json,
+        "bid_type" => self.get_bid_type,
+        "bid_info" => self.get_bid_info.to_json,
+        "targeting" => self.get_targeting.to_json,
         "redownload" => true
       }
 
