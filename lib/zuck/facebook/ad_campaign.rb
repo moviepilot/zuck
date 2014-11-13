@@ -52,17 +52,17 @@ module Zuck
     
     # @return [Hash] A hash of bid info
     def get_bid_info
-      return self.bid_info.present? ? self.bid_info : self.ad_groups.first.bid_info 
+      return self.bid_info.present? ? self.bid_info : self.ad_groups.first.bid_info
     end
     
     # @return [String] The bid type
     def get_bid_type
-      return self.bid_type.present? ? self.bid_type : self.ad_groups.first.bid_type 
+      return self.bid_type.present? ? self.bid_type : self.ad_groups.first.bid_type
     end
     
     # @return [Hash] A hash of targeting spec info
     def get_targeting
-      return self.targeting.present? ? self.targeting : self.ad_groups.first.targeting 
+      return self.targeting.present? ? self.targeting : self.ad_groups.first.targeting
     end
     
     # Sets the bid info object with the appropriate hash data
