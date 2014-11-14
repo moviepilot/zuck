@@ -4,11 +4,6 @@ module Zuck
   class AdGroup < RawFbObject
     attr_accessor :creative_id
 
-    BID_TYPE_CPC = 'CPC'
-    BID_TYPE_CPM = 'CPM'
-    BID_TYPE_MULTI_PREMIUM = 'MULTI_PREMIUM'
-    BID_TYPE_ABSOLUTE_OCPM = 'ABSOLUTE_OCPM'
-    BID_TYPE_CPA = 'CPA'
 
     STATUS_ACTIVE = 'ACTIVE'
     STATUS_DELETED = 'DELETED'
@@ -22,15 +17,15 @@ module Zuck
     CONVERSION_ACTION_INSTALL = 'mobile_app_install'
     MOBILE_AND_FACEBOOK_AUDIENCE_NETWORK = 'mobilefeed-and-external'
 
-    REQUIRED_FIELDS = [:name, :bid_type, :bid_info, :campaign_id, :targeting, :objective]
+    REQUIRED_FIELDS = [:name, :campaign_id, :objective]
 
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
     # actually returned.
     known_keys :account_id,
                :adgroup_status,
-               :bid_info,
-               :bid_type,
+               :bid_info, # OPTIONAL
+               :bid_type, # READ ONLY
                :campaign_group_id,
                :campaign_id,
                :conversion_specs,
@@ -41,7 +36,7 @@ module Zuck
                # :disapprove_reason_descriptions, # note: this should be reenabled with :adgroup_review_feedback
                :last_updated_by_app_id,
                :name,
-               :targeting,
+               :targeting, # READ ONLY
                :tracking_specs,
                :updated_time,
                :view_tags
@@ -57,15 +52,8 @@ module Zuck
     #   inherit from {Zuck::FbObject}
     def initialize(graph, data = {}, parent=nil)
       super(graph, data, parent)
-      @hash_delegator_hash[:bid_type] ||= BID_TYPE_ABSOLUTE_OCPM
     end
-
-    # Sets the bid info object with the appropriate hash data
-    # @param {Integer} bid_amount The bid amount in cents
-    def set_cpa_bid(bid_amount)
-      self.bid_info = {'ACTIONS' => bid_amount}
-    end
-
+    
     # Saves the current creative to Facebook
     # @throws Exception If not all required fields are present
     # @throws Exception If you try to save an exsiting record because we don't support updates yet
@@ -86,9 +74,7 @@ module Zuck
         "creative" => {'creative_id' => self.creative_id.to_s}.to_json,
         "name" => self.name,
         "campaign_id" => self.campaign_id.to_s,
-        "bid_type" => self.bid_type,
-        "bid_info" => self.bid_info.to_json,        
-        "targeting" => self.targeting.to_json,
+        "bid_info" => (self.bid_info.blank? ? "" : self.bid_info.to_json),
         "conversion_specs" => self.conversion_specs.to_json,
         "redownload" => 1,
         "objective" => self.objective
