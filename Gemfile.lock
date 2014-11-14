@@ -127,7 +127,7 @@ DEPENDENCIES
   guard-rspec
   guard-yard
   jeweler (~> 2.0.1)
-  koala (~> 1.6.0)
+  koala (~> 1.10.0)
   rb-fsevent
   rdoc (~> 3.12)
   redcarpet
