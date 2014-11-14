@@ -54,10 +54,12 @@ module Zuck
     def get_bid_info
       result = self.bid_info
       
-      these_ad_groups = self.ad_groups || []
-      # fall back to ad group data if ours is missing
-      if !result.present? && these_ad_groups.first.present?
-        result = these_ad_groups.first.bid_info
+      if !result.present?
+        # fall back to ad group data if ours is missing
+        these_ad_groups = self.ad_groups || []
+        if these_ad_groups.first.present?
+          result = these_ad_groups.first.bid_info
+        end
       end
       
       return result 
@@ -67,10 +69,12 @@ module Zuck
     def get_bid_type
       result = self.bid_type
       
-      these_ad_groups = self.ad_groups || []
-      # fall back to ad group data if ours is missing
-      if !result.present? && these_ad_groups.first.present?
-        result = these_ad_groups.first.bid_type
+      if !result.present?
+        # fall back to ad group data if ours is missing
+        these_ad_groups = self.ad_groups || []
+        if these_ad_groups.first.present?
+          result = these_ad_groups.first.bid_type
+        end
       end
       
       return result
@@ -80,10 +84,12 @@ module Zuck
     def get_targeting
       result = self.targeting
       
-      these_ad_groups = self.ad_groups || []
-      # fall back to ad group data if ours is missing
-      if !result.present? && these_ad_groups.first.present?
-        result = these_ad_groups.first.targeting
+      if !result.present?
+        # fall back to ad group data if ours is missing
+        these_ad_groups = self.ad_groups || []
+        if these_ad_groups.first.present?
+          result = these_ad_groups.first.targeting
+        end
       end
       
       return result
