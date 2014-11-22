@@ -6,14 +6,16 @@ module Zuck
     known_keys :id,
                :account_id,
                :approximate_count,
-               :lookalike_audience_ids,
-               :name,
                :data_source,
                :delivery_status,
                :description,
+               :lookalike_audience_ids,
                :lookalike_spec,
+               :name,
                :operation_status,
                :permission_for_actions,
+               :retention_days,
+               :rule,
                :subtype,
                :time_content_updated,
                :time_created,
@@ -22,7 +24,13 @@ module Zuck
     parent_object :ad_account
     list_path :customaudiences
     
+    DELIVERY_STATUS = {
+      :ready => 200,              # This audience is ready for use.
+      :too_small => 300          # Audiences must include at least 20 people to be used for ads.
+    }
+    
     OPERATION_STATUS = {
+      :not_avilable => 0,        # Status not available
       :normal => 200,            # Normal: there is no updating or issues found.
       :updating => 300,          # Updating: there is an ongoing updating on the audience
       :warning => 400,           # Warning: there is some message we would like advertisers to know
@@ -39,7 +47,7 @@ module Zuck
       :error => 500              # Error: there is some error and advertisers need to take action items to fix the error
     }
     
-    LOOKALIKE_MINIMUM_SIZE = 500
+    LOOKALIKE_MINIMUM_PARENT_AUDIENCE_SIZE = 500
     FACEBOOK_BATCH_SIZE = 10000
     
     # Types of lookalike audience
@@ -53,9 +61,24 @@ module Zuck
       LOOKALIKE_TYPE_CUSTOM_RATIO
     ]
     
-    # Range of values for custom ratios
-    MIN_CUSTOM_RATIO = 0.01
-    MAX_CUSTOM_RATIO = 0.20
+    # ratios for the given lookalike types
+    SIMILARITY_RATIO = 0.01
+    REACH_RATIO = 0.05
+    
+    # Range of values for lookalike ratios
+    MIN_LOOKALIKE_RATIO = 0.01
+    MAX_LOOKALIKE_RATIO = 0.20
+    
+    LOOKALIKE_RATIO_STEP_SIZE = 0.01
+    
+    # retention values
+    MAX_RETENTION_DAYS=180 #Facebook allows you to retain the last x days of users in your custom audience, 180 is the max
+    
+    # audience types
+    AUDIENCE_TYPE_APP = "app"
+    
+    # event types
+    EVENT_TYPE_APP_INSTALLS = "fb_mobile_first_app_launch"
     
     # Id Types accepted by Facebook for Custom Audience population
     FACEBOOK_ID='UID'
@@ -181,77 +204,105 @@ module Zuck
       return self
     end
     
+    # Creates a root Zuck::CustomAudience object for a given app
+    #
+    # @param [String] name The name of the project we are creating a root audience for
+    # @param [String] facebook_app_id The facebook_app_id we are creating the audience for
+    # @param [String] account_id The id of the Zuck::AdAccount
+    #
+    # @return [Hash] A hash of data in the form of {id => integer} containing the service_foreign_id for the newly created audience 
+    def self.create_root_audience(name, description, facebook_app_id, account_id)
+      # This data mirrors the internal calls made by Facebook on their web ads product
+      # There is no documentation for this data
+      args = {
+        "inclusions" => [{
+          "retention_days" => MAX_DAYS_BACK_TO_RETAIN,
+          "type" => AUDIENCE_TYPE_APP,
+          "rule" => {
+            "_application" => facebook_app_id,
+            "_eventName" => EVENT_TYPE_APP_INSTALLS
+          }
+        }].to_json,
+        "accountId" => account_id,
+        "name" => name,
+        "description" => description,
+        "subtype" => "combination",
+        "pretty" => 0 
+      }
+      
+      return self.create_remote_custom_audience(account_id, args)
+    end
+    
     # Creates a new lookalike audience from existing custom audience
     #
-    # @param [String] name        A name for the Zuck::CustomAudience being created
-    # @param [String] description A description for this audience
-    # @param [String] type        similarity or reach
-    # @param [Float]  ratio       A float ratio for this lookalike, only needed if type is 'custom_ratio'
-    # @param [String] country     Members of the lookalike audience will be from this country
+    # @param [Zuck::CustomAudience] parent_audience  The audience to create a lookalike for
+    # @param [String] name                           A name for the Zuck::CustomAudience being created
+    # @param [String] description                    A description for this audience
+    # @param [String] country                        Members of the lookalike audience will be from this country
+    # @param [Float]  ratio                          A float ratio for this lookalike, only needed if type is 'custom_ratio'
     #
     # @return [Hash] A response hash with data from our call
-    def create_lookalike(name, description, country, type, ratio=nil)
+    def self.create_lookalike(parent_audience, name, description, country, ratio)
+      # make sure we have a parent object
+      if !parent_audience.present?
+        raise "Parent custom audience is required to create a lookalike."
+      end
       
       # Setup the post body for Facebook
       args = {
         "name" => name,
         'description' => description,
-        'origin_audience_id' => self.id,
+        'origin_audience_id' => parent_audience.id,
         'lookalike_spec' => { 
-          'country' =>  country 
+          'country' =>  country,
+          'ratio' => ratio
         }
       }
       
-      # Only specify a type OR ratio 
-      args['lookalike_spec']['type'] = type if !ratio.present?
-      args['lookalike_spec']['ratio'] = ratio if ratio.present?
-      
       # Make sure our lookalike params are valid
-      Zuck::CustomAudience.validate_lookalike_params(args)
+      self.validate_default_lookalike_params(args)
       
       # Load our local data
-      self.hydrate
+      parent_audience.hydrate
       
       # Make sure our Zuck::CustomAudience is big enough to make a lookalike
-      if (self.approximate_count < LOOKALIKE_MINIMUM_SIZE)
-        raise "Your seed audience needs to be at least #{LOOKALIKE_MINIMUM_SIZE} users to make a lookalike from it."
+      if (parent_audience.approximate_count < LOOKALIKE_MINIMUM_PARENT_AUDIENCE_SIZE)
+        raise "Your seed audience needs to be at least #{LOOKALIKE_MINIMUM_PARENT_AUDIENCE_SIZE} users to make a lookalike from it."
       end
       
       # Convert the internal hash to json
       args['lookalike_spec'] = args['lookalike_spec'].to_json
-      account_id_uri = Zuck::AdAccount.id_for_api(self.account_id)
-      return Zuck.graph.put_connections(account_id_uri,"customaudiences", args)
+      
+      return self.create_remote_custom_audience(parent_audience.account_id, args)
     end
     
   protected
     
-    # Conveience function for validating our input parameters
+    # Convenience function for validating our input parameters for a default lookalike audience
     #
     # @param [Hash] params A hash of parameters for our Zuck::CustomAudience lookalike
-    def self.validate_lookalike_params(params)
+    def self.validate_default_lookalike_params(params)
       # Validate our inputs
       if params.blank?
         raise "Can't create a lookalike without params"
       elsif !params['name'].present?
         raise "You must specify a name for the lookalike"
       elsif params['lookalike_spec'].blank?
-        raise "You must specify a lookalike specs for your lookalike audience"
+        raise "You must specify a lookalike spec for your lookalike audience"
       else 
         lookalike_specs = params['lookalike_spec']
         ratio = lookalike_specs['ratio']
         type = lookalike_specs['type']
-        country = lookalike_specs['country']
         
-        # Validate that the country is alpha-2
-        if !country.present? || country.length != 2 # TODO: Add list of acceptable countries
-          raise "You must specify a valid ISO 3166-1 alpha-2 country code for your lookalike"
-        end
+        # validate the country code
+        self.validate_country_code(lookalike_specs['country'])
         
         # If a ratio is specified, make sure it is within range and type is not specified...
         if ratio.present?
-          if ratio < MIN_CUSTOM_RATIO || ratio > MAX_CUSTOM_RATIO
-            raise "Custom ratios must be between #{MIN_CUSTOM_RATIO} and #{MAX_CUSTOM_RATIO}"
-          elsif type.present? && type != LOOKALIKE_TYPE_CUSTOM_RATIO
+          # validate the ratio values
+          self.validate_ratio(ratio)
+          
+          if type.present? && type != LOOKALIKE_TYPE_CUSTOM_RATIO
             raise "Type can only be specified in the absence of a custom ratio"
           end
         elsif type == LOOKALIKE_TYPE_CUSTOM_RATIO
@@ -261,7 +312,40 @@ module Zuck
           raise "You must specify a lookalike audience type if a custom ratio is not present. (reach or similarity)"
         end
       end
-    end # end validate_lookalike_params
+    end # end validate_default_lookalike_params
+    
+    # Convenience function for validating a country code as alpha-2
+    #
+    # @param [String] country The country code to validate
+    def self.validate_country_code(country)
+      if !country.present? || country.length != 2 # TODO: Add list of acceptable countries
+        raise "You must specify a valid ISO 3166-1 alpha-2 country code for your lookalike"
+      end
+    end
+    
+    # Convenience function for validating a ratio
+    #
+    # @param [Float] ratio The ratio to validate
+    def self.validate_ratio(ratio)
+      if ratio.present? && (ratio < MIN_LOOKALIKE_RATIO || ratio > MAX_LOOKALIKE_RATIO)
+        raise "Custom ratios must be between #{MIN_LOOKALIKE_RATIO} and #{MAX_LOOKALIKE_RATIO}"
+      end
+    end
+    
+    # Convenience function that handles the creation of a custom audience
+    #
+    # @param [String] account_id The account id to create the custom audience for
+    # @param [Hash] args The custom audience parameters
+    #
+    # @return [Zuck::CustomAudience] The audience that was created
+    def self.create_remote_custom_audience(account_id, args)
+      if !account_id.present?
+        raise "Must have a valid account id to create a custom audience."
+      end
+      
+      account_id_uri = Zuck::AdAccount.id_for_api(account_id)
+      return Zuck.graph.put_connections(account_id_uri,"customaudiences", args)
+    end
     
   end #class
 end #module
