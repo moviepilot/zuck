@@ -22,6 +22,7 @@ module Zuck
     CURRENCY_USD = "USD"
     
     BATCH_SIZE = 50
+    IDS_BATCH_SIZE = 1000
 
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
@@ -134,17 +135,23 @@ module Zuck
       
       result = {}
       if ids && ids.length > 0
-        fields = [
-          'impressions','spent','clicks'
-        ]
-        
-        stats_query_hash = self.class.get_stats_query(start_time, end_time)
-        stats_query_hash[:ids] = ids.join(',')
-        stats_query_hash[:fields] = fields.join(',')
-        stats_path = path+"/stats"
-        stats_path += "?" + stats_query_hash.to_query if stats_query_hash.keys.length > 0
-        
-        result = get(graph, stats_path)
+        ids.each_slice(IDS_BATCH_SIZE).to_a.each do |batched_ids|
+          fields = [
+            'impressions','spent','clicks'
+          ]
+          
+          stats_query_hash = self.class.get_stats_query(start_time, end_time)
+          stats_query_hash[:ids] = batched_ids.join(',')
+          stats_query_hash[:fields] = fields.join(',')
+          stats_path = path+"/stats"
+          stats_path += "?" + stats_query_hash.to_query if stats_query_hash.keys.length > 0
+          
+          batch_result = get(graph, stats_path)
+          if !batch_result.blank?
+            result.merge!(batch_result)
+          end
+          
+        end
       end
       
       return result
