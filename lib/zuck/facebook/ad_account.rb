@@ -22,7 +22,7 @@ module Zuck
     CURRENCY_USD = "USD"
     
     BATCH_SIZE = 50
-    BATCH_SLEEP_IN_S = 1
+    BATCH_SLEEP_IN_S = 2
     
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
