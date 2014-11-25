@@ -22,6 +22,7 @@ module Zuck
     CURRENCY_USD = "USD"
     
     BATCH_SIZE = 50
+    BATCH_SLEEP_IN_S = 1
     
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
@@ -151,6 +152,8 @@ module Zuck
             result.merge!(batch_result)
           end
           
+          # add a mandatory sleep so we don't get rate limited
+          sleep(BATCH_SLEEP_IN_S)
         end
       end
       
