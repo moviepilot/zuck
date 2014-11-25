@@ -22,8 +22,7 @@ module Zuck
     CURRENCY_USD = "USD"
     
     BATCH_SIZE = 50
-    IDS_BATCH_SIZE = 1000
-
+    
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
     # actually returned.
@@ -121,6 +120,7 @@ module Zuck
     end
     
     # Fetches stats for AdCampaignGroups inside this AdAccount
+    #   NOTE: this call also returns stats as per the base /stats call on the ad_account - "This returns a single set of statistics across all adgroups in the account"
     # 
     # @param [Array] ids An array of AdCampaignGroup ids to get stats for
     # @param [DateTime] start_time the time we want to get results back from
@@ -135,7 +135,7 @@ module Zuck
       
       result = {}
       if ids && ids.length > 0
-        ids.each_slice(IDS_BATCH_SIZE).to_a.each do |batched_ids|
+        ids.each_slice(BATCH_SIZE).to_a.each do |batched_ids|
           fields = [
             'impressions','spent','clicks'
           ]
