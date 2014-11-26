@@ -22,7 +22,8 @@ module Zuck
     CURRENCY_USD = "USD"
     
     BATCH_SIZE = 50
-
+    BATCH_SLEEP_IN_S = 2
+    
     # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
     # were incomplete, so I added here what the graph explorer
     # actually returned.
@@ -120,6 +121,7 @@ module Zuck
     end
     
     # Fetches stats for AdCampaignGroups inside this AdAccount
+    #   NOTE: this call also returns stats as per the base /stats call on the ad_account - "This returns a single set of statistics across all adgroups in the account"
     # 
     # @param [Array] ids An array of AdCampaignGroup ids to get stats for
     # @param [DateTime] start_time the time we want to get results back from
@@ -134,17 +136,25 @@ module Zuck
       
       result = {}
       if ids && ids.length > 0
-        fields = [
-          'impressions','spent','clicks'
-        ]
-        
-        stats_query_hash = self.class.get_stats_query(start_time, end_time)
-        stats_query_hash[:ids] = ids.join(',')
-        stats_query_hash[:fields] = fields.join(',')
-        stats_path = path+"/stats"
-        stats_path += "?" + stats_query_hash.to_query if stats_query_hash.keys.length > 0
-        
-        result = get(graph, stats_path)
+        ids.each_slice(BATCH_SIZE).to_a.each do |batched_ids|
+          fields = [
+            'impressions','spent','clicks'
+          ]
+          
+          stats_query_hash = self.class.get_stats_query(start_time, end_time)
+          stats_query_hash[:ids] = batched_ids.join(',')
+          stats_query_hash[:fields] = fields.join(',')
+          stats_path = path+"/stats"
+          stats_path += "?" + stats_query_hash.to_query if stats_query_hash.keys.length > 0
+          
+          batch_result = get(graph, stats_path)
+          if !batch_result.blank?
+            result.merge!(batch_result)
+          end
+          
+          # add a mandatory sleep so we don't get rate limited
+          sleep(BATCH_SLEEP_IN_S)
+        end
       end
       
       return result
