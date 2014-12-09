@@ -195,7 +195,7 @@ module Zuck
       @spec[:genders] = [2] if gender.to_s == 'female'
 
       interest = spec.delete(:interest)
-      @spec[:interests] = normalize_array([interest, @spec[:interests]])
+      @spec[:interests] = [interest, @spec[:interests]].compact.flatten
 
       country = spec.delete(:country)
       @spec[:countries] = normalize_countries([country, @spec[:countries]])
