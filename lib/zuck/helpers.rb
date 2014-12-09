@@ -1,7 +1,7 @@
 module Zuck
   module Helpers
     def normalize_array(arr)
-      [arr].flatten.compact.map(&:to_s).uniq.sort
+      [arr].flatten.compact.uniq.sort
     end
 
     def normalize_countries(countries)
