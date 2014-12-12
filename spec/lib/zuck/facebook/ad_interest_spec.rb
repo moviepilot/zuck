@@ -5,13 +5,13 @@ describe Zuck::AdInterest do
 
   it "finds the best interest with a #" do
     VCR.use_cassette('ad_interest_search_disney') do
-      Zuck::AdInterest.best_guess(graph, 'disney')[:interest].should == 'The Walt Disney Company'
+      Zuck::AdInterest.best_guess(graph, 'disney')[:name].should == 'The Walt Disney Company'
     end
   end
 
   it "finds the best interest when no keyword with # is available" do
     VCR.use_cassette('ad_interest_search_moviepilot') do
-      Zuck::AdInterest.best_guess(graph, 'moviepilot')[:interest].should == 'moviepilotcom'
+      Zuck::AdInterest.best_guess(graph, 'moviepilot')[:name].should == 'moviepilot horror'
     end
   end
 

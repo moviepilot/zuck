@@ -18,6 +18,8 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Facebook-Api-Version:
+      - v1.0
       Etag:
       - ! '"1050253aec7b29caff644806927dabfa81406eee"'
       Content-Type:
@@ -27,15 +29,15 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1216101'
+      - '1528811'
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - QNmfkVe55l+0EhPmSprtl/3hWTHE0fyabyRpktddxtg=
+      - SifAF/VNUtHfOxPQVs+AC2nqI/3IXO3QmoTn/aZTPLToGzRQkNbGwzFgcE0VVMX7vt8pE3gSv/sByqWLz+Drrw==
       Date:
-      - Tue, 22 Apr 2014 16:22:30 GMT
+      - Fri, 12 Dec 2014 10:53:20 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -44,5 +46,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"data":[]}'
     http_version: 
-  recorded_at: Tue, 22 Apr 2014 16:22:32 GMT
+  recorded_at: Fri, 12 Dec 2014 10:53:20 GMT
 recorded_with: VCR 2.3.0

@@ -6,19 +6,12 @@ describe Zuck::TargetingSpec do
 
   describe "validating interests" do
 
-    let(:valid_interest_result){   [{"name" => "foo", "valid" => true }] }
-    let(:invalid_interest_result){ [{"name" => "sdjf", "valid" => false }] }
+    let(:valid_interest_result){  [{"name" => "foo", "valid" => true }] }
+    let(:invalid_interest_result){  [] }
 
-    it "escapes commas" do
-      o = {type: 'adinterestvalid', interest_list: ['foo%2Cbar'] }
-      graph.should_receive(:search).with(nil, o).and_return []
-      fts = Zuck::TargetingSpec.new(graph, ad_account, interests: 'foo,bar')
-      fts.validate_interest('foo,bar').should == false
-    end
 
     it "acknowledges valid interests" do
-      o = {type: 'adinterestvalid', interest_list: ['foo'] }
-      graph.should_receive(:search).with(nil, o).and_return valid_interest_result
+      graph.should_receive(:search).with('foo', type: :adinterest).and_return(valid_interest_result)
       #graph.should_not_receive(:search)
       fts = Zuck::TargetingSpec.new(graph, ad_account)
 
@@ -26,8 +19,7 @@ describe Zuck::TargetingSpec do
     end
 
     it "refuses invalid interests" do
-      o = {type: 'adinterestvalid', interest_list: ['sdjf'] }
-      graph.should_receive(:search).with(nil, o).and_return invalid_interest_result
+      graph.should_receive(:search).with('sdjf', type: :adinterest).and_return(invalid_interest_result)
       fts = Zuck::TargetingSpec.new(graph, ad_account)
 
       fts.validate_interest('sdjf').should == false
@@ -37,25 +29,25 @@ describe Zuck::TargetingSpec do
   describe "options given in spec" do
     it "accepts male as gender" do
       expect{
-        Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: ['foo'], gender: 'male')
+        Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: [{id: '123', name: 'foo'}], gender: 'male')
       }.to_not raise_error
     end
 
     it "accepts male as gender for young people" do
       expect{
-        Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: ['foo'], gender: 'male', age_class: 'young')
+        Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: [{id: '123', name: 'foo'}], gender: 'male', age_class: 'young')
       }.to_not raise_error
     end
 
     it "accepts male as gender for old people" do
       expect{
-        Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: ['foo'], gender: 'male', age_class: 'old')
+        Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: [{id: '123', name: 'foo'}], gender: 'male', age_class: 'old')
       }.to_not raise_error
     end
 
     it "accepts without gender" do
       expect{
-        Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: ['foo'])
+        Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: [{id: '123', name: 'foo'}])
       }.to_not raise_error
     end
 
@@ -67,13 +59,13 @@ describe Zuck::TargetingSpec do
 
     it "does not accept invalid genders" do
       expect{
-        Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: ['foo'], gender: 'gemale')
+        Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: [{id: '123', name: 'foo'}], gender: 'gemale')
       }.to raise_error("Gender can only be male or female")
     end
 
     it "does not accept invalid countries" do
       expect{
-        z = Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['XX']}, interests: ['foo'], gender: 'female')
+        z = Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['XX']}, interests: [{id: '123', name: 'foo'}], gender: 'female')
         z.send(:validate_spec)
       }.to raise_error('Invalid countrie(s): ["XX"]')
     end
@@ -103,7 +95,7 @@ describe Zuck::TargetingSpec do
 
     it "works without gender or age" do
       VCR.use_cassette('reach_for_valid_keywords') do
-        spec = {geo_locations: {countries: ['us']}, interests: ['Eminem', 'Sting (Musician)'] }
+        spec = {geo_locations: {countries: ['us']}, interests: [{id: '6003135347608', name: 'Eminem'}, {id: '6003504886186', name: 'Sting (musician)'}] }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
         reach = ts.fetch_reach
         reach[:users].should == 28_00_0000
@@ -112,10 +104,10 @@ describe Zuck::TargetingSpec do
 
     it "works with gender and age" do
       VCR.use_cassette('reach_for_valid_keywords_male_young') do
-        spec = {geo_locations: {countries: ['us']}, interests: ['Sting (musician)'], gender: :female, age_class: :young }
+        spec = {geo_locations: {countries: ['us']}, interests: [{id: '6003504886186', name: 'Sting (musician)'}], gender: :female, age_class: :young }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
         reach = ts.fetch_reach
-        reach[:users].should == 74_000
+        reach[:users].should == 220_000
       end
     end
 

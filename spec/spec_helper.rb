@@ -39,12 +39,8 @@ module TestResponseExtensions
   end
 end
 
-def expect_id_and_return(id, ret_val)
-  lambda { |id| id.to_s.should == id.to_s; ret_val }
-end
-
 def test_access_token
-  'CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD'
+  'CAAEvJ5vzhl8BAHZBVF97pZBZAH1ZBjvP5ZCvo1lamXZCZAB1COo3IE6bvP8mNzA9ZAqgLY5XaN5gbbe7dtJo0n1qd9eHPhwl4HtT7kQrYNu8Q3cZAsMxMC6ZC1tR82RuvQrZBblJ3znA5iO1vlznZC6ujr5cGZAPeDyL6TBb2TEVpZAGf8u2erMVjzaClVHw1PvZAdKcwoVUMyeAUsT379nhRskAhbZA'
 end
 
 require File.expand_path("../../lib/zuck", __FILE__)

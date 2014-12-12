@@ -104,7 +104,7 @@ module Zuck
     # @return boolean
     def validate_interest(interest)
       if @validated_interests[interest] == nil
-        interests = normalize_array([@spec[:interests]] + [interest])
+        interests = [@spec[:interests]] + [interest]
         @validated_interests = Zuck::AdInterest.validate(@graph, interests)
       end
       @validated_interests[interest] == true
@@ -153,7 +153,7 @@ module Zuck
     private
 
     def validate_spec
-      @spec[:interests]    = normalize_array(@spec[:interests])
+      @spec[:interests] = @spec[:interests]
       @spec[:broad_age] ||= false
       validate_countries
       unless @spec[:interests].present? or @spec[:connections].present?

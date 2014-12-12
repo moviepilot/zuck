@@ -18,8 +18,10 @@ http_interactions:
       code: 200
       message: OK
     headers:
+      Facebook-Api-Version:
+      - v1.0
       Etag:
-      - ! '"8b5fcea570986b5e25aff7226b80215ebf71cf56"'
+      - ! '"1c0c8539cdf9faf464fc90b35f9f7b3a33f285f0"'
       Content-Type:
       - application/json; charset=UTF-8
       Pragma:
@@ -27,28 +29,28 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1216101'
+      - '1528811'
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - oBEMRG6MgL42DEtthxp3LNt+Gzgr2GbJckt8uA8N/q8=
+      - x2PiK4j1QGfr5zbLENRn81GPK9NGFNw9IoDMyn18Ah8m9w5n0yhRWDe+dybLxrnWjfck9Xw3raMnfaxZoQJGEw==
       Date:
-      - Tue, 22 Apr 2014 16:22:30 GMT
+      - Fri, 12 Dec 2014 10:53:19 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '854'
+      - '845'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"name":"The Walt Disney Company","id":6003270522085,"audience_size":129354141,"path":[],"description":null},{"name":"Disney
-        Channel","id":6003327130854,"audience_size":45965936,"path":[],"description":null},{"name":"Walt
-        Disney","id":6003284678611,"audience_size":38133064,"path":[],"description":null},{"name":"Disneyland","id":6003274193708,"audience_size":31257896,"path":[],"description":null},{"name":"Walt
-        Disney Parks and Resorts","id":6003318701218,"audience_size":26448385,"path":[],"description":null},{"name":"List
-        of Disney Channel Original Movies","id":6003220883649,"audience_size":38392980,"path":[],"description":null},{"name":"Disney
-        XD","id":6003540152503,"audience_size":16841504,"path":[],"description":null},{"name":"Walt
-        Disney Animation Studios","id":6003375444677,"audience_size":17506594,"path":[],"description":null}]}'
+      string: ! '{"data":[{"name":"The Walt Disney Company","id":6003270522085,"audience_size":146886870,"path":[],"description":null},{"name":"Walt
+        Disney","id":6003284678611,"audience_size":70060110,"path":[],"description":null},{"name":"Walt
+        Disney Pictures","id":6003050377616,"audience_size":76368720,"path":[],"description":null},{"name":"Disney
+        Channel","id":6003327130854,"audience_size":55643300,"path":[],"description":null},{"name":"Walt
+        Disney Parks and Resorts","id":6003318701218,"audience_size":55636630,"path":[],"description":null},{"name":"Disney
+        on Ice","id":6003235403611,"audience_size":45812600,"path":[],"description":null},{"name":"Disney.com","id":6003413951089,"audience_size":45309160,"path":[],"description":null},{"name":"The
+        Walt Disney Studios (division)","id":6007022518262,"audience_size":45772080,"path":[],"description":null}]}'
     http_version: 
-  recorded_at: Tue, 22 Apr 2014 16:22:31 GMT
+  recorded_at: Fri, 12 Dec 2014 10:53:19 GMT
 recorded_with: VCR 2.3.0

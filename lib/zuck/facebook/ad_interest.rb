@@ -9,35 +9,32 @@ module Zuck
     # popular one
     def best_guess(graph, interest)
       search(graph, interest).sort do |a,b|
-        if a[:audience].to_i > 0 || b[:audience].to_i > 0
-          a[:audience].to_i <=> b[:audience].to_i
+        if a[:audience_size].to_i > 0 || b[:audience_size].to_i > 0
+          a[:audience_size].to_i <=> b[:audience_size].to_i
         else
-          b[:interest].length <=> a[:interest].length
+          b[:name].length <=> a[:name].length
         end
       end.last
     end
 
-    # Checks the ad api to see if the given interests are valid
+    # Checks the ad api to see if the given interests are valid. You can either
+    # pass it an array of strings, or an array of hashes with `:name` and `:id` keys.
     # @return [Hash] The keys are the (lowercased) interests and the values their validity
     def validate(graph, interests)
-      interests = normalize_array(interests).map{|k| k.gsub(',', '%2C')}
-      search = graph.search(nil, type: 'adinterestvalid', interest_list: [interests].flatten)
       results = {}
-      search.each do |r|
-        results[r['name']] = r['valid']
+      normalized = normalize_array(values_from_string_or_object_interests(interests))
+      normalized.each do |interest|
+        # The interest is valid if we found at least one match that
+        # has the exactly the same name (ignoring case)
+        hits = search(graph, interest).select{|d| d['name'].downcase == interest.downcase}
+        results[interest] = hits.count > 0
       end
       results
     end
 
     # Ad interest search
     def search(graph, interest)
-      results = graph.search(interest, type: :adinterest).map do |r|
-        {
-          interest: r['name'],
-          id:   r['id'],
-          audience: r['audience_size']
-        }
-      end
+      graph.search(interest, type: :adinterest).map(&:with_indifferent_access)
     end
   end
 
