@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.8.7
+      - Faraday v0.8.9
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,7 +21,7 @@ http_interactions:
       Facebook-Api-Version:
       - v1.0
       Etag:
-      - ! '"1c0c8539cdf9faf464fc90b35f9f7b3a33f285f0"'
+      - ! '"b0e223182b3f454da05345a3873cb31706b7cb78"'
       Content-Type:
       - application/json; charset=UTF-8
       Pragma:
@@ -29,28 +29,28 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1528811'
+      - '1534884'
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - x2PiK4j1QGfr5zbLENRn81GPK9NGFNw9IoDMyn18Ah8m9w5n0yhRWDe+dybLxrnWjfck9Xw3raMnfaxZoQJGEw==
+      - c5TS3GwP/Tzb2f929NEOK3kHE4cmKjRmmgdE02aqHGw7A/vmcgKszYotYyrb6eINCCOaQi9X4wYN+GOy3PRDnw==
       Date:
-      - Fri, 12 Dec 2014 10:53:19 GMT
+      - Wed, 17 Dec 2014 13:24:51 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '845'
+      - '850'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"name":"The Walt Disney Company","id":6003270522085,"audience_size":146886870,"path":[],"description":null},{"name":"Walt
-        Disney","id":6003284678611,"audience_size":70060110,"path":[],"description":null},{"name":"Walt
-        Disney Pictures","id":6003050377616,"audience_size":76368720,"path":[],"description":null},{"name":"Disney
-        Channel","id":6003327130854,"audience_size":55643300,"path":[],"description":null},{"name":"Walt
-        Disney Parks and Resorts","id":6003318701218,"audience_size":55636630,"path":[],"description":null},{"name":"Disney
-        on Ice","id":6003235403611,"audience_size":45812600,"path":[],"description":null},{"name":"Disney.com","id":6003413951089,"audience_size":45309160,"path":[],"description":null},{"name":"The
-        Walt Disney Studios (division)","id":6007022518262,"audience_size":45772080,"path":[],"description":null}]}'
+      string: ! '{"data":[{"name":"The Walt Disney Company","id":6003270522085,"audience_size":144930320,"path":[],"description":null},{"name":"Walt
+        Disney Pictures","id":6003050377616,"audience_size":75083700,"path":[],"description":null},{"name":"Walt
+        Disney","id":6003284678611,"audience_size":66833180,"path":[],"description":null},{"name":"Walt
+        Disney Parks and Resorts","id":6003318701218,"audience_size":53996790,"path":[],"description":null},{"name":"Disney.com","id":6003413951089,"audience_size":43788560,"path":[],"description":null},{"name":"Disney
+        Interactive","id":6003311026888,"audience_size":42316480,"path":[],"description":null},{"name":"The
+        Walt Disney Studios (division)","id":6007022518262,"audience_size":46006250,"path":[],"description":null},{"name":"Disney
+        Channel","id":6003327130854,"audience_size":56498220,"path":[],"description":null}]}'
     http_version: 
-  recorded_at: Fri, 12 Dec 2014 10:53:19 GMT
+  recorded_at: Wed, 17 Dec 2014 13:24:51 GMT
 recorded_with: VCR 2.3.0

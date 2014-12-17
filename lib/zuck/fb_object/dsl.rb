@@ -59,11 +59,23 @@ module Zuck
       # the ad account your campaign is part of.
       #
       # @param type [Symbol] Pass an underscored symbol here, for example
-      #   `ad_account`
-      def parent_object(type)
+      #   `:ad_account`
+      def parent_object(type, options = {})
+
+        # The `Read` module uses this
         @parent_object_type = type.to_s
+
         define_method(type) do
-          @parent_object
+          # Why a lambda? Because it gets evaluated on runtime, not now. This is a
+          # good thing because it allows for randomly loading files with classes
+          # that inherit from FbObject.
+          class_resolver = lambda{"Zuck::#{type.to_s.singularize.camelize}".constantize}
+
+          if options[:as]
+            @parent_object ||= class_resolver.call.new(@graph, {id: send(options[:as])}, nil)
+          else
+            @parent_object
+          end
         end
       end
 
@@ -86,10 +98,6 @@ module Zuck
       # forward to `Ding.new` and `Dong.new`.
       def connections(*args)
         args.each do |c|
-
-          # Why a lambda? Because it gets evaluated on runtime, not now. This is a
-          # good thing because it allows for randomly loading files with classes
-          # that inherit from FbObject.
           class_resolver = lambda{"Zuck::#{c.to_s.singularize.camelize}".constantize}
 
           # Define getter for connections

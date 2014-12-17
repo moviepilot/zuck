@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Zuck::AdAccount do
 
   let(:graph){ Koala::Facebook::API.new(:token) }
-  let(:acc){ Zuck::AdAccount.new(graph, name: :dance_in_style) }
+  let(:acc){ Zuck::AdAccount.new(graph, name: :dance_in_style, id: '123') }
 
   it "initializes graph correctly" do
     acc.graph.should == graph

@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6005950787751?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&fields=account_id,campaign_status,created_time,daily_imps,end_time,id,lifetime_budget,name,start_time,updated_time
+    uri: https://graph.facebook.com/6021496142951?access_token=CAAEvJ5vzhl8BANgaZCvjMZCRsIbNZCSPswoDM0MTx8g30ojs53HUp43aVBVdqHnu9kIFytWIR5oRfp1Sy8DZBtJ9p5Rw2kY93ZAu6EwzHqZCrjmeBxXBWWlMCty1Bg4zKc3abdbjgoX4fWP4NWCEyWZCFJBKXWR0WV3ZC63bSqw7ojzYJm4teOarRc1GaesGIlIKlZB6s7EwZA1qUZCCKsdZCSsq%0A&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.8.7
+      - Faraday v0.8.9
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -18,31 +18,80 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v1.0
+      Etag:
+      - ! '"55cae945ccdefc5bf670f4608a5f0e8a07da3ca5"'
       Content-Type:
       - application/json; charset=UTF-8
-      Etag:
-      - ! '"e86bfdbd29a6618779f20e958e1dfe705bb806de"'
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
       X-Fb-Rev:
-      - '934677'
+      - '1534884'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - i6CJnwde2dK30oFKSKB+yrtbjQtBwOx7j7wbo7jQdwQ=
+      - TDmzWPYxzb7kY+T65g0Yuj8tnEqPT6SMSVC2qFAxRCOPtIxJtfhAgJdP5QABBj1Aem1IpCLvwdEt1u6EeRMPrg==
       Date:
-      - Thu, 12 Sep 2013 13:21:40 GMT
+      - Wed, 17 Dec 2014 12:36:36 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '230'
+      - '149'
     body:
       encoding: US-ASCII
-      string: ! '{"account_id":"10150585630710217","campaign_status":3,"created_time":"2012-08-21T16:04:13+0200","daily_imps":0,"id":"6005950787751","name":"bloody","start_time":"2012-08-21T16:04:13+0200","updated_time":"2013-03-25T12:40:29+0100"}'
+      string: ! '{"id":"6021496142951","account_id":"10150585630710217","objective":"NONE","name":"bloody","campaign_group_status":"ARCHIVED","buying_type":"AUCTION"}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 13:21:40 GMT
+  recorded_at: Wed, 17 Dec 2014 12:36:36 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/6021496142951?access_token=CAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD%0A&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Facebook-Api-Version:
+      - v1.0
+      Etag:
+      - ! '"55cae945ccdefc5bf670f4608a5f0e8a07da3ca5"'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1534884'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - V86//b5y3DAluaqXAobUriiP/KE10U4Nf0XSwmy5Hwx3EgiB0lyYvZUm43VbNdkJKJfVxXZVnGG7piKEw6WRRg==
+      Date:
+      - Wed, 17 Dec 2014 13:22:06 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '149'
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"6021496142951","account_id":"10150585630710217","objective":"NONE","name":"bloody","campaign_group_status":"ARCHIVED","buying_type":"AUCTION"}'
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 13:22:06 GMT
 recorded_with: VCR 2.3.0

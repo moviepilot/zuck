@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.8.7
+      - Faraday v0.8.9
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -29,15 +29,15 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1528811'
+      - '1534884'
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - SifAF/VNUtHfOxPQVs+AC2nqI/3IXO3QmoTn/aZTPLToGzRQkNbGwzFgcE0VVMX7vt8pE3gSv/sByqWLz+Drrw==
+      - EeFRTf5/YcAT53Pj0vja6Ox7Gf/Utwd/C1994u9m/1KNlnwdO7ZUnAyMWLtNfMJIGaKumgmxYKba1r7tg+99sg==
       Date:
-      - Fri, 12 Dec 2014 10:53:20 GMT
+      - Wed, 17 Dec 2014 13:24:51 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -46,5 +46,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"data":[]}'
     http_version: 
-  recorded_at: Fri, 12 Dec 2014 10:53:20 GMT
+  recorded_at: Wed, 17 Dec 2014 13:24:52 GMT
 recorded_with: VCR 2.3.0

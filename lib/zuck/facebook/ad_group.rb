@@ -3,20 +3,20 @@ require 'zuck/facebook/ad_creative'
 module Zuck
   class AdGroup < RawFbObject
 
-    # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
-    # were incomplete, so I added here what the graph explorer
-    # actually returned.
-    known_keys :account_id,
+    # Known keys as per
+    # [fb docs](https://developers.facebook.com/docs/reference/ads-api/adgroup/v2.2)
+    known_keys :id,
+               :account_id,
                :adgroup_status,
-               :bid_info,
                :bid_type,
+               :bid_info,
+               :conversion_specs,
                :campaign_id,
+               :campaign_group_id,
                :conversion_specs,
                :created_time,
                :creative_ids,
-               :id,
-               :disapprove_reason_descriptions,
-               :last_updated_by_app_id,
+               :failed_delivery_checks,
                :name,
                :targeting,
                :tracking_specs,
@@ -27,10 +27,10 @@ module Zuck
     list_path     :adgroups
     connections   :ad_creatives
 
-    def self.create(graph, data, ad_campaign)
-      path = ad_campaign.ad_account.path
-      data['campaign_id'] = ad_campaign.id
-      super(graph, data, ad_campaign, path)
+    def self.create(graph, data, ad_set)
+      path = ad_set.ad_account.path
+      data['campaign_id'] = ad_set.id
+      super(graph, data, ad_set, path)
     end
 
   end

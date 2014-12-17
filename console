@@ -4,10 +4,11 @@ $LOAD_PATH.unshift File.expand_path(File.join(File.dirname(__FILE__), 'lib'))
 require 'bundler'
 Bundler.require
 
-require 'irb'
+require 'pry'
 require 'zuck'
 
 def reload!
+  Zuck.graph =  Koala::Facebook::API.new(File.read("test_access_token"))
   @loaded_files ||= {}
   count = 0
 
@@ -23,4 +24,9 @@ def reload!
   "reloaded #{count} files"
 end
 
-IRB.start
+def graph
+  Zuck.graph
+end
+
+Zuck.graph =  Koala::Facebook::API.new(File.read("test_access_token"))
+binding.pry

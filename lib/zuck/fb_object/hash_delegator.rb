@@ -58,7 +58,7 @@ module Zuck
           # Define getter
           self.send(:define_method, key) do
             init_hash
-            @hash_delegator_hash[key]
+            send('[]', key)
           end
 
           # Define setter
@@ -77,7 +77,12 @@ module Zuck
       d.each do |key, value|
         hash[(key.to_sym rescue key) || key] = value
       end
-      @hash_delegator_hash = hash
+      @hash_delegator_hash = hash.symbolize_keys
+    end
+
+    def merge_data(d)
+      init_hash
+      @hash_delegator_hash.merge!(d.symbolize_keys)
     end
 
     def data=(d)
@@ -90,7 +95,9 @@ module Zuck
 
     def [](key)
       init_hash
-      @hash_delegator_hash[key.to_sym]
+      k = key.to_sym
+      reload_once_on_nil_value(k)
+      @hash_delegator_hash[k]
     end
 
     def []=(key, value)
@@ -110,6 +117,16 @@ module Zuck
 
     def init_hash
       @hash_delegator_hash ||= {}
+    end
+
+    # For a hash that has been initialized with only an id,
+    # lazy reload from facebook when a nil attribute is accessed
+    # (but only do that once)
+    def reload_once_on_nil_value(key)
+      return if @hash_delegator_reloaded_once
+      return if @hash_delegator_hash[key.to_sym]
+      @hash_delegator_reloaded_once = true
+      reload
     end
   end
 end

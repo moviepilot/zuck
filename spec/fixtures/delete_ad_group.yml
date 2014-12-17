@@ -5,10 +5,10 @@ http_interactions:
     uri: https://graph.facebook.com/6010889169151
     body:
       encoding: US-ASCII
-      string: access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&method=delete
+      string: access_token=CAAEvJ5vzhl8BANgaZCvjMZCRsIbNZCSPswoDM0MTx8g30ojs53HUp43aVBVdqHnu9kIFytWIR5oRfp1Sy8DZBtJ9p5Rw2kY93ZAu6EwzHqZCrjmeBxXBWWlMCty1Bg4zKc3abdbjgoX4fWP4NWCEyWZCFJBKXWR0WV3ZC63bSqw7ojzYJm4teOarRc1GaesGIlIKlZB6s7EwZA1qUZCCKsdZCSsq%0A&method=delete
     headers:
       User-Agent:
-      - Faraday v0.8.7
+      - Faraday v0.8.9
       Content-Type:
       - application/x-www-form-urlencoded
       Accept:
@@ -18,22 +18,24 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v1.0
       Content-Type:
       - application/json; charset=UTF-8
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
       X-Fb-Rev:
-      - '934677'
+      - '1534884'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - 3Wi9ttNPO87lCGaYoK4G5weYE4oNEdHTNxYqAacF+3M=
+      - qGpX6qFKpWvgRHaBZoVnJPdM2FZO9ve2k7WmSjxTtJuRcdlvmHcBf2zJ1oEDRhvCp0EpwJOdwn3rPoqog9NV0Q==
       Date:
-      - Thu, 12 Sep 2013 13:21:43 GMT
+      - Wed, 17 Dec 2014 12:36:42 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -42,5 +44,50 @@ http_interactions:
       encoding: US-ASCII
       string: 'true'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 13:21:43 GMT
+  recorded_at: Wed, 17 Dec 2014 12:36:42 GMT
+- request:
+    method: post
+    uri: https://graph.facebook.com/6010889169151
+    body:
+      encoding: US-ASCII
+      string: access_token=CAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD%0A&method=delete
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Facebook-Api-Version:
+      - v1.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1534884'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - wC6lizxjFhgB2g26Kc+/L+wP9IOB91RlXIEukjSNsKvWLfZYrW7fYqrzPCNEiXTYg0X9UceE4GxjHUnIcWQu+w==
+      Date:
+      - Wed, 17 Dec 2014 13:22:14 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '4'
+    body:
+      encoding: US-ASCII
+      string: 'true'
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 13:22:14 GMT
 recorded_with: VCR 2.3.0

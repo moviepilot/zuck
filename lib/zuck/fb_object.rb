@@ -16,9 +16,9 @@ module Zuck
     #     class AdCampaign < FbObject
     #
     #       known_keys    :title, :budget
-    #       parent_object :ad_account
     #       list_path     :adcampaigns
     #       connections   :ad_groups
+    #       parent_object :ad_account, as: :account_id
     #
     #     end
     #

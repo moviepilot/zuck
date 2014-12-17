@@ -70,7 +70,7 @@ module Zuck
     def initialize(graph, ad_account, spec = nil)
       @validated_interests = {}
       @graph = graph
-      @ad_account = "act_#{ad_account}".gsub('act_act_', 'act_')
+      @ad_account = normalize_account_id(ad_account)
       self.spec = spec
     end
 

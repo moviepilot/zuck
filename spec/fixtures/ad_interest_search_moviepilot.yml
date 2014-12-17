@@ -8,7 +8,7 @@ http_interactions:
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.8.7
+      - Faraday v0.8.9
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -21,7 +21,7 @@ http_interactions:
       Facebook-Api-Version:
       - v1.0
       Etag:
-      - ! '"66239cf51181166b00cc115691f974f23e5513cb"'
+      - ! '"ba0fafe4ed5264db3ef1b4ac787694e839a1e8a6"'
       Content-Type:
       - application/json; charset=UTF-8
       Pragma:
@@ -29,27 +29,27 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1528811'
+      - '1534884'
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - GCodA9kAJivZwDHjrGLX/OvB7l7Tx5fZ1JlrCpM3G2o9vMUezf1kdXddhBr4v7KE2UqibGCrhlBz8Sqd3OQN8Q==
+      - PDh3mmxbsNqedDiNcGWtSC5YjmDAdCIV8DlHVOBGy2HkwKHTcgtRhxV/aSil9efUIZamLZayMMTlXYK/8+n2YA==
       Date:
-      - Fri, 12 Dec 2014 11:01:08 GMT
+      - Wed, 17 Dec 2014 13:24:51 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '810'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"name":"moviepilot horror","id":6016974866325,"audience_size":5357120,"path":[],"description":null},{"name":"moviepilotcom","id":6003495809986,"audience_size":4980170,"path":[],"description":null},{"name":"moviepilot","id":6003327847780,"audience_size":2028610,"path":[],"description":null},{"name":"moviepilot
-        superheroes","id":6013950241910,"audience_size":2516410,"path":[],"description":null},{"name":"moviepilot
-        tv","id":6014564835078,"audience_size":1471010,"path":[],"description":null},{"name":"moviepilot
-        action","id":6014532714533,"audience_size":1416810,"path":[],"description":null},{"name":"moviepilot
-        animation","id":6021685075080,"audience_size":1303860,"path":[],"description":null},{"name":"moviepilot
-        scifi","id":6014484233967,"audience_size":1147990,"path":[],"description":null}]}'
+      string: ! '{"data":[{"name":"moviepilot horror","id":6016974866325,"audience_size":5155140,"path":[],"description":null},{"name":"moviepilotcom","id":6003495809986,"audience_size":4805530,"path":[],"description":null},{"name":"moviepilot","id":6003327847780,"audience_size":1960530,"path":[],"description":null},{"name":"moviepilot
+        superheroes","id":6013950241910,"audience_size":2443280,"path":[],"description":null},{"name":"moviepilot
+        tv","id":6014564835078,"audience_size":1427730,"path":[],"description":null},{"name":"moviepilot
+        action","id":6014532714533,"audience_size":1372480,"path":[],"description":null},{"name":"moviepilot
+        animation","id":6021685075080,"audience_size":1278040,"path":[],"description":null},{"name":"moviepilot
+        scifi","id":6014484233967,"audience_size":1115420,"path":[],"description":null}]}'
     http_version: 
-  recorded_at: Fri, 12 Dec 2014 11:01:08 GMT
+  recorded_at: Wed, 17 Dec 2014 13:24:51 GMT
 recorded_with: VCR 2.3.0
