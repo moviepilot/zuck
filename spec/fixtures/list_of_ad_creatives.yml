@@ -2,13 +2,13 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6010889169151/adcreatives?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&fields=
+    uri: https://graph.facebook.com/6010889169151/adcreatives?access_token=CAAEvJ5vzhl8BANgaZCvjMZCRsIbNZCSPswoDM0MTx8g30ojs53HUp43aVBVdqHnu9kIFytWIR5oRfp1Sy8DZBtJ9p5Rw2kY93ZAu6EwzHqZCrjmeBxXBWWlMCty1Bg4zKc3abdbjgoX4fWP4NWCEyWZCFJBKXWR0WV3ZC63bSqw7ojzYJm4teOarRc1GaesGIlIKlZB6s7EwZA1qUZCCKsdZCSsq%0A&fields=
     body:
       encoding: US-ASCII
       string: ''
     headers:
       User-Agent:
-      - Faraday v0.8.7
+      - Faraday v0.8.9
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
@@ -18,32 +18,80 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v1.0
+      Etag:
+      - ! '"9818afb0fc3be647821cb978d9dec1afcfa6cdc6"'
       Content-Type:
       - application/json; charset=UTF-8
-      Etag:
-      - ! '"059c02f2d58116e7271e2885bc8551cf1b65f739"'
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
       X-Fb-Rev:
-      - '934677'
+      - '1534884'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - WDxMSDUs/mE5bYf2TYbE+FrTVQ6Ff/EM8TOVcqc9SLQ=
+      - CAY6wp0mChB83YQBHM2kkuOQDo7WdEqUNxRnIcltPMQWudYNGY/5cDr2a7eaM7TiWCSzeZLsNzWtEu4bbxmRJg==
       Date:
-      - Thu, 12 Sep 2013 13:21:39 GMT
+      - Wed, 17 Dec 2014 12:36:35 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '712'
+      - '33'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
-        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":9}],"paging":{"next":"https:\/\/graph.facebook.com\/6010889169151\/adcreatives?access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD&limit=500&offset=500&__after_id=6010888561951"},"count":1,"limit":500}'
+      string: ! '{"data":[{"id":"6010888561951"}]}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 13:21:39 GMT
+  recorded_at: Wed, 17 Dec 2014 12:36:35 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/6010889169151/adcreatives?access_token=CAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD%0A&fields=
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Facebook-Api-Version:
+      - v1.0
+      Etag:
+      - ! '"9818afb0fc3be647821cb978d9dec1afcfa6cdc6"'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1534884'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - /OJJwpvUT1P+qbKqAugkaGlbjSbKgRbtul+E8rWLDvCLR7xwOns/HN/mLngby00pcvLJ5I12LMvnZAsTzVrQpg==
+      Date:
+      - Wed, 17 Dec 2014 13:22:06 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '33'
+    body:
+      encoding: US-ASCII
+      string: ! '{"data":[{"id":"6010888561951"}]}'
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 13:22:06 GMT
 recorded_with: VCR 2.3.0

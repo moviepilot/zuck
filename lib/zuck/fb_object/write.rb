@@ -24,9 +24,9 @@ module Zuck
       #
       # Since we only put one at a time, we'll fetch this like that.
       data = result["data"].values.first.values.first
+      known_data = data.keep_if{|k,v| known_keys.include?(k.to_sym) }
 
-      # Update and return
-      set_data(data)
+      merge_data(known_data)
       result["result"]
     end
 
@@ -50,14 +50,26 @@ module Zuck
         data["redownload"] = 1
 
         # Create
-        result = create_connection(graph, p, list_path, data)["data"]
+        result = create_connection(graph, p, list_path, data)
 
-        # The data is nested by name and id, e.g.
+        # If the redownload flag was supported, the data is nested by
+        # name and id, e.g.
         #
         #     "campaigns" => { "12345" => "data" }
         #
-        # Since we only put one at a time, we'll fetch this like that.
-        data = result.values.first.values.first
+        # Since we only create one at a time, we can just say:
+        if d=result['data']
+          data = d.values.first.values.first
+
+        # Redownload was not supported, in this case facebook returns
+        # just {"id": "12345"}
+        elsif result['id']
+          data = result
+
+        # Don't know what to do. No id and no data. I need an adult.
+        else
+          raise "Invalid response received, found neither a data nor id key in #{result}"
+        end
 
         # Return a new instance
         new(graph, data, parent)

@@ -1,0 +1,95 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://graph.facebook.com/act_10150585630710217/adcampaigns
+    body:
+      encoding: US-ASCII
+      string: name=test+ad+set&campaign_status=PAUSED&daily_budget=100&targeting=%7B%27geo_locations%27%3A%7B%27countries%27%3A%5B%27US%27%2C%27GB%27%5D%7D%7D&campaign_group_id=6021499361751&redownload=1&access_token=CAAEvJ5vzhl8BANgaZCvjMZCRsIbNZCSPswoDM0MTx8g30ojs53HUp43aVBVdqHnu9kIFytWIR5oRfp1Sy8DZBtJ9p5Rw2kY93ZAu6EwzHqZCrjmeBxXBWWlMCty1Bg4zKc3abdbjgoX4fWP4NWCEyWZCFJBKXWR0WV3ZC63bSqw7ojzYJm4teOarRc1GaesGIlIKlZB6s7EwZA1qUZCCKsdZCSsq%0A
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Facebook-Api-Version:
+      - v1.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1534884'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - P9WaOOXq6uArlw9Am4iG1Bijy01ET0n1pIg8eNxZxY27Xh5c5gDfcSbFanBDwmXZ4oHn1D9JmbOYJ7CRX8jJhw==
+      Date:
+      - Wed, 17 Dec 2014 12:36:38 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '564'
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"6021526001951","data":{"campaigns":{"6021526001951":{"id":"6021526001951","account_id":"10150585630710217","name":"test
+        ad set","daily_budget":100,"campaign_status":"PAUSED","daily_imps":0,"frequency_cap":0,"frequency_cap_reset_period":0,"start_time":"2014-12-17T13:36:38+0100","updated_time":"2014-12-17T13:36:38+0100","created_time":"2014-12-17T13:36:38+0100","campaign_group_id":6021499361751,"prorated_daily_budget":43,"budget_remaining":43,"targeting":{"age_min":18,"age_max":65,"geo_locations":{"countries":["US","GB"]}},"pacing_type":["standard"]}}}}'
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 12:36:38 GMT
+- request:
+    method: post
+    uri: https://graph.facebook.com/act_10150585630710217/adcampaigns
+    body:
+      encoding: US-ASCII
+      string: name=test+ad+set&campaign_status=PAUSED&daily_budget=100&targeting=%7B%27geo_locations%27%3A%7B%27countries%27%3A%5B%27US%27%2C%27GB%27%5D%7D%7D&campaign_group_id=6021499361751&redownload=1&access_token=CAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD%0A
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Facebook-Api-Version:
+      - v1.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1534884'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - 3HxiMk9UHPheBgDJyYpXL6RRbuHsz/Hd8XWQtc7NH0YDnWStKSE3xRABKIcbOyMGLVPwlrY/RjqpJtf3X5AwfQ==
+      Date:
+      - Wed, 17 Dec 2014 13:22:10 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '564'
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"6021528858751","data":{"campaigns":{"6021528858751":{"id":"6021528858751","account_id":"10150585630710217","name":"test
+        ad set","daily_budget":100,"campaign_status":"PAUSED","daily_imps":0,"frequency_cap":0,"frequency_cap_reset_period":0,"start_time":"2014-12-17T14:22:10+0100","updated_time":"2014-12-17T14:22:10+0100","created_time":"2014-12-17T14:22:10+0100","campaign_group_id":6021499361751,"prorated_daily_budget":40,"budget_remaining":40,"targeting":{"age_min":18,"age_max":65,"geo_locations":{"countries":["US","GB"]}},"pacing_type":["standard"]}}}}'
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 13:22:10 GMT
+recorded_with: VCR 2.3.0

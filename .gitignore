@@ -5,3 +5,5 @@ pkg
 log
 Guardfile
 tmp
+gems.tags
+tags

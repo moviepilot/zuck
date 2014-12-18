@@ -4,25 +4,25 @@ module Zuck
     # Can't create this directly (yet)
     read_only
 
-    # The [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
-    # were incomplete, so I added here what the graph explorer
-    # actually returned.
-    known_keys :name,
-               :type,
-               :object_id,
+    # Known keys as per
+    # [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)
+    known_keys :actor_id,
                :body,
+               :call_to_action_type,
+               :follow_redirect,
+               :image_crops,
+               :image_file,
                :image_hash,
                :image_url,
-               :id,
-               :title,
                :link_url,
+               :name,
+               :object_id,
+               :object_story_id,
+               :object_story_spec,
+               :object_url,
+               :title,
                :url_tags,
-               :preview_url,
-               :related_fan_page,
-               :follow_redirect,
-               :auto_update,
-               :story_id,
-               :action_spec
+               :id
 
     parent_object :ad_group
     list_path     :adcreatives

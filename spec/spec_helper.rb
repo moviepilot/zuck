@@ -3,6 +3,7 @@ require 'simplecov'
 SimpleCov.start
 require 'bundler'
 Bundler.require
+require 'pry'
 
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV["RAILS_ENV"] ||= 'test'
@@ -40,7 +41,7 @@ module TestResponseExtensions
 end
 
 def test_access_token
-  'CAAEvJ5vzhl8BAHZBVF97pZBZAH1ZBjvP5ZCvo1lamXZCZAB1COo3IE6bvP8mNzA9ZAqgLY5XaN5gbbe7dtJo0n1qd9eHPhwl4HtT7kQrYNu8Q3cZAsMxMC6ZC1tR82RuvQrZBblJ3znA5iO1vlznZC6ujr5cGZAPeDyL6TBb2TEVpZAGf8u2erMVjzaClVHw1PvZAdKcwoVUMyeAUsT379nhRskAhbZA'
+  @test_access_token ||= File.read("test_access_token")
 end
 
 require File.expand_path("../../lib/zuck", __FILE__)

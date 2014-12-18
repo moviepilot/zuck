@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rvm'
 gem 'bundler'
-gem 'koala', '~>1.6.0'
+gem 'koala'
 gem 'activesupport'
 
 group :development do
@@ -16,11 +16,12 @@ group :development, :test do
   gem 'webmock', '~>1.8.0'
   gem 'rspec'
   gem 'vcr'
+  gem 'pry'
 end
 
 platform :ruby do
   group :development do
-    gem 'guard'
+    gem 'guard-ctags-bundler'
     gem 'guard-rspec'
     gem 'guard-bundler'
     gem 'guard-yard'

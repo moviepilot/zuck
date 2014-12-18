@@ -1,14 +1,61 @@
 ---
 http_interactions:
 - request:
+    method: get
+    uri: https://graph.facebook.com/6021525283751?access_token=CAAEvJ5vzhl8BANgaZCvjMZCRsIbNZCSPswoDM0MTx8g30ojs53HUp43aVBVdqHnu9kIFytWIR5oRfp1Sy8DZBtJ9p5Rw2kY93ZAu6EwzHqZCrjmeBxXBWWlMCty1Bg4zKc3abdbjgoX4fWP4NWCEyWZCFJBKXWR0WV3ZC63bSqw7ojzYJm4teOarRc1GaesGIlIKlZB6s7EwZA1qUZCCKsdZCSsq%0A&fields=id,name,account_id,bid_type,bid_info,campaign_group_id,campaign_status,start_time,end_time,updated_time,created_time,daily_budget,lifetime_budget,budget_remaining,targeting,promoted_object
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Facebook-Api-Version:
+      - v1.0
+      Etag:
+      - ! '"6d1f3fb1b8dc7e25bd46f71dd1ec13f3c6ad7d09"'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1534884'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - 9bZNvyB5HQZO7RwDT0Bol5xsP4JoQADI6bblZnxLLpN8R8UmskJOCqa4E0iAJ6ATvKEkHr/zZyLaNhERQe3BDg==
+      Date:
+      - Wed, 17 Dec 2014 12:36:40 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '324'
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"6021525283751","name":"test ad set","account_id":"10150585630710217","campaign_group_id":"6021499361751","campaign_status":"ACTIVE","start_time":"2014-12-17T12:53:23+0100","updated_time":"2014-12-17T13:29:58+0100","created_time":"2014-12-17T12:53:23+0100","daily_budget":100,"lifetime_budget":0,"budget_remaining":46}'
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 12:36:40 GMT
+- request:
     method: post
     uri: https://graph.facebook.com/act_10150585630710217/adgroups
     body:
       encoding: US-ASCII
-      string: bid_type=CPC&max_bid=1&name=Rap+like+me&targeting=%7B%22countries%22%3A%5B%22US%22%5D%7D&creative=%7B%22type%22%3A25%2C%22action_spec%22%3A%7B%22action.type%22%3A%22like%22%2C+%22post%22%3A10150420410887685%7D%7D&campaign_id=6010889111951&redownload=1&access_token=CAAEvJ5vzhl8BAH8aCPOx0Ft9uNB147TF8weJ8hK0g7YVDRWU4eEih7tEKdJgmfk0vABZClZACJbEzyhSMbiShL6RpsfkZASfX1C9nv1AlFvjJajflqkyYZAlpE2edT0FJHjdh4NFg0ZCt0sBgq0kZABtKsjuU18aMURLE7rjKHR4X8NkXBUafg1T4uZARRNqboZD
+      string: bid_type=CPC&bid_info=%7B%22CLICKS%22%3A+1%7D&name=Rap+like+me&targeting=%7B%22geo_locations%22%3A+%7B%22countries%22%3A%5B%22US%22%5D%7D%7D&objective=WEBSITE_CLICKS&creative=%7B%22creative_id%22%3A+%226021396606151%22%7D&campaign_id=6021525283751&redownload=1&access_token=CAAEvJ5vzhl8BANgaZCvjMZCRsIbNZCSPswoDM0MTx8g30ojs53HUp43aVBVdqHnu9kIFytWIR5oRfp1Sy8DZBtJ9p5Rw2kY93ZAu6EwzHqZCrjmeBxXBWWlMCty1Bg4zKc3abdbjgoX4fWP4NWCEyWZCFJBKXWR0WV3ZC63bSqw7ojzYJm4teOarRc1GaesGIlIKlZB6s7EwZA1qUZCCKsdZCSsq%0A
     headers:
       User-Agent:
-      - Faraday v0.8.7
+      - Faraday v0.8.9
       Content-Type:
       - application/x-www-form-urlencoded
       Accept:
@@ -18,31 +65,129 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Access-Control-Allow-Origin:
-      - ! '*'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v1.0
       Content-Type:
       - application/json; charset=UTF-8
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
       Pragma:
       - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
       X-Fb-Rev:
-      - '934677'
+      - '1534884'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - 40pq1sYZfSG3uVJTkgqTxLh8ul6oVyjcwRASFefh3mY=
+      - NTaINAkcgTiUSFH5+UEXMohGCHDwFGHQonsYLcjJ2IWVsC1KLxB7K6eB2ZPqHozhgYRPpL/YxojDPEPfZxCdmw==
       Date:
-      - Thu, 12 Sep 2013 13:21:42 GMT
+      - Wed, 17 Dec 2014 12:36:41 GMT
       Transfer-Encoding:
       - chunked
       Connection:
       - keep-alive
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6010891176751","data":{"adgroups":{"6010891176751":{"id":"6010891176751","account_id":"10150585630710217","adgroup_status":4,"bid_info":{"1":1},"bid_type":1,"campaign_id":6010889111951,"conversion_specs":[],"creative_ids":[6010888561951],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"Rap
-        like me","targeting":{"countries":["US"]},"tracking_specs":[],"updated_time":1378992102,"created_time":1378992102,"ad_id":6010891176751,"adgroup_id":6010891176751,"max_bid":1,"tracking_pixel_ids":[]}},"creatives":{"6010888561951":{"id":"6010888561951","action_spec":[{"action.type":["like"],"post":["10150420410887685"]}],"image_url":"","name":"Sponsored
-        story #6,010,888,561,951","preview_url":"https:\/\/www.facebook.com\/ads\/api\/creative_preview.php?cid=6010888561951","related_fan_page":1,"type":25,"creative_id":6010888561951,"run_status":1,"count_current_adgroups":11}}}}'
+      string: ! '{"id":"6021526003751","data":{"adgroups":{"6021526003751":{"id":"6021526003751","account_id":"10150585630710217","adgroup_status":"PENDING_REVIEW","bid_info":{"CLICKS":1},"bid_type":"CPC","campaign_id":"6021525283751","creative_ids":["6021396606151"],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"Rap
+        like me","objective":"WEBSITE_CLICKS","targeting":{"age_max":65,"age_min":18,"geo_locations":{"countries":["US"]}},"tracking_specs":[{"action.type":["post_engagement"],"page":[250413944992062],"post":[882760995090684]}],"updated_time":1418819801,"created_time":1418819801}},"creatives":{"6021396606151":{"id":"6021396606151","object_type":"SHARE","object_story_id":"250413944992062_882760995090684","object_story_spec":{"page_id":"250413944992062","link_data":{"link":"http:\/\/moviepilot.com\/","message":"Story
+        message","name":"Link Name","caption":"Link Caption","description":"A description","picture":"http:\/\/graph.facebook.com\/moviepilotdotcom\/picture"}},"name":"Link
+        Page Post Ad Creative"}}}}'
     http_version: 
-  recorded_at: Thu, 12 Sep 2013 13:21:42 GMT
+  recorded_at: Wed, 17 Dec 2014 12:36:41 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/6021525283751?access_token=CAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD%0A&fields=id,name,account_id,bid_type,bid_info,campaign_group_id,campaign_status,start_time,end_time,updated_time,created_time,daily_budget,lifetime_budget,budget_remaining,targeting,promoted_object
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Facebook-Api-Version:
+      - v1.0
+      Etag:
+      - ! '"6d1f3fb1b8dc7e25bd46f71dd1ec13f3c6ad7d09"'
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1534884'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - 9XcopJVIBLF438Uia/6uZLT4M4qLlKiglNysRbACUHTi2TbtpfjPJUxngDNCHhQYM7Qs2iZilXOqzkCj6yd/yA==
+      Date:
+      - Wed, 17 Dec 2014 13:22:12 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '324'
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"6021525283751","name":"test ad set","account_id":"10150585630710217","campaign_group_id":"6021499361751","campaign_status":"ACTIVE","start_time":"2014-12-17T12:53:23+0100","updated_time":"2014-12-17T13:29:58+0100","created_time":"2014-12-17T12:53:23+0100","daily_budget":100,"lifetime_budget":0,"budget_remaining":46}'
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 13:22:12 GMT
+- request:
+    method: post
+    uri: https://graph.facebook.com/act_10150585630710217/adgroups
+    body:
+      encoding: US-ASCII
+      string: bid_type=CPC&bid_info=%7B%22CLICKS%22%3A+1%7D&name=Rap+like+me&targeting=%7B%22geo_locations%22%3A+%7B%22countries%22%3A%5B%22US%22%5D%7D%7D&objective=WEBSITE_CLICKS&creative=%7B%22creative_id%22%3A+%226021396606151%22%7D&campaign_id=6021525283751&redownload=1&access_token=CAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD%0A
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Facebook-Api-Version:
+      - v1.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Pragma:
+      - no-cache
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1534884'
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - vExd7wU6raTmfRq43ihY78qXWPocxMA155ZybDyAFBdzLDi22iW/qIn4j3cSSQPyiv15aoi0HlX7ilyHL7rk/Q==
+      Date:
+      - Wed, 17 Dec 2014 13:22:13 GMT
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"6021528861551","data":{"adgroups":{"6021528861551":{"id":"6021528861551","account_id":"10150585630710217","adgroup_status":"PENDING_REVIEW","bid_info":{"CLICKS":1},"bid_type":"CPC","campaign_id":"6021525283751","creative_ids":["6021396606151"],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"Rap
+        like me","objective":"WEBSITE_CLICKS","targeting":{"age_max":65,"age_min":18,"geo_locations":{"countries":["US"]}},"tracking_specs":[{"action.type":["post_engagement"],"page":[250413944992062],"post":[882760995090684]}],"updated_time":1418822533,"created_time":1418822533}},"creatives":{"6021396606151":{"id":"6021396606151","object_type":"SHARE","object_story_id":"250413944992062_882760995090684","object_story_spec":{"page_id":"250413944992062","link_data":{"link":"http:\/\/moviepilot.com\/","message":"Story
+        message","name":"Link Name","caption":"Link Caption","description":"A description","picture":"http:\/\/graph.facebook.com\/moviepilotdotcom\/picture"}},"name":"Link
+        Page Post Ad Creative"}}}}'
+    http_version: 
+  recorded_at: Wed, 17 Dec 2014 13:22:13 GMT
 recorded_with: VCR 2.3.0
