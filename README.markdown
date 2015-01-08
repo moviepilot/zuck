@@ -63,12 +63,12 @@ creative = '{"type":25,"action_spec":{"action.type":"like", "post":1015042041088
 o = { bid_type:  1,
       max_bid:   1,
       name:      "My first ad group",
-      targeting: '{"countries":["US"]}',
+      targeting: '{"geo_locations": {"countries":["US"]}}',
       creative:  creative}
 
 # Create it in the context of my_campaign
 group = my_campaign.create_ad_group(o)
-=> #<Zuck::AdGroup adgroup_id: 6005851390151, ad_id: 6005851390151, campaign_id: 6005851032951, name: "My first ad group", adgroup_status: 4, bid_type: 1, max_bid: "1", bid_info: {"1":"1"}, ad_status: 4, account_id: "10150585630710217", id: "6005851390151", creative_ids: [6005851371551], targeting: {"countries":["US"],"friends_of_connections":[{"id":"6005851366351","name":null}]}, conversion_specs: [{"action.type":"like","post":"10150420410887685"}], start_time: null, end_time: null, updated_time: 1343916568, created_time: 1343916568>
+=> #<Zuck::AdGroup adgroup_id: 6005851390151, ad_id: 6005851390151, campaign_id: 6005851032951, name: "My first ad group", adgroup_status: 4, bid_type: 1, max_bid: "1", bid_info: {"1":"1"}, ad_status: 4, account_id: "10150585630710217", id: "6005851390151", creative_ids: [6005851371551], targeting: {"geo_locations": {"countries":["US"]},"friends_of_connections":[{"id":"6005851366351","name":null}]}, conversion_specs: [{"action.type":"like","post":"10150420410887685"}], start_time: null, end_time: null, updated_time: 1343916568, created_time: 1343916568>
 
 # Shoot, that was the wrong name
 group.name = "My serious ad group"

@@ -16,9 +16,12 @@ If you upgrade from 1.x, make sure you read the following:
 
 - `Zuck::AdInterest.search` results use the `audience_size` key in order to use
   the same names as the facebook api. In zuck 1.x it was `audience`
-- `Zuck::TargetingSpec.initialize` does not take string interests anymore,
-  but expects `{id: '123', name: 'foo'} objects, see
-  "[Specifying values for interests as a string will be sunset in favor of a JSON object of id and name](https://developers.facebook.com/docs/apps/migrations/ads-api-changes-2014-04-09)"
+- `Zuck::TargetingSpec`
+  - `initialize` does not take string interests anymore,
+    but expects `{id: '123', name: 'foo'} objects, see
+    "[Specifying values for interests as a string will be sunset in favor of a JSON object of id and name](https://developers.facebook.com/docs/apps/migrations/ads-api-changes-2014-04-09)"
+  - in your targeting spec, don't specify `{countries: ['US']}`, but
+    `{geo_locations: { countries: ['US']}}`
 - `Zuck::AdInterest.best_guess` returns an ad interest object, what was
   formerly the `:interest` key is now called `:name`
 - Ad Campaigns are now called Ad Sets, and Ad Sets can be grouped
