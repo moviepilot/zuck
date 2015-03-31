@@ -8,9 +8,9 @@ describe Zuck::FbObject do
   }
 
 
-  let(:graph)   { Zuck.graph                                                  }
-  let(:account_id) { "act_367106653" }
-  let(:account) { Zuck::AdAccount.new(graph,  {id: account_id})  }
+  let(:graph)      { Zuck.graph                                     }
+  let(:account_id) { "act_367106653"                                }
+  let(:account)    { Zuck::AdAccount.new(graph,  {id: account_id})  }
 
   describe "talking to facebook" do
     act_campaign = nil
