@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6021525861551?access_token=CAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD%0A&fields=id,account_id,adgroup_status,bid_type,bid_info,conversion_specs,campaign_id,campaign_group_id,conversion_specs,created_time,creative_ids,failed_delivery_checks,name,targeting,tracking_specs,updated_time,view_tags
+    uri: https://graph.facebook.com/v2.2/6023922386266?access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&fields=id,account_id,conversion_specs,campaign_id,campaign_group_id,created_time,creative_ids,failed_delivery_checks,name,tracking_specs,updated_time,view_tags
     body:
       encoding: US-ASCII
       string: ''
@@ -18,75 +18,62 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Facebook-Api-Version:
-      - v1.0
+      Content-Type:
+      - application/json; charset=UTF-8
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1666949'
       Etag:
-      - ! '"baa6237b818398d2f5f135c8e586d7cb83dcf561"'
-      Content-Type:
-      - application/json; charset=UTF-8
+      - ! '"2be370237b6c2d0bb839fe1e0db14609b9169995"'
       Pragma:
       - no-cache
-      Access-Control-Allow-Origin:
-      - ! '*'
-      X-Fb-Rev:
-      - '1534884'
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - jdavxgYqbzoVhoS2APL67eB0edLNDMVTA/Eo2kw9VUC4LrqwXtPTCKpwVGVLtUrB1cJDYD5oyHCWMT/8wVZS+Q==
+      - 9UDnImNlOctANgQXM/jmMwgLjmui2hY8js+pMzxIQY48FULdIxMDCgcoWp99Z05gQexuy3i4emaghUw5Ivx3rQ==
       Date:
-      - Wed, 17 Dec 2014 13:22:08 GMT
+      - Tue, 31 Mar 2015 14:51:02 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '786'
+      - '384'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6021525861551","account_id":"10150585630710217","adgroup_status":"ACTIVE","bid_type":"CPC","bid_info":{"CLICKS":1},"campaign_id":"6021525283751","campaign_group_id":"6021499361751","created_time":"2014-12-17T13:29:58+0100","creative_ids":["6021396606151"],"failed_delivery_checks":[{"check_name":"spending_limit_reached","description":"Your
-        ads aren''t running because you''ve reached the spending limit you set for
-        your ad account. To get your ads up and running please edit your spending
-        limit.","summary":"Spending limit reached."}],"name":"My new name","targeting":{"age_max":65,"age_min":18,"geo_locations":{"countries":["US"]}},"tracking_specs":[{"action.type":["post_engagement"],"page":[250413944992062],"post":[882760995090684]}],"updated_time":"2014-12-17T14:21:59+0100"}'
+      string: ! '{"id":"6023922386266","account_id":"367106653","campaign_id":"6023922380266","campaign_group_id":"6023922379466","created_time":"2015-03-31T07:50:59-0700","creative_ids":["6023920301066"],"name":"Rap
+        like me","tracking_specs":[{"action.type":["link_click"],"object":["10150219314478408"]},{"action.type":["like"],"page":["158352134203230"]}],"updated_time":"2015-03-31T07:50:59-0700"}'
     http_version: 
-  recorded_at: Wed, 17 Dec 2014 13:22:08 GMT
+  recorded_at: Tue, 31 Mar 2015 14:51:02 GMT
 - request:
     method: post
-    uri: https://graph.facebook.com/6021525861551
+    uri: https://graph.facebook.com/v2.2/6023922386266
     body:
       encoding: US-ASCII
       string: ! "-------------RubyMultipartPost\r\nContent-Disposition: form-data;
-        name=\"account_id\"\r\n\r\n10150585630710217\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"adgroup_status\"\r\n\r\nACTIVE\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"bid_type\"\r\n\r\nCPC\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"bid_info%5BCLICKS%5D\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"campaign_id\"\r\n\r\n6021525283751\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"campaign_group_id\"\r\n\r\n6021499361751\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"created_time\"\r\n\r\n2014-12-17T13:29:58+0100\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"creative_ids\"\r\n\r\n6021396606151\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"failed_delivery_checks%5B%5D%5Bcheck_name%5D\"\r\n\r\nspending_limit_reached\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"failed_delivery_checks%5B%5D%5Bdescription%5D\"\r\n\r\nYour
-        ads aren't running because you've reached the spending limit you set for your
-        ad account. To get your ads up and running please edit your spending limit.\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"failed_delivery_checks%5B%5D%5Bsummary%5D\"\r\n\r\nSpending
-        limit reached.\r\n-------------RubyMultipartPost\r\nContent-Disposition: form-data;
-        name=\"name\"\r\n\r\nMy old name\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"targeting%5Bage_max%5D\"\r\n\r\n65\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"targeting%5Bage_min%5D\"\r\n\r\n18\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"targeting%5Bgeo_locations%5D%5Bcountries%5D%5B%5D\"\r\n\r\nUS\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"tracking_specs%5B%5D%5Baction.type%5D%5B%5D\"\r\n\r\npost_engagement\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"tracking_specs%5B%5D%5Bpage%5D%5B%5D\"\r\n\r\n250413944992062\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"tracking_specs%5B%5D%5Bpost%5D%5B%5D\"\r\n\r\n882760995090684\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"updated_time\"\r\n\r\n2014-12-17T14:21:59+0100\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        name=\"account_id\"\r\n\r\n367106653\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"campaign_id\"\r\n\r\n6023922380266\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"campaign_group_id\"\r\n\r\n6023922379466\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"created_time\"\r\n\r\n2015-03-31T07:50:59-0700\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"creative_ids\"\r\n\r\n6023920301066\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"name\"\r\n\r\nMy old name\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"tracking_specs%5B%5D%5Baction.type%5D%5B%5D\"\r\n\r\nlink_click\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"tracking_specs%5B%5D%5Bobject%5D%5B%5D\"\r\n\r\n10150219314478408\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"tracking_specs%5B%5D%5Baction.type%5D%5B%5D\"\r\n\r\nlike\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"tracking_specs%5B%5D%5Bpage%5D%5B%5D\"\r\n\r\n158352134203230\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"updated_time\"\r\n\r\n2015-03-31T07:50:59-0700\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"redownload\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"access_token\"\r\n\r\nCAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD\n\r\n-------------RubyMultipartPost--\r\n\r\n"
+        form-data; name=\"access_token\"\r\n\r\nCAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD\r\n-------------RubyMultipartPost--\r\n\r\n"
     headers:
       User-Agent:
       - Faraday v0.8.9
       Content-Type:
       - multipart/form-data; boundary=-----------RubyMultipartPost
       Content-Length:
-      - '2748'
+      - '1682'
       Accept:
       - ! '*/*'
   response:
@@ -94,73 +81,62 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Facebook-Api-Version:
-      - v1.0
       Content-Type:
       - application/json; charset=UTF-8
-      Pragma:
-      - no-cache
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1534884'
+      - '1666949'
+      Pragma:
+      - no-cache
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - GWA1F0WL+zpThGYkDVXtMIDBvVHd/VHgPri7YBx+PM1GVwFeacmwvyVexCqsvt3J9u/lLX2UE/vzMLW1KwOZSA==
+      - jdcjkrWTAkdow7Fco8SBx8I18ZoluDmWpzIldF0Sty/sBi0je5XIQ57kAgMIT+YWvzQgpu84RR/xWqdx46gq0w==
       Date:
-      - Wed, 17 Dec 2014 13:22:09 GMT
-      Transfer-Encoding:
-      - chunked
+      - Tue, 31 Mar 2015 14:51:03 GMT
       Connection:
       - keep-alive
+      Content-Length:
+      - '987'
     body:
       encoding: US-ASCII
-      string: ! '{"result":true,"data":{"adgroups":{"6021525861551":{"id":"6021525861551","account_id":"10150585630710217","adgroup_status":"ACTIVE","bid_info":{"CLICKS":1},"bid_type":"CPC","campaign_id":"6021525283751","creative_ids":["6021396606151"],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"My
-        old name","objective":"WEBSITE_CLICKS","targeting":{"age_max":65,"age_min":18,"geo_locations":{"countries":["US"]}},"tracking_specs":[{"action.type":["post_engagement"],"page":[250413944992062],"post":[882760995090684]}],"updated_time":1418822529,"created_time":1418819398}},"creatives":{"6021396606151":{"id":"6021396606151","object_type":"SHARE","object_story_id":"250413944992062_882760995090684","object_story_spec":{"page_id":"250413944992062","link_data":{"link":"http:\/\/moviepilot.com\/","message":"Story
-        message","name":"Link Name","caption":"Link Caption","description":"A description","picture":"http:\/\/graph.facebook.com\/moviepilotdotcom\/picture"}},"name":"Link
-        Page Post Ad Creative"}}}}'
+      string: ! '{"result":{"success":true},"data":{"adgroups":{"6023922386266":{"id":"6023922386266","account_id":"367106653","adgroup_status":"PENDING_REVIEW","bid_info":{"CLICKS":1},"bid_type":"CPC","campaign_id":"6023922380266","creative_ids":["6023920301066"],"name":"My
+        old name","objective":"WEBSITE_CLICKS","targeting":{"age_max":65,"age_min":18,"geo_locations":{"countries":["US","GB"],"location_types":["home"]}},"tracking_specs":[{"action.type":["link_click"],"object":["10150219314478408"]},{"action.type":["like"],"page":["158352134203230"]}],"updated_time":1427813463,"created_time":1427813459}},"creatives":{"6023920301066":{"id":"6023920301066","body":"bloody
+        body","image_hash":"3750c9b7e692b387b6a6c66b47e97442","image_url":"https:\/\/fbcdn-creative-a.akamaihd.net\/hads-ak-xpf1\/t45.1600-4\/s110x80\/10736900_6023920295866_1120642805_n.jpg","actor_id":"158352134203230","object_type":"DOMAIN","object_url":"http:\/\/moviepilot.com\/","name":"bloody
+        title-01","title":"bloody title"}}}}'
     http_version: 
-  recorded_at: Wed, 17 Dec 2014 13:22:09 GMT
+  recorded_at: Tue, 31 Mar 2015 14:51:03 GMT
 - request:
     method: post
-    uri: https://graph.facebook.com/6021525861551
+    uri: https://graph.facebook.com/v2.2/6023922386266
     body:
       encoding: US-ASCII
       string: ! "-------------RubyMultipartPost\r\nContent-Disposition: form-data;
-        name=\"account_id\"\r\n\r\n10150585630710217\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"adgroup_status\"\r\n\r\nACTIVE\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"bid_type\"\r\n\r\nCPC\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"bid_info%5BCLICKS%5D\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"campaign_id\"\r\n\r\n6021525283751\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"campaign_group_id\"\r\n\r\n6021499361751\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"created_time\"\r\n\r\n1418819398\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"creative_ids\"\r\n\r\n6021396606151\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"failed_delivery_checks%5B%5D%5Bcheck_name%5D\"\r\n\r\nspending_limit_reached\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"failed_delivery_checks%5B%5D%5Bdescription%5D\"\r\n\r\nYour
-        ads aren't running because you've reached the spending limit you set for your
-        ad account. To get your ads up and running please edit your spending limit.\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"failed_delivery_checks%5B%5D%5Bsummary%5D\"\r\n\r\nSpending
-        limit reached.\r\n-------------RubyMultipartPost\r\nContent-Disposition: form-data;
-        name=\"name\"\r\n\r\nMy new name\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"targeting%5Bage_max%5D\"\r\n\r\n65\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"targeting%5Bage_min%5D\"\r\n\r\n18\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"targeting%5Bgeo_locations%5D%5Bcountries%5D%5B%5D\"\r\n\r\nUS\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"tracking_specs%5B%5D%5Baction.type%5D%5B%5D\"\r\n\r\npost_engagement\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"tracking_specs%5B%5D%5Bpage%5D%5B%5D\"\r\n\r\n250413944992062\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"tracking_specs%5B%5D%5Bpost%5D%5B%5D\"\r\n\r\n882760995090684\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"updated_time\"\r\n\r\n1418822529\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        name=\"account_id\"\r\n\r\n367106653\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"campaign_id\"\r\n\r\n6023922380266\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"campaign_group_id\"\r\n\r\n6023922379466\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"created_time\"\r\n\r\n1427813459\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"creative_ids\"\r\n\r\n6023920301066\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"name\"\r\n\r\nMy new name\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"tracking_specs%5B%5D%5Baction.type%5D%5B%5D\"\r\n\r\nlink_click\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"tracking_specs%5B%5D%5Bobject%5D%5B%5D\"\r\n\r\n10150219314478408\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"tracking_specs%5B%5D%5Baction.type%5D%5B%5D\"\r\n\r\nlike\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"tracking_specs%5B%5D%5Bpage%5D%5B%5D\"\r\n\r\n158352134203230\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"updated_time\"\r\n\r\n1427813463\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"redownload\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"access_token\"\r\n\r\nCAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD\n\r\n-------------RubyMultipartPost--\r\n\r\n"
+        form-data; name=\"access_token\"\r\n\r\nCAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD\r\n-------------RubyMultipartPost--\r\n\r\n"
     headers:
       User-Agent:
       - Faraday v0.8.9
       Content-Type:
       - multipart/form-data; boundary=-----------RubyMultipartPost
       Content-Length:
-      - '2720'
+      - '1654'
       Accept:
       - ! '*/*'
   response:
@@ -168,39 +144,39 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Facebook-Api-Version:
-      - v1.0
       Content-Type:
       - application/json; charset=UTF-8
-      Pragma:
-      - no-cache
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1534884'
+      - '1666949'
+      Pragma:
+      - no-cache
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - e9VBNYIQXRzzkBrZMvx+LJ8tmWUc7dOO0NeeQxAfvrdOkTnAbyH7xY9TQJ5K5jE6tmc/JdvoDgK9XU+xi3FSyg==
+      - qoxBXyHf8DErR3MtdAxyhg/d4QKvHnd6+GNzr+JOFbdZSY+TXmLMEtB5V1Zhmu7G9uP63TexQ+lo9z+7m4tGEA==
       Date:
-      - Wed, 17 Dec 2014 13:22:09 GMT
-      Transfer-Encoding:
-      - chunked
+      - Tue, 31 Mar 2015 14:51:04 GMT
       Connection:
       - keep-alive
+      Content-Length:
+      - '987'
     body:
       encoding: US-ASCII
-      string: ! '{"result":true,"data":{"adgroups":{"6021525861551":{"id":"6021525861551","account_id":"10150585630710217","adgroup_status":"ACTIVE","bid_info":{"CLICKS":1},"bid_type":"CPC","campaign_id":"6021525283751","creative_ids":["6021396606151"],"impression_control_map":[{"location":3,"control":{"impression_control_type":2,"user_impression_limit":6,"user_impression_limit_period":24,"user_impression_limit_period_unit":0}}],"last_updated_by_app_id":333322143368799,"locations":[3],"name":"My
-        new name","objective":"WEBSITE_CLICKS","targeting":{"age_max":65,"age_min":18,"geo_locations":{"countries":["US"]}},"tracking_specs":[{"action.type":["post_engagement"],"page":[250413944992062],"post":[882760995090684]}],"updated_time":1418822529,"created_time":1418819398}},"creatives":{"6021396606151":{"id":"6021396606151","object_type":"SHARE","object_story_id":"250413944992062_882760995090684","object_story_spec":{"page_id":"250413944992062","link_data":{"link":"http:\/\/moviepilot.com\/","message":"Story
-        message","name":"Link Name","caption":"Link Caption","description":"A description","picture":"http:\/\/graph.facebook.com\/moviepilotdotcom\/picture"}},"name":"Link
-        Page Post Ad Creative"}}}}'
+      string: ! '{"result":{"success":true},"data":{"adgroups":{"6023922386266":{"id":"6023922386266","account_id":"367106653","adgroup_status":"PENDING_REVIEW","bid_info":{"CLICKS":1},"bid_type":"CPC","campaign_id":"6023922380266","creative_ids":["6023920301066"],"name":"My
+        new name","objective":"WEBSITE_CLICKS","targeting":{"age_max":65,"age_min":18,"geo_locations":{"countries":["US","GB"],"location_types":["home"]}},"tracking_specs":[{"action.type":["link_click"],"object":["10150219314478408"]},{"action.type":["like"],"page":["158352134203230"]}],"updated_time":1427813464,"created_time":1427813459}},"creatives":{"6023920301066":{"id":"6023920301066","body":"bloody
+        body","image_hash":"3750c9b7e692b387b6a6c66b47e97442","image_url":"https:\/\/fbcdn-creative-a.akamaihd.net\/hads-ak-xpf1\/t45.1600-4\/s110x80\/10736900_6023920295866_1120642805_n.jpg","actor_id":"158352134203230","object_type":"DOMAIN","object_url":"http:\/\/moviepilot.com\/","name":"bloody
+        title-01","title":"bloody title"}}}}'
     http_version: 
-  recorded_at: Wed, 17 Dec 2014 13:22:09 GMT
+  recorded_at: Tue, 31 Mar 2015 14:51:04 GMT
 - request:
     method: get
-    uri: https://graph.facebook.com/6021525861551?access_token=CAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD%0A&fields=id,account_id,adgroup_status,bid_type,bid_info,conversion_specs,campaign_id,campaign_group_id,conversion_specs,created_time,creative_ids,failed_delivery_checks,name,targeting,tracking_specs,updated_time,view_tags
+    uri: https://graph.facebook.com/v2.2/6023922386266?access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&fields=id,account_id,conversion_specs,campaign_id,campaign_group_id,created_time,creative_ids,failed_delivery_checks,name,tracking_specs,updated_time,view_tags
     body:
       encoding: US-ASCII
       string: ''
@@ -216,36 +192,34 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Facebook-Api-Version:
-      - v1.0
-      Etag:
-      - ! '"5423f9fadc4ef58a12502c9488d10c46cf68bbc2"'
       Content-Type:
       - application/json; charset=UTF-8
-      Pragma:
-      - no-cache
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1534884'
+      - '1666949'
+      Etag:
+      - ! '"895afb8cf4da5cb9d3e09b68039d1fa04fba2a4c"'
+      Pragma:
+      - no-cache
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - 7NeKo0i9ZyLfFr6jSXbBIdm62OVKsIoLREg80Z2VAq713FZ5Z8/Y+Y2uDY7S+uuwedaagO/lm9HHnKZ6lS5wiw==
+      - ca8yvlHg/Y0ed/kbHYLEUyTu63BL4J+BX7/cHbE1F5aDqm0yU384NeEDpqiZ6OOn5H9mEypbWygPPHhMxQuRuA==
       Date:
-      - Wed, 17 Dec 2014 13:28:46 GMT
+      - Tue, 31 Mar 2015 14:51:04 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '786'
+      - '384'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6021525861551","account_id":"10150585630710217","adgroup_status":"ACTIVE","bid_type":"CPC","bid_info":{"CLICKS":1},"campaign_id":"6021525283751","campaign_group_id":"6021499361751","created_time":"2014-12-17T13:29:58+0100","creative_ids":["6021396606151"],"failed_delivery_checks":[{"check_name":"spending_limit_reached","description":"Your
-        ads aren''t running because you''ve reached the spending limit you set for
-        your ad account. To get your ads up and running please edit your spending
-        limit.","summary":"Spending limit reached."}],"name":"My new name","targeting":{"age_max":65,"age_min":18,"geo_locations":{"countries":["US"]}},"tracking_specs":[{"action.type":["post_engagement"],"page":[250413944992062],"post":[882760995090684]}],"updated_time":"2014-12-17T14:22:09+0100"}'
+      string: ! '{"id":"6023922386266","account_id":"367106653","campaign_id":"6023922380266","campaign_group_id":"6023922379466","created_time":"2015-03-31T07:50:59-0700","creative_ids":["6023920301066"],"name":"My
+        new name","tracking_specs":[{"action.type":["link_click"],"object":["10150219314478408"]},{"action.type":["like"],"page":["158352134203230"]}],"updated_time":"2015-03-31T07:51:04-0700"}'
     http_version: 
-  recorded_at: Wed, 17 Dec 2014 13:28:46 GMT
+  recorded_at: Tue, 31 Mar 2015 14:51:05 GMT
 recorded_with: VCR 2.3.0

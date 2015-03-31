@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217?access_token=CAAEvJ5vzhl8BANgaZCvjMZCRsIbNZCSPswoDM0MTx8g30ojs53HUp43aVBVdqHnu9kIFytWIR5oRfp1Sy8DZBtJ9p5Rw2kY93ZAu6EwzHqZCrjmeBxXBWWlMCty1Bg4zKc3abdbjgoX4fWP4NWCEyWZCFJBKXWR0WV3ZC63bSqw7ojzYJm4teOarRc1GaesGIlIKlZB6s7EwZA1qUZCCKsdZCSsq%0A&fields=account_groups,account_id,account_status,age,agency_client_declaration,amount_spent,balance,business_city,business_country_code,business_name,business_state,business_street2,business_street,business_zip,capabilities,created_time,currency,daily_spend_limit,end_advertiser,funding_source,funding_source_details,id,is_personal,media_agency,name,offsite_pixels_tos_accepted,partner,spend_cap,timezone_id,timezone_name,timezone_offset_hours_utc,tos_accepted,users,tax_id_status
+    uri: https://graph.facebook.com/v2.2/act_367106653?access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&fields=account_groups,account_id,account_status,age,agency_client_declaration,amount_spent,balance,business_city,business_country_code,business_name,business_state,business_street2,business_street,business_zip,capabilities,created_time,currency,daily_spend_limit,end_advertiser,funding_source,funding_source_details,id,is_personal,media_agency,name,offsite_pixels_tos_accepted,partner,spend_cap,timezone_id,timezone_name,timezone_offset_hours_utc,tos_accepted,users,tax_id_status
     body:
       encoding: US-ASCII
       string: ''
@@ -19,149 +19,69 @@ http_interactions:
       message: !binary |-
         T0s=
     headers:
-      !binary "RmFjZWJvb2stQXBpLVZlcnNpb24=":
-      - !binary |-
-        djEuMA==
-      !binary "RXRhZw==":
-      - !binary |-
-        Ijg5NTEyYmVhYWU5YjU3MmVlOWJmYzc2NWUyMmFmNDE5N2JlMzhiNGQi
       !binary "Q29udGVudC1UeXBl":
       - !binary |-
         YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD1VVEYtOA==
-      !binary "UHJhZ21h":
-      - !binary |-
-        bm8tY2FjaGU=
       !binary "QWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2lu":
       - !binary |-
         Kg==
       !binary "WC1GYi1SZXY=":
       - !binary |-
-        MTUzNDg4NA==
-      !binary "Q2FjaGUtQ29udHJvbA==":
-      - !binary |-
-        cHJpdmF0ZSwgbm8tY2FjaGUsIG5vLXN0b3JlLCBtdXN0LXJldmFsaWRhdGU=
-      !binary "RXhwaXJlcw==":
-      - !binary |-
-        U2F0LCAwMSBKYW4gMjAwMCAwMDowMDowMCBHTVQ=
-      !binary "Q29udGVudC1FbmNvZGluZw==":
-      - !binary |-
-        Z3ppcA==
-      !binary "WC1GYi1EZWJ1Zw==":
-      - !binary |-
-        cnlkUVZZRmpTdzZVdHpaY1ArMFJwc2ZtR1hwZTR0aHJSQnpRTkY2eHB1eElk
-        SHZKUThvUlI4eUUrT0F5MWFNSHZsVHcrNmpBdnpQaHkyS09LM0F6ZlE9PQ==
-      !binary "RGF0ZQ==":
-      - !binary |-
-        V2VkLCAxNyBEZWMgMjAxNCAxMjozNjozNiBHTVQ=
-      !binary "Q29ubmVjdGlvbg==":
-      - !binary |-
-        a2VlcC1hbGl2ZQ==
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        Nzky
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        H4sIAAAAAAAAA6VUwW6bQBD9FYtTq5J0wWAS37DZEGobEGCnaROtNrC2V8GA
-        2EWKE+XfO4udyG0q9dATaObNzOMxb140mud1V0nCC22sGciwkX1hj4bIMZBp
-        OJr+DhCSyk5oYwNCGwZPZBvnFyPHcOxL076E6O6Aa1gltbGNENK1B1rSKge0
-        eu8Er5gQJOdyD8MmrC15pZ0mVIN2D88CSjQPnyYrulPBCd8MFvyRDdyy5Zut
-        HCz9wactXcuu2ogHJvJte9chxKzqUX4+rVf8+wYfxgrZMiZNyH07lG5YWxV1
-        u2bt4AfjJRuMjI/4/+HyzBultmmiSwjntKEPvOSSM9D3pxYneBEsF5AJ8Q2Z
-        uovYDfyQpFmynGbLRKmyiCbBHBPXW+EkC1KckMAjy3geuR5k51E0c+fBrAe4
-        4RR7ZBqFV4EPuTiJEjeDyGTp+TiDSHR1lQYZVhDolgZRSK4D/5pMAtXrbVIc
-        kwTj0Hd9vMBhBp3TnuAsIh5OZ1kUA9Nw5aY99JA9qV0FHo6OYcCRZYpJsAAy
-        K6Di4wjC16p25QZzdwJFsXvbz1ng7Dr6rezYFX/PcBK6c0D6mGS3sdLlnxhy
-        FSVkHscn2GjuAbE+q8b0NDyS4oxkbgISBaHS7Q19+BBglQTTlEwS7M686CbU
-        7uE/tgxWrCCS95tqIsM4Q9aZaWcmGpvG2HK+IBMh9ce7tmVVrlywTJXKBeXl
-        vrdOQUq+47BdhnIQ2GbdVQWvNkTUXaucpA2dC2SZQ8MeWbbpWNqfEFIwCe1g
-        lV603tUfCwoumpLu1SZDHUBiuo9pOTh6HZaYlWWtdtdCm/1uy9qaNs15Xu/U
-        Gst9o/w/fNUP/Wkuyd8uBxekYa2oK1r2B+DoYMjU67XgkpGGP7FSEFkLAqNZ
-        A+pp4zUtBdO1gxjgjbdbomR9rivWnyrLOQkcG+OurRt29/Xd4e8ANY9JsgV9
-        BOlk3l+xTgA5JVJBJQXfHdWykeEM4QtG0ADo77gQvK6UMQ3d1Ie6pdu6A3+7
-        rcv+CiLj9R6UkPQJiL1fyeHrL2ctojhbBQAA
-    http_version: 
-  recorded_at: Wed, 17 Dec 2014 12:36:36 GMT
-- request:
-    method: get
-    uri: https://graph.facebook.com/act_10150585630710217?access_token=CAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD%0A&fields=account_groups,account_id,account_status,age,agency_client_declaration,amount_spent,balance,business_city,business_country_code,business_name,business_state,business_street2,business_street,business_zip,capabilities,created_time,currency,daily_spend_limit,end_advertiser,funding_source,funding_source_details,id,is_personal,media_agency,name,offsite_pixels_tos_accepted,partner,spend_cap,timezone_id,timezone_name,timezone_offset_hours_utc,tos_accepted,users,tax_id_status
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-  response:
-    status:
-      code: 200
-      message: !binary |-
-        T0s=
-    headers:
-      !binary "RmFjZWJvb2stQXBpLVZlcnNpb24=":
-      - !binary |-
-        djEuMA==
+        MTY2Njk0OQ==
       !binary "RXRhZw==":
       - !binary |-
-        IjY5ZTQxZmViMzM1Y2FkYmUxN2Q0ZGQwZDg1YmZkZmNlNDBmZDhlNTAi
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD1VVEYtOA==
+        Ijc0ZWU0Y2JmMmM0MWM5YjBjNDM1NWQzYTE0ZDg3NzIyMjBhMjI2NTgi
       !binary "UHJhZ21h":
       - !binary |-
         bm8tY2FjaGU=
-      !binary "QWNjZXNzLUNvbnRyb2wtQWxsb3ctT3JpZ2lu":
-      - !binary |-
-        Kg==
-      !binary "WC1GYi1SZXY=":
-      - !binary |-
-        MTUzNDg4NA==
       !binary "Q2FjaGUtQ29udHJvbA==":
       - !binary |-
         cHJpdmF0ZSwgbm8tY2FjaGUsIG5vLXN0b3JlLCBtdXN0LXJldmFsaWRhdGU=
+      !binary "RmFjZWJvb2stQXBpLVZlcnNpb24=":
+      - !binary |-
+        djIuMg==
       !binary "RXhwaXJlcw==":
       - !binary |-
         U2F0LCAwMSBKYW4gMjAwMCAwMDowMDowMCBHTVQ=
+      !binary "VmFyeQ==":
+      - !binary |-
+        QWNjZXB0LUVuY29kaW5n
       !binary "Q29udGVudC1FbmNvZGluZw==":
       - !binary |-
         Z3ppcA==
       !binary "WC1GYi1EZWJ1Zw==":
       - !binary |-
-        b2IyZnY1VlhIQnFIcWc3QTRLWXN5L3J4TkIya1k5YXFPNFR0OVZPdEU2Z3N2
-        N0p0clYzQXIraEhKYzRKOFE3Q3h3SWxEdDI0UjNDU0U5U0NnQVRNWHc9PQ==
+        bTU3Zld1Qm1ueGpFSmlpQlVteXI2T1VhTkRYWmVoZ0xCUDgwUENpOVhGc2sv
+        dlhaRlZPUXIydnkwUG9rT3UzSDdNWGxiUlNQQXI3ZkJ6ODFIZTlKTEE9PQ==
       !binary "RGF0ZQ==":
       - !binary |-
-        V2VkLCAxNyBEZWMgMjAxNCAxMzoyMjowNyBHTVQ=
+        VHVlLCAzMSBNYXIgMjAxNSAxNDo1MTowMiBHTVQ=
       !binary "Q29ubmVjdGlvbg==":
       - !binary |-
         a2VlcC1hbGl2ZQ==
       !binary "Q29udGVudC1MZW5ndGg=":
       - !binary |-
-        Nzky
+        NzU3
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        H4sIAAAAAAAAA6VUwW6bQBD9FYtTq5J0wRAc37DZEGobEGCnaROtNrC2V8GA
-        2EWKE+XfO4udyG0q9dATaObNzOMxb140mud1V0nCC22sGciwkT2yL4bIMZBp
-        OJr+DhCSyk5oYwNCGwZPZBvno8uRM7Ic0zQhujvgGlZJbWwjhHTtgZa0ygGt
-        3jvBKyYEybncw7AJa0teaacJ1aDdw7OAEs3Dp8mK7lRwwjeDBX9kA7ds+WYr
-        B0t/8GlL17KrNuKBiXzb3nUIMat6lJ9P6xX/vsGHsUK2jEkTct8OpRvWVkXd
-        rlk7+MF4yQYXxkf8/3B55o1S2zTRJYRz2tAHXnLJGej7U4sTvAiWC8iE+IZM
-        3UXsBn5I0ixZTrNlolRZRJNgjonrrXCSBSlOSOCRZTyPXA+y8yiaufNg1gPc
-        cIo9Mo3Cq8CHXJxEiZtBZLL0fJxBJLq6SoMMKwh0S4MoJNeBf00mger1NimO
-        SYJx6Ls+XuAwg85pT3AWEQ+nsyyKgWm4ctMeesie1K4CD0fHMODIMsUkWACZ
-        FVDxcQTha1W7coO5O4Gi2L3t5yxwdh39Vnbsir9nOAndOSB9TLLbWOnyTwy5
-        ihIyj+MTbDT3gFifVWN6Gh5JcUYyNwGJglDp9oY+fAiwSoJpSiYJdmdedBNq
-        9/AfWwYrVhDJ+001kWGcIevMtDMTjU1jbDlfkImQ+uNd27IqVy5YpkrlgvJy
-        31unICXfcdguQzkIbLPuqoJXGyLqrlVO0obOCFnm0LAvLNt0LO1PCCmYhHaw
-        Si9a7+qPBQUXTUn3apOhDiAx3ce0HBy9DkvMyrJWu2uhzX63ZW1Nm+Y8r3dq
-        jeW+Uf4fvuqH/jSX5G+XgwvSsFbUFS37A3B0MGTq9VpwyUjDn1gpiKwFgdGs
-        AfW08ZqWgunaQQzwxtstUbI+1xXrT5XlnASOjXHX1g27+/ru8HeAmsck2YI+
-        gnQy769YJ4CcEqmgkoLvjmrZyHCG8AUX0ADo77gQvK6UMQ3d1Ie6pdu6A3+7
-        rcv+CiLj9R6UkPQJiL1fyeHrL5WJX+JbBQAA
+        H4sIAAAAAAAAA4VUbW/bNhD+KwU/bYDSUXJkO/4mW4zDxRYFvbgN1uLASkxG
+        QJYMkQLqFfnvO8peKmzrZhiQdM9zbw/v+I3IquqG1oKuyYrM5gufzufhjHhv
+        gLHSDoasfDS9KLKi7+9mlAYz/3bp/iGajxfiSbUWcY98kY1sK8fF98HoVhkD
+        lbZnTEGmJufXn/FZI5mU+RRs5dEZpyZje6Vs8K/Wi7GSJ/lFN9pqhSX/RtKM
+        7Xm5RyRhH2AT7dOIbxPIi6zcFGXGENiLNd8xiOIDywqeswx4DGW6E1GMaJqJ
+        LCpYDOsy3rICLeL+PucFg41I0CPnIoEHvn2ANXf8v6KlKWSMJdtoy/YsKTC8
+        ay5hjwJilj8WIsVqkkOUj9QLOvE98JiJq/nBkQ4R30VrRNPoaQy4Z8WDGHGM
+        A2XO4OrOPhYsS6IdMrcMiqfUNfm/HLgXGezSdMIVuxgrGNG3MmLIWQFFlKEW
+        PNlO2JeKsaqMb3JYZyx6jMWH5Mrg+1RkBeYdH3gKaMfuYHMPPMkLkTGIscOn
+        7zJfU6H+e+H0F+tf2aZw4vwYxKNh2Y9h1+x/oPwj27lyRZLgN55rDiWHQ0A+
+        41z1SlpVg9XjUAbU929ocOOHhU9X4d2Kzm/oklJ0r4a+V23lRr3M3UTUUjfn
+        cTlqaPRR46T6IcWfR56HttbtC5hu6N26kNky8IPbRbgM5/NFEJK/U6BWFsPh
+        aH8jl4X9h0OtzamRZ7cV6IeUVJ5T2by7rvO7nxrVfRoovaXHoX5fq5/Rx55P
+        mN2fvXqXqLKyML0KtIGT6k3Xymbc6e+r2T0/G20VnPRX1RiwnQFMpE6oFVk9
+        y8Yoj1xax80cfZ2Cf3StGi8cf/J9DRodVa8r+emXHcaK2hfV4CZPaC6jsvA7
+        6mFgsBVZ3Sw8Mhisz6lSSytx8a/y+E7ngC4XYXBHF3cYB/s4amN017r7wfcC
+        b+bdeqG3wEPuu8bJQKn/+hmlsPIrFvl2/9HXPwEtvLlbLQUAAA==
     http_version: 
-  recorded_at: Wed, 17 Dec 2014 13:22:08 GMT
+  recorded_at: Tue, 31 Mar 2015 14:51:02 GMT
 recorded_with: VCR 2.3.0

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6010889169151/adcreatives?access_token=CAAEvJ5vzhl8BANgaZCvjMZCRsIbNZCSPswoDM0MTx8g30ojs53HUp43aVBVdqHnu9kIFytWIR5oRfp1Sy8DZBtJ9p5Rw2kY93ZAu6EwzHqZCrjmeBxXBWWlMCty1Bg4zKc3abdbjgoX4fWP4NWCEyWZCFJBKXWR0WV3ZC63bSqw7ojzYJm4teOarRc1GaesGIlIKlZB6s7EwZA1qUZCCKsdZCSsq%0A&fields=
+    uri: https://graph.facebook.com/v2.2/6023922386266/adcreatives?access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&fields=
     body:
       encoding: US-ASCII
       string: ''
@@ -18,80 +18,33 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Facebook-Api-Version:
-      - v1.0
-      Etag:
-      - ! '"9818afb0fc3be647821cb978d9dec1afcfa6cdc6"'
       Content-Type:
       - application/json; charset=UTF-8
-      Pragma:
-      - no-cache
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1534884'
+      - '1666949'
+      Etag:
+      - ! '"3dc6af73f407a58f1ea4cc600161a5d6e184d8d3"'
+      Pragma:
+      - no-cache
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - CAY6wp0mChB83YQBHM2kkuOQDo7WdEqUNxRnIcltPMQWudYNGY/5cDr2a7eaM7TiWCSzeZLsNzWtEu4bbxmRJg==
+      - 9YscvD/kjzLMjopBSUQrJiAo5eTLMyZGUiG9AzbfdBVxcwFFf+auHQgtFI49nLb5uUtssoRFvwsmu9FPSpYpSg==
       Date:
-      - Wed, 17 Dec 2014 12:36:35 GMT
+      - Tue, 31 Mar 2015 14:51:01 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '33'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"id":"6010888561951"}]}'
+      string: ! '{"data":[{"id":"6023920301066"}]}'
     http_version: 
-  recorded_at: Wed, 17 Dec 2014 12:36:35 GMT
-- request:
-    method: get
-    uri: https://graph.facebook.com/6010889169151/adcreatives?access_token=CAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD%0A&fields=
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Facebook-Api-Version:
-      - v1.0
-      Etag:
-      - ! '"9818afb0fc3be647821cb978d9dec1afcfa6cdc6"'
-      Content-Type:
-      - application/json; charset=UTF-8
-      Pragma:
-      - no-cache
-      Access-Control-Allow-Origin:
-      - ! '*'
-      X-Fb-Rev:
-      - '1534884'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      X-Fb-Debug:
-      - /OJJwpvUT1P+qbKqAugkaGlbjSbKgRbtul+E8rWLDvCLR7xwOns/HN/mLngby00pcvLJ5I12LMvnZAsTzVrQpg==
-      Date:
-      - Wed, 17 Dec 2014 13:22:06 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '33'
-    body:
-      encoding: US-ASCII
-      string: ! '{"data":[{"id":"6010888561951"}]}'
-    http_version: 
-  recorded_at: Wed, 17 Dec 2014 13:22:06 GMT
+  recorded_at: Tue, 31 Mar 2015 14:51:01 GMT
 recorded_with: VCR 2.3.0

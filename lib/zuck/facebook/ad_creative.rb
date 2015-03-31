@@ -2,7 +2,7 @@ module Zuck
   class AdCreative < RawFbObject
 
     # Can't create this directly (yet)
-    read_only
+    # read_only
 
     # Known keys as per
     # [fb docs](https://developers.facebook.com/docs/reference/ads-api/adaccount/)

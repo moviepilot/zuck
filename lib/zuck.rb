@@ -5,7 +5,7 @@ require 'zuck/fb_object'
 require 'zuck/helpers'
 Dir[File.expand_path("../zuck/facebook/**/*.rb", __FILE__)].each{ |f| require f}
 
-Koala.config.api_version = "v2.2" if Koala.config.ap_version == nil
+Koala.config.api_version = "v2.2" if Koala.config.api_version == nil
 if Koala.config.api_version != "v2.2"
   warn("!!! Zuck was written for Facebook API version v2.2 and may not work!")
   warn("    The current Koala.config.api_version='#{Koala.config.api_version}' does not match 'v2.2'!")

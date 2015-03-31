@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/act_10150585630710217/adcreatives?access_token=CAAEvJ5vzhl8BANgaZCvjMZCRsIbNZCSPswoDM0MTx8g30ojs53HUp43aVBVdqHnu9kIFytWIR5oRfp1Sy8DZBtJ9p5Rw2kY93ZAu6EwzHqZCrjmeBxXBWWlMCty1Bg4zKc3abdbjgoX4fWP4NWCEyWZCFJBKXWR0WV3ZC63bSqw7ojzYJm4teOarRc1GaesGIlIKlZB6s7EwZA1qUZCCKsdZCSsq%0A&fields=
+    uri: https://graph.facebook.com/v2.2/act_367106653/adcreatives?access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&fields=
     body:
       encoding: US-ASCII
       string: ''
@@ -18,80 +18,33 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Facebook-Api-Version:
-      - v1.0
-      Etag:
-      - ! '"097453d022fe293736d7a96bd423883d31ca8ad5"'
       Content-Type:
       - application/json; charset=UTF-8
-      Pragma:
-      - no-cache
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1534884'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      X-Fb-Debug:
-      - IODDyHGEfyt2DcMA7gGiPfy9Gzj0yguOO+hmjZTg1aoG8lJ7lCDzwAuOr8bYybSROEb2CxyWu/Zz/f057dGzqw==
-      Date:
-      - Wed, 17 Dec 2014 12:36:35 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '395'
-    body:
-      encoding: US-ASCII
-      string: ! '{"data":[{"id":"6021396606151"},{"id":"6013351235551"},{"id":"6013351233351"},{"id":"6011746439951"},{"id":"6010888561951"},{"id":"6010341812751"},{"id":"6010341810151"},{"id":"6005851371551"},{"id":"6004501081751"},{"id":"6004500825351"},{"id":"6004500752551"},{"id":"6004497043751"},{"id":"6004497038551"}],"paging":{"cursors":{"before":"NjAyMTM5NjYwNjE1MQ==","after":"NjAwNDQ5NzAzODU1MQ=="}}}'
-    http_version: 
-  recorded_at: Wed, 17 Dec 2014 12:36:35 GMT
-- request:
-    method: get
-    uri: https://graph.facebook.com/act_10150585630710217/adcreatives?access_token=CAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD%0A&fields=
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Facebook-Api-Version:
-      - v1.0
+      - '1666949'
       Etag:
-      - ! '"097453d022fe293736d7a96bd423883d31ca8ad5"'
-      Content-Type:
-      - application/json; charset=UTF-8
+      - ! '"ac236879fda03e1e501659e883e7b5c22c2188e2"'
       Pragma:
       - no-cache
-      Access-Control-Allow-Origin:
-      - ! '*'
-      X-Fb-Rev:
-      - '1534884'
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - wfSneHPkIqG3jcxgugJVy71nWIzGvYz1G1/SUa5T5Tg9hNQrO89TLVIa/ZFFc6cbnXYbokkDRaKHOTAlhy7mzw==
+      - KQoY+Sbn+LtxNrKo9h807s3BhpTFeIDd1Gb2dz3XbxIxVeOMAkC6MHQO0buC6kghISEjIG0hhMWXLoMWB7JlSQ==
       Date:
-      - Wed, 17 Dec 2014 13:22:06 GMT
+      - Tue, 31 Mar 2015 14:51:01 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '395'
+      - '119'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"id":"6021396606151"},{"id":"6013351235551"},{"id":"6013351233351"},{"id":"6011746439951"},{"id":"6010888561951"},{"id":"6010341812751"},{"id":"6010341810151"},{"id":"6005851371551"},{"id":"6004501081751"},{"id":"6004500825351"},{"id":"6004500752551"},{"id":"6004497043751"},{"id":"6004497038551"}],"paging":{"cursors":{"before":"NjAyMTM5NjYwNjE1MQ==","after":"NjAwNDQ5NzAzODU1MQ=="}}}'
+      string: ! '{"data":[{"id":"6023920301066"}],"paging":{"cursors":{"before":"NjAyMzkyMDMwMTA2Ng==","after":"NjAyMzkyMDMwMTA2Ng=="}}}'
     http_version: 
-  recorded_at: Wed, 17 Dec 2014 13:22:06 GMT
+  recorded_at: Tue, 31 Mar 2015 14:51:01 GMT
 recorded_with: VCR 2.3.0

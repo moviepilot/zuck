@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6021496142951?access_token=CAAEvJ5vzhl8BANgaZCvjMZCRsIbNZCSPswoDM0MTx8g30ojs53HUp43aVBVdqHnu9kIFytWIR5oRfp1Sy8DZBtJ9p5Rw2kY93ZAu6EwzHqZCrjmeBxXBWWlMCty1Bg4zKc3abdbjgoX4fWP4NWCEyWZCFJBKXWR0WV3ZC63bSqw7ojzYJm4teOarRc1GaesGIlIKlZB6s7EwZA1qUZCCKsdZCSsq%0A&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
+    uri: https://graph.facebook.com/v2.2/6023922379466?access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
     body:
       encoding: US-ASCII
       string: ''
@@ -18,80 +18,34 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Facebook-Api-Version:
-      - v1.0
-      Etag:
-      - ! '"55cae945ccdefc5bf670f4608a5f0e8a07da3ca5"'
       Content-Type:
       - application/json; charset=UTF-8
-      Pragma:
-      - no-cache
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1534884'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      X-Fb-Debug:
-      - TDmzWPYxzb7kY+T65g0Yuj8tnEqPT6SMSVC2qFAxRCOPtIxJtfhAgJdP5QABBj1Aem1IpCLvwdEt1u6EeRMPrg==
-      Date:
-      - Wed, 17 Dec 2014 12:36:36 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '149'
-    body:
-      encoding: US-ASCII
-      string: ! '{"id":"6021496142951","account_id":"10150585630710217","objective":"NONE","name":"bloody","campaign_group_status":"ARCHIVED","buying_type":"AUCTION"}'
-    http_version: 
-  recorded_at: Wed, 17 Dec 2014 12:36:36 GMT
-- request:
-    method: get
-    uri: https://graph.facebook.com/6021496142951?access_token=CAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD%0A&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Facebook-Api-Version:
-      - v1.0
+      - '1666949'
       Etag:
-      - ! '"55cae945ccdefc5bf670f4608a5f0e8a07da3ca5"'
-      Content-Type:
-      - application/json; charset=UTF-8
+      - ! '"9f9300f381710a19b74d3c1e57948399b73afd85"'
       Pragma:
       - no-cache
-      Access-Control-Allow-Origin:
-      - ! '*'
-      X-Fb-Rev:
-      - '1534884'
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - V86//b5y3DAluaqXAobUriiP/KE10U4Nf0XSwmy5Hwx3EgiB0lyYvZUm43VbNdkJKJfVxXZVnGG7piKEw6WRRg==
+      - jPY8wkIdMcpmD44DzqVV/qKus1eJ+zS9tD4rgskHbZoYuSFWX1bqB8Xp7w1ACjQ9sR5gN9KNl3zwiYEsmz1SNA==
       Date:
-      - Wed, 17 Dec 2014 13:22:06 GMT
+      - Tue, 31 Mar 2015 14:51:01 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '149'
+      - '279'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6021496142951","account_id":"10150585630710217","objective":"NONE","name":"bloody","campaign_group_status":"ARCHIVED","buying_type":"AUCTION"}'
+      string: ! '{"id":"6023922379466","account_id":"367106653","objective":"NONE","name":"bloody
+        campaign","adgroups":{"data":[{"id":"6023922386266"}],"paging":{"cursors":{"before":"NjAyMzkyMjM4NjI2Ng==","after":"NjAyMzkyMjM4NjI2Ng=="}}},"campaign_group_status":"PAUSED","buying_type":"AUCTION"}'
     http_version: 
-  recorded_at: Wed, 17 Dec 2014 13:22:06 GMT
+  recorded_at: Tue, 31 Mar 2015 14:51:01 GMT
 recorded_with: VCR 2.3.0

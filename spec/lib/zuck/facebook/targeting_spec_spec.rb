@@ -51,7 +51,7 @@ describe Zuck::TargetingSpec do
       }.to_not raise_error
     end
 
-    it "accepts single keywrod" do
+    it "accepts single keyword" do
       expect{
         Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interest: 'foo')
       }.to_not raise_error
@@ -98,7 +98,7 @@ describe Zuck::TargetingSpec do
         spec = {geo_locations: {countries: ['us']}, interests: [{id: '6003135347608', name: 'Eminem'}, {id: '6003504886186', name: 'Sting (musician)'}] }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
         reach = ts.fetch_reach
-        reach[:users].should == 28_00_0000
+        reach[:users].should == 36_00_0000
       end
     end
 
@@ -107,7 +107,7 @@ describe Zuck::TargetingSpec do
         spec = {geo_locations: {countries: ['us']}, interests: [{id: '6003504886186', name: 'Sting (musician)'}], gender: :female, age_class: :young }
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
         reach = ts.fetch_reach
-        reach[:users].should == 220_000
+        reach[:users].should == 17_400
       end
     end
 

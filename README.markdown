@@ -149,6 +149,12 @@ Here's a support chart:
 Users don't exist as objects yet, but you can list all ad users of
 an account via `my_ad_account.users` and you will get an array of hashes.
 
+Running tests with your account
+-------------------------------
+
+Ensure you have an ad account and a billing method set (you get an error without). Then you are ready to
+run the tests and make sure you check your account manager that nothing has been left over.
+
 To-Do
 -----
 

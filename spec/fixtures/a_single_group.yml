@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/6010889111951?access_token=CAAEvJ5vzhl8BANgaZCvjMZCRsIbNZCSPswoDM0MTx8g30ojs53HUp43aVBVdqHnu9kIFytWIR5oRfp1Sy8DZBtJ9p5Rw2kY93ZAu6EwzHqZCrjmeBxXBWWlMCty1Bg4zKc3abdbjgoX4fWP4NWCEyWZCFJBKXWR0WV3ZC63bSqw7ojzYJm4teOarRc1GaesGIlIKlZB6s7EwZA1qUZCCKsdZCSsq%0A&fields=account_id,adgroup_status,bid_type,bid_info,conversion_specs,campaign_id,campaign_group_id,conversion_specs,created_time,creative_ids,failed_delivery_checks,name,targeting,tracking_specs,updated_time,view_tags
+    uri: https://graph.facebook.com/v2.2/6023922379466?access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&fields=id,account_id,conversion_specs,campaign_id,campaign_group_id,created_time,creative_ids,failed_delivery_checks,name,tracking_specs,updated_time,view_tags
     body:
       encoding: US-ASCII
       string: ''
@@ -18,84 +18,35 @@ http_interactions:
       code: 400
       message: Bad Request
     headers:
-      Www-Authenticate:
-      - OAuth "Facebook Platform" "invalid_request" "(#100) Tried accessing nonexisting
-        field (adgroup_status) on node type (AdCampaign)"
-      Facebook-Api-Version:
-      - v1.0
       Content-Type:
       - application/json; charset=UTF-8
-      Pragma:
-      - no-cache
+      Www-Authenticate:
+      - OAuth "Facebook Platform" "invalid_request" "(#100) Tried accessing nonexisting
+        field (conversion_specs) on node type (AdCampaignGroup)"
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1534884'
-      Cache-Control:
-      - no-store
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      X-Fb-Debug:
-      - hrNs+NUgfjltB+Mcigsj4m9nyfgFWa18yMJTzHaHxr0Q8LIamdF9T8BUNk1WiOwPEjirHLwVTAZQ574vvaKhOQ==
-      Date:
-      - Wed, 17 Dec 2014 12:36:36 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '142'
-    body:
-      encoding: US-ASCII
-      string: ! '{"error":{"message":"(#100) Tried accessing nonexisting field (adgroup_status)
-        on node type (AdCampaign)","type":"OAuthException","code":100}}'
-    http_version: 
-  recorded_at: Wed, 17 Dec 2014 12:36:36 GMT
-- request:
-    method: get
-    uri: https://graph.facebook.com/6010889111951?access_token=CAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD%0A&fields=id,account_id,adgroup_status,bid_type,bid_info,conversion_specs,campaign_id,campaign_group_id,conversion_specs,created_time,creative_ids,failed_delivery_checks,name,targeting,tracking_specs,updated_time,view_tags
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-      Accept:
-      - ! '*/*'
-  response:
-    status:
-      code: 400
-      message: Bad Request
-    headers:
-      Www-Authenticate:
-      - OAuth "Facebook Platform" "invalid_request" "(#100) Tried accessing nonexisting
-        field (adgroup_status) on node type (AdCampaign)"
-      Facebook-Api-Version:
-      - v1.0
-      Content-Type:
-      - application/json; charset=UTF-8
+      - '1666949'
       Pragma:
       - no-cache
-      Access-Control-Allow-Origin:
-      - ! '*'
-      X-Fb-Rev:
-      - '1534884'
       Cache-Control:
       - no-store
+      Facebook-Api-Version:
+      - v2.2
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - ZmwXEClzqPL6Geuc4uXD1l1e16OiLJcKYrPfkA7s9KAyECHHfiK/FFwDDnPpICTbziM09AAZxF0vIsYToh98fA==
+      - lDE3MH8WTWypPJ5CsAvCyk5UeK4Mhvfc9o+5JQeorhcKR1nE835jziI8DGyzgSc0O9YrtYvLIMu369OWHX89FQ==
       Date:
-      - Wed, 17 Dec 2014 13:22:08 GMT
+      - Tue, 31 Mar 2015 14:51:02 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '142'
+      - '149'
     body:
       encoding: US-ASCII
-      string: ! '{"error":{"message":"(#100) Tried accessing nonexisting field (adgroup_status)
-        on node type (AdCampaign)","type":"OAuthException","code":100}}'
+      string: ! '{"error":{"message":"(#100) Tried accessing nonexisting field (conversion_specs)
+        on node type (AdCampaignGroup)","type":"OAuthException","code":100}}'
     http_version: 
-  recorded_at: Wed, 17 Dec 2014 13:22:08 GMT
+  recorded_at: Tue, 31 Mar 2015 14:51:02 GMT
 recorded_with: VCR 2.3.0
