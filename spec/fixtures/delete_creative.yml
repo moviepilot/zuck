@@ -1,0 +1,48 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://graph.facebook.com/v2.2/6023920301066
+    body:
+      encoding: US-ASCII
+      string: access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&method=delete
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1666949'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - yMykTMIHUtCqELPPs2kH8/rVsHh7vvGmAzOoU9Ry+Rz2POg33PUQKMUnD6vjfHfDxFbiMwuF9PX3/5g8B7blCw==
+      Date:
+      - Tue, 31 Mar 2015 14:51:08 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '16'
+    body:
+      encoding: US-ASCII
+      string: ! '{"success":true}'
+    http_version: 
+  recorded_at: Tue, 31 Mar 2015 14:51:08 GMT
+recorded_with: VCR 2.3.0
