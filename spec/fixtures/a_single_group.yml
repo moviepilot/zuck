@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/6023922379466?access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&fields=id,account_id,conversion_specs,campaign_id,campaign_group_id,created_time,creative_ids,failed_delivery_checks,name,tracking_specs,updated_time,view_tags
+    uri: https://graph.facebook.com/v2.2/6023922829666?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&fields=id,account_id,conversion_specs,campaign_id,campaign_group_id,created_time,creative_ids,failed_delivery_checks,name,tracking_specs,updated_time,view_tags
     body:
       encoding: US-ASCII
       string: ''
@@ -36,9 +36,9 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - lDE3MH8WTWypPJ5CsAvCyk5UeK4Mhvfc9o+5JQeorhcKR1nE835jziI8DGyzgSc0O9YrtYvLIMu369OWHX89FQ==
+      - J1LxV9vgwS+pUA/X+inEWAT8ClleeLsp2DtN7zsrGcAw+k5kqZ2Jw0FP9ZLvNFD1xLbg+x1NEI9kAJ8zdVR7sw==
       Date:
-      - Tue, 31 Mar 2015 14:51:02 GMT
+      - Tue, 31 Mar 2015 15:12:03 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -48,5 +48,5 @@ http_interactions:
       string: ! '{"error":{"message":"(#100) Tried accessing nonexisting field (conversion_specs)
         on node type (AdCampaignGroup)","type":"OAuthException","code":100}}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 14:51:02 GMT
+  recorded_at: Tue, 31 Mar 2015 15:12:03 GMT
 recorded_with: VCR 2.3.0

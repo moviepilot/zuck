@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/act_367106653/adcampaign_groups?access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&fields=
+    uri: https://graph.facebook.com/v2.2/act_367106653/adcampaign_groups?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&fields=
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       X-Fb-Rev:
       - '1666949'
       Etag:
-      - ! '"42ed0dd23c5462f94452697982b3f9625960adf1"'
+      - ! '"b0082a90d7f294f1210a708b8831d3020f192e67"'
       Pragma:
       - no-cache
       Cache-Control:
@@ -35,16 +35,16 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - GBBzQC5qRtEOISsBIkHfQf/AMZmvDfyfMa7ZL/loUbHVON59WgFoH9DhBdHkQY2ZYPzjm2FUVvBFEp4zuCrQ2w==
+      - 0M1x1KNMLxtXZCnBcdWlMSECZVMUO72ZsPkPIg8cWU9vHJL1gqU9w0sZ+TTzM7PoIgt3X6peHF9fbo4yzMJing==
       Date:
-      - Tue, 31 Mar 2015 14:51:00 GMT
+      - Tue, 31 Mar 2015 15:12:00 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '142'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"id":"6023922378666"},{"id":"6023922379466"}],"paging":{"cursors":{"before":"NjAyMzkyMjM3ODY2Ng==","after":"NjAyMzkyMjM3OTQ2Ng=="}}}'
+      string: ! '{"data":[{"id":"6023922829066"},{"id":"6023922829666"}],"paging":{"cursors":{"before":"NjAyMzkyMjgyOTA2Ng==","after":"NjAyMzkyMjgyOTY2Ng=="}}}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 14:51:00 GMT
+  recorded_at: Tue, 31 Mar 2015 15:12:00 GMT
 recorded_with: VCR 2.3.0

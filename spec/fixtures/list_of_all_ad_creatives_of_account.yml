@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/act_367106653/adcreatives?access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&fields=
+    uri: https://graph.facebook.com/v2.2/act_367106653/adcreatives?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&fields=
     body:
       encoding: US-ASCII
       string: ''
@@ -35,9 +35,9 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - KQoY+Sbn+LtxNrKo9h807s3BhpTFeIDd1Gb2dz3XbxIxVeOMAkC6MHQO0buC6kghISEjIG0hhMWXLoMWB7JlSQ==
+      - Uu2vhGl/MLWA/BxsArqkrOsDgwKQG0dkifY0sEoqziD7S3AlgiP+wvlVw9DrTVvUT1PUiaY78TGJeXSUGGZz1Q==
       Date:
-      - Tue, 31 Mar 2015 14:51:01 GMT
+      - Tue, 31 Mar 2015 15:12:01 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -46,5 +46,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"data":[{"id":"6023920301066"}],"paging":{"cursors":{"before":"NjAyMzkyMDMwMTA2Ng==","after":"NjAyMzkyMDMwMTA2Ng=="}}}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 14:51:01 GMT
+  recorded_at: Tue, 31 Mar 2015 15:12:01 GMT
 recorded_with: VCR 2.3.0

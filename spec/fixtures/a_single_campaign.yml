@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/6023922379466?access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
+    uri: https://graph.facebook.com/v2.2/6023922829666?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       X-Fb-Rev:
       - '1666949'
       Etag:
-      - ! '"9f9300f381710a19b74d3c1e57948399b73afd85"'
+      - ! '"b5752535d7c563ee94ebce7b4c2550e914a5ccb3"'
       Pragma:
       - no-cache
       Cache-Control:
@@ -35,17 +35,17 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - jPY8wkIdMcpmD44DzqVV/qKus1eJ+zS9tD4rgskHbZoYuSFWX1bqB8Xp7w1ACjQ9sR5gN9KNl3zwiYEsmz1SNA==
+      - FSp4Fdx/s5Tdzgd6ZwH58YLWeKO049iMweM2xk+PsEzb0sqJYbpVqcrXzVZXtGr6f2uQAscgQPSUOiAsELEL2A==
       Date:
-      - Tue, 31 Mar 2015 14:51:01 GMT
+      - Tue, 31 Mar 2015 15:12:01 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '279'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6023922379466","account_id":"367106653","objective":"NONE","name":"bloody
-        campaign","adgroups":{"data":[{"id":"6023922386266"}],"paging":{"cursors":{"before":"NjAyMzkyMjM4NjI2Ng==","after":"NjAyMzkyMjM4NjI2Ng=="}}},"campaign_group_status":"PAUSED","buying_type":"AUCTION"}'
+      string: ! '{"id":"6023922829666","account_id":"367106653","objective":"NONE","name":"bloody
+        campaign","adgroups":{"data":[{"id":"6023922832266"}],"paging":{"cursors":{"before":"NjAyMzkyMjgzMjI2Ng==","after":"NjAyMzkyMjgzMjI2Ng=="}}},"campaign_group_status":"PAUSED","buying_type":"AUCTION"}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 14:51:01 GMT
+  recorded_at: Tue, 31 Mar 2015 15:12:01 GMT
 recorded_with: VCR 2.3.0

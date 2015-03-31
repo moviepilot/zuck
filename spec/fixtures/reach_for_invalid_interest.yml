@@ -1,0 +1,102 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v2.2/search?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&q=Eminem&type=adinterest
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1666949'
+      Etag:
+      - ! '"70348a596c8e7b241b8c13e8ab02b21e04aa91eb"'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - SThDoJP6K5+aTLmUp79kkMEmWllPsjabOVbvGXoOGDnF0GgouU/op+qyJSDEGkIsJPRZyU2AMqFxxJ2CGQv3UA==
+      Date:
+      - Tue, 31 Mar 2015 15:11:49 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '800'
+    body:
+      encoding: US-ASCII
+      string: ! '{"data":[{"id":"6003135347608","name":"Eminem","audience_size":108195460,"path":[],"description":null},{"id":"6003250214311","name":"The
+        Eminem Show","audience_size":81472560,"path":[],"description":null},{"id":"6003489780564","name":"Recovery
+        (Eminem album)","audience_size":81976480,"path":[],"description":null},{"id":"6003902302066","name":"Feud","audience_size":3530760,"path":[],"description":null},{"id":"6003170652434","name":"eminem","audience_size":5370,"path":[],"description":null},{"id":"6017042219356","name":"eminem
+        forever blog","audience_size":807,"path":[],"description":null},{"id":"6003128077124","name":"Love
+        the Way You Lie","audience_size":1717940,"path":[],"description":null},{"id":"6004703849336","name":"Hip
+        hop feud","audience_size":1587800,"path":[],"description":null}]}'
+    http_version: 
+  recorded_at: Tue, 31 Mar 2015 15:11:49 GMT
+- request:
+    method: get
+    uri: https://graph.facebook.com/v2.2/search?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&q=invalidsssssssssssssss&type=adinterest
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1666949'
+      Etag:
+      - ! '"1050253aec7b29caff644806927dabfa81406eee"'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - ryXsB+XCHGtKb153QheuEXaeCDGNzm1XAFBF8B53fJldemVdOqTRQ2W2ciCkD45EDMjySsCpRCHYlL0VtiUWDA==
+      Date:
+      - Tue, 31 Mar 2015 15:11:50 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '11'
+    body:
+      encoding: US-ASCII
+      string: ! '{"data":[]}'
+    http_version: 
+  recorded_at: Tue, 31 Mar 2015 15:11:50 GMT
+recorded_with: VCR 2.3.0

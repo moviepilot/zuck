@@ -1,0 +1,50 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://graph.facebook.com/v2.2/act_1384977038406122/reachestimate?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&targeting_spec=%7B%22geo_locations%22:%7B%22countries%22:%5B%22US%22%5D%7D,%22interests%22:%5B%7B%22id%22:%226003504886186%22,%22name%22:%22Sting%20(musician)%22%7D%5D,%22age_min%22:13,%22age_max%22:24,%22genders%22:%5B2%5D,%22countries%22:%5B%5D,%22connections%22:%5B%5D%7D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1666949'
+      Etag:
+      - ! '"0fce4ecb48575e8e90f3b78fdc6b388dad65fe0e"'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - VdI6xnZB3Fw9lZ5XU8mLMPl60MmBikYcSncuPqLYqgNmwZeM0Ps6Fdxz9VRe/gOIWghc+VXKWu47R4kOBIBniA==
+      Date:
+      - Tue, 31 Mar 2015 15:11:51 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '446'
+    body:
+      encoding: US-ASCII
+      string: ! '{"users":17400,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":20,"cpa_median":35,"cpa_max":47,"cpc_min":7,"cpc_median":13,"cpc_max":17,"cpm_min":40,"cpm_median":190,"cpm_max":367}],"estimate_ready":true,"data":{"users":17400,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":20,"cpa_median":35,"cpa_max":47,"cpc_min":7,"cpc_median":13,"cpc_max":17,"cpm_min":40,"cpm_median":190,"cpm_max":367}],"estimate_ready":true}}'
+    http_version: 
+  recorded_at: Tue, 31 Mar 2015 15:11:51 GMT
+recorded_with: VCR 2.3.0

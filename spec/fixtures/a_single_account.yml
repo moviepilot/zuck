@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/act_367106653?access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&fields=account_groups,account_id,account_status,age,agency_client_declaration,amount_spent,balance,business_city,business_country_code,business_name,business_state,business_street2,business_street,business_zip,capabilities,created_time,currency,daily_spend_limit,end_advertiser,funding_source,funding_source_details,id,is_personal,media_agency,name,offsite_pixels_tos_accepted,partner,spend_cap,timezone_id,timezone_name,timezone_offset_hours_utc,tos_accepted,users,tax_id_status
+    uri: https://graph.facebook.com/v2.2/act_367106653?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&fields=account_groups,account_id,account_status,age,agency_client_declaration,amount_spent,balance,business_city,business_country_code,business_name,business_state,business_street2,business_street,business_zip,capabilities,created_time,currency,daily_spend_limit,end_advertiser,funding_source,funding_source_details,id,is_personal,media_agency,name,offsite_pixels_tos_accepted,partner,spend_cap,timezone_id,timezone_name,timezone_offset_hours_utc,tos_accepted,users,tax_id_status
     body:
       encoding: US-ASCII
       string: ''
@@ -30,7 +30,7 @@ http_interactions:
         MTY2Njk0OQ==
       !binary "RXRhZw==":
       - !binary |-
-        Ijc0ZWU0Y2JmMmM0MWM5YjBjNDM1NWQzYTE0ZDg3NzIyMjBhMjI2NTgi
+        Ijk5MjY1MDE1YmU0MjM4MWVlOWY4YzJiNGE4M2JhZmU3ODhhN2Y2Mzgi
       !binary "UHJhZ21h":
       - !binary |-
         bm8tY2FjaGU=
@@ -51,37 +51,37 @@ http_interactions:
         Z3ppcA==
       !binary "WC1GYi1EZWJ1Zw==":
       - !binary |-
-        bTU3Zld1Qm1ueGpFSmlpQlVteXI2T1VhTkRYWmVoZ0xCUDgwUENpOVhGc2sv
-        dlhaRlZPUXIydnkwUG9rT3UzSDdNWGxiUlNQQXI3ZkJ6ODFIZTlKTEE9PQ==
+        citTV3lSTVpYZTIzWUVTaWdEQVdhbnBFaTJTYmo3ZUo2cVlPckxjTFJVYVBw
+        ZmF5Qld5dzBpMmNpdXJWZFc5TitUWGZJTVNDVThubVFPNkVqdWRVOXc9PQ==
       !binary "RGF0ZQ==":
       - !binary |-
-        VHVlLCAzMSBNYXIgMjAxNSAxNDo1MTowMiBHTVQ=
+        VHVlLCAzMSBNYXIgMjAxNSAxNToxMjowMyBHTVQ=
       !binary "Q29ubmVjdGlvbg==":
       - !binary |-
         a2VlcC1hbGl2ZQ==
       !binary "Q29udGVudC1MZW5ndGg=":
       - !binary |-
-        NzU3
+        NzU0
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        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
+        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
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 14:51:02 GMT
+  recorded_at: Tue, 31 Mar 2015 15:12:03 GMT
 recorded_with: VCR 2.3.0

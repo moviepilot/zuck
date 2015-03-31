@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/6023922386266?access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&fields=id,account_id,conversion_specs,campaign_id,campaign_group_id,created_time,creative_ids,failed_delivery_checks,name,tracking_specs,updated_time,view_tags
+    uri: https://graph.facebook.com/v2.2/6023922832266?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&fields=id,account_id,conversion_specs,campaign_id,campaign_group_id,created_time,creative_ids,failed_delivery_checks,name,tracking_specs,updated_time,view_tags
     body:
       encoding: US-ASCII
       string: ''
@@ -25,7 +25,7 @@ http_interactions:
       X-Fb-Rev:
       - '1666949'
       Etag:
-      - ! '"2be370237b6c2d0bb839fe1e0db14609b9169995"'
+      - ! '"1f00287775f858f9c36be9665be06edf041a910f"'
       Pragma:
       - no-cache
       Cache-Control:
@@ -35,45 +35,45 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - 9UDnImNlOctANgQXM/jmMwgLjmui2hY8js+pMzxIQY48FULdIxMDCgcoWp99Z05gQexuy3i4emaghUw5Ivx3rQ==
+      - i2yTiG6p05B2//9ToCz1vkUjq/jDk1jKGvvAFsyfz4lGnCFJmqFkavOAUUDjVv/zGanJp0nLWxmv4L4ZgaEH8g==
       Date:
-      - Tue, 31 Mar 2015 14:51:02 GMT
+      - Tue, 31 Mar 2015 15:12:03 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '384'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6023922386266","account_id":"367106653","campaign_id":"6023922380266","campaign_group_id":"6023922379466","created_time":"2015-03-31T07:50:59-0700","creative_ids":["6023920301066"],"name":"Rap
-        like me","tracking_specs":[{"action.type":["link_click"],"object":["10150219314478408"]},{"action.type":["like"],"page":["158352134203230"]}],"updated_time":"2015-03-31T07:50:59-0700"}'
+      string: ! '{"id":"6023922832266","account_id":"367106653","campaign_id":"6023922831066","campaign_group_id":"6023922829666","created_time":"2015-03-31T08:11:58-0700","creative_ids":["6023920301066"],"name":"Rap
+        like me","tracking_specs":[{"action.type":["link_click"],"object":["10150219314478408"]},{"action.type":["like"],"page":["158352134203230"]}],"updated_time":"2015-03-31T08:11:58-0700"}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 14:51:02 GMT
+  recorded_at: Tue, 31 Mar 2015 15:12:03 GMT
 - request:
     method: post
-    uri: https://graph.facebook.com/v2.2/6023922386266
+    uri: https://graph.facebook.com/v2.2/6023922832266
     body:
       encoding: US-ASCII
       string: ! "-------------RubyMultipartPost\r\nContent-Disposition: form-data;
         name=\"account_id\"\r\n\r\n367106653\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"campaign_id\"\r\n\r\n6023922380266\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"campaign_group_id\"\r\n\r\n6023922379466\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"created_time\"\r\n\r\n2015-03-31T07:50:59-0700\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"campaign_id\"\r\n\r\n6023922831066\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"campaign_group_id\"\r\n\r\n6023922829666\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"created_time\"\r\n\r\n2015-03-31T08:11:58-0700\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"creative_ids\"\r\n\r\n6023920301066\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"name\"\r\n\r\nMy old name\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"tracking_specs%5B%5D%5Baction.type%5D%5B%5D\"\r\n\r\nlink_click\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"tracking_specs%5B%5D%5Bobject%5D%5B%5D\"\r\n\r\n10150219314478408\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"tracking_specs%5B%5D%5Baction.type%5D%5B%5D\"\r\n\r\nlike\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"tracking_specs%5B%5D%5Bpage%5D%5B%5D\"\r\n\r\n158352134203230\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"updated_time\"\r\n\r\n2015-03-31T07:50:59-0700\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"updated_time\"\r\n\r\n2015-03-31T08:11:58-0700\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"redownload\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"access_token\"\r\n\r\nCAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD\r\n-------------RubyMultipartPost--\r\n\r\n"
+        form-data; name=\"access_token\"\r\n\r\nCAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD\r\n-------------RubyMultipartPost--\r\n\r\n"
     headers:
       User-Agent:
       - Faraday v0.8.9
       Content-Type:
       - multipart/form-data; boundary=-----------RubyMultipartPost
       Content-Length:
-      - '1682'
+      - '1690'
       Accept:
       - ! '*/*'
   response:
@@ -96,47 +96,47 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - jdcjkrWTAkdow7Fco8SBx8I18ZoluDmWpzIldF0Sty/sBi0je5XIQ57kAgMIT+YWvzQgpu84RR/xWqdx46gq0w==
+      - Mr4ctXp3PtSVcOOV8YQbI4b2htuLfz/JsQqgqTk45Oj5vgUCU2q31/ocLcxhWobe25Juse3m2dtYQrVLQGhhuA==
       Date:
-      - Tue, 31 Mar 2015 14:51:03 GMT
+      - Tue, 31 Mar 2015 15:12:04 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '987'
     body:
       encoding: US-ASCII
-      string: ! '{"result":{"success":true},"data":{"adgroups":{"6023922386266":{"id":"6023922386266","account_id":"367106653","adgroup_status":"PENDING_REVIEW","bid_info":{"CLICKS":1},"bid_type":"CPC","campaign_id":"6023922380266","creative_ids":["6023920301066"],"name":"My
-        old name","objective":"WEBSITE_CLICKS","targeting":{"age_max":65,"age_min":18,"geo_locations":{"countries":["US","GB"],"location_types":["home"]}},"tracking_specs":[{"action.type":["link_click"],"object":["10150219314478408"]},{"action.type":["like"],"page":["158352134203230"]}],"updated_time":1427813463,"created_time":1427813459}},"creatives":{"6023920301066":{"id":"6023920301066","body":"bloody
+      string: ! '{"result":{"success":true},"data":{"adgroups":{"6023922832266":{"id":"6023922832266","account_id":"367106653","adgroup_status":"PENDING_REVIEW","bid_info":{"CLICKS":1},"bid_type":"CPC","campaign_id":"6023922831066","creative_ids":["6023920301066"],"name":"My
+        old name","objective":"WEBSITE_CLICKS","targeting":{"age_max":65,"age_min":18,"geo_locations":{"countries":["US","GB"],"location_types":["home"]}},"tracking_specs":[{"action.type":["link_click"],"object":["10150219314478408"]},{"action.type":["like"],"page":["158352134203230"]}],"updated_time":1427814724,"created_time":1427814718}},"creatives":{"6023920301066":{"id":"6023920301066","body":"bloody
         body","image_hash":"3750c9b7e692b387b6a6c66b47e97442","image_url":"https:\/\/fbcdn-creative-a.akamaihd.net\/hads-ak-xpf1\/t45.1600-4\/s110x80\/10736900_6023920295866_1120642805_n.jpg","actor_id":"158352134203230","object_type":"DOMAIN","object_url":"http:\/\/moviepilot.com\/","name":"bloody
         title-01","title":"bloody title"}}}}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 14:51:03 GMT
+  recorded_at: Tue, 31 Mar 2015 15:12:04 GMT
 - request:
     method: post
-    uri: https://graph.facebook.com/v2.2/6023922386266
+    uri: https://graph.facebook.com/v2.2/6023922832266
     body:
       encoding: US-ASCII
       string: ! "-------------RubyMultipartPost\r\nContent-Disposition: form-data;
         name=\"account_id\"\r\n\r\n367106653\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"campaign_id\"\r\n\r\n6023922380266\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"campaign_group_id\"\r\n\r\n6023922379466\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"created_time\"\r\n\r\n1427813459\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"campaign_id\"\r\n\r\n6023922831066\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"campaign_group_id\"\r\n\r\n6023922829666\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"created_time\"\r\n\r\n1427814718\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"creative_ids\"\r\n\r\n6023920301066\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"name\"\r\n\r\nMy new name\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"tracking_specs%5B%5D%5Baction.type%5D%5B%5D\"\r\n\r\nlink_click\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"tracking_specs%5B%5D%5Bobject%5D%5B%5D\"\r\n\r\n10150219314478408\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"tracking_specs%5B%5D%5Baction.type%5D%5B%5D\"\r\n\r\nlike\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"tracking_specs%5B%5D%5Bpage%5D%5B%5D\"\r\n\r\n158352134203230\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"updated_time\"\r\n\r\n1427813463\r\n-------------RubyMultipartPost\r\nContent-Disposition:
+        form-data; name=\"updated_time\"\r\n\r\n1427814724\r\n-------------RubyMultipartPost\r\nContent-Disposition:
         form-data; name=\"redownload\"\r\n\r\n1\r\n-------------RubyMultipartPost\r\nContent-Disposition:
-        form-data; name=\"access_token\"\r\n\r\nCAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD\r\n-------------RubyMultipartPost--\r\n\r\n"
+        form-data; name=\"access_token\"\r\n\r\nCAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD\r\n-------------RubyMultipartPost--\r\n\r\n"
     headers:
       User-Agent:
       - Faraday v0.8.9
       Content-Type:
       - multipart/form-data; boundary=-----------RubyMultipartPost
       Content-Length:
-      - '1654'
+      - '1662'
       Accept:
       - ! '*/*'
   response:
@@ -159,24 +159,24 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - qoxBXyHf8DErR3MtdAxyhg/d4QKvHnd6+GNzr+JOFbdZSY+TXmLMEtB5V1Zhmu7G9uP63TexQ+lo9z+7m4tGEA==
+      - iJVVXYwm2hzqVS9g6ejv0yEzqN1BmHc0PMdWtczVTVSKgjaOqqznd8cwFOWMhcLZlpCXeJipw4a/NfMyq+211Q==
       Date:
-      - Tue, 31 Mar 2015 14:51:04 GMT
+      - Tue, 31 Mar 2015 15:12:05 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '987'
     body:
       encoding: US-ASCII
-      string: ! '{"result":{"success":true},"data":{"adgroups":{"6023922386266":{"id":"6023922386266","account_id":"367106653","adgroup_status":"PENDING_REVIEW","bid_info":{"CLICKS":1},"bid_type":"CPC","campaign_id":"6023922380266","creative_ids":["6023920301066"],"name":"My
-        new name","objective":"WEBSITE_CLICKS","targeting":{"age_max":65,"age_min":18,"geo_locations":{"countries":["US","GB"],"location_types":["home"]}},"tracking_specs":[{"action.type":["link_click"],"object":["10150219314478408"]},{"action.type":["like"],"page":["158352134203230"]}],"updated_time":1427813464,"created_time":1427813459}},"creatives":{"6023920301066":{"id":"6023920301066","body":"bloody
+      string: ! '{"result":{"success":true},"data":{"adgroups":{"6023922832266":{"id":"6023922832266","account_id":"367106653","adgroup_status":"PENDING_REVIEW","bid_info":{"CLICKS":1},"bid_type":"CPC","campaign_id":"6023922831066","creative_ids":["6023920301066"],"name":"My
+        new name","objective":"WEBSITE_CLICKS","targeting":{"age_max":65,"age_min":18,"geo_locations":{"countries":["US","GB"],"location_types":["home"]}},"tracking_specs":[{"action.type":["link_click"],"object":["10150219314478408"]},{"action.type":["like"],"page":["158352134203230"]}],"updated_time":1427814725,"created_time":1427814718}},"creatives":{"6023920301066":{"id":"6023920301066","body":"bloody
         body","image_hash":"3750c9b7e692b387b6a6c66b47e97442","image_url":"https:\/\/fbcdn-creative-a.akamaihd.net\/hads-ak-xpf1\/t45.1600-4\/s110x80\/10736900_6023920295866_1120642805_n.jpg","actor_id":"158352134203230","object_type":"DOMAIN","object_url":"http:\/\/moviepilot.com\/","name":"bloody
         title-01","title":"bloody title"}}}}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 14:51:04 GMT
+  recorded_at: Tue, 31 Mar 2015 15:12:05 GMT
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/6023922386266?access_token=CAAEvJ5vzhl8BAEQZCcZCGbu4wERy7XwEQZBphaX17qnJmsmQsZCDX20Nbagl1G7AYf4My3ZCf0NBqYF1b23hVntVezxRZCjDflKu4E2GF6nLg6vqbFoYHr72zzv0PHXt1HiUaVAbLGgE70McJzcrkx4l9IBlhvDKOU3Xb7PgRL4st10Sr1aQwdkQANZATNxe85jhufSLVvhk5xI5TeQIol5iyQT7ZCGKZBsIZD&fields=id,account_id,conversion_specs,campaign_id,campaign_group_id,created_time,creative_ids,failed_delivery_checks,name,tracking_specs,updated_time,view_tags
+    uri: https://graph.facebook.com/v2.2/6023922832266?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&fields=id,account_id,conversion_specs,campaign_id,campaign_group_id,created_time,creative_ids,failed_delivery_checks,name,tracking_specs,updated_time,view_tags
     body:
       encoding: US-ASCII
       string: ''
@@ -199,7 +199,7 @@ http_interactions:
       X-Fb-Rev:
       - '1666949'
       Etag:
-      - ! '"895afb8cf4da5cb9d3e09b68039d1fa04fba2a4c"'
+      - ! '"ef9e7bd7844a6041aec2c782348278c356215271"'
       Pragma:
       - no-cache
       Cache-Control:
@@ -209,17 +209,17 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - ca8yvlHg/Y0ed/kbHYLEUyTu63BL4J+BX7/cHbE1F5aDqm0yU384NeEDpqiZ6OOn5H9mEypbWygPPHhMxQuRuA==
+      - JVnjoTfAMOVfJ1WDhtK6tc2h/RqUe4nnrHeiu8ZTw/yDA7We3oa0gnL0NgphkAzB5oyPQ3mXD6easL9xKLYUWA==
       Date:
-      - Tue, 31 Mar 2015 14:51:04 GMT
+      - Tue, 31 Mar 2015 15:12:05 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '384'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6023922386266","account_id":"367106653","campaign_id":"6023922380266","campaign_group_id":"6023922379466","created_time":"2015-03-31T07:50:59-0700","creative_ids":["6023920301066"],"name":"My
-        new name","tracking_specs":[{"action.type":["link_click"],"object":["10150219314478408"]},{"action.type":["like"],"page":["158352134203230"]}],"updated_time":"2015-03-31T07:51:04-0700"}'
+      string: ! '{"id":"6023922832266","account_id":"367106653","campaign_id":"6023922831066","campaign_group_id":"6023922829666","created_time":"2015-03-31T08:11:58-0700","creative_ids":["6023920301066"],"name":"My
+        new name","tracking_specs":[{"action.type":["link_click"],"object":["10150219314478408"]},{"action.type":["like"],"page":["158352134203230"]}],"updated_time":"2015-03-31T08:12:05-0700"}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 14:51:05 GMT
+  recorded_at: Tue, 31 Mar 2015 15:12:05 GMT
 recorded_with: VCR 2.3.0
