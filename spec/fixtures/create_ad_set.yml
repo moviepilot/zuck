@@ -5,7 +5,7 @@ http_interactions:
     uri: https://graph.facebook.com/v2.2/act_367106653/adcampaigns
     body:
       encoding: US-ASCII
-      string: bid_type=CPC&bid_info=%7B%27CLICKS%27%3A+1%7D&name=bloody+ad+set&campaign_status=PAUSED&daily_budget=100&targeting=%7B%27geo_locations%27%3A%7B%27countries%27%3A%5B%27US%27%2C%27GB%27%5D%7D%7D&campaign_group_id=6023922829666&redownload=1&access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD
+      string: bid_type=CPC&bid_info=%7B%27CLICKS%27%3A+1%7D&name=bloody+ad+set&campaign_status=PAUSED&daily_budget=100&targeting=%7B%27geo_locations%27%3A%7B%27countries%27%3A%5B%27US%27%2C%27GB%27%5D%7D%7D&campaign_group_id=6024300271066&redownload=1&access_token=FAKEACCESSTOKEN
     headers:
       User-Agent:
       - Faraday v0.8.9
@@ -23,7 +23,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Pragma:
       - no-cache
       Cache-Control:
@@ -33,17 +33,17 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - SzBAT29+q+ySOITZXKuYPZF3hiVP+SJQ0jBZP09bHOrsl8duZabFeITIQuY768BAuREx85NEEMlaQWe/iGmkVA==
+      - vHMkYhoPkbSPsFlnVXl+PT0fIYOQyG79Azhz65M0Ebiq9OSKAn0N/0McuXZcrEVM0e0SnCkAKu6+ASKNpFs5YA==
       Date:
-      - Tue, 31 Mar 2015 15:11:55 GMT
+      - Wed, 15 Apr 2015 08:31:50 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '676'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6023922831066","data":{"campaigns":{"6023922831066":{"id":"6023922831066","account_id":367106653,"name":"bloody
-        ad set","daily_budget":100,"campaign_status":"PAUSED","daily_imps":0,"frequency_cap":0,"frequency_cap_reset_period":0,"start_time":"2015-03-31T08:11:55-0700","updated_time":"2015-03-31T08:11:55-0700","created_time":"2015-03-31T08:11:55-0700","campaign_group_id":"6023922829666","product_ad_behavior":"REQUIRE_LAST_SEEN_PRODUCTS","prorated_daily_budget":65,"budget_remaining":65,"bid_type":"CPC","bid_info":{"CLICKS":1},"targeting":{"age_min":18,"age_max":65,"geo_locations":{"countries":["US","GB"],"location_types":["home"]}},"pacing_type":["standard"]}}}}'
+      string: ! '{"id":"6024300272266","data":{"campaigns":{"6024300272266":{"id":"6024300272266","account_id":367106653,"name":"bloody
+        ad set","daily_budget":100,"campaign_status":"PAUSED","daily_imps":0,"frequency_cap":0,"frequency_cap_reset_period":0,"start_time":"2015-04-15T01:31:49-0700","updated_time":"2015-04-15T01:31:49-0700","created_time":"2015-04-15T01:31:49-0700","campaign_group_id":"6024300271066","product_ad_behavior":"REQUIRE_LAST_SEEN_PRODUCTS","prorated_daily_budget":93,"budget_remaining":93,"bid_type":"CPC","bid_info":{"CLICKS":1},"targeting":{"age_min":18,"age_max":65,"geo_locations":{"countries":["US","GB"],"location_types":["home"]}},"pacing_type":["standard"]}}}}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:11:55 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:52 GMT
 recorded_with: VCR 2.3.0

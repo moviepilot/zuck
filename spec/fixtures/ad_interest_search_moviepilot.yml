@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/search?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&q=moviepilot&type=adinterest
+    uri: https://graph.facebook.com/v2.2/search?access_token=FAKEACCESSTOKEN&q=moviepilot&type=adinterest
     body:
       encoding: US-ASCII
       string: ''
@@ -23,9 +23,9 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Etag:
-      - ! '"b5e81b720e917f8b3ec07133966274348ced7101"'
+      - ! '"00c8d060548219c13e6e1e57928c422237f1b484"'
       Pragma:
       - no-cache
       Cache-Control:
@@ -35,22 +35,18 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - 98/5xwGf/FS7i3HAXws0+W7cIyA4axbLOihDIlUUTWniug/n3GsZ14CDwmm2kSz/apc6uY+5ad1iNKZYFZb9lA==
+      - MvznFodJDu9SsYDJhQuiq0dgbprzOpN/4lu1rkgDvOAEEM4Lp2gqhw4pNZwLveZUD/iwv1mE7O4HPdAQWzEwTg==
       Date:
-      - Tue, 31 Mar 2015 15:11:47 GMT
+      - Wed, 15 Apr 2015 08:31:45 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '800'
+      - '411'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"id":"6016974866325","name":"moviepilot horror","audience_size":11224,"path":[],"description":null},{"id":"6014564835078","name":"moviepilot
-        tv","audience_size":0,"path":[],"description":null},{"id":"6014532714533","name":"moviepilot
-        action","audience_size":210,"path":[],"description":null},{"id":"6021685075080","name":"moviepilot
-        animation","audience_size":60,"path":[],"description":null},{"id":"6014484233967","name":"moviepilot
-        scifi","audience_size":7286,"path":[],"description":null},{"id":"6014914020624","name":"moviepilot
-        fantasy","audience_size":0,"path":[],"description":null},{"id":"6003495809986","name":"moviepilotcom","audience_size":703990,"path":[],"description":null},{"id":"6018093532371","name":"moviepilot
-        directors","audience_size":19,"path":[],"description":null}]}'
+      string: ! '{"data":[{"id":"6003495809986","name":"moviepilotcom","audience_size":4982640,"path":[],"description":null},{"id":"6003327847780","name":"moviepilot","audience_size":1948110,"path":[],"description":null},{"id":"6016974866325","name":"moviepilot
+        horror","audience_size":5058700,"path":[],"description":null},{"id":"6014532714533","name":"moviepilot
+        action","audience_size":1387320,"path":[],"description":null}]}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:11:47 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:47 GMT
 recorded_with: VCR 2.3.0

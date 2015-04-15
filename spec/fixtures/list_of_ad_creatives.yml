@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/6023922832266/adcreatives?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&fields=
+    uri: https://graph.facebook.com/v2.2/6024300273866/adcreatives?access_token=FAKEACCESSTOKEN&fields=
     body:
       encoding: US-ASCII
       string: ''
@@ -23,9 +23,9 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Etag:
-      - ! '"3dc6af73f407a58f1ea4cc600161a5d6e184d8d3"'
+      - ! '"4fb30dfde07feecc5db97d66857e2cc2c36a316d"'
       Pragma:
       - no-cache
       Cache-Control:
@@ -35,16 +35,16 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - ajn/IV+Xag4bKNbMrO99FhDVl3Qge+PMSnu5yDN2V3vn+Le7AYLRGBNnVHc2p/Lfd0pVxyCqA87HEQsd7cNoPA==
+      - fo9Kf24iNKJ+w0xvuBKIc3kuY03Y9Y++7l0Z7ZPThE5VvEwbzvkyGIJnDWxtdf8iqUYYLKmCRJ4GtRQIxgAGuw==
       Date:
-      - Tue, 31 Mar 2015 15:12:00 GMT
+      - Wed, 15 Apr 2015 08:31:54 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '33'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"id":"6023920301066"}]}'
+      string: ! '{"data":[{"id":"6024299683866"}]}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:12:00 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:56 GMT
 recorded_with: VCR 2.3.0

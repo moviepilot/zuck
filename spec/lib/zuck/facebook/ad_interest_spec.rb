@@ -11,7 +11,7 @@ describe Zuck::AdInterest do
 
   it "finds the best interest when no keyword with # is available" do
     VCR.use_cassette('ad_interest_search_moviepilot') do
-      Zuck::AdInterest.best_guess(graph, 'moviepilot')[:name].should == 'moviepilotcom'
+      Zuck::AdInterest.best_guess(graph, 'moviepilot')[:name].should == 'moviepilot horror'
     end
   end
 

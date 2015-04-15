@@ -5,7 +5,7 @@ http_interactions:
     uri: https://graph.facebook.com/v2.2/act_367106653/adgroups
     body:
       encoding: US-ASCII
-      string: name=Rap+like+me&objective=WEBSITE_CLICKS&creative=%7B%22creative_id%22%3A+6023920301066%7D&campaign_id=6023922831066&redownload=1&access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD
+      string: name=Rap+like+me&objective=WEBSITE_CLICKS&creative=%7B%22creative_id%22%3A+6024299683866%7D&campaign_id=6024300272266&redownload=1&access_token=FAKEACCESSTOKEN
     headers:
       User-Agent:
       - Faraday v0.8.9
@@ -23,7 +23,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Pragma:
       - no-cache
       Cache-Control:
@@ -33,19 +33,19 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - 8lmPTaIGOYvPUjdO40gu7D7bh7b+F+olSQGWKZKUFRMnMC5KOLcue3DitAe/lZ45h1j/ug87D4iTPjWH+xafpQ==
+      - exte+aNjlHg327l2IzYMrn8ran3UwCtF+9csV5Iw5+CByqkjAgpUZf8dNhTKM4LY2cBtor/VTvyn0ilpxeH1+A==
       Date:
-      - Tue, 31 Mar 2015 15:11:59 GMT
+      - Wed, 15 Apr 2015 08:31:53 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '982'
+      - '956'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6023922832266","data":{"adgroups":{"6023922832266":{"id":"6023922832266","account_id":"367106653","adgroup_status":"PENDING_REVIEW","bid_info":{"CLICKS":1},"bid_type":"CPC","campaign_id":"6023922831066","creative_ids":["6023920301066"],"name":"Rap
-        like me","objective":"WEBSITE_CLICKS","targeting":{"age_max":65,"age_min":18,"geo_locations":{"countries":["US","GB"],"location_types":["home"]}},"tracking_specs":[{"action.type":["link_click"],"object":["10150219314478408"]},{"action.type":["like"],"page":["158352134203230"]}],"updated_time":1427814718,"created_time":1427814718}},"creatives":{"6023920301066":{"id":"6023920301066","body":"bloody
-        body","image_hash":"3750c9b7e692b387b6a6c66b47e97442","image_url":"https:\/\/fbcdn-creative-a.akamaihd.net\/hads-ak-xpf1\/t45.1600-4\/s110x80\/10736900_6023920295866_1120642805_n.jpg","actor_id":"158352134203230","object_type":"DOMAIN","object_url":"http:\/\/moviepilot.com\/","name":"bloody
-        title-01","title":"bloody title"}}}}'
+      string: ! '{"id":"6024300273866","data":{"adgroups":{"6024300273866":{"id":"6024300273866","account_id":"367106653","adgroup_status":"PENDING_REVIEW","bid_info":{"CLICKS":1},"bid_type":"CPC","campaign_id":"6024300272266","creative_ids":["6024299683866"],"name":"Rap
+        like me","objective":"WEBSITE_CLICKS","targeting":{"age_max":65,"age_min":18,"geo_locations":{"countries":["US","GB"],"location_types":["home"]}},"tracking_specs":[{"action.type":["link_click"],"object":["10150219314478408"]},{"action.type":["like"],"page":["158352134203230"]}],"updated_time":1429086712,"created_time":1429086712}},"creatives":{"6024299683866":{"id":"6024299683866","body":"bloody
+        body","image_hash":"1040d95f6a3505d0da0c8502cc87376a","image_url":"https:\/\/fbcdn-creative-a.akamaihd.net\/hads-ak-xaf1\/t45.1600-4\/s110x80\/10736784_6024299683266_385998835_n.png","actor_id":"158352134203230","object_type":"DOMAIN","object_url":"http:\/\/moviepilot.com\/","title":"bloody
+        title"}}}}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:11:59 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:55 GMT
 recorded_with: VCR 2.3.0

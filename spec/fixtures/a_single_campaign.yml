@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/6023922829666?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
+    uri: https://graph.facebook.com/v2.2/6024300271066?access_token=FAKEACCESSTOKEN&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
     body:
       encoding: US-ASCII
       string: ''
@@ -23,9 +23,9 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Etag:
-      - ! '"b5752535d7c563ee94ebce7b4c2550e914a5ccb3"'
+      - ! '"9801ec532ea2dc636715160659a83fef119221fe"'
       Pragma:
       - no-cache
       Cache-Control:
@@ -35,17 +35,17 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - FSp4Fdx/s5Tdzgd6ZwH58YLWeKO049iMweM2xk+PsEzb0sqJYbpVqcrXzVZXtGr6f2uQAscgQPSUOiAsELEL2A==
+      - 5UCLtJvh95hsVRibQlf68HLk/6Bb20B+ztOQUpnjvi6sdS85JANtgXmMLs4fVU048KjMjkll0juYssyDrg94cw==
       Date:
-      - Tue, 31 Mar 2015 15:12:01 GMT
+      - Wed, 15 Apr 2015 08:31:54 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '279'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6023922829666","account_id":"367106653","objective":"NONE","name":"bloody
-        campaign","adgroups":{"data":[{"id":"6023922832266"}],"paging":{"cursors":{"before":"NjAyMzkyMjgzMjI2Ng==","after":"NjAyMzkyMjgzMjI2Ng=="}}},"campaign_group_status":"PAUSED","buying_type":"AUCTION"}'
+      string: ! '{"id":"6024300271066","account_id":"367106653","objective":"NONE","name":"bloody
+        campaign","adgroups":{"data":[{"id":"6024300273866"}],"paging":{"cursors":{"before":"NjAyNDMwMDI3Mzg2Ng==","after":"NjAyNDMwMDI3Mzg2Ng=="}}},"campaign_group_status":"PAUSED","buying_type":"AUCTION"}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:12:01 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:56 GMT
 recorded_with: VCR 2.3.0

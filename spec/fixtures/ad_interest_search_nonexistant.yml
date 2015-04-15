@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/search?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&q=ick%20spickeby&type=adinterest
+    uri: https://graph.facebook.com/v2.2/search?access_token=FAKEACCESSTOKEN&q=ick%20spickeby&type=adinterest
     body:
       encoding: US-ASCII
       string: ''
@@ -23,7 +23,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Etag:
       - ! '"1050253aec7b29caff644806927dabfa81406eee"'
       Pragma:
@@ -35,9 +35,9 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - +BXFaPA0VtJxDj2E1xh+3f/PTCArky+Oe3mUown0KB6FPjc+5UOqIenTxQ0MsDMZCeXozITGzm6FXr5KcZJdgw==
+      - WNNz7Uoiw1QBioiQSiarW30TUGGOos/AxhNtL6OSKLidnJ84+S16HYI8kR4nnkulDM69Ko8sCxHYR7UIvDreYw==
       Date:
-      - Tue, 31 Mar 2015 15:11:48 GMT
+      - Wed, 15 Apr 2015 08:31:45 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -46,5 +46,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"data":[]}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:11:48 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:47 GMT
 recorded_with: VCR 2.3.0

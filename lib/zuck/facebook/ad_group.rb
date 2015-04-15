@@ -19,8 +19,9 @@ module Zuck
                :failed_delivery_checks,
                :name,
                :tracking_specs,
-               :updated_time,
-               :view_tags
+               :updated_time
+               # app must be whitelisted to use view_tags
+               # :view_tags
 
     parent_object :ad_campaign
     list_path     :adgroups

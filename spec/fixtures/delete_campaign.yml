@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://graph.facebook.com/v2.2/6023922829666
+    uri: https://graph.facebook.com/v2.2/6024300271066
     body:
       encoding: US-ASCII
-      string: access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&method=delete
+      string: access_token=FAKEACCESSTOKEN&method=delete
     headers:
       User-Agent:
       - Faraday v0.8.9
@@ -23,7 +23,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Pragma:
       - no-cache
       Cache-Control:
@@ -33,9 +33,9 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - chGdl1HWy1CMY764SZP5Xw2nhew5r6yWzK0/hM/nQD+Gm0RsBJyqP1+FMX4tgIKhmS9B43qgOWjB+3HUZa7q4w==
+      - DB9BLFJv1gG9AFgDTbXWgZTrhvMEcB9RCrAQ3516mmUvbnkPYLotatVUBcxgix0CD7Cx1eNhZi3zdw6nTvakUw==
       Date:
-      - Tue, 31 Mar 2015 15:12:10 GMT
+      - Wed, 15 Apr 2015 08:32:01 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -44,13 +44,13 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"success":true}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:12:10 GMT
+  recorded_at: Wed, 15 Apr 2015 08:32:03 GMT
 - request:
     method: post
-    uri: https://graph.facebook.com/v2.2/6023922829066
+    uri: https://graph.facebook.com/v2.2/6024300270466
     body:
       encoding: US-ASCII
-      string: access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&method=delete
+      string: access_token=FAKEACCESSTOKEN&method=delete
     headers:
       User-Agent:
       - Faraday v0.8.9
@@ -68,7 +68,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Pragma:
       - no-cache
       Cache-Control:
@@ -78,9 +78,9 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - h19+0s4iym3FAbWf7joE9kt6gLbaqsZzT/cVmBLhdA3tBG/upiwo3M6PSeXo7DV0AgbLsGJ2HWLmhEN2YNOTtw==
+      - qlN4i0urIkQXJoBrA5CqWPmD/Rtaz8PZtXQrWTcGeety4QEtFwv3+oDt1D5h6BSR1zpYorUUb3LxXYvqWJ1StA==
       Date:
-      - Tue, 31 Mar 2015 15:12:12 GMT
+      - Wed, 15 Apr 2015 08:32:03 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -89,5 +89,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"success":true}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:12:12 GMT
+  recorded_at: Wed, 15 Apr 2015 08:32:05 GMT
 recorded_with: VCR 2.3.0

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/6023922829666?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&fields=id,account_id,conversion_specs,campaign_id,campaign_group_id,created_time,creative_ids,failed_delivery_checks,name,tracking_specs,updated_time,view_tags
+    uri: https://graph.facebook.com/v2.2/6024300271066?access_token=FAKEACCESSTOKEN&fields=id,account_id,conversion_specs,campaign_id,campaign_group_id,created_time,creative_ids,failed_delivery_checks,name,tracking_specs,updated_time
     body:
       encoding: US-ASCII
       string: ''
@@ -26,7 +26,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Pragma:
       - no-cache
       Cache-Control:
@@ -36,9 +36,9 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - J1LxV9vgwS+pUA/X+inEWAT8ClleeLsp2DtN7zsrGcAw+k5kqZ2Jw0FP9ZLvNFD1xLbg+x1NEI9kAJ8zdVR7sw==
+      - uxSjnwxJCE0Dju5khX6qboeaKCGJk6NIOMYECOgZN3IPt6B2/24plTKArWF7j4ucMu/+9zh3P6ia/1tQX0WjnA==
       Date:
-      - Tue, 31 Mar 2015 15:12:03 GMT
+      - Wed, 15 Apr 2015 08:31:55 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -48,5 +48,5 @@ http_interactions:
       string: ! '{"error":{"message":"(#100) Tried accessing nonexisting field (conversion_specs)
         on node type (AdCampaignGroup)","type":"OAuthException","code":100}}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:12:03 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:57 GMT
 recorded_with: VCR 2.3.0

@@ -5,7 +5,7 @@ http_interactions:
     uri: https://graph.facebook.com/v2.2/act_367106653/adcampaign_groups
     body:
       encoding: US-ASCII
-      string: daily_budget=1000&name=bloody+campaign+%28via+account%29&redownload=1&access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD
+      string: daily_budget=1000&name=bloody+campaign+%28via+account%29&redownload=1&access_token=FAKEACCESSTOKEN
     headers:
       User-Agent:
       - Faraday v0.8.9
@@ -23,7 +23,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Pragma:
       - no-cache
       Cache-Control:
@@ -33,21 +33,21 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - oV+wD/sKAGs02369YnSiAiAZkfUmv+5O3NXka0ipgc7/nq+46oLaHtbKeX5oN5AxQp6bFAvYeN5xIi/NgiThUw==
+      - 0VWyk3B5tw1/+dND9G1v3N2/WqxDqwybjbYmmbLCU3wXlj+9jxewjKplWDdvLc5fsUhad8KKrYJ0VF/0c0lzPg==
       Date:
-      - Tue, 31 Mar 2015 15:11:52 GMT
+      - Wed, 15 Apr 2015 08:31:47 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '22'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6023922829066"}'
+      string: ! '{"id":"6024300270466"}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:11:52 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:49 GMT
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/6023922829066?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
+    uri: https://graph.facebook.com/v2.2/6024300270466?access_token=FAKEACCESSTOKEN&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
     body:
       encoding: US-ASCII
       string: ''
@@ -68,9 +68,9 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Etag:
-      - ! '"50186d7ff8e1acae2a66f65aaf781c934ec5d424"'
+      - ! '"d4275dbdef2f31612d0b584e5007051d574503c5"'
       Pragma:
       - no-cache
       Cache-Control:
@@ -80,25 +80,25 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - vkeJLfdrvD4jfRbMdsKx7fXpGLbTZpTE/m+iDNhbUjw72Q8EZ+t/6WVGyp5UqaQHc1jlud+CIGnFE9lMGBFkng==
+      - LpfCNLdKBODf0ei6Fqxa8qwCNEiYfXXW8mE7ljp3qePj/PPnYUL9PRfi1/Hp+Xk9EzbDrhzFLDMWITlm177LEA==
       Date:
-      - Tue, 31 Mar 2015 15:11:53 GMT
+      - Wed, 15 Apr 2015 08:31:48 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '162'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6023922829066","account_id":"367106653","objective":"NONE","name":"bloody
+      string: ! '{"id":"6024300270466","account_id":"367106653","objective":"NONE","name":"bloody
         campaign (via account)","campaign_group_status":"ACTIVE","buying_type":"AUCTION"}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:11:53 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:50 GMT
 - request:
     method: post
     uri: https://graph.facebook.com/v2.2/act_367106653/adcampaign_groups
     body:
       encoding: US-ASCII
-      string: objective=NONE&name=bloody+campaign&campaign_group_status=PAUSED&redownload=1&access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD
+      string: objective=NONE&name=bloody+campaign&campaign_group_status=PAUSED&redownload=1&access_token=FAKEACCESSTOKEN
     headers:
       User-Agent:
       - Faraday v0.8.9
@@ -116,7 +116,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Pragma:
       - no-cache
       Cache-Control:
@@ -126,21 +126,21 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - uhZ/2FI4C9xqIzpO/hjByC9bKB8nltnH3C5goI0H+LRImdxq4OWSr1CaphIFSaDFThoXoJqt49zdCFjtV9yDYw==
+      - P3oXxQn82F7HYt+7iBd4DOiI84HEg6kNx4snUsbrvD5IIYq6Q5Imrcoc6sHS4vH+mDqgVLyQHGp8CE4tKndWXA==
       Date:
-      - Tue, 31 Mar 2015 15:11:53 GMT
+      - Wed, 15 Apr 2015 08:31:48 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '22'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6023922829666"}'
+      string: ! '{"id":"6024300271066"}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:11:54 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:50 GMT
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/6023922829666?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
+    uri: https://graph.facebook.com/v2.2/6024300271066?access_token=FAKEACCESSTOKEN&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
     body:
       encoding: US-ASCII
       string: ''
@@ -161,9 +161,9 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Etag:
-      - ! '"95ea281b2af8a192b3f18eb7956f8c37321b82ae"'
+      - ! '"5fc49c9fce8b1298addf8f2dc950dd6bf98fb83b"'
       Pragma:
       - no-cache
       Cache-Control:
@@ -173,17 +173,17 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - ZnvghUh5ZTuAQv416kjp5wKAkUde85b7PXHFZtQsF5RWNwcAVIjNY19ID3fC/8+7BuMqY/gdckIRZv79Xe+0bQ==
+      - geKx3F9tyCnl5y8Gyql1y45rljNhu+sOh7cc5u9YbTRIwR8vIejGl7Q+VJi/yucYhUOkvlo12KEoueboI7oTSQ==
       Date:
-      - Tue, 31 Mar 2015 15:11:54 GMT
+      - Wed, 15 Apr 2015 08:31:49 GMT
       Connection:
       - keep-alive
       Content-Length:
       - '148'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"6023922829666","account_id":"367106653","objective":"NONE","name":"bloody
+      string: ! '{"id":"6024300271066","account_id":"367106653","objective":"NONE","name":"bloody
         campaign","campaign_group_status":"PAUSED","buying_type":"AUCTION"}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:11:54 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:51 GMT
 recorded_with: VCR 2.3.0

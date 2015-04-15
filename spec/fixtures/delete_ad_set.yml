@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://graph.facebook.com/v2.2/6023922831066
+    uri: https://graph.facebook.com/v2.2/6024300272266
     body:
       encoding: US-ASCII
-      string: access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&method=delete
+      string: access_token=FAKEACCESSTOKEN&method=delete
     headers:
       User-Agent:
       - Faraday v0.8.9
@@ -23,7 +23,7 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Pragma:
       - no-cache
       Cache-Control:
@@ -33,9 +33,9 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - zoixsZTGJBf8XlPOmguPmazheSMnPwYPSWrjECMt2wf9UUcgQe4z2MqXqA+QKLt2nMdoLe/58QROPTP5K114kg==
+      - Jdx6FZtPUdnTGeXG9vlik/LKprYxhYqCSOq3ba43Ye3zf9gUZgaodHBBlt/ntr2oMp/CZWf2cN87LEYoSk6G9A==
       Date:
-      - Tue, 31 Mar 2015 15:12:06 GMT
+      - Wed, 15 Apr 2015 08:31:58 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -44,5 +44,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"success":true}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:12:06 GMT
+  recorded_at: Wed, 15 Apr 2015 08:32:00 GMT
 recorded_with: VCR 2.3.0

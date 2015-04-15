@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/search?access_token=CAAEvJ5vzhl8BAMFq7jczsXOZBI4rRuBzjrp3lcNHei8FzxZAVzc5ImZCZB9R4qXrZAlxaE1T9HMhyNTM7gExEkZCcGZCXeZBduL23ZA2OMiGl5cIZBuCtxZBLFwZBlyUW8JkENHvtQWUE5ZADM8PvZCpt63OyLvHu0Lsz1kYXLaxKOIuoAM5zlECs3vHTBBAYmE6lcTcSprCCSZAzYKABNJCcyTWeZCPA8SjVLTpZC7QZD&q=disney&type=adinterest
+    uri: https://graph.facebook.com/v2.2/search?access_token=FAKEACCESSTOKEN&q=disney&type=adinterest
     body:
       encoding: US-ASCII
       string: ''
@@ -23,9 +23,9 @@ http_interactions:
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1666949'
+      - '1690131'
       Etag:
-      - ! '"3f3e4346ea53022e7d99afbb488102ebf596a102"'
+      - ! '"c96808895690b89fe50155bf0d601fe15764b86c"'
       Pragma:
       - no-cache
       Cache-Control:
@@ -35,22 +35,22 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - LQQpAhb3XL+1fa17i+RWvljFQLCNypTl/Ce10th9IL8yw3BD4BCH0arKd5hD/zh3zKF6nYYj5CvD1c5+Cj90bA==
+      - Sigzo9NNt4GA+WKHecGWop3xkFbNen/SwLg4G0q5imEVw67BlXjAwgputGXM98evMdn7N+zAKrQe6dJD5GKu1Q==
       Date:
-      - Tue, 31 Mar 2015 15:11:47 GMT
+      - Wed, 15 Apr 2015 08:31:45 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '862'
+      - '858'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"id":"6003270522085","name":"The Walt Disney Company","audience_size":161654510,"path":[],"description":null},{"id":"6003284678611","name":"Walt
-        Disney","audience_size":73753740,"path":[],"description":null},{"id":"6003050377616","name":"Walt
-        Disney Pictures","audience_size":79528580,"path":[],"description":null},{"id":"6003212182247","name":"Disney
-        Channel (Latin America)","audience_size":53833580,"path":[],"description":null},{"id":"6003327130854","name":"Disney
-        Channel","audience_size":69383350,"path":[],"description":null},{"id":"6003235403611","name":"Disney
-        on Ice","audience_size":45748160,"path":[],"description":null},{"id":"6007022518262","name":"The
-        Walt Disney Studios (division)","audience_size":48358890,"path":[],"description":null},{"id":"6003413951089","name":"Disney.com","audience_size":44243810,"path":[],"description":null}]}'
+      string: ! '{"data":[{"id":"6003270522085","name":"The Walt Disney Company","audience_size":157850860,"path":[],"description":null},{"id":"6003284678611","name":"Walt
+        Disney","audience_size":71107060,"path":[],"description":null},{"id":"6003050377616","name":"Walt
+        Disney Pictures","audience_size":73976190,"path":[],"description":null},{"id":"6003212182247","name":"Disney
+        Channel (Latin America)","audience_size":51049290,"path":[],"description":null},{"id":"6003663755307","name":"disney","audience_size":42628330,"path":[],"description":null},{"id":"6003327130854","name":"Disney
+        Channel","audience_size":59441180,"path":[],"description":null},{"id":"6003235403611","name":"Disney
+        on Ice","audience_size":43601380,"path":[],"description":null},{"id":"6007022518262","name":"The
+        Walt Disney Studios (division)","audience_size":53979150,"path":[],"description":null}]}'
     http_version: 
-  recorded_at: Tue, 31 Mar 2015 15:11:47 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:46 GMT
 recorded_with: VCR 2.3.0
