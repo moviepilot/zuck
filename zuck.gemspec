@@ -87,7 +87,7 @@ Gem::Specification.new do |s|
   ]
   s.homepage = "http://github.com/jayniz/zuck"
   s.licenses = ["MIT"]
-  s.rubygems_version = "2.4.6"
+  s.rubygems_version = "2.2.2"
   s.summary = "Ruby adapter to facebook's ad api"
 
   if s.respond_to? :specification_version then
