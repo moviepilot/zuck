@@ -154,8 +154,6 @@ module Zuck
 
     def validate_spec
       @spec[:interests] = @spec[:interests]
-      # deprecated: https://developers.facebook.com/docs/apps/migrations/migration-2014-01-08
-      # @spec[:broad_age] ||= false
       validate_countries
       unless @spec[:interests].present? or @spec[:connections].present?
         raise(ParamsMissingError, "Need to set :interests or :connections")
