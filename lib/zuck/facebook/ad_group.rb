@@ -18,7 +18,6 @@ module Zuck
                :creative_ids,
                :failed_delivery_checks,
                :name,
-               # :targeting,
                :tracking_specs,
                :updated_time,
                :view_tags
