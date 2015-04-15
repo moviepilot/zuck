@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/act_1384977038406122/reachestimate?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&targeting_spec=%7B%22geo_locations%22:%7B%22countries%22:%5B%22US%22%5D%7D,%22interests%22:%5B%7B%22id%22:%226003135347608%22,%22name%22:%22Eminem%22%7D,%7B%22id%22:%226003504886186%22,%22name%22:%22Sting%20(musician)%22%7D%5D,%22age_min%22:13,%22countries%22:%5B%5D,%22connections%22:%5B%5D,%22broad_age%22:false%7D
+    uri: https://graph.facebook.com/v2.2/act_1384977038406122/reachestimate?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&targeting_spec=%7B%22geo_locations%22:%7B%22countries%22:%5B%22US%22%5D%7D,%22interests%22:%5B%7B%22id%22:%226003135347608%22,%22name%22:%22Eminem%22%7D,%7B%22id%22:%226003504886186%22,%22name%22:%22Sting%20(musician)%22%7D%5D,%22age_min%22:13,%22countries%22:%5B%5D,%22connections%22:%5B%5D%7D
     body:
       encoding: US-ASCII
       string: ''
@@ -18,33 +18,33 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Facebook-Api-Version:
-      - v1.0
-      Etag:
-      - ! '"6091c44df86603e9fa3d02108fa4a66195cc8afc"'
       Content-Type:
       - application/json; charset=UTF-8
-      Pragma:
-      - no-cache
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1534884'
+      - '1690131'
+      Etag:
+      - ! '"c081fa992fa810ff727e2c62a3f07a337b225ad3"'
+      Pragma:
+      - no-cache
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - UQm3XcD/KHuSX+cXCyjgiHZPvXyxjJ3dmixnCSxG/7ErgcSDcDfNv6PKJ4iFqpsdg0rdQzbZg5Y2NhT8uzGMxQ==
+      - 8CQmvP8bZFslRFwWkK1SNvVZ1zFDa+wff77F/Hhe7B4zPqVMNAKxxvDR3ceaWbttcFHYO5VxgTEwM7eekCoczw==
       Date:
-      - Wed, 17 Dec 2014 13:24:53 GMT
+      - Wed, 15 Apr 2015 08:31:46 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '456'
+      - '452'
     body:
       encoding: US-ASCII
-      string: ! '{"users":28000000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":37,"cpa_median":69,"cpa_max":100,"cpc_min":19,"cpc_median":35,"cpc_max":50,"cpm_min":84,"cpm_median":270,"cpm_max":440}],"estimate_ready":true,"data":{"users":28000000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":37,"cpa_median":69,"cpa_max":100,"cpc_min":19,"cpc_median":35,"cpc_max":50,"cpm_min":84,"cpm_median":270,"cpm_max":440}],"estimate_ready":true}}'
+      string: ! '{"users":37000000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":15,"cpa_median":27,"cpa_max":37,"cpc_min":6,"cpc_median":10,"cpc_max":13,"cpm_min":45,"cpm_median":257,"cpm_max":429}],"estimate_ready":true,"data":{"users":37000000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":15,"cpa_median":27,"cpa_max":37,"cpc_min":6,"cpc_median":10,"cpc_max":13,"cpm_min":45,"cpm_median":257,"cpm_max":429}],"estimate_ready":true}}'
     http_version: 
-  recorded_at: Wed, 17 Dec 2014 13:24:53 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:48 GMT
 recorded_with: VCR 2.3.0

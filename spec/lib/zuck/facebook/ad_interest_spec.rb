@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe Zuck::AdInterest do
-  let(:graph){ Koala::Facebook::API.new('CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh')}
+  let(:graph){ Koala::Facebook::API.new(test_access_token)}
 
   it "finds the best interest with a #" do
     VCR.use_cassette('ad_interest_search_disney') do

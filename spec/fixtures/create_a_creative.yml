@@ -1,16 +1,16 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://graph.facebook.com/v2.2/6024300273866/adcreatives?access_token=FAKEACCESSTOKEN&fields=
+    method: post
+    uri: https://graph.facebook.com/v2.2/act_367106653/adcreatives
     body:
       encoding: US-ASCII
-      string: ''
+      string: title=bloody+title&body=bloody+body&object_url=http%3A%2F%2Fmoviepilot.com%2F&image_url=http%3A%2F%2Fimages-cdn.moviepilot.com%2Fimage%2Fupload%2Fc_fill%2Ch_246%2Cw_470%2Fv1427727623%2Fmoviepilot.jpg&redownload=1&access_token=FAKEACCESSTOKEN
     headers:
       User-Agent:
       - Faraday v0.8.9
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Content-Type:
+      - application/x-www-form-urlencoded
       Accept:
       - ! '*/*'
   response:
@@ -24,8 +24,6 @@ http_interactions:
       - ! '*'
       X-Fb-Rev:
       - '1690131'
-      Etag:
-      - ! '"4fb30dfde07feecc5db97d66857e2cc2c36a316d"'
       Pragma:
       - no-cache
       Cache-Control:
@@ -35,16 +33,16 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - fo9Kf24iNKJ+w0xvuBKIc3kuY03Y9Y++7l0Z7ZPThE5VvEwbzvkyGIJnDWxtdf8iqUYYLKmCRJ4GtRQIxgAGuw==
+      - 9wWrRIJ/Cohv1aG6YzYPLp67jGG4LngMt0ASXLODuReojMnYjEurJAR0CB8/azjZyXQ9rJsu0s1fxwtMIUz27Q==
       Date:
-      - Wed, 15 Apr 2015 08:31:54 GMT
+      - Wed, 15 Apr 2015 08:31:52 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '33'
+      - '22'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"id":"6024299683866"}]}'
+      string: ! '{"id":"6024299683866"}'
     http_version: 
-  recorded_at: Wed, 15 Apr 2015 08:31:56 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:54 GMT
 recorded_with: VCR 2.3.0

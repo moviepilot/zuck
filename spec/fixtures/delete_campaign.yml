@@ -1,0 +1,93 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://graph.facebook.com/v2.2/6024300271066
+    body:
+      encoding: US-ASCII
+      string: access_token=FAKEACCESSTOKEN&method=delete
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1690131'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - DB9BLFJv1gG9AFgDTbXWgZTrhvMEcB9RCrAQ3516mmUvbnkPYLotatVUBcxgix0CD7Cx1eNhZi3zdw6nTvakUw==
+      Date:
+      - Wed, 15 Apr 2015 08:32:01 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '16'
+    body:
+      encoding: US-ASCII
+      string: ! '{"success":true}'
+    http_version: 
+  recorded_at: Wed, 15 Apr 2015 08:32:03 GMT
+- request:
+    method: post
+    uri: https://graph.facebook.com/v2.2/6024300270466
+    body:
+      encoding: US-ASCII
+      string: access_token=FAKEACCESSTOKEN&method=delete
+    headers:
+      User-Agent:
+      - Faraday v0.8.9
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept:
+      - ! '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      Access-Control-Allow-Origin:
+      - ! '*'
+      X-Fb-Rev:
+      - '1690131'
+      Pragma:
+      - no-cache
+      Cache-Control:
+      - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
+      Expires:
+      - Sat, 01 Jan 2000 00:00:00 GMT
+      X-Fb-Debug:
+      - qlN4i0urIkQXJoBrA5CqWPmD/Rtaz8PZtXQrWTcGeety4QEtFwv3+oDt1D5h6BSR1zpYorUUb3LxXYvqWJ1StA==
+      Date:
+      - Wed, 15 Apr 2015 08:32:03 GMT
+      Connection:
+      - keep-alive
+      Content-Length:
+      - '16'
+    body:
+      encoding: US-ASCII
+      string: ! '{"success":true}'
+    http_version: 
+  recorded_at: Wed, 15 Apr 2015 08:32:05 GMT
+recorded_with: VCR 2.3.0

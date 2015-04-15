@@ -7,21 +7,21 @@ module Zuck
     # [fb docs](https://developers.facebook.com/docs/reference/ads-api/adgroup/v2.2)
     known_keys :id,
                :account_id,
-               :adgroup_status,
-               :bid_type,
-               :bid_info,
+               # not available anymore to send, but still there in a response
+               # :adgroup_status,
+               # :bid_type,
+               # :bid_info,
                :conversion_specs,
                :campaign_id,
                :campaign_group_id,
-               :conversion_specs,
                :created_time,
                :creative_ids,
                :failed_delivery_checks,
                :name,
-               :targeting,
                :tracking_specs,
-               :updated_time,
-               :view_tags
+               :updated_time
+               # app must be whitelisted to use view_tags
+               # :view_tags
 
     parent_object :ad_campaign
     list_path     :adgroups

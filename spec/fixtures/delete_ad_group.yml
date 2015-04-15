@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://graph.facebook.com/6010889169151
+    uri: https://graph.facebook.com/v2.2/6024300273866
     body:
       encoding: US-ASCII
-      string: access_token=CAAEvJ5vzhl8BANgaZCvjMZCRsIbNZCSPswoDM0MTx8g30ojs53HUp43aVBVdqHnu9kIFytWIR5oRfp1Sy8DZBtJ9p5Rw2kY93ZAu6EwzHqZCrjmeBxXBWWlMCty1Bg4zKc3abdbjgoX4fWP4NWCEyWZCFJBKXWR0WV3ZC63bSqw7ojzYJm4teOarRc1GaesGIlIKlZB6s7EwZA1qUZCCKsdZCSsq%0A&method=delete
+      string: access_token=FAKEACCESSTOKEN&method=delete
     headers:
       User-Agent:
       - Faraday v0.8.9
@@ -18,76 +18,31 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Facebook-Api-Version:
-      - v1.0
       Content-Type:
       - application/json; charset=UTF-8
-      Pragma:
-      - no-cache
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1534884'
-      Cache-Control:
-      - private, no-cache, no-store, must-revalidate
-      Expires:
-      - Sat, 01 Jan 2000 00:00:00 GMT
-      X-Fb-Debug:
-      - qGpX6qFKpWvgRHaBZoVnJPdM2FZO9ve2k7WmSjxTtJuRcdlvmHcBf2zJ1oEDRhvCp0EpwJOdwn3rPoqog9NV0Q==
-      Date:
-      - Wed, 17 Dec 2014 12:36:42 GMT
-      Connection:
-      - keep-alive
-      Content-Length:
-      - '4'
-    body:
-      encoding: US-ASCII
-      string: 'true'
-    http_version: 
-  recorded_at: Wed, 17 Dec 2014 12:36:42 GMT
-- request:
-    method: post
-    uri: https://graph.facebook.com/6010889169151
-    body:
-      encoding: US-ASCII
-      string: access_token=CAAEvJ5vzhl8BAICOwypV5nYnYWXhBq1eskHA7rKyrz9fXcAvKRXDWVZAaG7FpQ21qTXeCtGZCR7iu1dtZCqZCZBZCQbefKrMOnZAibDZAiQKiX0s22PgtKuCoQK4LDVimREnqkGdoLMyB4zgT3A6ZAU7pn6wc2mTzZBWVbkr71bZBJKjhyeb4V58TkMsUbN9SQer3ZCRRtWTxqNFTUwHuv51RoVsI7LNw0mCr5gZD%0A&method=delete
-    headers:
-      User-Agent:
-      - Faraday v0.8.9
-      Content-Type:
-      - application/x-www-form-urlencoded
-      Accept:
-      - ! '*/*'
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Facebook-Api-Version:
-      - v1.0
-      Content-Type:
-      - application/json; charset=UTF-8
+      - '1690131'
       Pragma:
       - no-cache
-      Access-Control-Allow-Origin:
-      - ! '*'
-      X-Fb-Rev:
-      - '1534884'
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - wC6lizxjFhgB2g26Kc+/L+wP9IOB91RlXIEukjSNsKvWLfZYrW7fYqrzPCNEiXTYg0X9UceE4GxjHUnIcWQu+w==
+      - byGWgISx681zR7Gby+kFRzeCAwULEdzX5RZcab+1dp7m9GlMyCBws8ZnnZFObcGwl46bBaEBWs3p1SAOxP8esg==
       Date:
-      - Wed, 17 Dec 2014 13:22:14 GMT
+      - Wed, 15 Apr 2015 08:31:57 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '4'
+      - '16'
     body:
       encoding: US-ASCII
-      string: 'true'
+      string: ! '{"success":true}'
     http_version: 
-  recorded_at: Wed, 17 Dec 2014 13:22:14 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:59 GMT
 recorded_with: VCR 2.3.0

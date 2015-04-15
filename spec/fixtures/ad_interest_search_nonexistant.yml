@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/search?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&q=ick%20spickeby&type=adinterest
+    uri: https://graph.facebook.com/v2.2/search?access_token=FAKEACCESSTOKEN&q=ick%20spickeby&type=adinterest
     body:
       encoding: US-ASCII
       string: ''
@@ -18,26 +18,26 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Facebook-Api-Version:
-      - v1.0
-      Etag:
-      - ! '"1050253aec7b29caff644806927dabfa81406eee"'
       Content-Type:
       - application/json; charset=UTF-8
-      Pragma:
-      - no-cache
       Access-Control-Allow-Origin:
       - ! '*'
       X-Fb-Rev:
-      - '1534884'
+      - '1690131'
+      Etag:
+      - ! '"1050253aec7b29caff644806927dabfa81406eee"'
+      Pragma:
+      - no-cache
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
+      Facebook-Api-Version:
+      - v2.2
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - EeFRTf5/YcAT53Pj0vja6Ox7Gf/Utwd/C1994u9m/1KNlnwdO7ZUnAyMWLtNfMJIGaKumgmxYKba1r7tg+99sg==
+      - WNNz7Uoiw1QBioiQSiarW30TUGGOos/AxhNtL6OSKLidnJ84+S16HYI8kR4nnkulDM69Ko8sCxHYR7UIvDreYw==
       Date:
-      - Wed, 17 Dec 2014 13:24:51 GMT
+      - Wed, 15 Apr 2015 08:31:45 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -46,5 +46,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"data":[]}'
     http_version: 
-  recorded_at: Wed, 17 Dec 2014 13:24:52 GMT
+  recorded_at: Wed, 15 Apr 2015 08:31:47 GMT
 recorded_with: VCR 2.3.0

@@ -44,4 +44,18 @@ def test_access_token
   @test_access_token ||= File.read("test_access_token")
 end
 
+def explain_error(&block)
+  raise "missing code block" unless block_given?
+
+  begin
+    block.call
+  rescue Koala::Facebook::APIError => e
+    puts "=== Facebook API Error ===================================="
+    body = JSON.parse e.response_body
+    body['error'].each { |k, v| printf("%-20s %s\n", k+":", v) }
+    puts "==========================================================="
+    raise e
+  end
+end
+
 require File.expand_path("../../lib/zuck", __FILE__)

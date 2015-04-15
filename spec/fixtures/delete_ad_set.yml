@@ -1,16 +1,16 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://graph.facebook.com/v2.2/6024300273866/adcreatives?access_token=FAKEACCESSTOKEN&fields=
+    method: post
+    uri: https://graph.facebook.com/v2.2/6024300272266
     body:
       encoding: US-ASCII
-      string: ''
+      string: access_token=FAKEACCESSTOKEN&method=delete
     headers:
       User-Agent:
       - Faraday v0.8.9
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Content-Type:
+      - application/x-www-form-urlencoded
       Accept:
       - ! '*/*'
   response:
@@ -24,8 +24,6 @@ http_interactions:
       - ! '*'
       X-Fb-Rev:
       - '1690131'
-      Etag:
-      - ! '"4fb30dfde07feecc5db97d66857e2cc2c36a316d"'
       Pragma:
       - no-cache
       Cache-Control:
@@ -35,16 +33,16 @@ http_interactions:
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - fo9Kf24iNKJ+w0xvuBKIc3kuY03Y9Y++7l0Z7ZPThE5VvEwbzvkyGIJnDWxtdf8iqUYYLKmCRJ4GtRQIxgAGuw==
+      - Jdx6FZtPUdnTGeXG9vlik/LKprYxhYqCSOq3ba43Ye3zf9gUZgaodHBBlt/ntr2oMp/CZWf2cN87LEYoSk6G9A==
       Date:
-      - Wed, 15 Apr 2015 08:31:54 GMT
+      - Wed, 15 Apr 2015 08:31:58 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '33'
+      - '16'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"id":"6024299683866"}]}'
+      string: ! '{"success":true}'
     http_version: 
-  recorded_at: Wed, 15 Apr 2015 08:31:56 GMT
+  recorded_at: Wed, 15 Apr 2015 08:32:00 GMT
 recorded_with: VCR 2.3.0
