@@ -137,7 +137,7 @@ Here's a support chart:
   <tr><td style="text-align: right">Ad account</td>       <td>✔</td><td>-</td><td>✔</td><td>✔</td><td>-</td></tr>
   <tr><td style="text-align: right">Ad account group</td> <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
   <tr><td style="text-align: right">Ad campaign</td>      <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
-  <tr><td style="text-align: right">Ad creative</td>      <td>✔</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+  <tr><td style="text-align: right">Ad creative</td>      <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>-</td></tr>
   <tr><td style="text-align: right">Ad group</td>         <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
   <tr><td style="text-align: right">Ad set</td>         <td>✔</td><td>✔</td><td>✔</td><td>✔</td><td>✔</td></tr>
   <tr><td style="text-align: right">Ad user</td>          <td>-</td><td>-</td><td>-</td><td>-</td><td>-</td></tr>

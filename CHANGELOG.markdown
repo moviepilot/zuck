@@ -1,3 +1,12 @@
+2.1.0
+=====
+
+- added creating and saving ad-creatives
+- disabled view_tags in AdGroup (needs App whitelisting to work)
+- fixed invalid attributes due to deprecation in Facebook Ad API version 2.2
+- updated specs and tapes 
+- implemented automatic setup and removal of test data (creative, ad set, campaign)
+
 2.0.0
 =====
 

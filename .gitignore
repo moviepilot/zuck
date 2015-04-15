@@ -7,3 +7,6 @@ Guardfile
 tmp
 gems.tags
 tags
+out
+.idea
+*.iml
