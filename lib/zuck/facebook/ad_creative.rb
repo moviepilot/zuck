@@ -7,7 +7,6 @@ module Zuck
                :body,
                :call_to_action_type,
                :image_crops,
-               :image_file,
                :image_hash,
                :image_url,
                :link_url,
