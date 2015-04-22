@@ -6,7 +6,6 @@ module Zuck
     known_keys :actor_id,
                :body,
                :call_to_action_type,
-               :follow_redirect,
                :image_crops,
                :image_file,
                :image_hash,
