@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/search?access_token=FAKEACCESSTOKEN&q=ick%20spickeby&type=adinterest
+    uri: https://graph.facebook.com/v2.4/search?access_token=DUMMY_TOKEN&q=ick%20spickeby&type=adinterest
     body:
       encoding: US-ASCII
       string: ''
@@ -18,12 +18,14 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
       Access-Control-Allow-Origin:
       - ! '*'
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Fb-Trace-Id:
+      - Ef4UcTkA94L
       X-Fb-Rev:
-      - '1690131'
+      - '1928154'
       Etag:
       - ! '"1050253aec7b29caff644806927dabfa81406eee"'
       Pragma:
@@ -31,13 +33,13 @@ http_interactions:
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Facebook-Api-Version:
-      - v2.2
+      - v2.4
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - WNNz7Uoiw1QBioiQSiarW30TUGGOos/AxhNtL6OSKLidnJ84+S16HYI8kR4nnkulDM69Ko8sCxHYR7UIvDreYw==
+      - SyWvW7PjP9UyfThaKkcjNngIQVmzIKPkhR/wDNSk9nYA+gP4cS3Wh73JFpdUWTJX7fXkGVigwg9KfOPWYk1mWg==
       Date:
-      - Wed, 15 Apr 2015 08:31:45 GMT
+      - Thu, 10 Sep 2015 09:47:15 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -46,5 +48,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"data":[]}'
     http_version: 
-  recorded_at: Wed, 15 Apr 2015 08:31:47 GMT
+  recorded_at: Thu, 10 Sep 2015 09:47:15 GMT
 recorded_with: VCR 2.3.0

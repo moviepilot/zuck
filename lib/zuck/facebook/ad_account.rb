@@ -21,7 +21,7 @@ module Zuck
                :capabilities,
                :created_time,
                :currency,
-               :daily_spend_limit,
+               # :daily_spend_limit,
                :end_advertiser,
                :funding_source,
                :funding_source_details,

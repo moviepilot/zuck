@@ -1,13 +1,13 @@
 require 'spec_helper'
 
 describe Zuck::TargetingSpec do
-  let(:ad_account){ "2ijdsfoij" }
-  let(:graph){ mock('koala') }
+  let(:ad_account) { "2ijdsfoij" }
+  let(:graph) { mock('koala') }
 
   describe "validating interests" do
 
-    let(:valid_interest_result){  [{"name" => "foo", "valid" => true }] }
-    let(:invalid_interest_result){  [] }
+    let(:valid_interest_result) { [{"name" => "foo", "valid" => true}] }
+    let(:invalid_interest_result) { [] }
 
 
     it "acknowledges valid interests" do
@@ -28,43 +28,43 @@ describe Zuck::TargetingSpec do
 
   describe "options given in spec" do
     it "accepts male as gender" do
-      expect{
+      expect {
         Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: [{id: '123', name: 'foo'}], gender: 'male')
       }.to_not raise_error
     end
 
     it "accepts male as gender for young people" do
-      expect{
+      expect {
         Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: [{id: '123', name: 'foo'}], gender: 'male', age_class: 'young')
       }.to_not raise_error
     end
 
     it "accepts male as gender for old people" do
-      expect{
+      expect {
         Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: [{id: '123', name: 'foo'}], gender: 'male', age_class: 'old')
       }.to_not raise_error
     end
 
     it "accepts without gender" do
-      expect{
+      expect {
         Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: [{id: '123', name: 'foo'}])
       }.to_not raise_error
     end
 
     it "accepts single keyword" do
-      expect{
+      expect {
         Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interest: 'foo')
       }.to_not raise_error
     end
 
     it "does not accept invalid genders" do
-      expect{
+      expect {
         Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, interests: [{id: '123', name: 'foo'}], gender: 'gemale')
       }.to raise_error("Gender can only be male or female")
     end
 
     it "does not accept invalid countries" do
-      expect{
+      expect {
         z = Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['XX']}, interests: [{id: '123', name: 'foo'}], gender: 'female')
         z.send(:validate_spec)
       }.to raise_error('Invalid countrie(s): ["XX"]')
@@ -72,7 +72,7 @@ describe Zuck::TargetingSpec do
 
 
     it "does not accept targetings with neither :interests nor :connections" do
-      expect{
+      expect {
         ts = Zuck::TargetingSpec.new(graph, ad_account, geo_locations: {countries: ['US']}, gender: 'female')
         ts.fetch_reach
       }.to raise_error("Need to set :interests or :connections")
@@ -80,14 +80,14 @@ describe Zuck::TargetingSpec do
   end
 
   describe "fetching reach" do
-    let(:graph){ Koala::Facebook::API.new('CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh') }
-    let(:ad_account){ 'act_1384977038406122' }
+    let(:graph) { Koala::Facebook::API.new(test_access_token) }
+    let(:ad_account) { test_account_id }
 
     it "bugs out when trying to use an invalid interest" do
       VCR.use_cassette('reach_for_invalid_interest') do
-        spec = {geo_locations: {countries: ['us']}, interests: ['Eminem', 'invalidsssssssssssssss'] }
+        spec = {geo_locations: {countries: ['us']}, interests: ['Eminem', 'invalidsssssssssssssss']}
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
-        expect{
+        expect {
           ts.validate_interests
         }.to raise_error(Zuck::InvalidKeywordError, 'invalidsssssssssssssss')
       end
@@ -95,19 +95,23 @@ describe Zuck::TargetingSpec do
 
     it "works without gender or age" do
       VCR.use_cassette('reach_for_valid_keywords') do
-        spec = {geo_locations: {countries: ['us']}, interests: [{id: '6003135347608', name: 'Eminem'}, {id: '6003504886186', name: 'Sting (musician)'}] }
+        spec = {geo_locations: {countries: ['us']}, interests: [{id: '6003135347608', name: 'Eminem'}, {id: '6003504886186', name: 'Sting (musician)'}]}
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
-        reach = ts.fetch_reach
-        reach[:users].should == 37_00_0000
+        explain_error {
+          reach = ts.fetch_reach
+          reach[:users].should == 31_00_0000
+        }
       end
     end
 
     it "works with gender and age" do
       VCR.use_cassette('reach_for_valid_keywords_male_young') do
-        spec = {geo_locations: {countries: ['us']}, interests: [{id: '6003504886186', name: 'Sting (musician)'}], gender: :female, age_class: :young }
+        spec = {geo_locations: {countries: ['us']}, interests: [{id: '6003504886186', name: 'Sting (musician)'}], gender: :female, age_class: :young}
         ts = Zuck::TargetingSpec.new(graph, ad_account, spec)
-        reach = ts.fetch_reach
-        reach[:users].should == 16_000
+        explain_error {
+          reach = ts.fetch_reach
+          reach[:users].should == 63_000
+        }
       end
     end
 
@@ -122,9 +126,9 @@ describe Zuck::TargetingSpec do
   end
 
   describe "Batch processing" do
-    let(:graph){ Koala::Facebook::API.new(test_access_token) }
-    let(:ad_account){ 'act_10150585630710217' }
-    let(:spec_mock){ mock(fetch_reach: {some: :data}) }
+    let(:graph) { Koala::Facebook::API.new(test_access_token) }
+    let(:ad_account) { test_account_id }
+    let(:spec_mock) { mock(fetch_reach: {some: :data}) }
 
     it "fetches each reach" do
       requests = [{some: :thing}] * 51

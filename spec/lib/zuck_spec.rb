@@ -9,7 +9,7 @@ describe Zuck::FbObject do
 
 
   let(:graph)      { Zuck.graph                                     }
-  let(:account_id) { "act_367106653"                                }
+  let(:account_id) { test_account_id                                }
   let(:account)    { Zuck::AdAccount.new(graph,  {id: account_id})  }
 
   describe "talking to facebook" do
@@ -52,8 +52,9 @@ describe Zuck::FbObject do
       it "an ad set" do
         VCR.use_cassette('create_ad_set') do
           o = {
-              bid_type: 'CPC',
-              bid_info: "{'CLICKS': 1}",
+              bid_amount: 1,
+              billing_event: 'IMPRESSIONS',
+              optimization_goal: 'REACH',
               name: 'bloody ad set',
               campaign_status: 'PAUSED',
               daily_budget: 100,
@@ -88,13 +89,14 @@ describe Zuck::FbObject do
           o = {
               name: "Rap like me",
               # targeting: '{"geo_locations": {"countries":["US"]}}',
-              objective: 'WEBSITE_CLICKS',
+              # objective: 'WEBSITE_CLICKS',
+              bid_amount: 5,
               creative: '{"creative_id": '+creative.id+'}'
           }
           explain_error {
             group = set.create_ad_group(o)
             group.name.should == "Rap like me"
-            group['bid_type'].should == 'CPC'
+            group['bid_type'].should == 'ABSOLUTE_OCPM'
           }
         end
       end
@@ -193,7 +195,9 @@ describe Zuck::FbObject do
 
       it "a creative" do
         VCR.use_cassette('delete_creative') do
-          creative.destroy.should be_true
+          explain_error {
+            creative.destroy.should be_true
+          }
         end
       end
 
@@ -203,6 +207,7 @@ describe Zuck::FbObject do
           act_campaign.destroy.should be_true
         end
       end
+
     end
   end
 end
