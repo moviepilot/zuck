@@ -1,3 +1,10 @@
+2.2.0
+=====
+
+- fixed support for API version 2.4 (2.2 is no longer officially supported)
+- removed deprecated api attributes and added new ones
+- fixed tests to work with one single account and access token
+
 2.1.0
 =====
 
