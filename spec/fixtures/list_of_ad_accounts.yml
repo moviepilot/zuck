@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/me/adaccounts?access_token=FAKEACCESSTOKEN&fields=
+    uri: https://graph.facebook.com/v2.4/me/adaccounts?access_token=DUMMY_TOKEN&fields=
     body:
       encoding: US-ASCII
       string: ''
@@ -18,33 +18,35 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
       Access-Control-Allow-Origin:
       - ! '*'
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Fb-Trace-Id:
+      - Co+ZGVxk0M7
       X-Fb-Rev:
-      - '1690131'
+      - '1928154'
       Etag:
-      - ! '"bd8f2b4cf7220fac541903b485b41f60702c1adc"'
+      - ! '"e30da8e35686b2f69655b1c416256e9e8041c655"'
       Pragma:
       - no-cache
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Facebook-Api-Version:
-      - v2.2
+      - v2.4
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - dXA73pglOr+Bl392CP8HTFDGWpG0pUv6z7sVDJ4VjENqUMgIfYTnn9TY9KDtAvzQT3MO4hZcLizQggbD6vTqLw==
+      - j5Iz8qctkVFi5mQ0BuZQvMF8gBQH5lbx9Y6zkxo9el58VbLw9MjfTJHBGLrG4XlIinbaMtgwTMGcc6oSbio1Ow==
       Date:
-      - Wed, 15 Apr 2015 08:31:53 GMT
+      - Thu, 10 Sep 2015 09:47:26 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '144'
+      - '148'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"account_id":"367106653","id":"act_367106653"}],"paging":{"cursors":{"before":"NjAwMzM3NDgzNjg2Ng==","after":"NjAwMzM3NDgzNjg2Ng=="}}}'
+      string: ! '{"data":[{"account_id":"367106653","id":"act_367106653"}],"paging":{"cursors":{"before":"NjAwMzM3NDgzNjg2NgZDZD","after":"NjAwMzM3NDgzNjg2NgZDZD"}}}'
     http_version: 
-  recorded_at: Wed, 15 Apr 2015 08:31:55 GMT
+  recorded_at: Thu, 10 Sep 2015 09:47:26 GMT
 recorded_with: VCR 2.3.0
