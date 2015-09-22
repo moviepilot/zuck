@@ -10,12 +10,8 @@ module Zuck
                :adgroup_review_feedback,
                :adgroup_status,
                :bid_amount,
-               # legacy, still available read-only
-               # :bid_info,
                :campaign_id,
                :campaign_group_id,
-               # legacy, still available read-only
-               # :conversion_specs,
                :created_time,
                :creative,
                :failed_delivery_checks,
