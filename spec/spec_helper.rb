@@ -28,6 +28,8 @@ RSpec.configure do |config|
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
 
+  # enable if you have issues with the api and need to see queries directly
+  # Koala::Utils.level = Logger::DEBUG
 end
 
 module TestResponseExtensions
@@ -41,7 +43,11 @@ module TestResponseExtensions
 end
 
 def test_access_token
-  @test_access_token ||= File.read("test_access_token")
+  @test_access_token ||= File.read("test_access_token").split("|")[1]
+end
+
+def test_account_id
+  @test_account_id ||= File.read("test_access_token").split("|")[0]
 end
 
 def explain_error(&block)

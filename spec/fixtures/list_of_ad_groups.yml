@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/6024300271066/adgroups?access_token=FAKEACCESSTOKEN&fields=
+    uri: https://graph.facebook.com/v2.4/6029725594066/adgroups?access_token=DUMMY_TOKEN&fields=
     body:
       encoding: US-ASCII
       string: ''
@@ -18,33 +18,35 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
       Access-Control-Allow-Origin:
       - ! '*'
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Fb-Trace-Id:
+      - EruXz+sntUe
       X-Fb-Rev:
-      - '1690131'
+      - '1928154'
       Etag:
-      - ! '"993fdf09a2e1595d6c573fe8d59352a2a6ba7a08"'
+      - ! '"4c90be3d95e94dc7eb918a75f7dd9fc412cedc54"'
       Pragma:
       - no-cache
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Facebook-Api-Version:
-      - v2.2
+      - v2.4
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - t0z8hIgbn2xtkuyMmTQfd65Ij5mCrFwhVZq4OcK3iogQEV4/5v42jDROmAav8Gj7w0Mvwl3aAG32zQac//JVSw==
+      - AHEu9HDXujtXs4Xs3jkhUyvOVwSjnPUCyfHuBSbBPECz/svN0JDZlygbl3KHAweAV5oqMr+hK0we6/79cXPKMQ==
       Date:
-      - Wed, 15 Apr 2015 08:31:53 GMT
+      - Thu, 10 Sep 2015 09:47:27 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '119'
+      - '123'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"id":"6024300273866"}],"paging":{"cursors":{"before":"NjAyNDMwMDI3Mzg2Ng==","after":"NjAyNDMwMDI3Mzg2Ng=="}}}'
+      string: ! '{"data":[{"id":"6029725596866"}],"paging":{"cursors":{"before":"NjAyOTcyNTU5Njg2NgZDZD","after":"NjAyOTcyNTU5Njg2NgZDZD"}}}'
     http_version: 
-  recorded_at: Wed, 15 Apr 2015 08:31:55 GMT
+  recorded_at: Thu, 10 Sep 2015 09:47:27 GMT
 recorded_with: VCR 2.3.0
