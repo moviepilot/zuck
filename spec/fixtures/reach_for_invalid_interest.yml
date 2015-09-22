@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/search?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&q=Eminem&type=adinterest
+    uri: https://graph.facebook.com/v2.4/search?access_token=DUMMY_TOKEN&q=Eminem&type=adinterest
     body:
       encoding: US-ASCII
       string: ''
@@ -18,42 +18,46 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
       Access-Control-Allow-Origin:
       - ! '*'
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Fb-Trace-Id:
+      - A54DuNc9z1W
       X-Fb-Rev:
-      - '1690131'
+      - '1928154'
       Etag:
-      - ! '"8a79bf5673dcfc21554b3bdb9fca30b52f467a2a"'
+      - ! '"99dacd26b80551044d5f6dfe94706a9ba419bf3d"'
       Pragma:
       - no-cache
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Facebook-Api-Version:
-      - v2.2
+      - v2.4
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - lCyUeevTwFibTPZqstUHyZXhmamylGB/PQ67RhWOVt4rUIbiwWsqeOuVfbCl9dOfAuBfX9T2B4Kr4sHMuTyKQQ==
+      - 9wqN/wuspAAdIN1bzeQxWqa3E7+S0+DJoFYZpTU7S9GJMgs4ym0z7tKlykJcBwUtvNaESLL8WvpneiuZbe81aA==
       Date:
-      - Wed, 15 Apr 2015 08:31:45 GMT
+      - Thu, 10 Sep 2015 09:47:15 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '798'
+      - '988'
     body:
       encoding: US-ASCII
-      string: ! '{"data":[{"id":"6003135347608","name":"Eminem","audience_size":119611820,"path":[],"description":null},{"id":"6003250214311","name":"The
-        Eminem Show","audience_size":77447340,"path":[],"description":null},{"id":"6003489780564","name":"Recovery
-        (Eminem album)","audience_size":77945310,"path":[],"description":null},{"id":"6003902302066","name":"Feud","audience_size":3491280,"path":[],"description":null},{"id":"6003170652434","name":"eminem","audience_size":78202590,"path":[],"description":null},{"id":"6003128077124","name":"Love
-        the Way You Lie","audience_size":1633850,"path":[],"description":null},{"id":"6004703849336","name":"Hip
-        hop feud","audience_size":1531490,"path":[],"description":null},{"id":"6004151469695","name":"em\u0131nem","audience_size":51952,"path":[],"description":null}]}'
+      string: ! '{"data":[{"id":"6003135347608","name":"Eminem","audience_size":108684220,"path":[],"description":null,"topic":"People"},{"id":"6003170652434","name":"eminem","audience_size":75072420,"path":[],"description":null,"topic":"News
+        and entertainment"},{"id":"6003489780564","name":"Recovery (Eminem album)","audience_size":74537730,"path":[],"description":null,"topic":"News
+        and entertainment"},{"id":"6003250214311","name":"The Eminem Show","audience_size":74333480,"path":[],"description":null,"topic":"News
+        and entertainment"},{"id":"6004596403706","name":"eminem fans","audience_size":1183330,"path":[],"description":null,"topic":"News
+        and entertainment"},{"id":"6003291289702","name":"eminem lovers","audience_size":1030710,"path":[],"description":null},{"id":"6017042219356","name":"eminem
+        forever blog","audience_size":753610,"path":[],"description":null,"topic":"News
+        and entertainment"},{"id":"6003455354537","name":"eminem world","audience_size":644310,"path":[],"description":null}]}'
     http_version: 
-  recorded_at: Wed, 15 Apr 2015 08:31:47 GMT
+  recorded_at: Thu, 10 Sep 2015 09:47:15 GMT
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/search?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&q=invalidsssssssssssssss&type=adinterest
+    uri: https://graph.facebook.com/v2.4/search?access_token=DUMMY_TOKEN&q=invalidsssssssssssssss&type=adinterest
     body:
       encoding: US-ASCII
       string: ''
@@ -69,12 +73,14 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
       Access-Control-Allow-Origin:
       - ! '*'
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Fb-Trace-Id:
+      - AgOq5x9dz5r
       X-Fb-Rev:
-      - '1690131'
+      - '1928154'
       Etag:
       - ! '"1050253aec7b29caff644806927dabfa81406eee"'
       Pragma:
@@ -82,13 +88,13 @@ http_interactions:
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Facebook-Api-Version:
-      - v2.2
+      - v2.4
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - zHtPaH8mPkg8j02BJazr0mWhLktYcUKF4cJc1hIUWLVl2HdDxCCj7zC4vRdqInEBFhBMvDoDbI1S5936dBODbA==
+      - jpy78YE5bNrF9soyExw+ORJ2zYVnomHCI9BLg7Qs+hfIZiOBaGVCqOkK7EfPN4qbHcoGSYfANVCAg1QikQPEVg==
       Date:
-      - Wed, 15 Apr 2015 08:31:46 GMT
+      - Thu, 10 Sep 2015 09:47:15 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -97,5 +103,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"data":[]}'
     http_version: 
-  recorded_at: Wed, 15 Apr 2015 08:31:48 GMT
+  recorded_at: Thu, 10 Sep 2015 09:47:15 GMT
 recorded_with: VCR 2.3.0

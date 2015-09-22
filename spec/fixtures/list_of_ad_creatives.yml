@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/6024300273866/adcreatives?access_token=FAKEACCESSTOKEN&fields=
+    uri: https://graph.facebook.com/v2.4/6029725596866/adcreatives?access_token=DUMMY_TOKEN&fields=
     body:
       encoding: US-ASCII
       string: ''
@@ -18,12 +18,14 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
       Access-Control-Allow-Origin:
       - ! '*'
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Fb-Trace-Id:
+      - Es3LLC9AijT
       X-Fb-Rev:
-      - '1690131'
+      - '1928154'
       Etag:
       - ! '"4fb30dfde07feecc5db97d66857e2cc2c36a316d"'
       Pragma:
@@ -31,13 +33,13 @@ http_interactions:
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Facebook-Api-Version:
-      - v2.2
+      - v2.4
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - fo9Kf24iNKJ+w0xvuBKIc3kuY03Y9Y++7l0Z7ZPThE5VvEwbzvkyGIJnDWxtdf8iqUYYLKmCRJ4GtRQIxgAGuw==
+      - YUBJxFqhPy84y1+AONTrN2XgQiDZwgX5ImI6nJaPf2tyvUHGRgiY82ZsE4YLpsP6YSbePXWCIYjHn+T93LSANA==
       Date:
-      - Wed, 15 Apr 2015 08:31:54 GMT
+      - Thu, 10 Sep 2015 09:47:27 GMT
       Connection:
       - keep-alive
       Content-Length:
@@ -46,5 +48,5 @@ http_interactions:
       encoding: US-ASCII
       string: ! '{"data":[{"id":"6024299683866"}]}'
     http_version: 
-  recorded_at: Wed, 15 Apr 2015 08:31:56 GMT
+  recorded_at: Thu, 10 Sep 2015 09:47:27 GMT
 recorded_with: VCR 2.3.0

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.2/act_1384977038406122/reachestimate?access_token=CAAEvJ5vzhl8BAPGZCZCPL4FxryEHXGxPCuCGeqe3PEWIjhIvJ00HB8PPpokFmUkemvmEUHirqdNMc7zIDLSTVnX6jTQjAgSlzcYrAYJRQ32fr6RM5ZAnKPdgFEwN5tgvswatXZAI4vu7ZBAQexRl9MU0CpwW7JDDBZAGo5XDrCKrBxkUUWJUvh&targeting_spec=%7B%22geo_locations%22:%7B%22countries%22:%5B%22US%22%5D%7D,%22interests%22:%5B%7B%22id%22:%226003504886186%22,%22name%22:%22Sting%20(musician)%22%7D%5D,%22age_min%22:13,%22age_max%22:24,%22genders%22:%5B2%5D,%22countries%22:%5B%5D,%22connections%22:%5B%5D%7D
+    uri: https://graph.facebook.com/v2.4/act_367106653/reachestimate?access_token=DUMMY_TOKEN&targeting_spec=%7B%22geo_locations%22:%7B%22countries%22:%5B%22US%22%5D%7D,%22interests%22:%5B%7B%22id%22:%226003504886186%22,%22name%22:%22Sting%20(musician)%22%7D%5D,%22age_min%22:13,%22age_max%22:24,%22genders%22:%5B2%5D,%22countries%22:%5B%5D,%22connections%22:%5B%5D%7D
     body:
       encoding: US-ASCII
       string: ''
@@ -18,33 +18,35 @@ http_interactions:
       code: 200
       message: OK
     headers:
-      Content-Type:
-      - application/json; charset=UTF-8
       Access-Control-Allow-Origin:
       - ! '*'
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Fb-Trace-Id:
+      - H0n10j/CL4g
       X-Fb-Rev:
-      - '1690131'
+      - '1928154'
       Etag:
-      - ! '"a73131e9a917d324772c67deb8439a6b7920b5fc"'
+      - ! '"c75d411662859aafcc2efa45b9fbb378fde706e5"'
       Pragma:
       - no-cache
       Cache-Control:
       - private, no-cache, no-store, must-revalidate
       Facebook-Api-Version:
-      - v2.2
+      - v2.4
       Expires:
       - Sat, 01 Jan 2000 00:00:00 GMT
       X-Fb-Debug:
-      - ne/YLUTYDwlwIF07UxvtizPBcIiEPPDgGDn6RUAuvc6DP3kftUX94ZUlI5/kH5XoASCbZ16arkMLEJv0k40Psg==
+      - 29QGQcnnY8OEHTvFA1ftp1m8GUwqOeBoO0kDmBfLRMJ2WDtv+pptxZi84ZzxQFK84jwF50IOnfXImrgGADwx0w==
       Date:
-      - Wed, 15 Apr 2015 08:31:47 GMT
+      - Thu, 10 Sep 2015 09:47:18 GMT
       Connection:
       - keep-alive
       Content-Length:
-      - '444'
+      - '448'
     body:
       encoding: US-ASCII
-      string: ! '{"users":16000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":16,"cpa_median":27,"cpa_max":36,"cpc_min":5,"cpc_median":9,"cpc_max":12,"cpm_min":26,"cpm_median":148,"cpm_max":309}],"estimate_ready":true,"data":{"users":16000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":16,"cpa_median":27,"cpa_max":36,"cpc_min":5,"cpc_median":9,"cpc_max":12,"cpm_min":26,"cpm_median":148,"cpm_max":309}],"estimate_ready":true}}'
+      string: ! '{"users":63000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":36,"cpa_median":69,"cpa_max":97,"cpc_min":12,"cpc_median":22,"cpc_max":30,"cpm_min":75,"cpm_median":188,"cpm_max":305}],"estimate_ready":true,"data":{"users":63000,"bid_estimations":[{"unsupported":false,"location":3,"cpa_min":36,"cpa_median":69,"cpa_max":97,"cpc_min":12,"cpc_median":22,"cpc_max":30,"cpm_min":75,"cpm_median":188,"cpm_max":305}],"estimate_ready":true}}'
     http_version: 
-  recorded_at: Wed, 15 Apr 2015 08:31:49 GMT
+  recorded_at: Thu, 10 Sep 2015 09:47:18 GMT
 recorded_with: VCR 2.3.0
