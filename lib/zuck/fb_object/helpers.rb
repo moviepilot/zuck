@@ -5,6 +5,7 @@ module Zuck
       private
 
       def get(graph, path)
+        puts "get #{path}"
         begin
           graph.get_object(path, fields: known_keys.compact.join(','))
         rescue => e
@@ -14,6 +15,7 @@ module Zuck
       end
 
       def create_connection(graph, parent, connection, args = {}, opts = {})
+        puts "create_connection #{path}"
         begin
           graph.put_connections(parent, connection, args, opts)
         rescue => e
@@ -24,6 +26,7 @@ module Zuck
       end
 
       def post(graph, path, data, opts = {})
+        puts "post #{path}"
         begin
           graph.graph_call(path.to_s, data, "post", opts)
         rescue => e
@@ -34,6 +37,7 @@ module Zuck
       end
 
       def delete(graph, path)
+        puts "delete #{path}"
         begin
           graph.delete_object(path)
         rescue => e

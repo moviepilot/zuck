@@ -50,7 +50,7 @@ module Zuck
       #
       # It also defines a getter method. Look
       #
-      #     class AdCampaign < FbObject
+      #     class AdSet < FbObject
       #       ...
       #       parent_object :ad_account
       #     end
@@ -115,4 +115,3 @@ module Zuck
    end
  end
 end
-

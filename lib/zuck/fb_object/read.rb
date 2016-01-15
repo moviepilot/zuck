@@ -15,10 +15,10 @@ module Zuck
       set_data(data)
 
       # If the parent is an {AdAccount} we only want to set it as this
-      # object's direct parent when this object is an {AdCampaign}.
-      if !parent.is_a?(AdAccount) or parent.is_a?(AdAccount) and self.is_a?(AdCampaign)
-        set_parent(parent)
-      end
+      # object's direct parent when this object is an {AdSet}.
+      # if !parent.is_a?(AdAccount) or (parent.is_a?(AdAccount) and self.is_a?(AdSet))
+      #   set_parent(parent)
+      # end
     end
 
     # Refetches the data from façeboko
@@ -57,13 +57,13 @@ module Zuck
       # it's own `list_path` property that you have defined (see
       # list_path)
       #
-      # If, however, you want to fetch all ad creatives, regardless of
-      # which ad group is their parent, you can omit the `parent`
-      # parameter. The creatives returned by `Zuck::AdCreative.all` will
-      # return `nil` when you call `#ad_group` on them, though, because facebook
-      # will not return this information. So if you can, try to fetch 
+      # If, however, you want to fetch all ads, regardless of
+      # which ad set is their parent, you can omit the `parent`
+      # parameter. The ads returned by `Zuck::Ad.all` will
+      # return `nil` when you call `#ad_set` on them, though, because facebook
+      # will not return this information. So if you can, try to fetch
       # objects through their direct parent, e.g.
-      # `my_ad_group.ad_creatives`.
+      # `my_ad_group.ad_sets`.
       #
       # @param graph [Koala::Facebook::API] A graph with access_token
       # @param parent [<FbObject] A parent object to scope
@@ -95,8 +95,8 @@ module Zuck
       end
 
       # Some objects can be fetched "per account" or "per parent
-      # object", e.g. you can fetch all ad creatives for your account
-      # or only for a special ad group.
+      # object", e.g. you can fetch all ads for your account
+      # or only for an ad set.
       #
       # @return [nil, Zuck::FbObject] Returns the current ad account
       #   unless you're calling `Zuck::AdAccount.all`. Then we return
