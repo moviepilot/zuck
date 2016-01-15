@@ -10,6 +10,7 @@
 # account.campaigns.first.class
 # account.ad_sets.first.class
 # account.ads.first.class
+# account.ad_creatives.first.class
 
 module Zuck
   class AdAccount < RawFbObject
@@ -30,7 +31,7 @@ module Zuck
                :business_street,
                :business_street2,
                :business_zip,
-               :capabilities,
+              #  :capabilities,
                :created_time,
                :currency,
                :disable_reason,
@@ -59,7 +60,7 @@ module Zuck
                :timezone_id,
                :timezone_name,
                :timezone_offset_hours_utc,
-               :rf_spec,
+              #  :rf_spec,
                :tos_accepted,
                :user_role,
                :vertical_name,
@@ -73,7 +74,7 @@ module Zuck
 
     list_path 'me/adaccounts'
 
-    connections :campaigns, :ad_sets, :ads
+    connections :campaigns, :ad_sets, :ads, :ad_creatives
 
     def self.all(graph = Zuck.graph)
       super(graph)

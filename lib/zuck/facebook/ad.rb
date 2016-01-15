@@ -6,6 +6,7 @@
 # ad = Zuck::Ad.find('6028425575295')
 # ad.class
 # ad.ad_set.class
+# ad.ad_creatives.first.class
 
 module Zuck
   class Ad < RawFbObject
@@ -36,6 +37,8 @@ module Zuck
     list_path :ads
 
     parent_object :ad_set, as: :adset_id
+
+    connections :ad_creatives
 
     def self.create(graph, data, ad_set)
       path = ad_set.ad_account.path

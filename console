@@ -30,7 +30,7 @@ def graph
 end
 
 def p(object)
-  object.known_keys.collect do |key|
+  object.known_keys.select { |key| object.send(key).present? }.collect do |key|
     "#{key}: #{object.send(key)}"
   end
 end

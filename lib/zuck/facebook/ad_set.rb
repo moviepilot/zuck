@@ -9,6 +9,7 @@
 # set.class
 # set.campaign.class
 # set.ads.first.class
+# set.ad_creatives.first.class
 
 module Zuck
   class AdSet < RawFbObject
@@ -54,7 +55,7 @@ module Zuck
 
     parent_object :campaign, as: :campaign_id
 
-    connections :ads
+    connections :ads, :ad_creatives
 
   end
 end

@@ -1,6 +1,7 @@
 module Zuck
  module FbObject
    module Write
+
     def self.included(base)
       base.extend(ClassMethods)
     end
@@ -34,7 +35,6 @@ module Zuck
       self.class.destroy(graph, path)
     end
 
-
     module ClassMethods
 
       def raise_if_read_only
@@ -62,16 +62,15 @@ module Zuck
           data = d.values.first.values.first
 
         # Redownload was not supported, in this case facebook returns
-        # just {"id": "12345"}
+        # just {"id": "12345"}.
         elsif result['id']
           data = result
-
         # Don't know what to do. No id and no data. I need an adult.
         else
           raise "Invalid response received, found neither a data nor id key in #{result}"
         end
 
-        # Return a new instance
+        # Return a new instance.
         new(graph, data, parent)
       end
 

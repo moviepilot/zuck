@@ -25,8 +25,10 @@ Gem::Specification.new do |s|
     "VERSION",
     "console",
     "lib/zuck.rb",
+    "lib/zuck/facebook/ad.rb",
     "lib/zuck/facebook/ad_account.rb",
     "lib/zuck/facebook/ad_set.rb",
+    "lib/zuck/facebook/campaign.rb",
     "lib/zuck/fb_object.rb",
     "lib/zuck/fb_object/dsl.rb",
     "lib/zuck/fb_object/error.rb",
@@ -37,7 +39,6 @@ Gem::Specification.new do |s|
     "lib/zuck/fb_object/write.rb",
     "lib/zuck/helpers.rb",
     "lib/zuck/koala/koala_methods.rb",
-    "test_access_token",
     "zuck.gemspec"
   ]
   s.homepage = "http://github.com/jayniz/zuck"
