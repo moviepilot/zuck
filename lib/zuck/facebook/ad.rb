@@ -2,9 +2,10 @@
 # associate it with a corresponding ad set.
 #
 # Usage:
-# Zuck::Ad.find('6028425575295').ad_account
-# Zuck::Ad.find('6028425575295').campaign
-# Zuck::Ad.find('6028425575295').ad_set
+# Zuck::Ad.all
+# ad = Zuck::Ad.find('6028425575295')
+# ad.class
+# ad.ad_set.class
 
 module Zuck
   class Ad < RawFbObject
@@ -34,8 +35,6 @@ module Zuck
 
     list_path :ads
 
-    parent_object :ad_account, as: :account_id
-    parent_object :campaign, as: :campaign_id
     parent_object :ad_set, as: :adset_id
 
     def self.create(graph, data, ad_set)

@@ -2,6 +2,13 @@
 # schedule, bid type, bid info, and targeting data. Ad sets enable you to group
 # ads according to your criteria, and you can retrieve the ad-related statistics
 # that apply to a set.
+#
+# Usage:
+# Zuck::AdSet.all
+# set = Zuck::AdSet.find('6031733848281')
+# set.class
+# set.campaign.class
+# set.ads.first.class
 
 module Zuck
   class AdSet < RawFbObject
@@ -45,7 +52,6 @@ module Zuck
 
     list_path :adsets
 
-    parent_object :ad_account, as: :account_id
     parent_object :campaign, as: :campaign_id
 
     connections :ads

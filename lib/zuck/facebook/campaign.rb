@@ -4,10 +4,11 @@
 #
 # Usage:
 # Zuck::Campaign.all
-# Zuck::Campaign.find('6036226676095')
-# Zuck::Campaign.find('6036226676095').ad_account
-# Zuck::Campaign.find('6036226676095').ad_sets
-# Zuck::Campaign.find('6036226676095').ads
+# campaign = Zuck::Campaign.find('6036226676095')
+# campaign.class
+# campaign.ad_account.class
+# campaign.ad_sets.first.class
+# campaign.ads.first.class
 
 module Zuck
   class Campaign < RawFbObject
