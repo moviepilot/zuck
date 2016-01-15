@@ -5,10 +5,10 @@
 #
 # Usage:
 # Zuck::AdAccount.all
-# Zuck::AdAccount.find('39788579')
-# Zuck::AdAccount.find('39788579').campaigns
-# Zuck::AdAccount.find('39788579').ad_sets
-# Zuck::AdAccount.find('39788579').ads
+# account = Zuck::AdAccount.find('39788579')
+# account.campaigns
+# account.ad_sets
+# account.ads
 
 module Zuck
   class AdAccount < RawFbObject
