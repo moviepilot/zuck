@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: https://graph.facebook.com/v2.4/act_367106653/adcampaign_groups
+    uri: https://graph.facebook.com/v2.4/act_367106653/campaigns
     body:
       encoding: US-ASCII
       string: daily_budget=1000&name=bloody+campaign+%28via+account%29&redownload=1&access_token=DUMMY_TOKEN
@@ -49,7 +49,7 @@ http_interactions:
   recorded_at: Thu, 10 Sep 2015 09:47:19 GMT
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.4/6029725593266?access_token=DUMMY_TOKEN&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
+    uri: https://graph.facebook.com/v2.4/6029725593266?access_token=DUMMY_TOKEN&fields=id,account_id,objective,name,ads,status,buying_type
     body:
       encoding: US-ASCII
       string: ''
@@ -94,15 +94,15 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"id":"6029725593266","account_id":"367106653","objective":"NONE","name":"bloody
-        campaign (via account)","campaign_group_status":"ACTIVE","buying_type":"AUCTION"}'
+        campaign (via account)","status":"ACTIVE","buying_type":"AUCTION"}'
     http_version: 
   recorded_at: Thu, 10 Sep 2015 09:47:19 GMT
 - request:
     method: post
-    uri: https://graph.facebook.com/v2.4/act_367106653/adcampaign_groups
+    uri: https://graph.facebook.com/v2.4/act_367106653/campaigns
     body:
       encoding: US-ASCII
-      string: objective=NONE&name=bloody+campaign&campaign_group_status=PAUSED&redownload=1&access_token=DUMMY_TOKEN
+      string: objective=NONE&name=bloody+campaign&status=PAUSED&redownload=1&access_token=DUMMY_TOKEN
     headers:
       User-Agent:
       - Faraday v0.8.9
@@ -146,7 +146,7 @@ http_interactions:
   recorded_at: Thu, 10 Sep 2015 09:47:20 GMT
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.4/6029725594066?access_token=DUMMY_TOKEN&fields=id,account_id,objective,name,adgroups,campaign_group_status,buying_type
+    uri: https://graph.facebook.com/v2.4/6029725594066?access_token=DUMMY_TOKEN&fields=id,account_id,objective,name,ads,status,buying_type
     body:
       encoding: US-ASCII
       string: ''
@@ -191,7 +191,7 @@ http_interactions:
     body:
       encoding: US-ASCII
       string: ! '{"id":"6029725594066","account_id":"367106653","objective":"NONE","name":"bloody
-        campaign","campaign_group_status":"PAUSED","buying_type":"AUCTION"}'
+        campaign","status":"PAUSED","buying_type":"AUCTION"}'
     http_version: 
   recorded_at: Thu, 10 Sep 2015 09:47:20 GMT
 recorded_with: VCR 2.3.0
