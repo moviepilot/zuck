@@ -63,14 +63,14 @@ module Zuck
               #  :rf_spec,
                :tos_accepted,
                :user_role,
-               :vertical_name,
+               #:vertical_name,
                :amount_spent,
                :spend_cap,
                :balance,
                :business,
                :owner_business,
-               :last_used_time,
-               :asset_score
+               :last_used_time
+               #:asset_score
 
     list_path 'me/adaccounts'
 
