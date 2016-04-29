@@ -66,7 +66,7 @@ module Zuck
     # @USAGE:
     # Zuck::AdAccount.find('1051938118182807').create_ad_image('https://d38eepresuu519.cloudfront.net/fd1d1c521595e95391e47a18efd96c3a/original.jpg')
     def create_ad_image(url)
-      create_ad_images([url])
+      create_ad_images([url]).first
     end
 
     # @USAGE:
@@ -76,18 +76,16 @@ module Zuck
         pathname = Pathname.new(url)
         name = "#{pathname.dirname.basename}.jpg"
         data = HTTParty.get(url, timeout: 120).body
-        f = File.open("/tmp/#{name}", 'w')
+        f = File.open("/tmp/#{name}", 'w') # This assumes a *nix-based system.
         f.binmode
         f.write(data)
         f.close
-        [name, f]
+        [name, File.open(f.path)]
       end.to_h
 
-      query = files.map { |name, file| [name, File.open(file.path)] }.to_h
-      puts query.inspect
-      response = rest_upload("#{id}/adimages", query: query)
+      response = rest_upload("#{id}/adimages", query: files)
 
-      files.values.each do |file|
+      files.values.each do |file| # Do we really need to do this?
         File.delete(file.path)
       end
 
