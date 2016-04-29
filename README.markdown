@@ -43,7 +43,6 @@ An Ad can have two formats:
 
 #### Tophatter User Attribution
 
-- signed_up_with (How did the user register? - "email", "facebook", "google")
 - source (Which ad network did the user come from? - "Facebook Ads", "Google" - This is event.media_source in AppsFlyer)
 - ad_group (Which specific ad did the user come from? - "Tops", "Watches" - This is event.fb_adgroup_name in AppsFlyer)
 - ad_campaign (Which specific ad set did the user come from? - "" - This is event.fb_adset_name in AppsFlyer)
@@ -57,9 +56,13 @@ ad_account = Zuck::AdAccount.find(1051938118182807)
 campaigns = ad_account.campaigns
 ```
 
-#### Usage - Audience Management (TBD)
+#### Usage - Audience Management
 
-#### Usage - Ads Insights (TBD)
+TBD
+
+#### Usage - Ads Insights
+
+TBD
 
 #### Finding Creatives
 
@@ -79,5 +82,17 @@ image_urls.each do |image_url|
     puts "Done"
     f.close
   end
+end
+```
+
+Ash's approach:
+
+```
+def creatives(subcategory, count: 100, range: 2.weeks.ago..Time.now, min_width: 600, min_height: 600)
+  lot_ids          = Lot.where(bidding_ended_at: range, product_subcategory: subcategory).pluck(:id)
+  bidders          = Bid.joins(lot: :image1, user: {}).where('DATEDIFF(bids.created_at, users.created_at) = 0').where(lot_id: lot_ids, 'images.width': min_width..Float::INFINITY, 'images.height': min_height..Float::INFINITY).group('images.data_fingerprint').count('distinct bids.user_id')
+  fingerprints     = bidders.sort_by { |f, v| -v }.first(count).collect(&:first)
+  latest_image_ids = Image.where(data_fingerprint: fingerprints).group(:data_fingerprint).maximum(:id).values​
+  Image.where(id: latest_image_ids).sort_by { |i| fingerprints.index(i.data_fingerprint) }.collect { |i| i.url(:large) }
 end
 ```
