@@ -14,6 +14,12 @@ module Zuck
         HTTParty.post("#{rest_path}/#{path}", query: hash).parsed_response
       end
 
+      def rest_upload(path, query: {})
+        hash = query.merge(access_token: Zuck.graph.access_token)
+        puts "UPLOAD #{rest_path}/#{path} | #{hash.inspect}"
+        HTTMultiParty.post("#{rest_path}/#{path}", query: hash, detect_mime_type: true).parsed_response
+      end
+
       def rest_path
         "https://graph.facebook.com/#{Koala.config.api_version}"
       end

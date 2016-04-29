@@ -63,5 +63,38 @@ module Zuck
       end
     end
 
+    # @USAGE:
+    # Zuck::AdAccount.find('1051938118182807').create_ad_image('https://d38eepresuu519.cloudfront.net/fd1d1c521595e95391e47a18efd96c3a/original.jpg')
+    def create_ad_image(url)
+      create_ad_images([url])
+    end
+
+    # @USAGE:
+    # Zuck::AdAccount.find('1051938118182807').create_ad_images(['https://d38eepresuu519.cloudfront.net/fd1d1c521595e95391e47a18efd96c3a/original.jpg', 'https://d38eepresuu519.cloudfront.net/d6f70e9dcf5c3786523f33dcf03228fe/original.jpg'])
+    def create_ad_images(urls)
+      files = urls.collect do |url|
+        pathname = Pathname.new(url)
+        name = "#{pathname.dirname.basename}.jpg"
+        data = HTTParty.get(url, timeout: 120).body
+        f = File.open("/tmp/#{name}", 'w')
+        f.binmode
+        f.write(data)
+        f.close
+        [name, f]
+      end.to_h
+
+      query = files.map { |name, file| [name, File.open(file.path)] }.to_h
+      puts query.inspect
+      response = rest_upload("#{id}/adimages", query: query)
+
+      files.values.each do |file|
+        File.delete(file.path)
+      end
+
+      response['images'].collect do |name, object|
+        Zuck::AdImage.new(graph, object, nil)
+      end
+    end
+
   end
 end
