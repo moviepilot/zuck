@@ -1,10 +1,7 @@
-source 'http://rubygems.org'
-
-gem 'bundler'
-gem 'koala'
-gem 'activesupport'
+source 'https://rubygems.org'
+gemspec
 
 group :development, :test do
-  gem 'jeweler', '~> 2.0.1'
+  gem 'awesome_print'
   gem 'pry'
 end

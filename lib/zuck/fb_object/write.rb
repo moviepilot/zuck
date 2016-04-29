@@ -9,14 +9,14 @@ module Zuck
     def save
       self.class.raise_if_read_only
 
-      # Tell facebook to return
+      # Tell Facebook to return.
       data = @hash_delegator_hash.merge(redownload: 1)
       data = data.stringify_keys
 
-      # Don't post ids, because facebook doesn't like it
-      data = data.keep_if{ |k,v| k != "id" }
+      # Don't post ids, because facebook doesn't like it.
+      data = data.keep_if { |k, v| k != "id" }
 
-      # Update on facebook
+      # Update on facebook.
       result = post(graph, path, data)
 
       # The data is nested by name and id, e.g.
@@ -46,7 +46,7 @@ module Zuck
         raise_if_read_only
         p = path || parent.path
 
-        # We want facebook to return the data of the created object
+        # We want facebook to return the data of the created object.
         data["redownload"] = 1
 
         # Create

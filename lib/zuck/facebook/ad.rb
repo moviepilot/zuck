@@ -3,7 +3,7 @@
 #
 # Usage:
 # Zuck::Ad.all
-# ad = Zuck::Ad.find('6028425575295')
+# ad = Zuck::Ad.find('6060101427457')
 # ad.class
 # ad.ad_set.class
 # ad.ad_creatives.first.class
@@ -39,12 +39,6 @@ module Zuck
     parent_object :ad_set, as: :adset_id
 
     connections :ad_creatives
-
-    def self.create(graph, data, ad_set)
-      path = ad_set.campaign.ad_account.path
-      data['campaign_id'] = ad_set.id
-      super(graph, data, ad_set, path)
-    end
 
   end
 end

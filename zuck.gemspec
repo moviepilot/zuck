@@ -5,69 +5,29 @@
 # stub: zuck 3.0.0 ruby lib
 
 Gem::Specification.new do |s|
-  s.name = "zuck"
-  s.version = "3.0.0"
+  s.name        = 'zuck'
+  s.version     = '3.0.0'
+  s.platform    = Gem::Platform::RUBY
+  s.licenses    = ['MIT']
+  s.authors     = ['Chris Estreich']
+  s.email       = 'cestreich@gmail.com'
+  s.homepage    = 'http://github.com/cte/zuck'
+  s.summary     = "Ruby adapter to Facebook's Marketing API."
+  s.description = "This gem allows to easily access Facebook's Marketing API in ruby. See https://developers.facebook.com/docs/reference/ads-api/"
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.require_paths = ["lib"]
-  s.authors = ["Jannis Hermanns"]
-  s.date = "2016-01-15"
-  s.description = "This gem allows to easily access facebook's ads api in ruby. See https://developers.facebook.com/docs/reference/ads-api/"
-  s.email = "jannis@gmail.com"
-  s.extra_rdoc_files = [
-    "README.markdown"
-  ]
-  s.files = [
-    "Gemfile",
-    "Gemfile.lock",
-    "README.markdown",
-    "Rakefile",
-    "VERSION",
-    "console",
-    "lib/zuck.rb",
-    "lib/zuck/facebook/ad.rb",
-    "lib/zuck/facebook/ad_account.rb",
-    "lib/zuck/facebook/ad_set.rb",
-    "lib/zuck/facebook/campaign.rb",
-    "lib/zuck/fb_object.rb",
-    "lib/zuck/fb_object/dsl.rb",
-    "lib/zuck/fb_object/error.rb",
-    "lib/zuck/fb_object/hash_delegator.rb",
-    "lib/zuck/fb_object/helpers.rb",
-    "lib/zuck/fb_object/read.rb",
-    "lib/zuck/fb_object/read_only.rb",
-    "lib/zuck/fb_object/write.rb",
-    "lib/zuck/helpers.rb",
-    "lib/zuck/koala/koala_methods.rb",
-    "zuck.gemspec"
-  ]
-  s.homepage = "http://github.com/jayniz/zuck"
-  s.licenses = ["MIT"]
-  s.rubygems_version = "2.4.5.1"
-  s.summary = "Ruby adapter to facebook's ad api"
+  s.extra_rdoc_files = ['README.markdown']
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 4
+  s.required_ruby_version = '~> 2.0'
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<bundler>, [">= 0"])
-      s.add_runtime_dependency(%q<koala>, [">= 0"])
-      s.add_runtime_dependency(%q<activesupport>, [">= 0"])
-      s.add_development_dependency(%q<jeweler>, ["~> 2.0.1"])
-      s.add_development_dependency(%q<pry>, [">= 0"])
-    else
-      s.add_dependency(%q<bundler>, [">= 0"])
-      s.add_dependency(%q<koala>, [">= 0"])
-      s.add_dependency(%q<activesupport>, [">= 0"])
-      s.add_dependency(%q<jeweler>, ["~> 2.0.1"])
-      s.add_dependency(%q<pry>, [">= 0"])
-    end
-  else
-    s.add_dependency(%q<bundler>, [">= 0"])
-    s.add_dependency(%q<koala>, [">= 0"])
-    s.add_dependency(%q<activesupport>, [">= 0"])
-    s.add_dependency(%q<jeweler>, ["~> 2.0.1"])
-    s.add_dependency(%q<pry>, [">= 0"])
-  end
+  s.add_dependency 'bundler'
+  s.add_dependency 'koala'
+  s.add_dependency 'activesupport'
+  s.add_dependency 'pry'
+  s.add_dependency 'httparty'
+
+  s.files         = `git ls-files`.split("\n")
+  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
+  s.require_paths = ['lib']
+
 end
-

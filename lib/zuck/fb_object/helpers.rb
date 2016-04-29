@@ -2,6 +2,22 @@ module Zuck
   module FbObject
     module Helpers
 
+      def rest_get(path, query: {})
+        hash = query.merge(access_token: Zuck.graph.access_token)
+        puts "GET #{rest_path}/#{path} | #{hash.inspect}"
+        HTTParty.get("#{rest_path}/#{path}", query: hash).parsed_response
+      end
+
+      def rest_post(path, query: {})
+        hash = query.merge(access_token: Zuck.graph.access_token)
+        puts "POST #{rest_path}/#{path} | #{hash.inspect}"
+        HTTParty.post("#{rest_path}/#{path}", query: hash).parsed_response
+      end
+
+      def rest_path
+        "https://graph.facebook.com/#{Koala.config.api_version}"
+      end
+
       private
 
       def get(graph, path)

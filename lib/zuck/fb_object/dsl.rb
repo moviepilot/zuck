@@ -98,7 +98,7 @@ module Zuck
       # forward to `Ding.new` and `Dong.new`.
       def connections(*args)
         args.each do |c|
-          class_resolver = lambda{"Zuck::#{c.to_s.singularize.camelize}".constantize}
+          class_resolver = lambda { "Zuck::#{c.to_s.singularize.camelize}".constantize }
 
           # Define getter for connections
           define_method(c.to_s.pluralize) do
