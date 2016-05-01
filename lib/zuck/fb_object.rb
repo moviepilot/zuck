@@ -1,6 +1,3 @@
-Dir[File.expand_path("../koala/**/*.rb", __FILE__)].each{ |f| require f}
-Dir[File.expand_path("../fb_object/**/*.rb", __FILE__)].each{ |f| require f}
-
 module Zuck
   module FbObject
     # An object that includes {Zuck::HashDelegator} for easy hash
@@ -48,6 +45,3 @@ module Zuck
     end
   end
 end
-
-# See #{Zuck::FbObject::RawFbObject}
-Zuck::RawFbObject = Zuck::FbObject::RawFbObject

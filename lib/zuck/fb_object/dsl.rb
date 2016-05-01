@@ -1,5 +1,3 @@
-require_relative 'error'
-
 module Zuck
   module FbObject
     module DSL

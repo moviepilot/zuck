@@ -1,17 +1,10 @@
 require 'active_support/all'
-$LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'zuck/koala/koala_methods'
+Koala.config.api_version = 'v2.6'
+Dir[File.expand_path("../zuck/fb_object/**/*.rb", __FILE__)].each { |f| require f }
 require 'zuck/fb_object'
-
-Dir[File.expand_path("../zuck/facebook/**/*.rb", __FILE__)].each{ |f| require f}
-
-Koala.config.api_version = 'v2.6' if Koala.config.api_version == nil
-puts 'Koala Config Version: ' + Koala.config.api_version
-
-if Koala.config.api_version != 'v2.6'
-  warn('!!! Zuck was written for Facebook API version v2.6 and may not work!')
-  warn("The current Koala.config.api_version='#{Koala.config.api_version}' does not match 'v2.6'!")
-end
+Zuck::RawFbObject = Zuck::FbObject::RawFbObject
+Dir[File.expand_path('../zuck/facebook/**/*.rb', __FILE__)].each { |f| require f }
 
 module Zuck
   extend KoalaMethods
