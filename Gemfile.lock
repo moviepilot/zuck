@@ -3,7 +3,6 @@ PATH
   specs:
     zuck (3.0.0)
       activesupport
-      bundler
       httmultiparty
       httparty
       koala
@@ -19,6 +18,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.4.0)
     awesome_print (1.6.1)
+    builder (3.2.2)
     coderay (1.1.1)
     faraday (0.9.2)
       multipart-post (>= 1.2, < 3)
@@ -51,6 +51,7 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
       spoon (~> 0.0)
+    rake (10.4.2)
     slop (3.6.0)
     spoon (0.0.4)
       ffi
@@ -64,7 +65,10 @@ PLATFORMS
 
 DEPENDENCIES
   awesome_print
+  builder
+  bundler (~> 1.7)
   pry
+  rake (~> 10.0)
   zuck!
 
 BUNDLED WITH

@@ -17,17 +17,20 @@ Gem::Specification.new do |s|
 
   s.extra_rdoc_files = ['README.markdown']
 
+  s.files         = `git ls-files`.split("\n")
+  s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
+  s.require_paths = ['lib']
+
   s.required_ruby_version = '~> 2.0'
 
-  s.add_dependency 'bundler'
   s.add_dependency 'koala'
   s.add_dependency 'activesupport'
   s.add_dependency 'httparty'
   s.add_dependency 'httmultiparty'
 
-  s.files         = `git ls-files`.split("\n")
-  s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
-  s.executables   = `git ls-files -- bin/*`.split("\n").map { |f| File.basename(f) }
-  s.require_paths = ['lib']
-
+  s.add_development_dependency 'bundler', '~> 1.7'
+  s.add_development_dependency 'rake', '~> 10.0'
+  s.add_development_dependency 'pry'
+  s.add_development_dependency 'awesome_print'
+  s.add_development_dependency 'builder'
 end
