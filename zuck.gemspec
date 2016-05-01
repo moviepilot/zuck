@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.licenses    = ['MIT']
   s.authors     = ['Chris Estreich']
   s.email       = 'cestreich@gmail.com'
-  s.homepage    = 'http://github.com/cte/zuck'
+  s.homepage    = 'https://github.com/cte/zuck'
   s.summary     = "Ruby adapter to Facebook's Marketing API."
   s.description = "This gem allows to easily access Facebook's Marketing API in ruby. See https://developers.facebook.com/docs/reference/ads-api/"
 
@@ -22,7 +22,6 @@ Gem::Specification.new do |s|
   s.add_dependency 'bundler'
   s.add_dependency 'koala'
   s.add_dependency 'activesupport'
-  s.add_dependency 'pry'
   s.add_dependency 'httparty'
   s.add_dependency 'httmultiparty'
 
