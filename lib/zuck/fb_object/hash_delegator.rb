@@ -128,5 +128,6 @@ module Zuck
       @hash_delegator_reloaded_once = true
       reload
     end
+
   end
 end

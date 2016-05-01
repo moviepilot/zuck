@@ -9,34 +9,5 @@ require 'awesome_print'
 require 'pry'
 
 Pry.config.color = false
-
-def reload!
-  Zuck.graph = Koala::Facebook::API.new(File.read('test_access_token'))
-  @loaded_files ||= {}
-  count = 0
-
-  Dir['./lib/**/*.rb'].each do |file|
-    mtime = File.stat(file).mtime
-    if !@loaded_files.has_key?(file) or mtime > @loaded_files[file]
-      STDERR.puts "mtime for #{file} changed, reloading"
-      load file
-      @loaded_files[file] = mtime
-      count += 1
-    end
-  end
-
-  "reloaded #{count} files"
-end
-
-def graph
-  Zuck.graph
-end
-
-def p(object)
-  object.known_keys.select { |key| object.send(key).present? }.collect do |key|
-    "#{key}: #{object.send(key)}"
-  end
-end
-
 Zuck.graph = Koala::Facebook::API.new(File.read('test_access_token'))
 binding.pry
