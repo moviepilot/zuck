@@ -32,6 +32,7 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
     json (1.8.3)
+    json (1.8.3-java)
     koala (2.3.0)
       addressable
       faraday
@@ -56,6 +57,7 @@ GEM
     spoon (0.0.4)
       ffi
     thread_safe (0.3.5)
+    thread_safe (0.3.5-java)
     tzinfo (1.2.2)
       thread_safe (~> 0.1)
 
