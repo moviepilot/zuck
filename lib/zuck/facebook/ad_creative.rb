@@ -23,7 +23,7 @@ module Zuck
     # https://developers.facebook.com/docs/marketing-api/guides/carousel-ads/v2.6
     def self.carousel(page_id:, app_store_url:, message:, assets:)
       {
-        name: "MobileApp|Carousel|#{Time.now.to_i}",
+        name: name,
         object_story_spec: {
           'page_id' => page_id,
           'link_data' => {

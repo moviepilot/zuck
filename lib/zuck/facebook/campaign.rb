@@ -31,5 +31,22 @@ module Zuck
 
     connections :ad_sets, :ads
 
+    def create_ad_set(name:, promoted_object:, targeting:, daily_budget:, billing_event:, optimization_goal:, status:)
+      object = rest_post("act_#{account_id}/adsets", query: {
+        campaign_id: self.id,
+        name: name,
+        promoted_object: promoted_object.to_json,
+        targeting: targeting.to_json,
+        daily_budget: daily_budget,
+        billing_event: billing_event,
+        optimization_goal: optimization_goal,
+        is_autobid: true, # @TODO: Specify bid_amount when possible.
+        redownload: true,
+        status: status
+      })
+      raise Exception, object[:error][:error_user_msg] if object[:error].present?
+      Zuck::AdSet.new(graph, object, nil)
+    end
+
   end
 end

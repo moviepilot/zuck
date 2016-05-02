@@ -10,7 +10,10 @@ module Zuck
     # [fb docs](https://developers.facebook.com/docs/marketing-api/reference/ad-image)
     known_keys :id,
                :hash,
-               :url
+               :name,
+               :permalink_url,
+               :original_width,
+               :original_height
 
     list_path :adimages
 

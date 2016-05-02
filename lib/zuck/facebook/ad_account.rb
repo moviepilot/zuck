@@ -55,11 +55,37 @@ module Zuck
     # @USAGE:
     # Zuck::AdAccount.find('1051938118182807').get_ad_images(['f8966cf7910931fe427cfe38b2a2ec41'])
     def get_ad_images(hashes)
-      collection = rest_get("#{id}/adimages", query: { hashes: hashes })
+      collection = rest_get("#{id}/adimages", query: {
+        hashes: hashes,
+        fields: 'hash,name,permalink_url,original_width,original_height'
+      })
 
       Koala::Facebook::API::GraphCollection.new(collection, graph).map do |object|
         Zuck::AdImage.new(graph, object, nil)
       end
+    end
+
+    # @USAGE:
+    # Zuck::AdAccount.find('1051938118182807').create_ad_creative(
+    #   name: 'tops',
+    #   page_id: '300664329976860',
+    #   app_store_url: 'http://play.google.com/store/apps/details?id=com.tophatter',
+    #   message: 'Lowest Prices + Free Shipping on select items.',
+    #   assets: [
+    #     { hash: 'f8966cf7910931fe427cfe38b2a2ec41', title: '83% Off' },
+    #     { hash: 'e20e7d70e7808674155b0a387c604cee', title: '81% Off' },
+    #     { hash: '5a149de42b8296ad92ce2d3ace35008c', title: 'Free Shipping' }
+    #   ]
+    # )
+    def create_ad_creative(name:, page_id:, app_store_url:, message:, assets:, type: 'carousel')
+      object = case type
+      when 'carousel' then Zuck::AdCreative.carousel(name: name, page_id: page_id, app_store_url: app_store_url, message: message, assets: assets)
+      else raise Exception, "Unhandled ad creative type: #{type}"
+      end
+
+      Zuck::AdCreative.create(graph, object, nil, id)
+      # @TODO: Check for errors here.
+      # @TODO: Create via a call to rest_post.
     end
 
     # @USAGE:
