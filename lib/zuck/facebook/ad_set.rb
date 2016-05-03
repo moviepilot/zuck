@@ -9,8 +9,7 @@
 module Zuck
   class AdSet < RawFbObject
 
-    # Known keys as per
-    # [fb docs](https://developers.facebook.com/docs/marketing-api/reference/ad-campaign)
+    # https://developers.facebook.com/docs/marketing-api/reference/ad-campaign
     known_keys :adlabels,
                :adset_schedule,
                :id,
@@ -53,7 +52,7 @@ module Zuck
     connections :ads, :ad_creatives
 
     # @USAGE:
-    # Zuck::AdSet.find('6060101424057').create_ad(name: 'tops')
+    # Zuck::AdSet.find('6060101424057').create_ad(name: 'tops', creative_id: 12345)
     def create_ad(name:, creative_id:)
       object = rest_post("act_#{account_id}/ads", query: { name: name, adset_id: id, creative: { creative_id: creative_id }.to_json })
       raise Exception, object[:error][:error_user_msg] if object[:error].present?

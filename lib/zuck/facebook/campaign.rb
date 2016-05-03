@@ -9,8 +9,7 @@
 module Zuck
   class Campaign < RawFbObject
 
-    # Known keys as per
-    # [fb docs](https://developers.facebook.com/docs/marketing-api/reference/ad-campaign-group)
+    # https://developers.facebook.com/docs/marketing-api/reference/ad-campaign-group
     known_keys :id,
                :account_id,
                :buying_type,

@@ -21,7 +21,7 @@ module Zuck
     list_path :adcreatives
 
     # https://developers.facebook.com/docs/marketing-api/guides/carousel-ads/v2.6
-    def self.carousel(page_id:, app_store_url:, message:, assets:)
+    def self.carousel(name:, page_id:, app_store_url:, message:, assets:)
       {
         name: name,
         object_story_spec: {
