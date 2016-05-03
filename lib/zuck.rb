@@ -1,6 +1,8 @@
 # External requires.
 require 'active_support/all'
 require 'koala'
+require 'httparty'
+require 'httmultiparty'
 
 # Internal requires.
 require 'zuck/koala/koala_methods'

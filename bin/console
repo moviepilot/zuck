@@ -1,9 +1,9 @@
 #!/usr/bin/env ruby
 
 require 'bundler/setup'
-require 'koala'
-require 'httparty'
-require 'httmultiparty'
+# require 'koala'
+# require 'httparty'
+# require 'httmultiparty'
 require 'zuck'
 require 'awesome_print'
 require 'pry'

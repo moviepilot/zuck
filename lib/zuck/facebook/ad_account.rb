@@ -11,8 +11,7 @@
 module Zuck
   class AdAccount < RawFbObject
 
-    # Known keys as per
-    # [fb docs](https://developers.facebook.com/docs/marketing-api/reference/ad-account)
+    # https://developers.facebook.com/docs/marketing-api/reference/ad-account
     known_keys :id,
                :account_id,
                :account_status,
@@ -66,29 +65,6 @@ module Zuck
     end
 
     # @USAGE:
-    # Zuck::AdAccount.find('1051938118182807').create_ad_creative(
-    #   name: 'tops',
-    #   page_id: '300664329976860',
-    #   app_store_url: 'http://play.google.com/store/apps/details?id=com.tophatter',
-    #   message: 'Lowest Prices + Free Shipping on select items.',
-    #   assets: [
-    #     { hash: 'f8966cf7910931fe427cfe38b2a2ec41', title: '83% Off' },
-    #     { hash: 'e20e7d70e7808674155b0a387c604cee', title: '81% Off' },
-    #     { hash: '5a149de42b8296ad92ce2d3ace35008c', title: 'Free Shipping' }
-    #   ]
-    # )
-    def create_ad_creative(name:, page_id:, app_store_url:, message:, assets:, type: 'carousel')
-      object = case type
-      when 'carousel' then Zuck::AdCreative.carousel(name: name, page_id: page_id, app_store_url: app_store_url, message: message, assets: assets)
-      else raise Exception, "Unhandled ad creative type: #{type}"
-      end
-
-      Zuck::AdCreative.create(graph, object, nil, id)
-      # @TODO: Check for errors here.
-      # @TODO: Create via a call to rest_post.
-    end
-
-    # @USAGE:
     # Zuck::AdAccount.find('1051938118182807').create_ad_image('https://d38eepresuu519.cloudfront.net/fd1d1c521595e95391e47a18efd96c3a/original.jpg')
     def create_ad_image(url)
       create_ad_images([url]).first
@@ -109,14 +85,32 @@ module Zuck
       end.to_h
 
       response = rest_upload("#{id}/adimages", query: files)
+      files.values.each { |file| File.delete(file.path) } # Do we really need to do this?
+      hashes = response['images'].map { |name, object| object['hash'] }
+      get_ad_images(hashes)
+    end
 
-      files.values.each do |file| # Do we really need to do this?
-        File.delete(file.path)
+    # @USAGE:
+    # Zuck::AdAccount.find('1051938118182807').create_ad_creative(
+    #   name: 'tops',
+    #   page_id: '300664329976860',
+    #   app_store_url: 'http://play.google.com/store/apps/details?id=com.tophatter',
+    #   message: 'Lowest Prices + Free Shipping on select items.',
+    #   assets: [
+    #     { hash: 'f8966cf7910931fe427cfe38b2a2ec41', title: '83% Off' },
+    #     { hash: 'e20e7d70e7808674155b0a387c604cee', title: '81% Off' },
+    #     { hash: '5a149de42b8296ad92ce2d3ace35008c', title: 'Free Shipping' }
+    #   ]
+    # )
+    def create_ad_creative(name:, page_id:, app_store_url:, message:, assets:, type: 'carousel')
+      object = case type
+      when 'carousel' then Zuck::AdCreative.carousel(name: name, page_id: page_id, app_store_url: app_store_url, message: message, assets: assets)
+      else raise Exception, "Unhandled ad creative type: #{type}"
       end
 
-      response['images'].collect do |name, object|
-        Zuck::AdImage.new(graph, object, nil)
-      end
+      Zuck::AdCreative.create(graph, object, nil, id)
+      # @TODO: Check for errors here.
+      # @TODO: Create via a call to rest_post.
     end
 
     private
