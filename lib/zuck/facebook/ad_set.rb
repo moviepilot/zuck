@@ -5,6 +5,7 @@
 # ad_set.campaign.class
 # ad_set.ads.first.class
 # ad_set.ad_creatives.first.class
+# ad_set.ad_set_insights
 
 module Zuck
   class AdSet < RawFbObject
@@ -49,7 +50,7 @@ module Zuck
     parent_object :campaign, as: :campaign_id
     parent_object :ad_account, as: :account_id
 
-    connections :ads, :ad_creatives
+    connections :ads, :ad_creatives, :ad_set_insights
 
     # @USAGE:
     # Zuck::AdSet.find('6060101424057').create_ad(name: 'tops', creative_id: 12345)

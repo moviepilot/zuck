@@ -88,12 +88,12 @@ module Zuck
           args.each do |c|
             class_resolver = lambda { "Zuck::#{c.to_s.singularize.camelize}".constantize }
 
-            # Define getter for connections
+            # Define getter for connections.
             define_method(c.to_s.pluralize) do
               class_resolver.call.all(graph, self)
             end
 
-            # Define create method for connections
+            # Define create method for connections.
             define_method("create_#{c.to_s.singularize}") do |data|
               class_resolver.call.create(graph, data, self)
             end
