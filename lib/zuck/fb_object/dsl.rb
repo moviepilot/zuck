@@ -14,15 +14,6 @@ module Zuck
 
       module ClassMethods
 
-        # Don't allow create/update/delete.
-        def read_only
-          @read_only = true
-        end
-
-        def read_only?
-          !!@read_only
-        end
-
         # Part of our little DSL, sets the part of the path that fetches the
         # list of objects from facebook.
         #

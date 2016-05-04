@@ -7,7 +7,7 @@ module Zuck
       end
 
       def save
-        self.class.raise_if_read_only
+        raise Exception, 'Called save.'
 
         # Tell Facebook to return.
         data = @hash_delegator_hash.merge(redownload: 1)
@@ -32,24 +32,17 @@ module Zuck
       end
 
       def destroy
+        raise Exception, 'Called destroy.'
         self.class.destroy(graph, path)
       end
 
       module ClassMethods
 
-        def raise_if_read_only
-          return unless read_only?
-          raise Zuck::Error::ReadOnly.new("#{self} is read_only")
-        end
-
         def create(graph, data, parent=nil, path=nil)
-          raise_if_read_only
           p = path || parent.path
 
           # We want facebook to return the data of the created object.
-          data["redownload"] = 1
-
-          # Create
+          data['redownload'] = 1
           result = create_connection(graph, p, list_path, data)
 
           # If the redownload flag was supported, the data is nested by
@@ -58,14 +51,12 @@ module Zuck
           #     "campaigns" => { "12345" => "data" }
           #
           # Since we only create one at a time, we can just say:
-          if d=result['data']
+          if (d = result['data'])
             data = d.values.first.values.first
-
-          # Redownload was not supported, in this case facebook returns
-          # just {"id": "12345"}.
+            # Redownload was not supported, in this case facebook returns just {"id": "12345"}.
           elsif result['id']
             data = result
-          # Don't know what to do. No id and no data. I need an adult.
+            # Don't know what to do. No id and no data. I need an adult.
           else
             raise "Invalid response received, found neither a data nor id key in #{result}"
           end
@@ -75,7 +66,7 @@ module Zuck
         end
 
         def destroy(graph, id)
-          raise_if_read_only
+          raise Exception, 'Called destroy.'
           delete(graph, id)
         end
 

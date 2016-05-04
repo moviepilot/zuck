@@ -32,10 +32,6 @@ module Zuck
 
     connections :campaigns, :ad_sets, :ads, :ad_creatives, :ad_images
 
-    def self.all(graph = Zuck.graph)
-      super(graph)
-    end
-
     def path
       normalize_account_id(id)
     end
