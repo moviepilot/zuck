@@ -38,8 +38,6 @@ module Zuck
 
     parent_object :ad_set, as: :adset_id
 
-    connections :ad_insights
-
     def ad_creative
       @ad_creative ||= Zuck::AdCreative.find(creative['id'])
     end

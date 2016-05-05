@@ -154,12 +154,9 @@ module Zuck
         query: {
           access_token: graph.access_token,
           level: :ad,
-          fields: [ :ad_id, :objective, :impressions, :unique_actions, :cost_per_unique_action_type, :clicks, :cpc, :cpm, :ctr, :spend ].join(','),
+          fields: [:ad_id, :objective, :impressions, :unique_actions, :cost_per_unique_action_type, :clicks, :cpc, :cpm, :ctr, :spend].join(','),
           time_increment: 1,
-          time_range: {
-            'since': range.first.to_s,
-            'until': range.last.to_s
-          }
+          time_range: { 'since': range.first.to_s, 'until': range.last.to_s }
         }
       ).parsed_response
 
