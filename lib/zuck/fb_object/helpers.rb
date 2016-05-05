@@ -20,8 +20,16 @@ module Zuck
         HTTMultiParty.post("#{rest_path}/#{path}", query: hash, detect_mime_type: true).parsed_response
       end
 
+      def rest_host
+        'https://graph.facebook.com'
+      end
+
+      def rest_relative_path
+        Koala.config.api_version
+      end
+
       def rest_path
-        "https://graph.facebook.com/#{Koala.config.api_version}"
+        "#{rest_host}/#{rest_relative_path}"
       end
 
       private

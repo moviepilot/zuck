@@ -88,15 +88,11 @@ module Zuck
 
     # @USAGE:
     # Zuck::AdAccount.find('1051938118182807').create_ad_creative(
-    #   name: 'tops',
+    #   name: 'Creative #1',
     #   page_id: '300664329976860',
     #   app_store_url: 'http://play.google.com/store/apps/details?id=com.tophatter',
-    #   message: 'Lowest Prices + Free Shipping on select items.',
-    #   assets: [
-    #     { hash: 'f8966cf7910931fe427cfe38b2a2ec41', title: '83% Off' },
-    #     { hash: 'e20e7d70e7808674155b0a387c604cee', title: '81% Off' },
-    #     { hash: '5a149de42b8296ad92ce2d3ace35008c', title: 'Free Shipping' }
-    #   ]
+    #   message: 'A message.',
+    #   assets: [{ hash: 'f8966cf7910931fe427cfe38b2a2ec41', title: '83% Off' }, ...]
     # )
     def create_ad_creative(name:, page_id:, app_store_url:, message:, assets:, type: 'carousel')
       object = case type
@@ -107,6 +103,75 @@ module Zuck
       Zuck::AdCreative.create(graph, object, nil, id)
       # @TODO: Check for errors here.
       # @TODO: Create via a call to rest_post.
+    end
+
+    # @USAGE:
+    # creatives = [{
+    #   name: 'Creative #1',
+    #   page_id: '300664329976860',
+    #   app_store_url: 'http://play.google.com/store/apps/details?id=com.tophatter',
+    #   message: 'A message.',
+    #   assets: [{ hash: 'f8966cf7910931fe427cfe38b2a2ec41', title: '83% Off' }, ...]
+    # },
+    # {
+    #   name: 'Creative #2',
+    #   page_id: '300664329976860',
+    #   app_store_url: 'http://play.google.com/store/apps/details?id=com.tophatter',
+    #   message: 'A message.',
+    #   assets: [{ hash: 'f8966cf7910931fe427cfe38b2a2ec41', title: '83% Off' }, ...]
+    # }]
+    # Zuck::AdAccount.find('1051938118182807').create_ad_creatives(creatives)
+    def create_ad_creatives(creatives)
+      batch = creatives.map do |creative|
+        object = Zuck::AdCreative.carousel(
+          name: creative[:name],
+          page_id: creative[:page_id],
+          app_store_url: creative[:app_store_url],
+          message: creative[:message],
+          assets: creative[:assets]
+        )
+
+        body = object.map do |key, value|
+          "#{key}=#{value}"
+        end.join('&')
+
+        {
+          method: 'POST',
+          relative_url: "#{rest_relative_path}/#{id}/adcreatives",
+          body: body
+        }
+      end
+
+      rest_get('', query: { batch: batch })
+    end
+
+    # @USAGE:
+    # Zuck::AdAccount.find('1051938118182807').get_insights(Date.today..Date.today)
+    def get_insights(range)
+      # Build the initial query.
+      insights = HTTParty.get(
+        "#{rest_path}/#{id}/insights",
+        query: {
+          access_token: graph.access_token,
+          level: :ad,
+          fields: [ :ad_id, :objective, :impressions, :unique_actions, :cost_per_unique_action_type, :clicks, :cpc, :cpm, :ctr, :spend ].join(','),
+          time_increment: 1,
+          time_range: {
+            'since': range.first.to_s,
+            'until': range.last.to_s
+          }
+        }
+      ).parsed_response
+
+      # Page through and pull all the information into a single array.
+      ad_performances = []
+
+      begin
+        ad_performances += insights['data']
+        next_page_url    = insights['paging']['next']
+      end while next_page_url.present? && (insights = HTTParty.get(next_page_url).parsed_response).present?
+
+      ad_performances
     end
 
     private
