@@ -50,18 +50,18 @@ module Zuck
       def known_keys(*args)
         args.each do |key|
 
-          # Define list of known keys
+          # Define list of known keys.
           self.send(:define_method, :known_keys) do
             args || []
           end
 
-          # Define getter
+          # Define getter.
           self.send(:define_method, key) do
             init_hash
             send('[]', key)
           end
 
-          # Define setter
+          # Define setter.
           self.send(:define_method, "#{key}=") do |val|
             init_hash
             @hash_delegator_hash[key] = val

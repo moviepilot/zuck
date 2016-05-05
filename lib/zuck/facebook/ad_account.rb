@@ -91,25 +91,6 @@ module Zuck
     # CREATIVES ################################################################
 
     # @USAGE:
-    # Zuck::AdAccount.find('1051938118182807').create_ad_creative(
-    #   name: 'Creative #1',
-    #   page_id: '300664329976860',
-    #   app_store_url: 'http://play.google.com/store/apps/details?id=com.tophatter',
-    #   message: 'A message.',
-    #   assets: [{ hash: 'f8966cf7910931fe427cfe38b2a2ec41', title: '83% Off' }, ...]
-    # )
-    def create_ad_creative(name:, page_id:, app_store_url:, message:, assets:, type: 'carousel')
-      object = case type
-      when 'carousel' then Zuck::AdCreative.carousel(name: name, page_id: page_id, app_store_url: app_store_url, message: message, assets: assets)
-      else raise Exception, "Unhandled ad creative type: #{type}"
-      end
-
-      Zuck::AdCreative.create(graph, object, nil, id)
-      # @TODO: Check for errors here.
-      # @TODO: Create via a call to rest_post.
-    end
-
-    # @USAGE:
     # creatives = [{
     #   name: 'Creative #1',
     #   page_id: '300664329976860',
@@ -126,27 +107,37 @@ module Zuck
     # }]
     # Zuck::AdAccount.find('1051938118182807').create_ad_creatives(creatives)
     def create_ad_creatives(creatives)
-      batch = creatives.map do |creative|
-        object = Zuck::AdCreative.carousel(
+      queries = creatives.map do |creative|
+        if %i( name page_id app_store_url message assets ).any? { |key| creative[key].blank? }
+          raise Exception, "Creative is malformed: #{creative.inspect}"
+        end
+
+        body = Zuck::AdCreative.carousel(
           name: creative[:name],
           page_id: creative[:page_id],
           app_store_url: creative[:app_store_url],
           message: creative[:message],
           assets: creative[:assets]
-        )
-
-        body = object.map do |key, value|
+        ).map do |key, value|
           "#{key}=#{value}"
         end.join('&')
 
-        {
-          method: 'POST',
-          relative_url: "#{rest_relative_path}/#{id}/adcreatives",
-          body: body
-        }
+        { method: 'POST', relative_url: "#{rest_relative_path}/#{id}/adcreatives", body: body }
       end
 
-      rest_get('', query: { batch: batch })
+      results = rest_post('', query: { batch: queries.to_json })
+      objects = results.collect { |response| Zuck::AdCreative.new(graph, JSON.parse(response['body']), nil) }
+
+      # Need to re-fetch since we only get an ID back.
+      creatives = []
+      ids       = objects.map(&:id)
+      fields    = Zuck::AdCreative::FIELDS
+
+      objects = rest_get('', query: { ids: ids.join(','), fields: fields.join(',') }).each_pair do |id, object|
+        creatives << Zuck::AdCreative.new(graph, object, nil)
+      end
+
+      creatives
     end
 
     # CAMPAIGNS ################################################################
