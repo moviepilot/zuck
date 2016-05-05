@@ -151,6 +151,8 @@ module Zuck
 
     # CAMPAIGNS ################################################################
 
+    # @USAGE:
+    # Zuck::AdAccount.find('1051938118182807').create_campaign(name: 'Test', objective: 'MOBILE_APP_INSTALLS', status: 'ACTIVE')
     def create_campaign(name:, objective:, status:)
       object = rest_post("#{id}/campaigns", query: {
         name: name,
@@ -158,6 +160,19 @@ module Zuck
         status: status
       })
       Zuck::Campaign.new(graph, object, nil)
+    end
+
+    # AUDIENCES ################################################################
+
+    # @USAGE:
+    # audience = Zuck::AdAccount.find('1051938118182807').create_custom_audience(name: 'Test', description: 'This is a test audience.')
+    def create_custom_audience(name:, description:)
+      object = rest_post("#{id}/customaudiences", query: {
+        name: name,
+        subtype: 'CUSTOM',
+        description: description
+      })
+      Zuck::CustomAudience.new(graph, object, nil)
     end
 
     # INSIGHTS #################################################################
