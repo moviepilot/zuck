@@ -5,19 +5,25 @@ module Zuck
       def rest_get(path, query: {})
         hash = query.merge(access_token: Zuck.graph.access_token)
         puts "GET #{rest_path}/#{path} | #{hash.inspect}"
-        HTTParty.get("#{rest_path}/#{path}", query: hash).parsed_response
+        r = HTTParty.get("#{rest_path}/#{path}", query: hash).parsed_response
+        puts "#{r.class.name}: #{r.inspect}"
+        r.is_a?(String) ? JSON.parse(r) : r
       end
 
       def rest_post(path, query: {})
         hash = query.merge(access_token: Zuck.graph.access_token)
         puts "POST #{rest_path}/#{path} | #{hash.inspect}"
-        HTTParty.post("#{rest_path}/#{path}", query: hash).parsed_response
+        r = HTTParty.post("#{rest_path}/#{path}", query: hash).parsed_response
+        puts "#{r.class.name}: #{r.inspect}"
+        r.is_a?(String) ? JSON.parse(r) : r # https://rollbar.com/Tophatter/Tophatter/items/12182/
       end
 
       def rest_upload(path, query: {})
         hash = query.merge(access_token: Zuck.graph.access_token)
         puts "UPLOAD #{rest_path}/#{path} | #{hash.inspect}"
-        HTTMultiParty.post("#{rest_path}/#{path}", query: hash, detect_mime_type: true).parsed_response
+        r = HTTMultiParty.post("#{rest_path}/#{path}", query: hash, detect_mime_type: true).parsed_response
+        puts "#{r.class.name}: #{r.inspect}"
+        r.is_a?(String) ? JSON.parse(r) : r
       end
 
       def rest_host
