@@ -41,6 +41,8 @@ module Zuck
       self.id = normalize_account_id(id)
     end
 
+    # IMAGES ###################################################################
+
     # @USAGE:
     # Zuck::AdAccount.find('1051938118182807').get_ad_image('f8966cf7910931fe427cfe38b2a2ec41')
     def get_ad_image(hash)
@@ -82,9 +84,11 @@ module Zuck
 
       response = rest_upload("#{id}/adimages", query: files)
       files.values.each { |file| File.delete(file.path) } # Do we really need to do this?
-      hashes = response['images'].map { |name, object| object['hash'] }
+      hashes = response['images'].map { |key, hash| hash['hash'] }
       get_ad_images(hashes)
     end
+
+    # CREATIVES ################################################################
 
     # @USAGE:
     # Zuck::AdAccount.find('1051938118182807').create_ad_creative(
@@ -144,6 +148,19 @@ module Zuck
 
       rest_get('', query: { batch: batch })
     end
+
+    # CAMPAIGNS ################################################################
+
+    def create_campaign(name:, objective:, status:)
+      object = rest_post("#{id}/campaigns", query: {
+        name: name,
+        objective: objective,
+        status: status
+      })
+      Zuck::Campaign.new(graph, object, nil)
+    end
+
+    # INSIGHTS #################################################################
 
     # @USAGE:
     # Zuck::AdAccount.find('1051938118182807').get_insights(Date.today..Date.today)
