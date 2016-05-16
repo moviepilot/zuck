@@ -16,7 +16,7 @@ module Zuck
     list_path :adcreatives
 
     # https://developers.facebook.com/docs/marketing-api/guides/carousel-ads/v2.6
-    def self.carousel(name:, page_id:, app_store_url:, message:, assets:)
+    def self.carousel(name:, page_id:, app_store_url:, message:, assets:, multi_share_optimized: true)
       object_story_spec = {
         'page_id' => page_id,
         'link_data' => {
@@ -32,7 +32,7 @@ module Zuck
               }
             }
           },
-          'multi_share_optimized' => true
+          'multi_share_optimized' => multi_share_optimized
         },
       }
       {
