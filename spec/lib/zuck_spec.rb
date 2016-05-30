@@ -40,7 +40,7 @@ describe Zuck::FbObject do
           o = {
               objective: 'NONE',
               name: "bloody campaign",
-              campaign_group_status: 'PAUSED'
+              status: 'PAUSED'
           }
           explain_error {
             campaign = Zuck::AdCampaign.create(graph, o, account)
@@ -59,7 +59,7 @@ describe Zuck::FbObject do
               campaign_status: 'PAUSED',
               daily_budget: 100,
               targeting: "{'geo_locations':{'countries':['US','GB']}}",
-              campaign_group_id: campaign.id
+              campaign_id: campaign.id
           }
           explain_error {
             set = Zuck::AdSet.create(graph, o, account)

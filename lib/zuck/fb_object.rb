@@ -16,7 +16,7 @@ module Zuck
     #     class AdCampaign < FbObject
     #
     #       known_keys    :title, :budget
-    #       list_path     :adcampaigns
+    #       list_path     :adsets
     #       connections   :ad_groups
     #       parent_object :ad_account, as: :account_id
     #
@@ -30,7 +30,7 @@ module Zuck
     #     `my_campaign[:secret_key]` to get to the juicy bits
     # 2.  You can call `AdCampaign.all(graph, my_ad_account)`, because your
     #     `AdCampaign` instance knows how to construct the path
-    #     `act_12345/adcampaigns`. It knows this, because it knows its
+    #     `act_12345/adsets`. It knows this, because it knows its
     #     parent object and its own list path.
     # 3.  You can call `#ad_groups` on any `AdCampaign` instance to fetch 
     #     the ad groups in that campaign. To add an ad_group to a campaign,

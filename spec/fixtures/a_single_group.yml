@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://graph.facebook.com/v2.4/6029725594066?access_token=DUMMY_TOKEN&fields=id,account_id,adgroup_review_feedback,adgroup_status,bid_amount,campaign_id,campaign_group_id,created_time,creative,failed_delivery_checks,name,targeting,tracking_specs,updated_time
+    uri: https://graph.facebook.com/v2.4/6029725594066?access_token=DUMMY_TOKEN&fields=id,account_id,adgroup_review_feedback,adgroup_status,bid_amount,adset_id,created_time,creative,failed_delivery_checks,name,targeting,tracking_specs,updated_time
     body:
       encoding: US-ASCII
       string: ''

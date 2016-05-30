@@ -7,11 +7,11 @@ module Zuck
     # [fb docs](https://developers.facebook.com/docs/reference/ads-api/adgroup/v2.2)
     known_keys :id,
                :account_id,
-               :adgroup_review_feedback,
-               :adgroup_status,
+               :ad_review_feedback,
+               :status,
                :bid_amount,
                :campaign_id,
-               :campaign_group_id,
+               :adset_id,
                :created_time,
                :creative,
                :failed_delivery_checks,
@@ -21,12 +21,12 @@ module Zuck
                :updated_time
 
     parent_object :ad_campaign
-    list_path     :adgroups
+    list_path     :ads
     connections   :ad_creatives
 
     def self.create(graph, data, ad_set)
       path = ad_set.ad_account.path
-      data['campaign_id'] = ad_set.id
+      data['adset_id'] = ad_set.id
       super(graph, data, ad_set, path)
     end
 
