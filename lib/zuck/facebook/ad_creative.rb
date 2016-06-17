@@ -16,23 +16,24 @@ module Zuck
     list_path :adcreatives
 
     # https://developers.facebook.com/docs/marketing-api/guides/carousel-ads/v2.6
-    def self.carousel(name:, page_id:, app_store_url:, message:, assets:, multi_share_optimized: true)
+    def self.carousel(name:, page_id:, link:, message:, assets:, type:, multi_share_optimized:, multi_share_end_card:)
       object_story_spec = {
-        'page_id' => page_id,
+        'page_id' => page_id, # 300664329976860
         'link_data' => {
-          'link' => app_store_url,
+          'link' => link, # https://tophatter.com/, https://itunes.apple.com/app/id619460348
           'message' => message,
           'child_attachments' => assets.collect { |asset|
             {
-              'link' => app_store_url,
+              'link' => link,
               'image_hash' => asset[:hash],
               'call_to_action' => {
-                'type' => 'INSTALL_MOBILE_APP', # 'USE_MOBILE_APP'
+                'type' => type, # SHOP_NOW, INSTALL_MOBILE_APP
                 'value' => { 'link_title' => asset[:title] } # 'app_link' => 'DEEP LINK'
               }
             }
           },
-          'multi_share_optimized' => multi_share_optimized
+          'multi_share_optimized' => multi_share_optimized,
+          'multi_share_end_card' => multi_share_end_card
         },
       }
       {
