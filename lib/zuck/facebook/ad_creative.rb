@@ -36,7 +36,6 @@ module Zuck
           'multi_share_end_card' => multi_share_end_card
         }
       }
-      puts object_story_spec.inspect
       {
         name: name,
         object_story_spec: object_story_spec.to_json

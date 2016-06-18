@@ -129,6 +129,8 @@ module Zuck
           "#{key}=#{value}"
         end.join('&')
 
+        puts body
+
         { method: 'POST', relative_url: "#{rest_relative_path}/#{id}/adcreatives", body: body }
       end
 
