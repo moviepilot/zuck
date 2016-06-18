@@ -112,6 +112,7 @@ module Zuck
     # Zuck::AdAccount.find('1051938118182807').create_ad_creatives(creatives)
     def create_ad_creatives(creatives)
       if creatives.length == 1
+        creative = creatives.first
         query = Zuck::AdCreative.carousel(
           name: creative[:name],
           page_id: creative[:page_id],
