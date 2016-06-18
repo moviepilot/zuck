@@ -22,20 +22,21 @@ module Zuck
         'link_data' => {
           'link' => link, # https://tophatter.com/, https://itunes.apple.com/app/id619460348
           'message' => message,
+          'call_to_action' => { 'type' => type }, # SHOP_NOW, INSTALL_MOBILE_APP
           'child_attachments' => assets.collect { |asset|
             {
               'link' => link,
               'image_hash' => asset[:hash],
-              'call_to_action' => {
-                'type' => type, # SHOP_NOW, INSTALL_MOBILE_APP
-                'value' => { 'link_title' => asset[:title] } # 'app_link' => 'DEEP LINK'
-              }
+              'name' => asset[:title],
+              # 'description' => asset[:title],
+              'call_to_action' => { 'type' => type }
             }
           },
           'multi_share_optimized' => multi_share_optimized,
           'multi_share_end_card' => multi_share_end_card
-        },
+        }
       }
+      puts object_story_spec.inspect
       {
         name: name,
         object_story_spec: object_story_spec.to_json
