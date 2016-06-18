@@ -112,7 +112,7 @@ module Zuck
     # Zuck::AdAccount.find('1051938118182807').create_ad_creatives(creatives)
     def create_ad_creatives(creatives)
       queries = creatives.map do |creative|
-        if %i( name page_id link message assets type multi_share_optimized multi_share_end_card ).any? { |key| creative[key].blank? }
+        if %i( name page_id link message assets type multi_share_optimized multi_share_end_card ).any? { |key| !creative.has_key?(key) }
           raise Exception, "Creative is malformed: #{creative.inspect}"
         end
 
