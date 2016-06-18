@@ -124,8 +124,7 @@ module Zuck
           multi_share_end_card: creative[:multi_share_end_card]
         )
         object = rest_post("#{id}/adcreatives", query: query)
-        creative = Zuck::AdCreative.new(graph, object, nil)
-        creatives = [creative]
+        Zuck::AdCreative.new(graph, object, nil)
       else
         # @TODO: Some requests fail when we batch request.
         queries = creatives.map do |creative|
@@ -160,9 +159,9 @@ module Zuck
         objects = rest_get('', query: { ids: ids.join(','), fields: fields.join(',') }).each_pair do |id, object|
           creatives << Zuck::AdCreative.new(graph, object, nil)
         end
-      end
 
-      creatives
+        creatives
+      end
     end
 
     # CAMPAIGNS ################################################################
