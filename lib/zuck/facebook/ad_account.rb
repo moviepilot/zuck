@@ -111,8 +111,8 @@ module Zuck
     # }]
     # Zuck::AdAccount.find('1051938118182807').create_ad_creatives(creatives)
     def create_ad_creatives(creatives)
-      if creatives.length == 1
-        creative = creatives.first
+      if creatives.is_a?(Hash)
+        creative = creatives
         query = Zuck::AdCreative.carousel(
           name: creative[:name],
           page_id: creative[:page_id],
@@ -123,11 +123,11 @@ module Zuck
           multi_share_optimized: creative[:multi_share_optimized],
           multi_share_end_card: creative[:multi_share_end_card]
         )
-        puts query
         object = rest_post("#{id}/adcreatives", query: query)
         creative = Zuck::AdCreative.new(graph, object, nil)
         creatives = [creative]
       else
+        # @TODO: Some requests fail when we batch request.
         queries = creatives.map do |creative|
           if %i( name page_id link message assets type multi_share_optimized multi_share_end_card ).any? { |key| !creative.has_key?(key) }
             raise Exception, "Creative is malformed: #{creative.inspect}"
