@@ -91,77 +91,31 @@ module Zuck
     # CREATIVES ################################################################
 
     # @USAGE:
-    # creatives = [{
+    # creatives = {
     #   name: 'Creative #1',
     #   page_id: '300664329976860',
+    #   instagram_actor_id: '503391023081924',
     #   app_store_url: 'http://play.google.com/store/apps/details?id=com.tophatter',
     #   message: 'A message.',
     #   assets: [{ hash: 'f8966cf7910931fe427cfe38b2a2ec41', title: '83% Off' }, ...],
     #   multi_share_optimized: false,
     #   multi_share_end_card: false
-    # },
-    # {
-    #   name: 'Creative #2',
-    #   page_id: '300664329976860',
-    #   link: 'http://play.google.com/store/apps/details?id=com.tophatter',
-    #   message: 'A message.',
-    #   assets: [{ hash: 'f8966cf7910931fe427cfe38b2a2ec41', title: '83% Off' }, ...],
-    #   multi_share_optimized: true,
-    #   multi_share_end_card: true
-    # }]
-    # Zuck::AdAccount.find('1051938118182807').create_ad_creatives(creatives)
-    def create_ad_creatives(creatives)
-      if creatives.is_a?(Hash)
-        creative = creatives
-        query = Zuck::AdCreative.carousel(
-          name: creative[:name],
-          page_id: creative[:page_id],
-          link: creative[:link],
-          message: creative[:message],
-          assets: creative[:assets],
-          type: creative[:type],
-          multi_share_optimized: creative[:multi_share_optimized],
-          multi_share_end_card: creative[:multi_share_end_card]
-        )
-        object = rest_post("#{id}/adcreatives", query: query)
-        Zuck::AdCreative.new(graph, object, nil)
-      else
-        # @TODO: Some requests fail when we batch request.
-        queries = creatives.map do |creative|
-          if %i( name page_id link message assets type multi_share_optimized multi_share_end_card ).any? { |key| !creative.has_key?(key) }
-            raise Exception, "Creative is malformed: #{creative.inspect}"
-          end
-
-          body = Zuck::AdCreative.carousel(
-            name: creative[:name],
-            page_id: creative[:page_id],
-            link: creative[:link],
-            message: creative[:message],
-            assets: creative[:assets],
-            type: creative[:type],
-            multi_share_optimized: creative[:multi_share_optimized],
-            multi_share_end_card: creative[:multi_share_end_card]
-          ).map do |key, value|
-            "#{key}=#{value}"
-          end.join('&')
-
-          { method: 'POST', relative_url: "#{rest_relative_path}/#{id}/adcreatives", body: body }
-        end
-
-        results = rest_post('', query: { batch: queries.to_json })
-        objects = results.collect { |response| Zuck::AdCreative.new(graph, JSON.parse(response['body']), nil) }
-
-        # Need to re-fetch since we only get an ID back.
-        creatives = []
-        ids       = objects.map(&:id)
-        fields    = Zuck::AdCreative::FIELDS
-
-        objects = rest_get('', query: { ids: ids.join(','), fields: fields.join(',') }).each_pair do |id, object|
-          creatives << Zuck::AdCreative.new(graph, object, nil)
-        end
-
-        creatives
-      end
+    # }
+    # Zuck::AdAccount.find('1051938118182807').create_ad_creative(creative)
+    def create_ad_creative(creative)
+      query = Zuck::AdCreative.carousel(
+        name: creative[:name],
+        page_id: creative[:page_id],
+        instagram_actor_id: creative[:page_id],
+        link: creative[:link],
+        message: creative[:message],
+        assets: creative[:assets],
+        type: creative[:type],
+        multi_share_optimized: creative[:multi_share_optimized],
+        multi_share_end_card: creative[:multi_share_end_card]
+      )
+      object = rest_post("#{id}/adcreatives", query: query)
+      Zuck::AdCreative.new(graph, object, nil)
     end
 
     # CAMPAIGNS ################################################################

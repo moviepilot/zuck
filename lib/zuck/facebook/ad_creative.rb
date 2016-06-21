@@ -16,9 +16,10 @@ module Zuck
     list_path :adcreatives
 
     # https://developers.facebook.com/docs/marketing-api/guides/carousel-ads/v2.6
-    def self.carousel(name:, page_id:, link:, message:, assets:, type:, multi_share_optimized:, multi_share_end_card:)
+    def self.carousel(name:, page_id:, instagram_actor_id:, link:, message:, assets:, type:, multi_share_optimized:, multi_share_end_card:)
       object_story_spec = {
         'page_id' => page_id, # 300664329976860
+        'instagram_actor_id' => instagram_actor_id, # 503391023081924
         'link_data' => {
           'link' => link, # https://tophatter.com/, https://itunes.apple.com/app/id619460348
           'message' => message,
