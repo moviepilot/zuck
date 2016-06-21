@@ -106,7 +106,7 @@ module Zuck
       query = Zuck::AdCreative.carousel(
         name: creative[:name],
         page_id: creative[:page_id],
-        instagram_actor_id: creative[:page_id],
+        instagram_actor_id: creative[:instagram_actor_id],
         link: creative[:link],
         message: creative[:message],
         assets: creative[:assets],
