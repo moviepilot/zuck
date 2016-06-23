@@ -7,8 +7,6 @@ module Zuck
       end
 
       def save
-        raise Exception, 'Called save.'
-
         # Tell Facebook to return.
         data = @hash_delegator_hash.merge(redownload: 1)
         data = data.stringify_keys
