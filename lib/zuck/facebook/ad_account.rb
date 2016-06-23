@@ -165,9 +165,13 @@ module Zuck
       ad_performances = []
 
       begin
-        ad_performances += insights['data'] if insights['data'].present?
-        puts insights['data'] unless insights['data'].present?
-        next_page_url    = insights['paging'].present? ? insights['paging']['next'] : nil
+        if insights['data'].present? && insights['data'].is_a?(Array)
+          ad_performances += insights['data']
+        else
+          puts insights.inspect
+        end
+
+        next_page_url = insights['paging'].present? ? insights['paging']['next'] : nil
       end while next_page_url.present? && (insights = HTTParty.get(next_page_url).parsed_response).present?
 
       ad_performances
