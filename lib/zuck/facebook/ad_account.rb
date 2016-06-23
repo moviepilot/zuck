@@ -149,30 +149,40 @@ module Zuck
     # @USAGE:
     # Zuck::AdAccount.find('1051938118182807').get_insights(Date.today..Date.today)
     def get_insights(range)
-      # Build the initial query.
-      insights = HTTParty.get(
-        "#{rest_path}/#{id}/insights",
-        query: {
-          access_token: graph.access_token,
-          level: :ad,
-          fields: [:ad_id, :objective, :impressions, :unique_actions, :cost_per_unique_action_type, :clicks, :cpc, :cpm, :ctr, :spend].join(','),
-          time_increment: 1,
-          time_range: { 'since': range.first.to_s, 'until': range.last.to_s }
-        }
-      ).parsed_response
+      resource_url = "#{rest_path}/#{id}/insights"
+      query = {
+        access_token: graph.access_token,
+        level: :ad,
+        fields: [:ad_id, :objective, :impressions, :unique_actions, :cost_per_unique_action_type, :clicks, :cpc, :cpm, :ctr, :spend].join(','),
+        time_increment: 1,
+        time_range: { 'since': range.first.to_s, 'until': range.last.to_s }
+      }
 
-      # Page through and pull all the information into a single array.
-      ad_performances = []
+      errors = 0
 
-      begin
+      while resource_url.present? && errors < 3
+        insights = HTTParty.get(resource_url, query: query).parsed_response
+
+        # Allow a few errors.
+        if insights['error'].present?
+          errors += 1
+          puts "#{insights['error']['code']}: #{insights['error']['message']}"
+          sleep 2**errors
+          next
+        end
+
+        # Page through and pull all the information into a single array.
+        ad_performances = []
+
         if insights['data'].present? && insights['data'].is_a?(Array)
           ad_performances += insights['data']
         else
           puts insights.inspect
         end
 
-        next_page_url = insights['paging'].present? ? insights['paging']['next'] : nil
-      end while next_page_url.present? && (insights = HTTParty.get(next_page_url).parsed_response).present?
+        resource_url = insights['paging'].present? ? insights['paging']['next'] : nil
+        query = nil
+      end
 
       ad_performances
     end
