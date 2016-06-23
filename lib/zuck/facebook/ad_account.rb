@@ -158,9 +158,10 @@ module Zuck
         time_range: { 'since': range.first.to_s, 'until': range.last.to_s }
       }
 
+      ad_performances = []
       errors = 0
 
-      while resource_url.present? && errors < 3
+      while resource_url.present? && errors < 3 # Page through and pull all the information into a single array.
         insights = HTTParty.get(resource_url, query: query).parsed_response
 
         # Allow a few errors.
@@ -170,9 +171,6 @@ module Zuck
           sleep 2**errors
           next
         end
-
-        # Page through and pull all the information into a single array.
-        ad_performances = []
 
         if insights['data'].present? && insights['data'].is_a?(Array)
           ad_performances += insights['data']
