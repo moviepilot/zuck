@@ -166,7 +166,7 @@ module Zuck
 
       begin
         ad_performances += insights['data']
-        next_page_url    = insights['paging']['next']
+        next_page_url    = insights['paging'].present? ? insights['paging']['next'] : nil
       end while next_page_url.present? && (insights = HTTParty.get(next_page_url).parsed_response).present?
 
       ad_performances
