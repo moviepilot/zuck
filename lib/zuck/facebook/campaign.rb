@@ -40,7 +40,7 @@ module Zuck
         billing_event: billing_event,
         optimization_goal: optimization_goal,
         is_autobid: true, # @TODO: Specify bid_amount when possible.
-        redownload: true,
+        redownload: false,
         status: status
       })
       raise Exception, object[:error][:error_user_msg] if object[:error].present?
