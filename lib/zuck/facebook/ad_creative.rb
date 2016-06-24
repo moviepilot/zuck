@@ -8,12 +8,17 @@
 module Zuck
   class AdCreative < RawFbObject
 
-    FIELDS = %i( id name object_story_id object_story_spec object_type thumbnail_url run_status )
-
     # https://developers.facebook.com/docs/marketing-api/reference/ad-creative
+    FIELDS = %i(id name object_story_id object_story_spec object_type thumbnail_url run_status)
+
     known_keys *FIELDS
 
     list_path :adcreatives
+
+    def self.find(id)
+      object = rest_get(id, query: { fields: FIELDS.join(',') })
+      Zuck::AdCreative.new(Zuck.graph, object, nil)
+    end
 
     # https://developers.facebook.com/docs/marketing-api/guides/carousel-ads/v2.6
     def self.carousel(name:, page_id:, instagram_actor_id:, link:, message:, assets:, type:, multi_share_optimized:, multi_share_end_card:)
