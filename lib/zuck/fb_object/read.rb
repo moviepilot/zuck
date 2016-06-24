@@ -24,8 +24,12 @@ module Zuck
 
       # Refetches the data.
       def reload
-        data = get(graph, path)
-        set_data(data)
+        begin
+          data = get(graph, path)
+          set_data(data)
+        rescue Exception => e
+          puts e.inspect
+        end
         self
       end
 
