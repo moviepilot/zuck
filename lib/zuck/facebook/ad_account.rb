@@ -148,41 +148,11 @@ module Zuck
 
     # @USAGE:
     # Zuck::AdAccount.find('1051938118182807').get_insights(Date.today..Date.today)
-    def get_insights(range)
-      resource_url = "#{rest_path}/#{id}/insights"
-      query = {
-        access_token: graph.access_token,
-        level: :ad,
-        fields: [:ad_id, :objective, :impressions, :unique_actions, :cost_per_unique_action_type, :clicks, :cpc, :cpm, :ctr, :spend].join(','),
-        time_increment: 1,
-        time_range: { 'since': range.first.to_s, 'until': range.last.to_s }
-      }
-
-      ad_performances = []
-      errors = 0
-
-      while resource_url.present? && errors < 3 # Page through and pull all the information into a single array.
-        insights = HTTParty.get(resource_url, query: query).parsed_response
-
-        # Allow a few errors.
-        if insights['error'].present?
-          errors += 1
-          puts "#{insights['error']['code']}: #{insights['error']['message']}"
-          sleep 2**errors
-          next
-        end
-
-        if insights['data'].present? && insights['data'].is_a?(Array)
-          ad_performances += insights['data']
-        else
-          puts insights.inspect
-        end
-
-        resource_url = insights['paging'].present? ? insights['paging']['next'] : nil
-        query = nil
-      end
-
-      ad_performances
+    def get_insights(range = Date.today..Date.today)
+      campaigns = Zuck::AdInsight.get(graph_object_id: id, range: range, level: :campaign, fields: %w(campaign_id))
+      campaigns.map do |campaign|
+        Zuck::AdInsight.get(graph_object_id: campaign['campaign_id'], range: range)
+      end.flatten
     end
 
     private
