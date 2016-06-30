@@ -10,7 +10,7 @@ module Zuck
   class AdSet < RawFbObject
 
     # https://developers.facebook.com/docs/marketing-api/reference/ad-set
-    FIELDS = %i(adlabels adset_schedule id account_id bid_amount bid_info billing_event campaign campaign_id configured_status created_time creative_sequence effective_status end_time frequency_cap frequency_cap_reset_period name optimization_goal promoted_object rf_prediction_id rtb_flag start_time targeting updated_time use_new_app_click pacing_type budget_remaining daily_budget lifetime_budget)
+    FIELDS = %i(adlabels adset_schedule id account_id bid_amount bid_info billing_event campaign campaign_id configured_status created_time creative_sequence effective_status end_time name optimization_goal promoted_object rf_prediction_id rtb_flag start_time targeting updated_time use_new_app_click pacing_type budget_remaining daily_budget lifetime_budget)
 
     known_keys *FIELDS
 
