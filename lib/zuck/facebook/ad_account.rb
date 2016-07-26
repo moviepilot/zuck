@@ -102,18 +102,31 @@ module Zuck
     #   multi_share_end_card: false
     # }
     # Zuck::AdAccount.find('1051938118182807').create_ad_creative(creative)
-    def create_ad_creative(creative)
-      query = Zuck::AdCreative.carousel(
-        name: creative[:name],
-        page_id: creative[:page_id],
-        instagram_actor_id: creative[:instagram_actor_id],
-        link: creative[:link],
-        message: creative[:message],
-        assets: creative[:assets],
-        type: creative[:type],
-        multi_share_optimized: creative[:multi_share_optimized],
-        multi_share_end_card: creative[:multi_share_end_card]
-      )
+    def create_ad_creative(creative, carousel: true)
+      query = if carousel
+        Zuck::AdCreative.carousel(
+          name: creative[:name],
+          page_id: creative[:page_id],
+          instagram_actor_id: creative[:instagram_actor_id],
+          link: creative[:link],
+          message: creative[:message],
+          assets: creative[:assets],
+          type: creative[:type],
+          multi_share_optimized: creative[:multi_share_optimized],
+          multi_share_end_card: creative[:multi_share_end_card]
+        )
+      else
+        Zuck::AdCreative.photo(
+          name: creative[:name],
+          page_id: creative[:page_id],
+          instagram_actor_id: creative[:instagram_actor_id],
+          message: creative[:message],
+          link: creative[:link],
+          link_title: creative[:link_title],
+          image_hash: creative[:image_hash],
+          type: creative[:type]
+        )
+      end
       object = rest_post("#{id}/adcreatives", query: query)
       Zuck::AdCreative.new(graph, object, nil)
     end

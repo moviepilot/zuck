@@ -2,9 +2,9 @@
 
 #### Objects
 
-- Business (Tophatter [760977220612233])
-- Account (Marketing API [1051938118182807], Tophatter [861827983860489])
-- Campaign (Android App Installs [6060101423257], Facebook App Installs [6060102414657])
+- Business
+- Account
+- Campaign
 - Ad Set
 - Ad
 - Ad Creative (Only via API)
@@ -63,36 +63,3 @@ TBD
 #### Usage - Ads Insights
 
 TBD
-
-#### Finding Creatives
-
-Top 25 most-sold tops in the last 30 days:
-
-```
-product_ids = Invoice.where(paid_at: 1.month.ago..Time.now).joins(:lot).where('lots.product_category': 'Apparel').where('lots.product_subcategory': 'Tops').group('lots.product_id').count.sort_by { |k, v| v }.last(25).map(&:first)
-lot_ids = product_ids.collect { |product_id| Lot.find_by!(product_id: product_id).id }
-image_urls = product_ids.collect { |product_id| Lot.find_by!(product_id: product_id).image1.url(:original) }
-image_urls.each do |image_url|
-  pathname = Pathname.new(image_url)
-  md5 = pathname.dirname.basename
-  File.open("/Users/cte/Dropbox/Ads/#{md5}.jpg", "wb") do |f|
-    f.binmode
-    print "GET #{image_url}... "
-    f.write HTTParty.get(image_url).parsed_response
-    puts "Done"
-    f.close
-  end
-end
-```
-
-Ash's approach:
-
-```
-def creatives(subcategory, count: 100, range: 2.weeks.ago..Time.now, min_width: 600, min_height: 600)
-  lot_ids          = Lot.where(bidding_ended_at: range, product_subcategory: subcategory).pluck(:id)
-  bidders          = Bid.joins(lot: :image1, user: {}).where('DATEDIFF(bids.created_at, users.created_at) = 0').where(lot_id: lot_ids, 'images.width': min_width..Float::INFINITY, 'images.height': min_height..Float::INFINITY).group('images.data_fingerprint').count('distinct bids.user_id')
-  fingerprints     = bidders.sort_by { |f, v| -v }.first(count).collect(&:first)
-  latest_image_ids = Image.where(data_fingerprint: fingerprints).group(:data_fingerprint).maximum(:id).values​
-  Image.where(id: latest_image_ids).sort_by { |i| fingerprints.index(i.data_fingerprint) }.collect { |i| i.url(:large) }
-end
-```
