@@ -35,9 +35,7 @@ module Zuck
               'link' => link,
               'link_title' => link_title
             }
-          },
-          'multi_share_optimized' => multi_share_optimized,
-          'multi_share_end_card' => multi_share_end_card
+          }
         }
       }
       {
