@@ -84,8 +84,14 @@ module Zuck
 
       response = rest_upload("#{id}/adimages", query: files)
       files.values.each { |file| File.delete(file.path) } # Do we really need to do this?
-      hashes = response['images'].map { |key, hash| hash['hash'] }
-      get_ad_images(hashes)
+
+      if response['images'].present?
+        hashes = response['images'].map { |key, hash| hash['hash'] }
+        get_ad_images(hashes)
+      else
+        puts response.inspect # Need real error handling.
+        []
+      end
     end
 
     # CREATIVES ################################################################
