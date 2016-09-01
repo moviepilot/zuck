@@ -1,11 +1,10 @@
 PATH
   remote: .
   specs:
-    zuck (3.0.0)
+    zuck (4.0.0)
       activesupport
       httmultiparty
       httparty
-      koala
 
 GEM
   remote: https://rubygems.org/
@@ -16,12 +15,9 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
-    addressable (2.4.0)
     awesome_print (1.6.1)
     builder (3.2.2)
     coderay (1.1.1)
-    faraday (0.9.2)
-      multipart-post (>= 1.2, < 3)
     ffi (1.9.10-java)
     httmultiparty (0.3.16)
       httparty (>= 0.7.3)
@@ -32,14 +28,9 @@ GEM
       multi_xml (>= 0.5.2)
     i18n (0.7.0)
     json (1.8.3)
-    koala (2.3.0)
-      addressable
-      faraday
-      multi_json
     method_source (0.8.2)
     mimemagic (0.3.1)
-    minitest (5.8.4)
-    multi_json (1.11.3)
+    minitest (5.9.0)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     pry (0.10.3)
