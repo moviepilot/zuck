@@ -58,6 +58,7 @@ module Zuck # list_path :adcreatives
           object_story_spec: object_story_spec.to_json
         }
       end
+
     end
 
   end

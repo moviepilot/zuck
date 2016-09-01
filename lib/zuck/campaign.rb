@@ -9,13 +9,13 @@ module Zuck
     # belongs_to
 
     def ad_account
-      @ad_account ||= Zuck::AdAccount.find(account_id)
+      @ad_account ||= Zuck::AdAccount.find("act_#{account_id}")
     end
 
     # has_many
 
-    def ad_sets(effective_status: ['ACTIVE'])
-      response = rest_get("#{id}/adsets", query: Zuck::AdSet.default_query.merge(effective_status: effective_status).compact)
+    def ad_sets(effective_status: ['ACTIVE'], limit: 100)
+      response = rest_get("#{id}/adsets", query: Zuck::AdSet.default_query.merge(effective_status: effective_status, limit: limit).compact)
       data     = Zuck::AdSet.paginate(response)
       data.present? ? data.map { |hash| Zuck::AdSet.new(hash.merge(campaign: self)) } : []
     end

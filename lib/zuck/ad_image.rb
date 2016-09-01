@@ -6,5 +6,11 @@ module Zuck # list_path :adimages
     attr_accessor *FIELDS
     attr_accessor :ad_account
 
+    class << self
+      def find(id)
+        raise Exception, 'NOT IMPLEMENTED'
+      end
+    end
+
   end
 end

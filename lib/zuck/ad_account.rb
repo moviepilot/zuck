@@ -24,20 +24,20 @@ module Zuck
 
     # has_many
 
-    def campaigns(effective_status: ['ACTIVE'])
-      response = rest_get("#{id}/campaigns", query: Zuck::Campaign.default_query.merge(effective_status: effective_status).compact)
+    def campaigns(effective_status: ['ACTIVE'], limit: 100)
+      response = rest_get("#{id}/campaigns", query: Zuck::Campaign.default_query.merge(effective_status: effective_status, limit: limit).compact)
       data     = Zuck::Campaign.paginate(response)
       data.present? ? data.map { |hash| Zuck::Campaign.new(hash.merge(ad_account: self)) } : []
     end
 
-    def ad_creatives
-      response = rest_get("#{id}/adcreatives", query: Zuck::AdCreative.default_query)
+    def ad_creatives(limit: 100)
+      response = rest_get("#{id}/adcreatives", query: Zuck::AdCreative.default_query.merge(limit: limit).compact)
       data     = Zuck::AdCreative.paginate(response)
       data.present? ? data.map { |hash| Zuck::AdCreative.new(hash.merge(ad_account: self)) } : []
     end
 
-    def ad_images(hashes: nil)
-      response = rest_get("#{id}/adimages", query: Zuck::AdImage.default_query.merge(hashes: hashes))
+    def ad_images(hashes: nil, limit: 100)
+      response = rest_get("#{id}/adimages", query: Zuck::AdImage.default_query.merge(hashes: hashes, limit: limit).compact)
       data     = Zuck::AdImage.paginate(response)
       data.present? ? data.map { |hash| Zuck::AdImage.new(hash.merge(ad_account: self)) } : []
     end

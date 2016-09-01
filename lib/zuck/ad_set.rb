@@ -14,14 +14,14 @@ module Zuck # list_path :adsets
 
     # has_many
 
-    def ads(effective_status: ['ACTIVE'])
-      response = rest_get("#{id}/ads", query: Zuck::Ad.default_query.merge(effective_status: effective_status).compact)
+    def ads(effective_status: ['ACTIVE'], limit: 100)
+      response = rest_get("#{id}/ads", query: Zuck::Ad.default_query.merge(effective_status: effective_status, limit: limit).compact)
       data     = Zuck::Ad.paginate(response)
       data.present? ? data.map { |hash| Zuck::Ad.new(hash.merge(ad_set: self)) } : []
     end
 
-    # @USAGE:
-    # Zuck::AdSet.find('6060101424057').create_ad(name: 'tops', creative_id: 12345)
+    # creation
+
     def create_ad(name:, creative_id:)
       object = rest_post("act_#{account_id}/ads", query: { name: name, adset_id: id, creative: { creative_id: creative_id }.to_json })
       raise Exception, object[:error][:error_user_msg] if object[:error].present?
