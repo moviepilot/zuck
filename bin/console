@@ -9,5 +9,5 @@ require 'awesome_print'
 require 'pry'
 
 Pry.config.color = false
-Zuck.graph = Koala::Facebook::API.new(File.read('test_access_token'))
+Zuck.access_token = File.read('test_access_token')
 binding.pry

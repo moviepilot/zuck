@@ -1,34 +1,26 @@
-# @USAGE:
-# Zuck::Campaign.all
-# campaign = Zuck::Campaign.find('6060101423257')
-# campaign.class
-# campaign.ad_account.class
-# campaign.ad_sets.first.class
-# campaign.ads.first.class
-
 module Zuck
-  class Campaign < RawFbObject
+  class Campaign < Base
 
     # https://developers.facebook.com/docs/marketing-api/reference/ad-campaign-group
-    known_keys :id,
-               :account_id,
-               :buying_type,
-               :can_use_spend_cap,
-               :configured_status,
-               :created_time,
-               :effective_status,
-               :name,
-               :objective,
-               :start_time,
-               :stop_time,
-               :updated_time,
-               :spend_cap
+    FIELDS = %w(id account_id buying_type can_use_spend_cap configured_status created_time effective_status name objective start_time stop_time updated_time spend_cap)
+    attr_accessor *FIELDS
+    attr_accessor :ad_account
 
-    list_path :campaigns
+    # belongs_to
 
-    parent_object :ad_account, as: :account_id
+    def ad_account
+      @ad_account ||= Zuck::AdAccount.find(account_id)
+    end
 
-    connections :ad_sets, :ads
+    # has_many
+
+    def ad_sets(effective_status: ['ACTIVE'])
+      response = rest_get("#{id}/adsets", query: Zuck::AdSet.default_query.merge(effective_status: effective_status).compact)
+      data     = Zuck::AdSet.paginate(response)
+      data.present? ? data.map { |hash| Zuck::AdSet.new(hash.merge(campaign: self)) } : []
+    end
+
+    # creation
 
     def create_ad_set(name:, promoted_object:, targeting:, daily_budget:, billing_event:, optimization_goal:, status:)
       object = rest_post("act_#{account_id}/adsets", query: {
@@ -44,7 +36,7 @@ module Zuck
         status: status
       })
       raise Exception, object[:error][:error_user_msg] if object[:error].present?
-      Zuck::AdSet.new(graph, object, nil)
+      Zuck::AdSet.new(object)
     end
 
   end
