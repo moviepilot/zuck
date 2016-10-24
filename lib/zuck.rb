@@ -11,7 +11,7 @@ require 'zuck/fb_object'
 Zuck::RawFbObject = Zuck::FbObject::RawFbObject
 Dir[File.expand_path('../zuck/facebook/**/*.rb', __FILE__)].each { |f| require f }
 
-Koala.config.api_version = 'v2.6'
+Koala.config.api_version = 'v2.7'
 
 module Zuck
   extend KoalaMethods
