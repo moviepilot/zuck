@@ -1,10 +1,5 @@
 [![Build Status](https://secure.travis-ci.org/moviepilot/zuck.png?branch=master)](https://travis-ci.org/moviepilot/zuck)
 
-This gem is up for adoption
-===========================
-Unfortunately, we don't maintain this gem anymore - let [@jayniz](/jayniz) know if you'd like to take over.
-
-
 Zuck; use facebook's advertisement API with ruby
 ================
 

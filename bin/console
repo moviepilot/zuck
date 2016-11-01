@@ -1,0 +1,13 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+# require 'koala'
+# require 'httparty'
+# require 'httmultiparty'
+require 'zuck'
+require 'awesome_print'
+require 'pry'
+
+Pry.config.color = false
+Zuck.graph = Koala::Facebook::API.new(File.read('test_access_token'))
+binding.pry

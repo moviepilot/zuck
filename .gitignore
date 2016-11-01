@@ -1,12 +1,2 @@
-coverage
-.yardoc
-doc
-pkg
-log
-Guardfile
-tmp
-gems.tags
-tags
-out
-.idea
-*.iml
+.DS_Store
+test_access_token

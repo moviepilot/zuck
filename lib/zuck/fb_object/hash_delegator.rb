@@ -50,18 +50,18 @@ module Zuck
       def known_keys(*args)
         args.each do |key|
 
-          # Define list of known keys
+          # Define list of known keys.
           self.send(:define_method, :known_keys) do
             args || []
           end
 
-          # Define getter
+          # Define getter.
           self.send(:define_method, key) do
             init_hash
             send('[]', key)
           end
 
-          # Define setter
+          # Define setter.
           self.send(:define_method, "#{key}=") do |val|
             init_hash
             @hash_delegator_hash[key] = val
@@ -71,8 +71,7 @@ module Zuck
     end
 
     def set_data(d)
-      e = "You can only assign a Hash to #{self.class}, not a #{d.class}"
-      raise e unless d.is_a? Hash
+      raise "You can only assign a Hash to #{self.class}, not a #{d.class} | #{d.inspect}" unless d.is_a? Hash
       hash = Hash.new
       d.each do |key, value|
         hash[(key.to_sym rescue key) || key] = value
@@ -128,5 +127,6 @@ module Zuck
       @hash_delegator_reloaded_once = true
       reload
     end
+
   end
 end
