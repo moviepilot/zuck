@@ -6,7 +6,7 @@
 
 Gem::Specification.new do |s|
   s.name        = 'zuck'
-  s.version     = '3.0.0'
+  s.version     = '3.1.0'
   s.platform    = Gem::Platform::RUBY
   s.licenses    = ['MIT']
   s.authors     = ['Chris Estreich']
